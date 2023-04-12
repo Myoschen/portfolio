@@ -27,12 +27,18 @@ const projects: ProjectInfo[] = [
     repo: 'https://github.com/Myoschen/muser',
   },
   {
-    image: '/project/social-media-app.png',
-    title: 'Social Media',
-    description:
-      'This is a social media built with React, Firebase and Chakra UI.',
-    repo: 'https://github.com/Myoschen/social-media-app',
-    demo: 'https://social-media-app-myoschen.vercel.app',
+    image: '/project/react-todo-list.png',
+    title: 'React Todo List',
+    description: 'This is a todo list built with React and Tailwind CSS.',
+    repo: 'https://github.com/Myoschen/react-todo-list',
+    demo: 'https://react-todo-list-myoschen.vercel.app/',
+  },
+  {
+    image: '/project/react-linktree.png',
+    title: 'React Linktree',
+    description: 'This is a linktree app built with React and Tailwind CSS.',
+    repo: 'https://github.com/Myoschen/react-linktree',
+    demo: 'https://react-linktree.vercel.app/',
   },
   {
     image: '/project/typing-speed.png',
@@ -43,11 +49,12 @@ const projects: ProjectInfo[] = [
     demo: 'https://typing-speed-myos.vercel.app/',
   },
   {
-    image: '/project/react-linktree.png',
-    title: 'React Linktree',
-    description: 'This is a linktree app built with React and Tailwind CSS.',
-    repo: 'https://github.com/Myoschen/react-linktree',
-    demo: 'https://react-linktree.vercel.app/',
+    image: '/project/social-media-app.png',
+    title: 'Social Media',
+    description:
+      'This is a social media built with React, Firebase and Chakra UI.',
+    repo: 'https://github.com/Myoschen/social-media-app',
+    demo: 'https://social-media-app-myoschen.vercel.app',
   },
 ];
 
