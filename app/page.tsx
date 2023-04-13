@@ -68,7 +68,7 @@ export default function HomePage() {
           <div className="relative aspect-square w-40 overflow-hidden rounded-full shadow-lg ring-4 ring-neutral-900 dark:ring-slate-100">
             <Image
               className="object-cover"
-              src="/ryan-chen.jpg"
+              src="/ryan-chen.png"
               alt="Ryan Chen"
               fill
             />
