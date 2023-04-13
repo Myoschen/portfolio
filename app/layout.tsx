@@ -34,7 +34,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${noto.variable} ${ibm.variable}`}
     >
-      <body className="mb-20 mt-8 flex max-w-4xl flex-col bg-[#151515] text-white antialiased md:mx-auto md:mt-20 md:flex-row lg:mt-32 ">
+      <body className="mb-20 mt-8 flex max-w-4xl flex-col bg-slate-100 text-neutral-900 antialiased transition-colors dark:bg-neutral-900 dark:text-slate-100 md:mx-auto md:mt-20 md:flex-row lg:mt-32 ">
         <Sidebar />
         {children}
       </body>

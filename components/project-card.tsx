@@ -30,7 +30,7 @@ function ProjectCard({ info }: Props) {
   return (
     <motion.div
       variants={card}
-      className="space-y-4 rounded-md border border-neutral-800 p-4"
+      className="space-y-4 border-2 border-slate-200 p-4 transition-colors hover:border-indigo-600 dark:border-neutral-800 dark:hover:border-indigo-300"
     >
       <div className="relative aspect-video overflow-hidden rounded-md">
         <Image className="object-cover" src={image} alt="Programming" fill />
@@ -43,7 +43,7 @@ function ProjectCard({ info }: Props) {
         <div className="flex items-center justify-start gap-x-1">
           <Tooltip text="Repository">
             <a
-              className="flex items-center justify-center rounded-md p-2 transition-colors hover:bg-neutral-700"
+              className="flex items-center justify-center rounded-md p-2 transition-colors hover:bg-slate-200 dark:hover:bg-neutral-800"
               href={repo}
               target="_blank"
               rel="noreferrer noopener"
@@ -54,7 +54,7 @@ function ProjectCard({ info }: Props) {
           {demo ? (
             <Tooltip text="Demo">
               <a
-                className="flex items-center justify-center rounded-md p-2 transition-colors hover:bg-neutral-700"
+                className="flex items-center justify-center rounded-md p-2 transition-colors hover:bg-slate-200 dark:hover:bg-neutral-800"
                 href={demo}
                 target="_blank"
                 rel="noreferrer noopener"

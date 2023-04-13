@@ -4,7 +4,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { BarChartIcon, DashboardIcon, HomeIcon, PersonIcon } from '@radix-ui/react-icons';
+import {
+  BarChartIcon,
+  DashboardIcon,
+  HomeIcon,
+  MoonIcon,
+  PersonIcon,
+  SunIcon,
+} from '@radix-ui/react-icons';
+import Switch from './switch';
+import useDarkMode from '@/hooks/use-dark-mode';
 
 const navLinks = [
   {
@@ -32,6 +41,7 @@ const navLinks = [
 function Sidebar() {
   const pathname = usePathname();
   const [hoverNav, setHoverNav] = useState<number | null>(null);
+  const { theme, setTheme } = useDarkMode();
 
   return (
     <aside className="px-6 md:w-[150px] md:shrink-0 md:px-0">
@@ -47,30 +57,36 @@ function Sidebar() {
             />
           </Link>
         </div>
-        <nav>
+        <nav className="mb-4 md:mb-8">
           <div
-            className="-ml-2 flex flex-wrap items-start gap-x-2 md:flex-col md:gap-x-0 md:gap-y-2"
+            className="-ml-2 flex flex-wrap items-start gap-2 md:flex-col md:gap-x-0 md:gap-y-2"
             onMouseLeave={() => setHoverNav(null)}
           >
             {navLinks.map(({ label, href, icon }, index) => (
               <Link
-                className="flex text-neutral-500 transition-colors hover:text-neutral-200"
+                className="flex transition-colors hover:text-indigo-600 dark:hover:text-indigo-300"
                 href={href}
                 key={href}
                 onMouseEnter={() => setHoverNav(index)}
               >
-                <span className="font-ibm relative flex items-center gap-x-1 px-2 py-1 font-medium tracking-wider">
+                <span
+                  className={`${
+                    pathname === href
+                      ? 'text-indigo-600 dark:text-indigo-300'
+                      : ''
+                  } font-ibm relative flex items-center gap-x-1 px-2 py-1 font-medium tracking-wider`}
+                >
                   {icon}
                   {label}
                   {pathname === href ? (
                     <motion.div
-                      className="absolute inset-0 z-[-1] rounded-md bg-neutral-800"
+                      className="absolute inset-0 z-[-1] rounded-t-md bg-slate-200 dark:bg-neutral-800"
                       layoutId="background"
                     />
                   ) : null}
                   {hoverNav === index ? (
                     <motion.div
-                      className="absolute bottom-[-2px] left-0 h-[2px] w-full rounded-md bg-neutral-400"
+                      className="absolute bottom-0 left-0 h-[2px] w-full rounded-md bg-indigo-600 dark:bg-indigo-300"
                       layoutId="underline"
                     />
                   ) : null}
@@ -79,6 +95,15 @@ function Sidebar() {
             ))}
           </div>
         </nav>
+        <Switch
+          id="dark-mode"
+          leftIcon={<SunIcon />}
+          rightIcon={<MoonIcon />}
+          checked={theme === 'dark' ? true : false}
+          onCheckedChange={(checked) =>
+            checked ? setTheme('dark') : setTheme('light')
+          }
+        />
       </div>
     </aside>
   );
