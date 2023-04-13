@@ -44,7 +44,7 @@ function Sidebar() {
   const { theme, setTheme } = useDarkMode();
 
   return (
-    <aside className="px-6 md:w-[150px] md:shrink-0 md:px-0">
+    <aside className="px-6 md:w-[150px] md:shrink-0">
       <div className="md:sticky md:top-20">
         <div className="-ml-2 mb-4 flex justify-start md:mb-8">
           <Link href="/">
