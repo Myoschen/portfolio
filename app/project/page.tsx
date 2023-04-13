@@ -16,7 +16,11 @@ const container = {
 
 const item = {
   hidden: { opacity: 0, x: -10 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.3, staggerChildren: 0.25 },
+  },
 } satisfies Variants;
 
 const projects: ProjectInfo[] = [
