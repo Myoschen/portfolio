@@ -1,15 +1,12 @@
 'use client';
 import { motion, Variants } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import MainWrapper from '@/components/main-wrapper';
 import NextLink from '@/components/next-link';
 import PageTitle from '@/components/page-title';
 import SocialLink, { SocialLinkInfo } from '@/components/social-link';
-import {
-  EnvelopeClosedIcon,
-  GitHubLogoIcon,
-  TwitterLogoIcon,
-} from '@radix-ui/react-icons';
+import { EnvelopeClosedIcon, GitHubLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
 
 const socialLinks: SocialLinkInfo[] = [
   {
@@ -45,6 +42,8 @@ const item = {
 } satisfies Variants;
 
 export default function HomePage() {
+  const t = useTranslations('Home');
+
   return (
     <MainWrapper>
       <motion.div
@@ -53,13 +52,13 @@ export default function HomePage() {
         animate="visible"
         className="flex flex-col gap-y-6"
       >
-        <PageTitle label="Ryan Chen" />
+        <PageTitle label={t('title')} />
         <motion.div
           variants={item}
           className="font-inter font-medium tracking-wide"
         >
-          <p>Hello 👋, I&apos;m Ryan.</p>
-          <p>I am a passionate front-end developer!</p>
+          <p>{t('name')}</p>
+          <p>{t('major')}</p>
         </motion.div>
         <motion.div
           variants={item}
@@ -85,13 +84,10 @@ export default function HomePage() {
           variants={item}
           className="font-inter font-medium tracking-wide"
         >
-          <p>
-            I am still continuing to learn React and Next.js related
-            technologies, and I will also use time to learn back-end knowledge.
-          </p>
+          <p>{t('currently')}</p>
         </motion.div>
         <motion.div variants={item} className="inline-block self-end">
-          <NextLink next="about" />
+          <NextLink next="about" label={t('next')} />
         </motion.div>
       </motion.div>
     </MainWrapper>

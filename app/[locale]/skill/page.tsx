@@ -1,20 +1,14 @@
 'use client';
 import { motion, Variants } from 'framer-motion';
-import {
-  IconBrandCss3,
-  IconBrandFirebase,
-  IconBrandHtml5,
-  IconBrandJavascript,
-  IconBrandMongodb,
-  IconBrandReact,
-  IconBrandRedux,
-  IconBrandTailwind,
-  IconBrandTypescript,
-} from '@tabler/icons-react';
+import { useTranslations } from 'next-intl';
 import MainWrapper from '@/components/main-wrapper';
 import NextLink from '@/components/next-link';
 import PageTitle from '@/components/page-title';
 import SkillCard, { SkillInfo } from '@/components/skill-card';
+import {
+    IconBrandCss3, IconBrandFirebase, IconBrandHtml5, IconBrandJavascript, IconBrandMongodb,
+    IconBrandReact, IconBrandRedux, IconBrandTailwind, IconBrandTypescript
+} from '@tabler/icons-react';
 
 const container = {
   hidden: { opacity: 0 },
@@ -84,6 +78,8 @@ const skills: SkillInfo[] = [
 ];
 
 function SkillPage() {
+  const t = useTranslations('Skill');
+
   return (
     <MainWrapper>
       <motion.div
@@ -92,14 +88,14 @@ function SkillPage() {
         animate="visible"
         className="flex flex-col gap-y-6"
       >
-        <PageTitle label="My Skills" />
+        <PageTitle label={t('title')} />
         <motion.div variants={item} className="grid gap-y-4">
           {skills.map((skill) => (
             <SkillCard key={skill.title} info={skill} />
           ))}
         </motion.div>
         <motion.div variants={item} className="inline-block self-end">
-          <NextLink next="project" />
+          <NextLink next="project" label={t('next')} />
         </motion.div>
       </motion.div>
     </MainWrapper>

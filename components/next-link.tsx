@@ -1,10 +1,11 @@
 'use client';
 import { motion, Variants } from 'framer-motion';
-import Link from 'next/link';
 import { ArrowRightIcon } from '@radix-ui/react-icons';
+import Link from './link';
 
 interface Props {
   next: string;
+  label: string;
 }
 
 const arrow = {
@@ -19,12 +20,12 @@ const arrow = {
   },
 } satisfies Variants;
 
-function NextLink({ next }: Props) {
+function NextLink({ next, label }: Props) {
   return (
     <Link href={`/${next}`}>
       <motion.div className="flex items-center gap-x-1" whileHover="hover">
         <span className="font-ibm font-medium capitalize tracking-wider">
-          {next}
+          {label}
         </span>
         <motion.div variants={arrow}>
           <ArrowRightIcon />

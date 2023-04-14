@@ -1,8 +1,8 @@
 'use client';
 import { motion, Variants } from 'framer-motion';
-import { CodeIcon, RocketIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
 import Tooltip from '@/components/tooltip';
+import { CodeIcon, RocketIcon } from '@radix-ui/react-icons';
 
 const card = {
   hidden: {
@@ -30,16 +30,23 @@ function ProjectCard({ info }: Props) {
   return (
     <motion.div
       variants={card}
-      className="space-y-4 border-2 border-slate-200 p-4 transition-colors hover:border-indigo-600 dark:border-neutral-800 dark:hover:border-indigo-300"
+      className="group space-y-4 border-2 border-slate-200 transition-colors hover:border-indigo-600 dark:border-neutral-800 dark:hover:border-indigo-300"
     >
-      <div className="relative aspect-video overflow-hidden rounded-md">
-        <Image className="object-cover" src={image} alt="Programming" fill />
+      <div className="relative aspect-video overflow-hidden">
+        <Image
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
+          src={image}
+          alt="Programming"
+          fill
+        />
       </div>
-      <div className="flex flex-col gap-y-2 px-2">
+      <div className="flex flex-col gap-y-2 px-6 pb-4">
         <h2 className="font-ibm text-2xl font-semibold leading-relaxed">
           {title}
         </h2>
-        <p className="font-inter font-medium tracking-wider">{description}</p>
+        <p className="font-inter text-sm font-medium tracking-wider text-neutral-400 dark:text-neutral-500">
+          {description}
+        </p>
         <div className="flex items-center justify-start gap-x-1">
           <Tooltip text="Repository">
             <a
