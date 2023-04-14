@@ -10,19 +10,19 @@ export const metadata = {
 
 const inter = Inter({
   subsets: ['latin'],
-  variable: '--inter',
+  variable: '--ff-inter',
   weight: ['400', '600', '500', '700'],
 });
 
 const noto = Noto_Sans_TC({
   subsets: ['latin'],
-  variable: '--noto',
+  variable: '--ff-noto',
   weight: ['400', '500', '700'],
 });
 
 const ibm = IBM_Plex_Serif({
   subsets: ['latin'],
-  variable: '--ibm',
+  variable: '--ff-ibm',
   weight: ['400', '600', '500', '700'],
 });
 
