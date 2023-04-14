@@ -1,0 +1,41 @@
+{
+  "Sidebar": {
+    "home": "首頁",
+    "about": "關於",
+    "skill": "技能",
+    "project": "作品"
+  },
+  "Home": {
+    "title": "Ryan Chen",
+    "name": "你好 👋, 我是 Ryan。",
+    "major": "我是一個對於前端充滿熱情的開發者！",
+    "currently": "我還在繼續學習 React 和 Next.js 相關技術，我也會利用時間學習後端知識。",
+    "next": "about"
+  },
+  "About": {
+    "title": "關於我",
+    "paragraph": {
+      "degree": "我畢業於淡江大學資訊工程學系。",
+      "programming": "我對撰寫程式充滿熱情，所以我嘗試了許多不同的程式語言，例如 JavaScript、TypeScript、Python、Golang 等等。",
+      "cause": "然而由於大學課程的緣故，接觸到了 web 前端開發。直到現在，我依然熱愛 web 前端開發。",
+      "currently": "現在，我仍然在提升自己的技能，比如像是學習 React.js、Next.js、CSS 排版等等。",
+      "addition": "另外，我對後端技術也很十分感興趣，像是 Golang、Node.js 等等。",
+      "future": "所以未來，我仍然會專注於前端。但如果有空閒的時間的話，我也會嘗試去了解一下後端相關的技術與知識。"
+    },
+    "next": "skill"
+  },
+  "Skill": {
+    "title": "我的技能",
+    "next": "project"
+  },
+  "Project": {
+    "title": "作品集",
+    "description": {
+      "muser": "這是一個簡易的 mp3 音樂播放器，使用 Electron 及 React.js 所製作的。",
+      "react-todo-list": "這是一個代辦事項應用，使用 React.js 及 Tailwind CSS 所製作的。",
+      "react-linktree": "這是一個連結樹應用，使用 React.js 及 Tailwind CSS 所製作的。",
+      "typing-speed": "這是一個測試打字速度應用，使用 React.js 及 Tailwind CSS 所製作的。",
+      "social-media": "這是一個社群媒體應用，使用 React.js、Firebase 及 Chakra UI 所製作的。"
+    }
+  }
+}

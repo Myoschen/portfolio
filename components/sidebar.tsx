@@ -1,9 +1,10 @@
 'use client';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
+import { usePathname } from 'next-intl/client';
 import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import useDarkMode from '@/hooks/use-dark-mode';
 import {
   BarChartIcon,
   DashboardIcon,
@@ -13,35 +14,37 @@ import {
   SunIcon,
 } from '@radix-ui/react-icons';
 import Switch from './switch';
-import useDarkMode from '@/hooks/use-dark-mode';
-
-const navLinks = [
-  {
-    label: 'Home',
-    href: '/',
-    icon: <HomeIcon className="-mb-1" />,
-  },
-  {
-    label: 'About',
-    href: '/about',
-    icon: <PersonIcon className="-mb-1" />,
-  },
-  {
-    label: 'Skill',
-    href: '/skill',
-    icon: <BarChartIcon className="-mb-1" />,
-  },
-  {
-    label: 'Project',
-    href: '/project',
-    icon: <DashboardIcon className="-mb-1" />,
-  },
-];
+import Link from './link';
+import LangSwitch from './lang-switch';
 
 function Sidebar() {
-  const pathname = usePathname();
   const [hoverNav, setHoverNav] = useState<number | null>(null);
   const { theme, setTheme } = useDarkMode();
+  const t = useTranslations('Sidebar');
+  const pathname = usePathname();
+
+  const navLinks = [
+    {
+      label: t('home'),
+      href: '/',
+      icon: <HomeIcon className="-mb-1" />,
+    },
+    {
+      label: t('about'),
+      href: '/about',
+      icon: <PersonIcon className="-mb-1" />,
+    },
+    {
+      label: t('skill'),
+      href: '/skill',
+      icon: <BarChartIcon className="-mb-1" />,
+    },
+    {
+      label: t('project'),
+      href: '/project',
+      icon: <DashboardIcon className="-mb-1" />,
+    },
+  ];
 
   return (
     <aside className="px-6 md:w-[150px] md:shrink-0 lg:px-0">
@@ -57,9 +60,12 @@ function Sidebar() {
             />
           </Link>
         </div>
+        <div className="mb-4 md:mb-8">
+          <LangSwitch />
+        </div>
         <nav className="mb-4 md:mb-8">
           <div
-            className="-ml-2 flex flex-wrap items-start gap-2 md:flex-col md:gap-x-0 md:gap-y-2"
+            className="-ml-2 flex flex-wrap items-start gap-x-px md:flex-col md:gap-x-0 md:gap-y-2"
             onMouseLeave={() => setHoverNav(null)}
           >
             {navLinks.map(({ label, href, icon }, index) => (
@@ -74,7 +80,7 @@ function Sidebar() {
                     pathname === href
                       ? 'text-indigo-600 dark:text-indigo-300'
                       : ''
-                  } font-ibm relative flex items-center gap-x-1 px-2 py-1 font-medium tracking-wider`}
+                  } font-ibm relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide`}
                 >
                   {icon}
                   {label}

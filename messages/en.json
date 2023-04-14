@@ -1,0 +1,41 @@
+{
+  "Sidebar": {
+    "home": "Home",
+    "about": "About",
+    "skill": "Skill",
+    "project": "Project"
+  },
+  "Home": {
+    "title": "Ryan Chen",
+    "name": "Hello 👋, I'm Ryan.",
+    "major": "I am a developer passionate about front-end!",
+    "currently": "I am still continuing to learn React and Next.js related technologies, and I will also use time to learn back-end knowledge.",
+    "next": "about"
+  },
+  "About": {
+    "title": "About Me",
+    "paragraph": {
+      "degree": "I graduated from Tamkang University in the Department of Computer Science and Information Engineering.",
+      "programming": "I am passionate about programming, so I tried a lot of different Programming languages such as JavaScript, TypeScript, Python, Golang, etc.",
+      "cause": "However, due to university courses, I was exposed to web front-end development. Until now, I still love web front-end development.",
+      "currently": "Now, I am still improving my skills, such as learning React.js, Next.js, CSS typography, etc.",
+      "addition": "In addition, I am also very interested in back-end technology. Like Golang, Node.js, etc.",
+      "future": "So in the future, I will focus on the front-end. If I have spare time, I will also learn more about the back-end technology."
+    },
+    "next": "skill"
+  },
+  "Skill": {
+    "title": "My Skills",
+    "next": "project"
+  },
+  "Project": {
+    "title": "Side Projects",
+    "description": {
+      "muser": "This is a simple mp3 player built with Electron and React.",
+      "react-todo-list": "This is a todo list built with React and Tailwind CSS.",
+      "react-linktree": "This is a linktree app built with React and Tailwind CSS.",
+      "typing-speed": "This is a test typing speed app built with React and Tailwind CSS.",
+      "social-media": "This is a social media built with React, Firebase and Chakra UI."
+    }
+  }
+}
