@@ -6,8 +6,19 @@ import NextLink from '@/components/next-link';
 import PageTitle from '@/components/page-title';
 import SkillCard, { SkillInfo } from '@/components/skill-card';
 import {
-    IconBrandCss3, IconBrandFirebase, IconBrandHtml5, IconBrandJavascript, IconBrandMongodb,
-    IconBrandReact, IconBrandRedux, IconBrandTailwind, IconBrandTypescript
+  IconBrandCss3,
+  IconBrandFirebase,
+  IconBrandGolang,
+  IconBrandHtml5,
+  IconBrandJavascript,
+  IconBrandMongodb,
+  IconBrandNextjs,
+  IconBrandPython,
+  IconBrandReact,
+  IconBrandRedux,
+  IconBrandTailwind,
+  IconBrandTypescript,
+  IconBrandRust,
 } from '@tabler/icons-react';
 
 const container = {
@@ -38,12 +49,12 @@ const skills: SkillInfo[] = [
   {
     title: 'CSS',
     icon: <IconBrandCss3 color="#254bdd" size={60} />,
-    level: 'advanced',
+    level: 'master',
   },
   {
     title: 'JavaScript',
     icon: <IconBrandJavascript color="#f4cd00" size={60} />,
-    level: 'advanced',
+    level: 'master',
   },
   {
     title: 'TypeScript',
@@ -53,17 +64,22 @@ const skills: SkillInfo[] = [
   {
     title: 'React',
     icon: <IconBrandReact color="#5ed3f3" size={60} />,
+    level: 'master',
+  },
+  {
+    title: 'Next.js',
+    icon: <IconBrandNextjs size={60} />,
     level: 'advanced',
   },
   {
     title: 'React Redux',
     icon: <IconBrandRedux color="#7248b7" size={60} />,
-    level: 'intermediate',
+    level: 'advanced',
   },
   {
     title: 'Tailwind CSS',
     icon: <IconBrandTailwind color="#38bdf8" size={60} />,
-    level: 'advanced',
+    level: 'master',
   },
   {
     title: 'Firebase',
@@ -74,6 +90,21 @@ const skills: SkillInfo[] = [
     title: 'Mongodb',
     icon: <IconBrandMongodb color="#10aa50" size={60} />,
     level: 'intermediate',
+  },
+  {
+    title: 'Python',
+    icon: <IconBrandPython color="#4481b2" size={60} />,
+    level: 'master',
+  },
+  {
+    title: 'Golang',
+    icon: <IconBrandGolang color="#00a7d0" size={60} />,
+    level: 'intermediate',
+  },
+  {
+    title: 'Rust',
+    icon: <IconBrandRust color="#ec4d09" size={60} />,
+    level: 'newbie',
   },
 ];
 
