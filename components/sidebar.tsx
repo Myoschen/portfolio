@@ -20,7 +20,7 @@ import Switch from './switch';
 
 function Sidebar() {
   const [hoverNav, setHoverNav] = useState<number | null>(null);
-  const { theme, setTheme } = useDarkMode();
+  const [theme, setTheme] = useDarkMode();
   const t = useTranslations('Sidebar');
   const pathname = usePathname();
 
@@ -107,7 +107,7 @@ function Sidebar() {
             id="dark-mode"
             leftIcon={<SunIcon />}
             rightIcon={<MoonIcon />}
-            checked={theme === 'dark' ? true : false}
+            checked={theme === 'dark'}
             onCheckedChange={(checked) =>
               checked ? setTheme('dark') : setTheme('light')
             }

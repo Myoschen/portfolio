@@ -1,21 +1,16 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import useLocalStorage from './use-local-storage';
 
 function useDarkMode() {
-  const [theme, setTheme] = useState('light');
-
-  useEffect(() => {
-    let data = localStorage.getItem('theme') || 'light';
-    setTheme(data);
-  }, []);
+  const [theme, setTheme] = useLocalStorage('theme', 'light');
 
   useEffect(() => {
     document.documentElement.classList.remove('light', 'dark');
     document.documentElement.classList.add(theme);
-    localStorage.setItem('theme', theme);
   }, [theme]);
 
-  return { theme, setTheme };
+  return [theme, setTheme] as const;
 }
 
 export default useDarkMode;
