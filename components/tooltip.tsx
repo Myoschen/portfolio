@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState } from 'react';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
 interface Props {
@@ -7,20 +9,52 @@ interface Props {
 }
 
 function Tooltip({ children, text }: Props) {
+  const [open, setOpen] = useState(false);
+
   return (
     <TooltipPrimitive.Provider delayDuration={0.4}>
-      <TooltipPrimitive.Root>
-        <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
-        <TooltipPrimitive.Portal>
-          <TooltipPrimitive.Content
-            className="font-paragraph data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade text-light-primary-100 bg-dark-primary-500 dark:bg-light-primary-100 dark:text-dark-primary-500 select-none rounded-[4px] px-4 py-2 text-sm font-medium leading-none will-change-[transform,opacity]"
-            side="bottom"
-            sideOffset={5}
+      <TooltipPrimitive.Root open={open} onOpenChange={setOpen}>
+        <TooltipPrimitive.Trigger asChild>
+          <motion.div
+            onHoverStart={() => setOpen(true)}
+            onHoverEnd={() => setOpen(false)}
           >
-            {text}
-            <TooltipPrimitive.Arrow className="fill-dark-primary-500 dark:fill-light-primary-100" />
-          </TooltipPrimitive.Content>
-        </TooltipPrimitive.Portal>
+            {children}
+          </motion.div>
+        </TooltipPrimitive.Trigger>
+        <AnimatePresence>
+          {open && (
+            <TooltipPrimitive.Portal forceMount>
+              <TooltipPrimitive.Content
+                className="font-paragraph text-light-primary-100 bg-dark-primary-500 dark:bg-light-primary-100 dark:text-dark-primary-500 select-none rounded-[4px] px-4 py-2 text-sm font-medium leading-none will-change-[transform,opacity]"
+                side="bottom"
+                sideOffset={5}
+                asChild
+              >
+                <motion.div
+                  initial="close"
+                  animate="open"
+                  exit="close"
+                  variants={{
+                    close: {
+                      opacity: 0,
+                      y: -2,
+                      transition: { ease: 'easeIn', duration: 0.1 },
+                    },
+                    open: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { ease: 'easeOut', duration: 0.2 },
+                    },
+                  }}
+                >
+                  {text}
+                  <TooltipPrimitive.Arrow className="fill-dark-primary-500 dark:fill-light-primary-100" />
+                </motion.div>
+              </TooltipPrimitive.Content>
+            </TooltipPrimitive.Portal>
+          )}
+        </AnimatePresence>
       </TooltipPrimitive.Root>
     </TooltipPrimitive.Provider>
   );

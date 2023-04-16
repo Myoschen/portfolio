@@ -1,46 +1,71 @@
+'use client';
 import { GlobeIcon } from '@radix-ui/react-icons';
 import { Link, useLocale } from 'next-intl';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
 
 function LanguageMenu() {
+  const [open, setOpen] = useState(false);
   const locale = useLocale();
   const nextLocale = locale === 'en' ? 'zh-TW' : 'en';
 
   return (
-    <DropdownMenuPrimitive.Root>
+    <DropdownMenuPrimitive.Root open={open} onOpenChange={setOpen}>
       <DropdownMenuPrimitive.Trigger className="font-heading inline-flex items-center gap-x-2 font-medium tracking-wide outline-none">
         <GlobeIcon />
         {nextLocale === 'en' ? '語言' : 'Language'}
       </DropdownMenuPrimitive.Trigger>
-      <DropdownMenuPrimitive.Portal>
-        <DropdownMenuPrimitive.Content
-          className="data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=data-[highlighted]:bg-light-primary-500 bg-dark-primary-500 dark:bg-light-primary-100 min-w-[100px] rounded-md p-1 shadow-lg will-change-[opacity,transform]"
-          sideOffset={5}
-          align="start"
-        >
-          <DropdownMenuPrimitive.Item asChild>
-            <Link
-              className="font-heading text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
-              href="/"
-              locale="zh-TW"
-              tw=""
+      <AnimatePresence>
+        {open && (
+          <DropdownMenuPrimitive.Portal forceMount>
+            <DropdownMenuPrimitive.Content
+              className="bg-dark-primary-500 dark:bg-light-primary-100 min-w-[100px] rounded-md p-1 will-change-[opacity]"
+              sideOffset={5}
+              align="start"
+              asChild
             >
-              繁體中文
-            </Link>
-          </DropdownMenuPrimitive.Item>
-          <DropdownMenuPrimitive.Item asChild>
-            <Link
-              className="font-heading text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
-              href="/"
-              locale="en"
-              tw=""
-            >
-              English
-            </Link>
-          </DropdownMenuPrimitive.Item>
-          <DropdownMenuPrimitive.Arrow className="fill-dark-primary-500 dark:fill-light-primary-100 " />
-        </DropdownMenuPrimitive.Content>
-      </DropdownMenuPrimitive.Portal>
+              <motion.div
+                initial="close"
+                animate="open"
+                exit="close"
+                variants={{
+                  close: {
+                    opacity: 0,
+                    transition: { ease: 'easeIn', duration: 0.1 },
+                  },
+                  open: {
+                    opacity: 1,
+                    transition: { ease: 'easeOut', duration: 0.2 },
+                  },
+                }}
+              >
+                <DropdownMenuPrimitive.Item asChild>
+                  <Link
+                    className="font-heading text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
+                    href="/"
+                    locale="zh-TW"
+                    tw=""
+                  >
+                    繁體中文
+                  </Link>
+                </DropdownMenuPrimitive.Item>
+                <DropdownMenuPrimitive.Item asChild>
+                  <Link
+                    className="font-heading text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
+                    href="/"
+                    locale="en"
+                    tw=""
+                  >
+                    English
+                  </Link>
+                </DropdownMenuPrimitive.Item>
+                <DropdownMenuPrimitive.Arrow className="fill-dark-primary-500 dark:fill-light-primary-100 " />
+              </motion.div>
+            </DropdownMenuPrimitive.Content>
+          </DropdownMenuPrimitive.Portal>
+        )}
+      </AnimatePresence>
     </DropdownMenuPrimitive.Root>
   );
 }
