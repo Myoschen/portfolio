@@ -10,7 +10,7 @@
     "name": "你好 👋, 我是 Ryan。",
     "major": "我是一個對於前端充滿熱情的開發者！",
     "currently": "我還在繼續學習 React 和 Next.js 相關技術，我也會利用時間學習後端知識。",
-    "next": "about"
+    "next": "關於"
   },
   "About": {
     "title": "關於我",
@@ -22,11 +22,11 @@
       "addition": "另外，我對後端技術也很十分感興趣，像是 Golang、Node.js 等等。",
       "future": "所以未來，我仍然會專注於前端。但如果有空閒的時間的話，我也會嘗試去了解一下後端相關的技術與知識。"
     },
-    "next": "skill"
+    "next": "技能"
   },
   "Skill": {
     "title": "我的技能",
-    "next": "project"
+    "next": "作品"
   },
   "Project": {
     "title": "作品集",
