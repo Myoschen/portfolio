@@ -30,7 +30,7 @@ function ProjectCard({ info }: Props) {
   return (
     <motion.div
       variants={card}
-      className="group space-y-4 border-2 border-slate-200 transition-colors hover:border-indigo-600 dark:border-neutral-800 dark:hover:border-indigo-300"
+      className="border-light-primary-500 hover:border-light-secondary dark:border-dark-primary-600 dark:hover:border-dark-secondary group space-y-4 border-2 transition-colors"
     >
       <div className="relative aspect-video overflow-hidden">
         <Image
@@ -44,13 +44,13 @@ function ProjectCard({ info }: Props) {
         <h2 className="font-heading text-2xl font-medium leading-relaxed">
           {title}
         </h2>
-        <p className="font-paragraph text-sm tracking-wider text-neutral-400 dark:text-neutral-500">
+        <p className="font-paragraph text-light-primary-700 text-sm tracking-wider">
           {description}
         </p>
         <div className="flex items-center justify-start gap-x-1">
           <Tooltip text="Repository">
             <a
-              className="flex items-center justify-center rounded-md p-2 transition-colors hover:bg-slate-200 dark:hover:bg-neutral-800"
+              className="hover:bg-light-primary-500 dark:hover:bg-dark-primary-700 flex items-center justify-center rounded-md p-2 transition-colors"
               href={repo}
               target="_blank"
               rel="noreferrer noopener"
@@ -61,7 +61,7 @@ function ProjectCard({ info }: Props) {
           {demo ? (
             <Tooltip text="Demo">
               <a
-                className="flex items-center justify-center rounded-md p-2 transition-colors hover:bg-slate-200 dark:hover:bg-neutral-800"
+                className="hover:bg-light-primary-500 dark:hover:bg-dark-primary-700 flex items-center justify-center rounded-md p-2 transition-colors"
                 href={demo}
                 target="_blank"
                 rel="noreferrer noopener"

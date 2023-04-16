@@ -8,7 +8,7 @@ interface Props {
 function Progress({ value }: Props) {
   return (
     <ProgressPrimitive.Root
-      className="relative h-[25px] w-full overflow-hidden rounded-md bg-black"
+      className="bg-light-primary-600/25 dark:bg-dark-primary-600 relative h-[25px] w-full overflow-hidden rounded"
       style={{
         // Fix overflow clipping in Safari
         // https://gist.github.com/domske/b66047671c780a238b51c51ffde8d3a0
@@ -17,7 +17,7 @@ function Progress({ value }: Props) {
       value={value}
     >
       <ProgressPrimitive.Indicator
-        className="ease-[cubic-bezier(0.65, 0, 0.35, 1)] h-full w-full bg-white transition-transform duration-[660ms]"
+        className="bg-light-secondary dark:bg-dark-secondary h-full w-full"
         style={{ transform: `translateX(-${100 - value}%)` }}
       />
     </ProgressPrimitive.Root>

@@ -1,4 +1,5 @@
 'use client';
+import cn from 'classnames';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next-intl/client';
@@ -13,9 +14,9 @@ import {
   PersonIcon,
   SunIcon,
 } from '@radix-ui/react-icons';
-import Switch from './switch';
-import Link from './link';
 import LangSwitch from './lang-switch';
+import Link from './link';
+import Switch from './switch';
 
 function Sidebar() {
   const [hoverNav, setHoverNav] = useState<number | null>(null);
@@ -70,29 +71,31 @@ function Sidebar() {
           >
             {navLinks.map(({ label, href, icon }, index) => (
               <Link
-                className="flex transition-colors hover:text-indigo-600 dark:hover:text-indigo-300"
+                className="hover:text-light-secondary dark:hover:text-dark-secondary flex transition-colors"
                 href={href}
                 key={href}
                 onMouseEnter={() => setHoverNav(index)}
               >
                 <span
-                  className={`${
-                    pathname === href
-                      ? 'text-indigo-600 dark:text-indigo-300'
-                      : ''
-                  } font-heading relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide`}
+                  className={cn(
+                    'font-heading relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide',
+                    {
+                      'text-light-secondary dark:text-dark-secondary':
+                        pathname === href,
+                    }
+                  )}
                 >
                   {icon}
                   {label}
                   {pathname === href ? (
                     <motion.div
-                      className="absolute inset-0 z-[-1] rounded-t-md bg-slate-200 dark:bg-neutral-800"
+                      className="bg-light-primary-500 dark:bg-dark-primary-700 absolute inset-0 z-[-1] rounded-t-md"
                       layoutId="background"
                     />
                   ) : null}
                   {hoverNav === index ? (
                     <motion.div
-                      className="absolute bottom-0 left-0 h-[2px] w-full rounded-md bg-indigo-600 dark:bg-indigo-300"
+                      className="bg-light-secondary dark:bg-dark-secondary absolute bottom-0 left-0 h-[2px] w-full rounded-md"
                       layoutId="underline"
                     />
                   ) : null}

@@ -65,7 +65,7 @@ export default function HomePage() {
           variants={item}
           className="grid gap-y-4 md:grid-cols-[180px_auto] md:gap-x-2 md:gap-y-0"
         >
-          <div className="relative aspect-square w-40 overflow-hidden rounded-full shadow-lg ring-4 ring-indigo-600 dark:shadow-indigo-600 dark:ring-indigo-300">
+          <div className="ring-light-secondary shadow-light-secondary dark:ring-dark-secondary dark:shadow-dark-secondary relative aspect-square w-40 overflow-hidden rounded-full shadow-lg ring-4">
             <Image
               className="object-cover"
               src="/ryan-chen.png"
