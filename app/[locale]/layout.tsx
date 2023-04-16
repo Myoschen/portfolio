@@ -56,11 +56,13 @@ export default async function RootLayout({
       lang={locale}
       className={`${mulish.variable} ${work_sans.variable} ${noto.variable}`}
     >
-      <body className="bg-light-primary-100 dark:bg-dark-primary-500 dark:text-dark-primary-100 text-light-primary-900 mb-20 mt-8 flex max-w-4xl flex-col antialiased transition-colors md:mx-auto md:mt-20 md:flex-row lg:mt-32">
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <Sidebar />
-          {children}
-        </NextIntlClientProvider>
+      <body className="bg-light-primary-100 dark:bg-dark-primary-500 dark:text-dark-primary-100 text-light-primary-900">
+        <div className="mb-20 mt-8 flex max-w-4xl flex-col antialiased transition-colors md:mx-auto md:mt-20 md:flex-row lg:mt-32">
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <Sidebar />
+            {children}
+          </NextIntlClientProvider>
+        </div>
       </body>
     </html>
   );
