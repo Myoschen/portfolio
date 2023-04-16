@@ -5,8 +5,9 @@ function useLocalStorage<T>(key: string, initialValue: T) {
   const [value, setValue] = useState<T>(initialValue);
 
   useEffect(() => {
-    const value = localStorage.getItem(key);
-    setValue(value ? (JSON.parse(value) as T) : initialValue);
+    const storedValue = localStorage.getItem(key);
+    const parsedValue = storedValue ? JSON.parse(storedValue) : initialValue;
+    setValue(parsedValue as T);
   }, [key, initialValue]);
 
   useEffect(() => {
