@@ -14,7 +14,7 @@ import {
   PersonIcon,
   SunIcon,
 } from '@radix-ui/react-icons';
-import LangSwitch from './lang-switch';
+import LanguageMenu from './language-menu';
 import Link from './link';
 import Switch from './switch';
 
@@ -61,9 +61,6 @@ function Sidebar() {
             />
           </Link>
         </div>
-        <div className="mb-4 md:mb-8">
-          <LangSwitch />
-        </div>
         <nav className="mb-4 md:mb-8">
           <div
             className="-ml-2 flex flex-wrap items-start gap-x-px md:flex-col md:gap-x-0 md:gap-y-2"
@@ -104,15 +101,18 @@ function Sidebar() {
             ))}
           </div>
         </nav>
-        <Switch
-          id="dark-mode"
-          leftIcon={<SunIcon />}
-          rightIcon={<MoonIcon />}
-          checked={theme === 'dark' ? true : false}
-          onCheckedChange={(checked) =>
-            checked ? setTheme('dark') : setTheme('light')
-          }
-        />
+        <div className="inline-flex items-center gap-x-4 md:flex-col md:items-start md:gap-y-4">
+          <LanguageMenu />
+          <Switch
+            id="dark-mode"
+            leftIcon={<SunIcon />}
+            rightIcon={<MoonIcon />}
+            checked={theme === 'dark' ? true : false}
+            onCheckedChange={(checked) =>
+              checked ? setTheme('dark') : setTheme('light')
+            }
+          />
+        </div>
       </div>
     </aside>
   );
