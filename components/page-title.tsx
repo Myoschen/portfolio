@@ -14,7 +14,7 @@ function PageTitle({ label }: Props) {
   return (
     <motion.h1
       variants={title}
-      className="font-ibm text-4xl font-bold leading-relaxed"
+      className="font-heading text-4xl font-bold leading-relaxed"
     >
       {label}
     </motion.h1>

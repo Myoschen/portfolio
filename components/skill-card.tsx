@@ -44,7 +44,7 @@ function SkillCard({ info }: Props) {
     >
       <div className="flex items-center justify-center">{icon}</div>
       <div className="flex flex-col gap-y-2">
-        <h2 className="font-ibm text-xl font-semibold">{title}</h2>
+        <h2 className="font-heading text-xl font-medium">{title}</h2>
         <Progress value={transform(level)} />
       </div>
     </motion.div>

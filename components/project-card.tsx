@@ -41,10 +41,10 @@ function ProjectCard({ info }: Props) {
         />
       </div>
       <div className="flex flex-col gap-y-2 px-6 pb-4">
-        <h2 className="font-ibm text-2xl font-semibold leading-relaxed">
+        <h2 className="font-heading text-2xl font-medium leading-relaxed">
           {title}
         </h2>
-        <p className="font-inter text-sm font-medium tracking-wider text-neutral-400 dark:text-neutral-500">
+        <p className="font-paragraph text-sm tracking-wider text-neutral-400 dark:text-neutral-500">
           {description}
         </p>
         <div className="flex items-center justify-start gap-x-1">

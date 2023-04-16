@@ -80,7 +80,7 @@ function Sidebar() {
                     pathname === href
                       ? 'text-indigo-600 dark:text-indigo-300'
                       : ''
-                  } font-ibm relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide`}
+                  } font-heading relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide`}
                 >
                   {icon}
                   {label}

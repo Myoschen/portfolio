@@ -19,7 +19,7 @@ function SocialLink({ info }: Props) {
       rel="noreferrer noopener"
     >
       {icon}
-      <span className="font-inter font-medium">{label}</span>
+      <span className="font-paragraph tracking-wide">{label}</span>
     </a>
   );
 }

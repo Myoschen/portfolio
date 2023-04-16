@@ -6,8 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: ['var(--ff-inter)', 'var(--ff-noto)', 'sans-serif'],
-        ibm: ['var(--ff-ibm)', 'var(--ff-noto)', 'serif'],
+        heading: ['var(--ff-work-sans)', 'var(--ff-noto)', 'serif'],
+        paragraph: ['var(--ff-mulish)', 'var(--ff-noto)', 'sans-serif'],
       },
       keyframes: {
         slideDownAndFade: {

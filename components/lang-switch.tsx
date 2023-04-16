@@ -9,7 +9,9 @@ function LangSwitch() {
     <Link href="/" locale={nextLocale} tw="true">
       <div className="flex items-center gap-x-2">
         <GlobeIcon />
-        <span className="font-ibm font-medium tracking-wide">{nextLocale}</span>
+        <span className="font-heading font-medium tracking-wide">
+          {nextLocale}
+        </span>
       </div>
     </Link>
   );

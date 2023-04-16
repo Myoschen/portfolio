@@ -6,7 +6,11 @@ import MainWrapper from '@/components/main-wrapper';
 import NextLink from '@/components/next-link';
 import PageTitle from '@/components/page-title';
 import SocialLink, { SocialLinkInfo } from '@/components/social-link';
-import { EnvelopeClosedIcon, GitHubLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons';
+import {
+  EnvelopeClosedIcon,
+  GitHubLogoIcon,
+  TwitterLogoIcon,
+} from '@radix-ui/react-icons';
 
 const socialLinks: SocialLinkInfo[] = [
   {
@@ -53,10 +57,7 @@ export default function HomePage() {
         className="flex flex-col gap-y-6"
       >
         <PageTitle label={t('title')} />
-        <motion.div
-          variants={item}
-          className="font-inter font-medium tracking-wide"
-        >
+        <motion.div variants={item} className="font-paragraph tracking-wide">
           <p>{t('name')}</p>
           <p>{t('major')}</p>
         </motion.div>
@@ -80,10 +81,7 @@ export default function HomePage() {
             ))}
           </ul>
         </motion.div>
-        <motion.div
-          variants={item}
-          className="font-inter font-medium tracking-wide"
-        >
+        <motion.div variants={item} className="font-paragraph tracking-wide">
           <p>{t('currently')}</p>
         </motion.div>
         <motion.div variants={item} className="inline-block self-end">
