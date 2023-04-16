@@ -14,13 +14,13 @@ function LanguageMenu() {
       </DropdownMenuPrimitive.Trigger>
       <DropdownMenuPrimitive.Portal>
         <DropdownMenuPrimitive.Content
-          className="data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=data-[highlighted]:bg-light-primary-500 bg-light-primary-500 dark:bg-dark-primary-700 min-w-[100px] rounded-md p-1 shadow-lg will-change-[opacity,transform]"
+          className="data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=data-[highlighted]:bg-light-primary-500 bg-dark-primary-500 dark:bg-light-primary-100 min-w-[100px] rounded-md p-1 shadow-lg will-change-[opacity,transform]"
           sideOffset={5}
           align="start"
         >
           <DropdownMenuPrimitive.Item asChild>
             <Link
-              className="font-heading text-dark-primary-800 dark:text-light-primary-100 data-[highlighted]:text-light-primary-100 dark:data-[highlighted]:text-dark-primary-800 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
+              className="font-heading text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
               href="/"
               locale="zh-TW"
               tw=""
@@ -30,7 +30,7 @@ function LanguageMenu() {
           </DropdownMenuPrimitive.Item>
           <DropdownMenuPrimitive.Item asChild>
             <Link
-              className="font-heading text-dark-primary-800 dark:text-light-primary-100 data-[highlighted]:text-light-primary-100 dark:data-[highlighted]:text-dark-primary-800 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
+              className="font-heading text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
               href="/"
               locale="en"
               tw=""
@@ -38,7 +38,7 @@ function LanguageMenu() {
               English
             </Link>
           </DropdownMenuPrimitive.Item>
-          <DropdownMenuPrimitive.Arrow className="fill-light-primary-500 dark:fill-dark-primary-700" />
+          <DropdownMenuPrimitive.Arrow className="fill-dark-primary-500 dark:fill-light-primary-100 " />
         </DropdownMenuPrimitive.Content>
       </DropdownMenuPrimitive.Portal>
     </DropdownMenuPrimitive.Root>
