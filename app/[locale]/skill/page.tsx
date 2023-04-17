@@ -19,6 +19,7 @@ import {
   IconBrandTailwind,
   IconBrandTypescript,
   IconBrandRust,
+  IconBrandVue,
 } from '@tabler/icons-react';
 
 const container = {
@@ -70,6 +71,11 @@ const skills: SkillInfo[] = [
     title: 'Next.js',
     icon: <IconBrandNextjs size={60} />,
     level: 'advanced',
+  },
+  {
+    title: 'Vue.js',
+    icon: <IconBrandVue color="#42d392" size={60} />,
+    level: 'newbie',
   },
   {
     title: 'React Redux',

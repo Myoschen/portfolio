@@ -24,8 +24,8 @@ const socialLinks: SocialLinkInfo[] = [
     icon: <EnvelopeClosedIcon />,
   },
   {
-    label: 'willy14620',
-    href: 'https://twitter.com/willy14620',
+    label: 'MyosChen',
+    href: 'https://twitter.com/MyosChen',
     icon: <TwitterLogoIcon />,
   },
 ];
