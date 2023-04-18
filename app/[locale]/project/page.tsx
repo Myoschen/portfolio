@@ -35,6 +35,20 @@ function ProjectPage() {
       repo: 'https://github.com/Myoschen/muser',
     },
     {
+      image: '/project/social-media-app.png',
+      title: 'Social Media',
+      description: t('description.social-media'),
+      repo: 'https://github.com/Myoschen/social-media-app',
+      demo: 'https://social-media-app-myoschen.vercel.app',
+    },
+    {
+      image: '/project/github-explorer.png',
+      title: 'Github Explorer',
+      description: t('description.github-explorer'),
+      repo: 'https://github.com/Myoschen/github-explorer',
+      demo: 'https://github-explorer-myoschen.vercel.app/',
+    },
+    {
       image: '/project/react-todo-list.png',
       title: 'React Todo List',
       description: t('description.react-todo-list'),
@@ -54,13 +68,6 @@ function ProjectPage() {
       description: t('description.typing-speed'),
       repo: 'https://github.com/Myoschen/typing-speed',
       demo: 'https://typing-speed-myos.vercel.app/',
-    },
-    {
-      image: '/project/social-media-app.png',
-      title: 'Social Media',
-      description: t('description.social-media'),
-      repo: 'https://github.com/Myoschen/social-media-app',
-      demo: 'https://social-media-app-myoschen.vercel.app',
     },
   ];
 

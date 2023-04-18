@@ -35,7 +35,8 @@
       "react-todo-list": "This is a todo list built with React and Tailwind CSS.",
       "react-linktree": "This is a linktree app built with React and Tailwind CSS.",
       "typing-speed": "This is a test typing speed app built with React and Tailwind CSS.",
-      "social-media": "This is a social media built with React, Firebase and Chakra UI."
+      "social-media": "This is a social media built with React, Firebase and Chakra UI.",
+      "github-explorer": "This is a github repository explorer built with React, axios, Tailwind CSS, Github Search API."
     }
   }
 }
