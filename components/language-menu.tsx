@@ -45,7 +45,6 @@ function LanguageMenu() {
                     className="font-heading text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
                     href="/"
                     locale="zh-TW"
-                    tw=""
                   >
                     繁體中文
                   </Link>
@@ -55,7 +54,6 @@ function LanguageMenu() {
                     className="font-heading text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
                     href="/"
                     locale="en"
-                    tw=""
                   >
                     English
                   </Link>
