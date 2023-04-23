@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { usePathname } from 'next-intl/client';
 import Image from 'next/image';
 import { useState } from 'react';
-import useDarkMode from '@/hooks/use-dark-mode';
+import useTheme from '@/lib/hooks/use-theme';
 import {
   BarChartIcon,
   DashboardIcon,
@@ -20,7 +20,7 @@ import Switch from './switch';
 
 function Sidebar() {
   const [hoverNav, setHoverNav] = useState<number | null>(null);
-  const [theme, setTheme] = useDarkMode();
+  const { theme, setTheme } = useTheme();
   const t = useTranslations('Sidebar');
   const pathname = usePathname();
 

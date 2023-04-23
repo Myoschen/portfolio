@@ -1,8 +1,9 @@
 import './globals.css';
 import { NextIntlClientProvider } from 'next-intl';
-import { Work_Sans, Mulish, Noto_Sans_TC } from 'next/font/google';
+import { Mulish, Noto_Sans_TC, Work_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import Sidebar from '@/components/sidebar';
+import ThemeProvider from '@/lib/contexts/theme';
 
 export const metadata = {
   title: 'Ryan Chen',
@@ -59,8 +60,10 @@ export default async function RootLayout({
       <body className="bg-light-primary-100 dark:bg-dark-primary-500 dark:text-dark-primary-100 text-light-primary-900">
         <div className="mb-20 mt-8 flex max-w-4xl flex-col antialiased transition-colors md:mx-auto md:mt-20 md:flex-row lg:mt-32">
           <NextIntlClientProvider locale={locale} messages={messages}>
-            <Sidebar />
-            {children}
+            <ThemeProvider>
+              <Sidebar />
+              {children}
+            </ThemeProvider>
           </NextIntlClientProvider>
         </div>
       </body>
