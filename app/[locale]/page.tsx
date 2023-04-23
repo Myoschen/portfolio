@@ -1,32 +1,28 @@
 'use client';
 import { motion, Variants } from 'framer-motion';
+import { LucideGithub, LucideMail, LucideTwitter } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import MainWrapper from '@/components/main-wrapper';
 import NextLink from '@/components/next-link';
 import PageTitle from '@/components/page-title';
 import SocialLink, { SocialLinkInfo } from '@/components/social-link';
-import {
-  EnvelopeClosedIcon,
-  GitHubLogoIcon,
-  TwitterLogoIcon,
-} from '@radix-ui/react-icons';
 
 const socialLinks: SocialLinkInfo[] = [
   {
     label: 'Myoschen',
     href: 'https://github.com/Myoschen',
-    icon: <GitHubLogoIcon />,
+    icon: <LucideGithub size={16} />,
   },
   {
     label: 'myos.chen@gmail.com',
     href: 'mailto:myos.chen@gmail.com',
-    icon: <EnvelopeClosedIcon />,
+    icon: <LucideMail size={16} />,
   },
   {
     label: 'MyosChen',
     href: 'https://twitter.com/MyosChen',
-    icon: <TwitterLogoIcon />,
+    icon: <LucideTwitter size={16} />,
   },
 ];
 
@@ -46,7 +42,7 @@ const item = {
 } satisfies Variants;
 
 export default function HomePage() {
-  const t = useTranslations('Home');
+  const t = useTranslations('home');
 
   return (
     <MainWrapper>

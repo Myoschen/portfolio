@@ -1,5 +1,5 @@
 'use client';
-import { GlobeIcon } from '@radix-ui/react-icons';
+import { LucideLanguages } from 'lucide-react';
 import { Link, useLocale } from 'next-intl';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -13,7 +13,7 @@ function LanguageMenu() {
   return (
     <DropdownMenuPrimitive.Root open={open} onOpenChange={setOpen}>
       <DropdownMenuPrimitive.Trigger className="font-heading inline-flex items-center gap-x-2 font-medium tracking-wide outline-none">
-        <GlobeIcon />
+        <LucideLanguages size={16} />
         {nextLocale === 'en' ? '語言' : 'Language'}
       </DropdownMenuPrimitive.Trigger>
       <AnimatePresence>

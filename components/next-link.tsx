@@ -1,6 +1,6 @@
 'use client';
 import { motion, Variants } from 'framer-motion';
-import { ArrowRightIcon } from '@radix-ui/react-icons';
+import { LucideArrowRight } from 'lucide-react';
 import Link from './link';
 
 interface Props {
@@ -28,7 +28,7 @@ function NextLink({ next, label }: Props) {
           {label}
         </span>
         <motion.div variants={arrow}>
-          <ArrowRightIcon />
+          <LucideArrowRight size={16} />
         </motion.div>
       </motion.div>
     </Link>

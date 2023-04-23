@@ -25,7 +25,7 @@ const item = {
 } satisfies Variants;
 
 function ProjectPage() {
-  const t = useTranslations('Project');
+  const t = useTranslations('project');
 
   const projects: ProjectInfo[] = [
     {

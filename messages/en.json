@@ -1,18 +1,35 @@
 {
-  "Sidebar": {
+  "sidebar": {
     "home": "Home",
     "about": "About",
     "skill": "Skill",
     "project": "Project"
   },
-  "Home": {
+  "command": {
+    "trigger": "Command",
+    "action": {
+      "page": "Page",
+      "home": "Home",
+      "about": "About",
+      "skill": "Skill",
+      "project": "Project",
+      "operation": "Operation",
+      "toggle-theme": "Toggle theme",
+      "light-theme": "Light theme",
+      "dark-theme": "Dark theme",
+      "toggle-language": "Toggle language",
+      "en": "English",
+      "zh-tw": "Traditional Chinese"
+    }
+  },
+  "home": {
     "title": "Ryan Chen",
     "name": "Hello 👋, I'm Ryan.",
     "major": "I am a developer passionate about front-end!",
     "currently": "I am still continuing to learn React and Next.js related technologies, and I will also use time to learn back-end knowledge.",
     "next": "about"
   },
-  "About": {
+  "about": {
     "title": "About Me",
     "paragraph": {
       "degree": "I graduated from Tamkang University in the Department of Computer Science and Information Engineering.",
@@ -24,11 +41,11 @@
     },
     "next": "skill"
   },
-  "Skill": {
+  "skill": {
     "title": "My Skills",
     "next": "project"
   },
-  "Project": {
+  "project": {
     "title": "Side Projects",
     "description": {
       "muser": "This is a simple mp3 player built with Electron and React.",

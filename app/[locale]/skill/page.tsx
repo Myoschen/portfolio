@@ -115,7 +115,7 @@ const skills: SkillInfo[] = [
 ];
 
 function SkillPage() {
-  const t = useTranslations('Skill');
+  const t = useTranslations('skill');
 
   return (
     <MainWrapper>

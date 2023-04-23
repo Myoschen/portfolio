@@ -4,6 +4,7 @@ import { Mulish, Noto_Sans_TC, Work_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import Sidebar from '@/components/sidebar';
 import ThemeProvider from '@/lib/contexts/theme';
+import CommandPalette from '@/components/command-palette';
 
 export const metadata = {
   title: 'Ryan Chen',
@@ -61,8 +62,10 @@ export default async function RootLayout({
         <div className="mb-20 mt-8 flex max-w-4xl flex-col antialiased transition-colors md:mx-auto md:mt-20 md:flex-row lg:mt-32">
           <NextIntlClientProvider locale={locale} messages={messages}>
             <ThemeProvider>
-              <Sidebar />
-              {children}
+              <CommandPalette>
+                <Sidebar />
+                {children}
+              </CommandPalette>
             </ThemeProvider>
           </NextIntlClientProvider>
         </div>

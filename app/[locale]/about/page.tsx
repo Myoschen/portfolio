@@ -22,7 +22,7 @@ const item = {
 } satisfies Variants;
 
 function AboutPage() {
-  const t = useTranslations('About');
+  const t = useTranslations('about');
 
   return (
     <MainWrapper>

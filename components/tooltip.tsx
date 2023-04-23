@@ -1,6 +1,6 @@
 'use client';
 import { AnimatePresence, motion } from 'framer-motion';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 
 interface Props {

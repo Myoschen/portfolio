@@ -2,7 +2,7 @@
 import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
 import Tooltip from '@/components/tooltip';
-import { CodeIcon, RocketIcon } from '@radix-ui/react-icons';
+import { LucideCode, LucideRocket } from 'lucide-react';
 
 const card = {
   hidden: {
@@ -55,7 +55,7 @@ function ProjectCard({ info }: Props) {
               target="_blank"
               rel="noreferrer noopener"
             >
-              <CodeIcon />
+              <LucideCode size={16} />
             </a>
           </Tooltip>
           {demo ? (
@@ -66,7 +66,7 @@ function ProjectCard({ info }: Props) {
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <RocketIcon />
+                <LucideRocket size={16} />
               </a>
             </Tooltip>
           ) : null}

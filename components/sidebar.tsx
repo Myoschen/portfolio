@@ -1,49 +1,50 @@
 'use client';
 import cn from 'classnames';
 import { motion } from 'framer-motion';
+import {
+  LucideBarChart2,
+  LucideHome,
+  LucideLayoutGrid,
+  LucideMoon,
+  LucideSun,
+  LucideUser,
+} from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next-intl/client';
 import Image from 'next/image';
 import { useState } from 'react';
 import useTheme from '@/lib/hooks/use-theme';
-import {
-  BarChartIcon,
-  DashboardIcon,
-  HomeIcon,
-  MoonIcon,
-  PersonIcon,
-  SunIcon,
-} from '@radix-ui/react-icons';
 import LanguageMenu from './language-menu';
 import Link from './link';
 import Switch from './switch';
+import { CommandPaletteTrigger } from './command-palette';
 
 function Sidebar() {
   const [hoverNav, setHoverNav] = useState<number | null>(null);
   const { theme, setTheme } = useTheme();
-  const t = useTranslations('Sidebar');
+  const t = useTranslations('sidebar');
   const pathname = usePathname();
 
   const navLinks = [
     {
       label: t('home'),
       href: '/',
-      icon: <HomeIcon className="-mb-1" />,
+      icon: <LucideHome size={16} />,
     },
     {
       label: t('about'),
       href: '/about',
-      icon: <PersonIcon className="-mb-1" />,
+      icon: <LucideUser size={16} />,
     },
     {
       label: t('skill'),
       href: '/skill',
-      icon: <BarChartIcon className="-mb-1" />,
+      icon: <LucideBarChart2 size={16} />,
     },
     {
       label: t('project'),
       href: '/project',
-      icon: <DashboardIcon className="-mb-1" />,
+      icon: <LucideLayoutGrid size={16} />,
     },
   ];
 
@@ -102,11 +103,12 @@ function Sidebar() {
           </div>
         </nav>
         <div className="inline-flex items-center gap-x-4 md:flex-col md:items-start md:gap-y-4">
+          <CommandPaletteTrigger />
           <LanguageMenu />
           <Switch
             id="dark-mode"
-            leftIcon={<SunIcon />}
-            rightIcon={<MoonIcon />}
+            leftIcon={<LucideSun size={16} />}
+            rightIcon={<LucideMoon size={16} />}
             checked={theme === 'dark'}
             onCheckedChange={(checked) =>
               checked ? setTheme('dark') : setTheme('light')
