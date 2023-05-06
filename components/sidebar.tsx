@@ -2,22 +2,17 @@
 import cn from 'classnames';
 import { motion } from 'framer-motion';
 import {
-  LucideBarChart2,
-  LucideHome,
-  LucideLayoutGrid,
-  LucideMoon,
-  LucideSun,
-  LucideUser,
+    LucideBarChart2, LucideHome, LucideLayoutGrid, LucideMoon, LucideSun, LucideUser
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next-intl/client';
 import Image from 'next/image';
 import { useState } from 'react';
 import useTheme from '@/lib/hooks/use-theme';
+import { CommandPaletteTrigger } from './command-palette';
 import LanguageMenu from './language-menu';
 import Link from './link';
 import Switch from './switch';
-import { CommandPaletteTrigger } from './command-palette';
 
 function Sidebar() {
   const [hoverNav, setHoverNav] = useState<number | null>(null);
@@ -76,7 +71,7 @@ function Sidebar() {
               >
                 <span
                   className={cn(
-                    'font-heading relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide',
+                    'font-work-sans relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide',
                     {
                       'text-light-secondary dark:text-dark-secondary':
                         pathname === href,

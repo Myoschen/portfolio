@@ -6,8 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ['var(--ff-work-sans)', 'var(--ff-noto)', 'serif'],
-        paragraph: ['var(--ff-mulish)', 'var(--ff-noto)', 'sans-serif'],
+        'work-sans': ['var(--ff-work-sans)', 'var(--ff-noto)', 'serif'],
       },
       colors: {
         'light-primary': {

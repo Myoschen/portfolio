@@ -43,7 +43,7 @@ function AboutPage() {
         </motion.div>
         <motion.div
           variants={item}
-          className="font-paragraph space-y-4 tracking-wide"
+          className="font-work-sans space-y-4 tracking-wide"
         >
           <p>{t('paragraph.degree')}</p>
           <p>{t('paragraph.programming')}</p>

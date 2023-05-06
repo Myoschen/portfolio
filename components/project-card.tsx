@@ -1,8 +1,8 @@
 'use client';
 import { motion, Variants } from 'framer-motion';
+import { LucideCode, LucideRocket } from 'lucide-react';
 import Image from 'next/image';
 import Tooltip from '@/components/tooltip';
-import { LucideCode, LucideRocket } from 'lucide-react';
 
 const card = {
   hidden: {
@@ -41,10 +41,10 @@ function ProjectCard({ info }: Props) {
         />
       </div>
       <div className="flex flex-col gap-y-2 px-6 pb-4">
-        <h2 className="font-heading text-2xl font-medium leading-relaxed">
+        <h2 className="font-work-sans text-2xl font-medium leading-relaxed">
           {title}
         </h2>
-        <p className="font-paragraph text-light-primary-700 text-sm tracking-wider">
+        <p className="font-work-sans text-light-primary-700 text-sm tracking-wider">
           {description}
         </p>
         <div className="flex items-center justify-start gap-x-1">

@@ -53,7 +53,7 @@ export default function HomePage() {
         className="flex flex-col gap-y-6"
       >
         <PageTitle label={t('title')} />
-        <motion.div variants={item} className="font-paragraph tracking-wide">
+        <motion.div variants={item} className="font-work-sans tracking-wide">
           <p>{t('name')}</p>
           <p>{t('major')}</p>
         </motion.div>
@@ -77,7 +77,7 @@ export default function HomePage() {
             ))}
           </ul>
         </motion.div>
-        <motion.div variants={item} className="font-paragraph tracking-wide">
+        <motion.div variants={item} className="font-work-sans tracking-wide">
           <p>{t('currently')}</p>
         </motion.div>
         <motion.div variants={item} className="inline-block self-end">

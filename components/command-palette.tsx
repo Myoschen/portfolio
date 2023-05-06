@@ -1,28 +1,12 @@
 'use client';
 import cn from 'classnames';
 import {
-  Action,
-  ActionId,
-  ActionImpl,
-  KBarAnimator,
-  KBarPortal,
-  KBarPositioner,
-  KBarProvider,
-  KBarResults,
-  KBarSearch,
-  useKBar,
-  useMatches,
+    Action, ActionId, ActionImpl, KBarAnimator, KBarPortal, KBarPositioner, KBarProvider,
+    KBarResults, KBarSearch, useKBar, useMatches
 } from 'kbar';
 import {
-  LucideBarChart2,
-  LucideCommand,
-  LucideHome,
-  LucideLanguages,
-  LucideLayoutGrid,
-  LucideMoon,
-  LucidePalette,
-  LucideSun,
-  LucideUser,
+    LucideBarChart2, LucideCommand, LucideHome, LucideLanguages, LucideLayoutGrid, LucideMoon,
+    LucidePalette, LucideSun, LucideUser
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
@@ -130,7 +114,7 @@ function CommandPalette({ children }: Props) {
       <KBarPortal>
         <KBarPositioner className="bg-light-primary-100/80 dark:bg-dark-primary-500/80 z-20 flex items-center p-2 backdrop-blur-sm">
           <KBarAnimator className="bg-light-primary-200/90 dark:bg-dark-primary-700/90 border-light-primary-400 dark:border-dark-primary-800 box-content w-full max-w-xl overflow-hidden rounded-md border p-2 shadow-sm">
-            <KBarSearch className="font-paragraph h-16 w-full bg-transparent px-4 outline-none" />
+            <KBarSearch className="font-work-sans h-16 w-full bg-transparent px-4 outline-none" />
             <SearchResults />
           </KBarAnimator>
         </KBarPositioner>
@@ -149,7 +133,7 @@ function SearchResults() {
       items={results}
       onRender={({ item, active }) =>
         typeof item === 'string' ? (
-          <div className="dark:text-dark-primary-100 text-light-primary-900 font-heading px-4 pb-2 pt-4 font-medium">
+          <div className="dark:text-dark-primary-100 text-light-primary-900 font-work-sans px-4 pb-2 pt-4 font-medium">
             {item}
           </div>
         ) : (
@@ -193,7 +177,7 @@ const ResultItem = forwardRef<HTMLDivElement, ResultItemProps>(
       >
         <div className="flex items-center gap-2">
           {action.icon && action.icon}
-          <div className="font-paragraph flex flex-col font-medium tracking-wide">
+          <div className="font-work-sans flex flex-col font-medium tracking-wide">
             <div className="line-clamp-1">
               {ancestors.length > 0 &&
                 ancestors.map((ancestor) => (
@@ -242,7 +226,7 @@ function CommandPaletteTrigger() {
       aria-label="trigger command palette"
     >
       <LucideCommand size={16} />
-      <span className="font-heading font-medium tracking-wide">
+      <span className="font-work-sans font-medium tracking-wide">
         {t('trigger')}
       </span>
     </button>

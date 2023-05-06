@@ -1,9 +1,9 @@
 'use client';
+import { AnimatePresence, motion } from 'framer-motion';
 import { LucideLanguages } from 'lucide-react';
 import { Link, useLocale } from 'next-intl';
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
-import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
+import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
 function LanguageMenu() {
   const [open, setOpen] = useState(false);
@@ -12,7 +12,7 @@ function LanguageMenu() {
 
   return (
     <DropdownMenuPrimitive.Root open={open} onOpenChange={setOpen}>
-      <DropdownMenuPrimitive.Trigger className="font-heading inline-flex items-center gap-x-2 font-medium tracking-wide outline-none">
+      <DropdownMenuPrimitive.Trigger className="font-work-sans inline-flex items-center gap-x-2 font-medium tracking-wide outline-none">
         <LucideLanguages size={16} />
         {nextLocale === 'en' ? '語言' : 'Language'}
       </DropdownMenuPrimitive.Trigger>
@@ -42,7 +42,7 @@ function LanguageMenu() {
               >
                 <DropdownMenuPrimitive.Item asChild>
                   <Link
-                    className="font-heading text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
+                    className="font-work-sans text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
                     href="/"
                     locale="zh-TW"
                   >
@@ -51,7 +51,7 @@ function LanguageMenu() {
                 </DropdownMenuPrimitive.Item>
                 <DropdownMenuPrimitive.Item asChild>
                   <Link
-                    className="font-heading text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
+                    className="font-work-sans text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
                     href="/"
                     locale="en"
                   >
