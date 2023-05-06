@@ -1,7 +1,7 @@
 'use client';
-import { motion, Variants } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import MainWrapper from '@/components/main-wrapper';
+import MotionWrapper from '@/components/motion-wrapper';
 import NextLink from '@/components/next-link';
 import PageTitle from '@/components/page-title';
 import SkillCard, { SkillInfo } from '@/components/skill-card';
@@ -16,30 +16,11 @@ import {
   IconBrandPython,
   IconBrandReact,
   IconBrandRedux,
+  IconBrandRust,
   IconBrandTailwind,
   IconBrandTypescript,
-  IconBrandRust,
   IconBrandVue,
 } from '@tabler/icons-react';
-
-const container = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.25,
-    },
-  },
-} satisfies Variants;
-
-const item = {
-  hidden: { opacity: 0, x: -10 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.3, staggerChildren: 0.25 },
-  },
-} satisfies Variants;
 
 const skills: SkillInfo[] = [
   {
@@ -119,22 +100,19 @@ function SkillPage() {
 
   return (
     <MainWrapper>
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="flex flex-col gap-y-6"
-      >
-        <PageTitle label={t('title')} />
-        <motion.div variants={item} className="grid gap-y-4">
-          {skills.map((skill) => (
-            <SkillCard key={skill.title} info={skill} />
-          ))}
-        </motion.div>
-        <motion.div variants={item} className="inline-block self-end">
-          <NextLink next="project" label={t('next')} />
-        </motion.div>
-      </motion.div>
+      <MotionWrapper>
+        <div className="m-container flex flex-col gap-y-6">
+          <PageTitle label={t('title')} />
+          <div className="grid gap-y-4">
+            {skills.map((skill) => (
+              <SkillCard key={skill.title} info={skill} />
+            ))}
+          </div>
+          <div className="m-item inline-block self-end">
+            <NextLink next="project" label={t('next')} />
+          </div>
+        </div>
+      </MotionWrapper>
     </MainWrapper>
   );
 }

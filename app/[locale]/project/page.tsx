@@ -1,28 +1,9 @@
 'use client';
-import { motion, Variants } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import MainWrapper from '@/components/main-wrapper';
+import MotionWrapper from '@/components/motion-wrapper';
 import PageTitle from '@/components/page-title';
 import ProjectCard, { ProjectInfo } from '@/components/project-card';
-
-const container = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.25,
-    },
-  },
-} satisfies Variants;
-
-const item = {
-  hidden: { opacity: 0, x: -10 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.3, staggerChildren: 0.25 },
-  },
-} satisfies Variants;
 
 function ProjectPage() {
   const t = useTranslations('project');
@@ -73,19 +54,16 @@ function ProjectPage() {
 
   return (
     <MainWrapper>
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="flex flex-col gap-y-6"
-      >
-        <PageTitle label={t('title')} />
-        <motion.div variants={item} className="grid gap-4 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.repo} info={project} />
-          ))}
-        </motion.div>
-      </motion.div>
+      <MotionWrapper>
+        <div className="m-container flex flex-col gap-y-6">
+          <PageTitle label={t('title')} />
+          <div className="grid gap-4 md:grid-cols-2">
+            {projects.map((project) => (
+              <ProjectCard key={project.repo} info={project} />
+            ))}
+          </div>
+        </div>
+      </MotionWrapper>
     </MainWrapper>
   );
 }

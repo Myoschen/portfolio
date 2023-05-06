@@ -1,17 +1,7 @@
 'use client';
-import { motion, Variants } from 'framer-motion';
 import { LucideCode, LucideRocket } from 'lucide-react';
 import Image from 'next/image';
 import Tooltip from '@/components/tooltip';
-
-const card = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-  },
-} satisfies Variants;
 
 export type ProjectInfo = {
   image: string;
@@ -28,10 +18,7 @@ interface Props {
 function ProjectCard({ info }: Props) {
   const { image, title, description, repo, demo } = info;
   return (
-    <motion.div
-      variants={card}
-      className="border-light-primary-500 hover:border-light-secondary dark:border-dark-primary-600 dark:hover:border-dark-secondary group space-y-4 border-2 transition-colors"
-    >
+    <div className="m-item border-light-primary-500 hover:border-light-secondary dark:border-dark-primary-600 dark:hover:border-dark-secondary group space-y-4 border-2 transition-colors">
       <div className="relative aspect-video overflow-hidden">
         <Image
           className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -72,7 +59,7 @@ function ProjectCard({ info }: Props) {
           ) : null}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

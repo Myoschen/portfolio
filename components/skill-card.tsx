@@ -1,5 +1,4 @@
 'use client';
-import { motion, Variants } from 'framer-motion';
 import Progress from './progress';
 
 type SkillLevel = 'newbie' | 'junior' | 'intermediate' | 'advanced' | 'master';
@@ -36,24 +35,16 @@ const transform = (level: SkillLevel) => {
   return value;
 };
 
-const card = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-} satisfies Variants;
-
 function SkillCard({ info }: Props) {
   const { title, icon, level } = info;
   return (
-    <motion.div
-      variants={card}
-      className="border-light-primary-500 hover:border-light-secondary dark:border-dark-primary-600 dark:hover:border-dark-secondary grid grid-cols-[60px_auto] items-center gap-x-4 border-2 p-4 transition-colors"
-    >
+    <div className="border-light-primary-500 m-item hover:border-light-secondary dark:border-dark-primary-600 dark:hover:border-dark-secondary grid grid-cols-[60px_auto] items-center gap-x-4 border-2 p-4 transition-colors">
       <div className="flex items-center justify-center">{icon}</div>
       <div className="flex flex-col gap-y-2">
         <h2 className="font-work-sans text-xl font-medium">{title}</h2>
         <Progress value={transform(level)} />
       </div>
-    </motion.div>
+    </div>
   );
 }
 
