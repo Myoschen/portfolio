@@ -1,5 +1,4 @@
 'use client';
-import cn from 'classnames';
 import { motion } from 'framer-motion';
 import {
   LucideBarChart2,
@@ -14,6 +13,7 @@ import { usePathname } from 'next-intl/client';
 import Image from 'next/image';
 import { useState } from 'react';
 import useTheme from '@/hooks/use-theme';
+import { cn } from '@/utils/classnames';
 import { CommandPaletteTrigger } from './command-palette';
 import LanguageMenu from './language-menu';
 import Link from './link';

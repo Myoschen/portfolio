@@ -1,5 +1,4 @@
 'use client';
-import cn from 'classnames';
 import {
   Action,
   ActionId,
@@ -28,6 +27,7 @@ import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { forwardRef, Fragment, ReactNode, useMemo } from 'react';
 import useTheme from '@/hooks/use-theme';
+import { cn } from '@/utils/classnames';
 
 interface Props {
   children: ReactNode;
