@@ -1,17 +1,33 @@
 'use client';
 import cn from 'classnames';
 import {
-    Action, ActionId, ActionImpl, KBarAnimator, KBarPortal, KBarPositioner, KBarProvider,
-    KBarResults, KBarSearch, useKBar, useMatches
+  Action,
+  ActionId,
+  ActionImpl,
+  KBarAnimator,
+  KBarPortal,
+  KBarPositioner,
+  KBarProvider,
+  KBarResults,
+  KBarSearch,
+  useKBar,
+  useMatches,
 } from 'kbar';
 import {
-    LucideBarChart2, LucideCommand, LucideHome, LucideLanguages, LucideLayoutGrid, LucideMoon,
-    LucidePalette, LucideSun, LucideUser
+  LucideBarChart2,
+  LucideCommand,
+  LucideHome,
+  LucideLanguages,
+  LucideLayoutGrid,
+  LucideMoon,
+  LucidePalette,
+  LucideSun,
+  LucideUser,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { forwardRef, Fragment, ReactNode, useMemo } from 'react';
-import useTheme from '@/lib/hooks/use-theme';
+import useTheme from '@/hooks/use-theme';
 
 interface Props {
   children: ReactNode;

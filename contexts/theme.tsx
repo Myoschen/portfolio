@@ -1,6 +1,6 @@
 'use client';
 import { createContext, ReactNode, useCallback, useEffect } from 'react';
-import useLocalStorage from '../hooks/use-local-storage';
+import useLocalStorage from '@/hooks/use-local-storage';
 
 type ThemeContextType = {
   theme: string;

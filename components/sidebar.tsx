@@ -2,13 +2,18 @@
 import cn from 'classnames';
 import { motion } from 'framer-motion';
 import {
-    LucideBarChart2, LucideHome, LucideLayoutGrid, LucideMoon, LucideSun, LucideUser
+  LucideBarChart2,
+  LucideHome,
+  LucideLayoutGrid,
+  LucideMoon,
+  LucideSun,
+  LucideUser,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next-intl/client';
 import Image from 'next/image';
 import { useState } from 'react';
-import useTheme from '@/lib/hooks/use-theme';
+import useTheme from '@/hooks/use-theme';
 import { CommandPaletteTrigger } from './command-palette';
 import LanguageMenu from './language-menu';
 import Link from './link';

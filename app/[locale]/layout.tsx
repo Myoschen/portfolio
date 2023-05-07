@@ -4,7 +4,7 @@ import { Noto_Sans_TC, Work_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import CommandPalette from '@/components/command-palette';
 import Sidebar from '@/components/sidebar';
-import ThemeProvider from '@/lib/contexts/theme';
+import ThemeProvider from '@/contexts/theme';
 
 export const metadata = {
   title: 'Ryan Chen',
