@@ -26,7 +26,7 @@ function Tooltip({ children, text }: Props) {
           {open && (
             <TooltipPrimitive.Portal forceMount>
               <TooltipPrimitive.Content
-                className="font-work-sans text-light-primary-100 bg-dark-primary-500 dark:bg-light-primary-100 dark:text-dark-primary-500 select-none rounded-[4px] px-4 py-2 text-sm font-medium leading-none will-change-[transform,opacity]"
+                className="font-work-sans bg-mauveA-mauveA4 dark:bg-mauveDarkA-mauveA4 select-none rounded-[4px] px-4 py-2 text-sm font-medium leading-none backdrop-blur"
                 side="bottom"
                 sideOffset={5}
                 asChild
@@ -49,7 +49,7 @@ function Tooltip({ children, text }: Props) {
                   }}
                 >
                   {text}
-                  <TooltipPrimitive.Arrow className="fill-dark-primary-500 dark:fill-light-primary-100" />
+                  <TooltipPrimitive.Arrow className="fill-mauveA-mauveA4 dark:fill-mauveDarkA-mauveA4" />
                 </motion.div>
               </TooltipPrimitive.Content>
             </TooltipPrimitive.Portal>

@@ -38,7 +38,7 @@ const transform = (level: SkillLevel) => {
 function SkillCard({ info }: Props) {
   const { title, icon, level } = info;
   return (
-    <div className="border-light-primary-500 m-item hover:border-light-secondary dark:border-dark-primary-600 dark:hover:border-dark-secondary grid grid-cols-[60px_auto] items-center gap-x-4 border-2 p-4 transition-colors">
+    <div className="border-mauve-mauve7 m-item hover:border-violet-violet7 dark:border-mauveDark-mauve7 dark:hover:border-violetDark-violet7 grid grid-cols-[60px_auto] items-center gap-x-4 rounded border-2 p-4 transition-colors">
       <div className="flex items-center justify-center">{icon}</div>
       <div className="flex flex-col gap-y-2">
         <h2 className="font-work-sans text-xl font-medium">{title}</h2>

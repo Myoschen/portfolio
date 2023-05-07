@@ -15,14 +15,14 @@ const work_sans = Work_Sans({
   subsets: ['latin'],
   variable: '--ff-work-sans',
   weight: ['400', '500', '600', '700'],
-  preload: false,
+  display: 'swap',
 });
 
 const noto = Noto_Sans_TC({
   subsets: ['latin'],
   variable: '--ff-noto',
   weight: ['400', '500', '700'],
-  preload: false,
+  display: 'swap',
 });
 
 export function generateStaticParams() {
@@ -45,7 +45,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={`${work_sans.variable} ${noto.variable}`}>
-      <body className="bg-light-primary-100 dark:bg-dark-primary-500 dark:text-dark-primary-100 text-light-primary-900">
+      <body className="bg-mauve-mauve1 dark:bg-mauveDark-mauve1 dark:text-mauveDark-mauve12 text-mauve-mauve12">
         <div className="mb-20 mt-8 flex max-w-4xl flex-col antialiased transition-colors md:mx-auto md:mt-20 md:flex-row lg:mt-32">
           <NextIntlClientProvider locale={locale} messages={messages}>
             <ThemeProvider>

@@ -20,7 +20,7 @@ function LanguageMenu() {
         {open && (
           <DropdownMenuPrimitive.Portal forceMount>
             <DropdownMenuPrimitive.Content
-              className="bg-dark-primary-500 dark:bg-light-primary-100 min-w-[100px] rounded-md p-1 will-change-[opacity]"
+              className="bg-mauveA-mauveA4 dark:bg-mauveDarkA-mauveA4 min-w-[100px] rounded-md p-1 backdrop-blur"
               sideOffset={5}
               align="start"
               asChild
@@ -42,7 +42,7 @@ function LanguageMenu() {
               >
                 <DropdownMenuPrimitive.Item asChild>
                   <Link
-                    className="font-work-sans text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
+                    className="font-work-sans data-[highlighted]:bg-violet-violet8 dark:data-[highlighted]:bg-violetDark-violet8 relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
                     href="/"
                     locale="zh-TW"
                   >
@@ -51,14 +51,14 @@ function LanguageMenu() {
                 </DropdownMenuPrimitive.Item>
                 <DropdownMenuPrimitive.Item asChild>
                   <Link
-                    className="font-work-sans text-light-primary-100 dark:text-dark-primary-500 data-[highlighted]:bg-light-secondary dark:data-[highlighted]:bg-dark-secondary relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
+                    className="font-work-sans data-[highlighted]:bg-violet-violet8 dark:data-[highlighted]:bg-violetDark-violet8 relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
                     href="/"
                     locale="en"
                   >
                     English
                   </Link>
                 </DropdownMenuPrimitive.Item>
-                <DropdownMenuPrimitive.Arrow className="fill-dark-primary-500 dark:fill-light-primary-100 " />
+                <DropdownMenuPrimitive.Arrow className="fill-mauveA-mauveA4 dark:fill-mauveDarkA-mauveA4" />
               </motion.div>
             </DropdownMenuPrimitive.Content>
           </DropdownMenuPrimitive.Portal>

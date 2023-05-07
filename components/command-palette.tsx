@@ -128,8 +128,8 @@ function CommandPalette({ children }: Props) {
   return (
     <KBarProvider actions={actions}>
       <KBarPortal>
-        <KBarPositioner className="bg-light-primary-100/80 dark:bg-dark-primary-500/80 z-20 flex items-center p-2 backdrop-blur-sm">
-          <KBarAnimator className="bg-light-primary-200/90 dark:bg-dark-primary-700/90 border-light-primary-400 dark:border-dark-primary-800 box-content w-full max-w-xl overflow-hidden rounded-md border p-2 shadow-sm">
+        <KBarPositioner className="bg-mauveA-mauveA4 dark:bg-mauveDarkA-mauveA4 z-20 flex items-center p-2 backdrop-blur-sm">
+          <KBarAnimator className="bg-mauve-mauve4 dark:bg-mauveDark-mauve4 box-content w-full max-w-xl overflow-hidden rounded-md p-2 shadow">
             <KBarSearch className="font-work-sans h-16 w-full bg-transparent px-4 outline-none" />
             <SearchResults />
           </KBarAnimator>
@@ -149,7 +149,7 @@ function SearchResults() {
       items={results}
       onRender={({ item, active }) =>
         typeof item === 'string' ? (
-          <div className="dark:text-dark-primary-100 text-light-primary-900 font-work-sans px-4 pb-2 pt-4 font-medium">
+          <div className="font-work-sans px-4 pb-2 pt-4 font-medium">
             {item}
           </div>
         ) : (
@@ -187,7 +187,8 @@ const ResultItem = forwardRef<HTMLDivElement, ResultItemProps>(
         className={cn(
           'flex cursor-pointer items-center justify-between rounded-lg px-4 py-2',
           {
-            'bg-secondary text-dark-primary-100 rounded-md': active,
+            'bg-mauve-mauve6 dark:bg-mauveDark-mauve6 text-violet-violet11 dark:text-violetDark-violet11 rounded-md':
+              active,
           }
         )}
       >

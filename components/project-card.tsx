@@ -18,10 +18,10 @@ interface Props {
 function ProjectCard({ info }: Props) {
   const { image, title, description, repo, demo } = info;
   return (
-    <div className="m-item border-light-primary-500 hover:border-light-secondary dark:border-dark-primary-600 dark:hover:border-dark-secondary group space-y-4 border-2 transition-colors">
+    <div className="m-item border-mauve-mauve7 hover:border-violet-violet7 dark:border-mauveDark-mauve7 dark:hover:border-violetDark-violet7 group space-y-4 rounded border-2 transition-colors">
       <div className="relative aspect-video overflow-hidden">
         <Image
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
+          className="rounded-t object-cover transition-transform duration-500 group-hover:scale-105"
           src={image}
           alt="Programming"
           fill

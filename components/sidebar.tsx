@@ -69,16 +69,16 @@ function Sidebar() {
           >
             {navLinks.map(({ label, href, icon }, index) => (
               <Link
-                className="hover:text-light-secondary dark:hover:text-dark-secondary flex transition-colors"
+                className="flex transition-colors"
                 href={href}
                 key={href}
                 onMouseEnter={() => setHoverNav(index)}
               >
                 <span
                   className={cn(
-                    'font-work-sans relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide',
+                    'font-work-sans relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide hover:text-violet-violet11 dark:hover:text-violetDark-violet11',
                     {
-                      'text-light-secondary dark:text-dark-secondary':
+                      'text-violet-violet11 dark:text-violetDark-violet11':
                         pathname === href,
                     }
                   )}
@@ -87,14 +87,15 @@ function Sidebar() {
                   {label}
                   {pathname === href ? (
                     <motion.div
-                      className="bg-light-primary-500 dark:bg-dark-primary-700 absolute inset-0 z-[-1] rounded-t-md"
+                      className="bg-mauve-mauve4 dark:bg-mauveDark-mauve4 absolute inset-0 z-[-1] rounded-t-md"
                       layoutId="background"
                     />
                   ) : null}
                   {hoverNav === index ? (
                     <motion.div
-                      className="bg-light-secondary dark:bg-dark-secondary absolute bottom-0 left-0 h-[2px] w-full rounded-md"
+                      className="bg-violet-violet11 dark:bg-violetDark-violet11 absolute bottom-0 left-0 h-[2px] w-full rounded-md"
                       layoutId="underline"
+                      exit={{ opacity: 0 }}
                     />
                   ) : null}
                 </span>
