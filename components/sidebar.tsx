@@ -76,10 +76,10 @@ function Sidebar() {
               >
                 <span
                   className={cn(
-                    'font-work-sans relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide hover:text-violet-violet11 dark:hover:text-violetDark-violet11',
+                    'font-work-sans relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide',
                     {
-                      'text-violet-violet11 dark:text-violetDark-violet11':
-                        pathname === href,
+                      'hover:text-violet-11 dark:hover:text-violetDark-11':
+                        pathname !== href,
                     }
                   )}
                 >
@@ -87,15 +87,8 @@ function Sidebar() {
                   {label}
                   {pathname === href ? (
                     <motion.div
-                      className="bg-mauve-mauve4 dark:bg-mauveDark-mauve4 absolute inset-0 z-[-1] rounded-t-md"
-                      layoutId="background"
-                    />
-                  ) : null}
-                  {hoverNav === index ? (
-                    <motion.div
-                      className="bg-violet-violet11 dark:bg-violetDark-violet11 absolute bottom-0 left-0 h-[2px] w-full rounded-md"
-                      layoutId="underline"
-                      exit={{ opacity: 0 }}
+                      className="bg-mauve-4 dark:bg-mauveDark-4 absolute inset-0 z-[-1] rounded-md"
+                      layoutId="active-pill"
                     />
                   ) : null}
                 </span>

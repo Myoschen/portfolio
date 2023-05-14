@@ -26,7 +26,7 @@ const noto = Noto_Sans_TC({
 });
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'zh-tw' }];
+  return [{ locale: 'en' }, { locale: 'zh-TW' }];
 }
 
 export default async function RootLayout({
@@ -45,7 +45,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={`${work_sans.variable} ${noto.variable}`}>
-      <body className="bg-mauve-mauve1 dark:bg-mauveDark-mauve1 dark:text-mauveDark-mauve12 text-mauve-mauve12">
+      <body className="bg-mauve-1 dark:bg-mauveDark-1 dark:text-mauveDark-12 text-mauve-12">
         <div className="mb-20 mt-8 flex max-w-4xl flex-col antialiased transition-colors md:mx-auto md:mt-20 md:flex-row lg:mt-32">
           <NextIntlClientProvider locale={locale} messages={messages}>
             <ThemeProvider>

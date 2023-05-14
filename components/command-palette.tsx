@@ -128,8 +128,8 @@ function CommandPalette({ children }: Props) {
   return (
     <KBarProvider actions={actions}>
       <KBarPortal>
-        <KBarPositioner className="bg-mauveA-mauveA4 dark:bg-mauveDarkA-mauveA4 z-20 flex items-center p-2 backdrop-blur-sm">
-          <KBarAnimator className="bg-mauve-mauve4 dark:bg-mauveDark-mauve4 box-content w-full max-w-xl overflow-hidden rounded-md p-2 shadow">
+        <KBarPositioner className="bg-mauveA-2 dark:bg-mauveDarkA-2 z-20 flex items-center p-2 backdrop-blur-sm">
+          <KBarAnimator className="bg-mauve-4 dark:bg-mauveDark-4 box-content w-full max-w-xl overflow-hidden rounded-md p-2 shadow">
             <KBarSearch className="font-work-sans h-16 w-full bg-transparent px-4 outline-none" />
             <SearchResults />
           </KBarAnimator>

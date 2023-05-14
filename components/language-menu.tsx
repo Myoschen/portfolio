@@ -1,7 +1,8 @@
 'use client';
 import { AnimatePresence, motion } from 'framer-motion';
 import { LucideLanguages } from 'lucide-react';
-import { Link, useLocale } from 'next-intl';
+import { useLocale } from 'next-intl';
+import Link from 'next-intl/link';
 import { useState } from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 
@@ -20,7 +21,7 @@ function LanguageMenu() {
         {open && (
           <DropdownMenuPrimitive.Portal forceMount>
             <DropdownMenuPrimitive.Content
-              className="bg-mauveA-mauveA4 dark:bg-mauveDarkA-mauveA4 min-w-[100px] rounded-md p-1 backdrop-blur"
+              className="bg-mauveA-4 dark:bg-mauveDarkA-4 min-w-[100px] rounded-md p-1 backdrop-blur"
               sideOffset={5}
               align="start"
               asChild
@@ -42,7 +43,7 @@ function LanguageMenu() {
               >
                 <DropdownMenuPrimitive.Item asChild>
                   <Link
-                    className="font-work-sans data-[highlighted]:bg-violet-violet8 dark:data-[highlighted]:bg-violetDark-violet8 relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
+                    className="font-work-sans data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violetDark-8 relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
                     href="/"
                     locale="zh-TW"
                   >
@@ -51,14 +52,14 @@ function LanguageMenu() {
                 </DropdownMenuPrimitive.Item>
                 <DropdownMenuPrimitive.Item asChild>
                   <Link
-                    className="font-work-sans data-[highlighted]:bg-violet-violet8 dark:data-[highlighted]:bg-violetDark-violet8 relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
+                    className="font-work-sans data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violetDark-8 relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
                     href="/"
                     locale="en"
                   >
                     English
                   </Link>
                 </DropdownMenuPrimitive.Item>
-                <DropdownMenuPrimitive.Arrow className="fill-mauveA-mauveA4 dark:fill-mauveDarkA-mauveA4" />
+                <DropdownMenuPrimitive.Arrow className="fill-mauveA-4 dark:fill-mauveDarkA-4" />
               </motion.div>
             </DropdownMenuPrimitive.Content>
           </DropdownMenuPrimitive.Portal>

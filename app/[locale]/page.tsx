@@ -39,7 +39,7 @@ export default function HomePage() {
             <p>{t('major')}</p>
           </div>
           <div className="m-item grid gap-y-4 md:grid-cols-[180px_auto] md:gap-x-2 md:gap-y-0">
-            <div className="ring-violet-violet7 dark:via-violetDark-violet7 relative aspect-square w-40 overflow-hidden rounded-full ring-4">
+            <div className="ring-violet-7 dark:via-violetDark-7 relative aspect-square w-40 overflow-hidden rounded-full ring-4">
               <Image
                 className="object-cover"
                 src="/ryan-chen.png"

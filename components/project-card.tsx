@@ -18,7 +18,7 @@ interface Props {
 function ProjectCard({ info }: Props) {
   const { image, title, description, repo, demo } = info;
   return (
-    <div className="m-item border-mauve-mauve7 hover:border-violet-violet7 dark:border-mauveDark-mauve7 dark:hover:border-violetDark-violet7 group space-y-4 rounded border-2 transition-colors">
+    <div className="m-item border-mauve-7 hover:border-violet-7 dark:border-mauveDark-7 dark:hover:border-violetDark-7 group space-y-4 rounded border-2 transition-colors">
       <div className="relative aspect-video overflow-hidden">
         <Image
           className="rounded-t object-cover transition-transform duration-500 group-hover:scale-105"
@@ -31,13 +31,11 @@ function ProjectCard({ info }: Props) {
         <h2 className="font-work-sans text-2xl font-medium leading-relaxed">
           {title}
         </h2>
-        <p className="font-work-sans text-light-primary-700 text-sm tracking-wider">
-          {description}
-        </p>
+        <p className="font-work-sans text-sm tracking-wider">{description}</p>
         <div className="flex items-center justify-start gap-x-1">
           <Tooltip text="Repository">
             <a
-              className="hover:bg-light-primary-500 dark:hover:bg-dark-primary-700 flex items-center justify-center rounded-md p-2 transition-colors"
+              className="hover:bg-mauve-3 dark:hover:bg-mauveDark-3 flex items-center justify-center rounded-md p-2 transition-colors"
               href={repo}
               target="_blank"
               rel="noreferrer noopener"
@@ -48,7 +46,7 @@ function ProjectCard({ info }: Props) {
           {demo ? (
             <Tooltip text="Demo">
               <a
-                className="hover:bg-light-primary-500 dark:hover:bg-dark-primary-700 flex items-center justify-center rounded-md p-2 transition-colors"
+                className="hover:bg-mauve-3 dark:hover:bg-mauveDark-3 flex items-center justify-center rounded-md p-2 transition-colors"
                 href={demo}
                 target="_blank"
                 rel="noreferrer noopener"
