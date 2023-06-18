@@ -1,46 +1,34 @@
-import './globals.css';
-import { NextIntlClientProvider } from 'next-intl';
-import { Noto_Sans_TC, Work_Sans } from 'next/font/google';
-import { notFound } from 'next/navigation';
-import CommandPalette from '@/components/command-palette';
-import Sidebar from '@/components/sidebar';
-import ThemeProvider from '@/contexts/theme';
+import './globals.css'
+
+import { notFound } from 'next/navigation'
+import { NextIntlClientProvider } from 'next-intl'
+
+import { noto, work_sans } from '@/utils/fonts'
+import ThemeProvider from '@/contexts/theme'
+import CommandPalette from '@/components/command-palette'
+import Sidebar from '@/components/sidebar'
 
 export const metadata = {
   title: 'Ryan Chen',
-  description: 'Welcome, this is my portfolio.',
-};
-
-const work_sans = Work_Sans({
-  subsets: ['latin'],
-  variable: '--ff-work-sans',
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-});
-
-const noto = Noto_Sans_TC({
-  subsets: ['latin'],
-  variable: '--ff-noto',
-  weight: ['400', '500', '700'],
-  display: 'swap',
-});
+  description: 'Welcome, this is my portfolio.'
+}
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'zh-TW' }];
+  return [{ locale: 'en' }, { locale: 'zh-TW' }]
 }
 
 export default async function RootLayout({
   children,
-  params: { locale },
+  params: { locale }
 }: {
-  children: React.ReactNode;
-  params: { locale: string };
+  children: React.ReactNode
+  params: { locale: string }
 }) {
-  let messages;
+  let messages
   try {
-    messages = (await import(`../../messages/${locale}.json`)).default;
+    messages = (await import(`../../messages/${locale}.json`)).default
   } catch (error) {
-    notFound();
+    notFound()
   }
 
   return (
@@ -58,5 +46,5 @@ export default async function RootLayout({
         </div>
       </body>
     </html>
-  );
+  )
 }

@@ -1,9 +1,9 @@
 export const metadata = {
-  title: 'Ryan Chen | About',
-};
-
-function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  title: 'Ryan Chen | About'
 }
 
-export default Layout;
+function Layout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>
+}
+
+export default Layout

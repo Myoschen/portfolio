@@ -1,11 +1,11 @@
-import * as SwitchPrimitive from '@radix-ui/react-switch';
+import * as SwitchPrimitive from '@radix-ui/react-switch'
 
 interface Props {
-  id: string;
-  leftIcon?: JSX.Element;
-  rightIcon?: JSX.Element;
-  checked: boolean;
-  onCheckedChange: (checked: boolean) => void;
+  id: string
+  leftIcon?: JSX.Element
+  rightIcon?: JSX.Element
+  checked: boolean
+  onCheckedChange: (checked: boolean) => void
 }
 
 function Switch({ id, leftIcon, rightIcon, checked, onCheckedChange }: Props) {
@@ -30,7 +30,7 @@ function Switch({ id, leftIcon, rightIcon, checked, onCheckedChange }: Props) {
         </label>
       ) : null}
     </div>
-  );
+  )
 }
 
-export default Switch;
+export default Switch

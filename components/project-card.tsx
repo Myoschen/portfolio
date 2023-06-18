@@ -1,22 +1,24 @@
-'use client';
-import { LucideCode, LucideRocket } from 'lucide-react';
-import Image from 'next/image';
-import Tooltip from '@/components/tooltip';
+'use client'
+
+import Image from 'next/image'
+import { LucideCode, LucideRocket } from 'lucide-react'
+
+import Tooltip from '@/components/tooltip'
 
 export type ProjectInfo = {
-  image: string;
-  title: string;
-  description: string;
-  repo: string;
-  demo?: string;
-};
+  image: string
+  title: string
+  description: string
+  repo: string
+  demo?: string
+}
 
 interface Props {
-  info: ProjectInfo;
+  info: ProjectInfo
 }
 
 function ProjectCard({ info }: Props) {
-  const { image, title, description, repo, demo } = info;
+  const { image, title, description, repo, demo } = info
   return (
     <div className="m-item border-mauve-7 hover:border-violet-7 dark:border-mauveDark-7 dark:hover:border-violetDark-7 group space-y-4 rounded border-2 transition-colors">
       <div className="relative aspect-video overflow-hidden">
@@ -28,9 +30,7 @@ function ProjectCard({ info }: Props) {
         />
       </div>
       <div className="flex flex-col gap-y-2 px-6 pb-4">
-        <h2 className="font-work-sans text-2xl font-medium leading-relaxed">
-          {title}
-        </h2>
+        <h2 className="font-work-sans text-2xl font-medium leading-relaxed">{title}</h2>
         <p className="font-work-sans text-sm tracking-wider">{description}</p>
         <div className="flex items-center justify-start gap-x-1">
           <Tooltip text="Repository">
@@ -58,7 +58,7 @@ function ProjectCard({ info }: Props) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default ProjectCard;
+export default ProjectCard
