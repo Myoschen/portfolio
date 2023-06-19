@@ -1,6 +1,6 @@
 'use client';
 
-import {useState} from 'react';
+import {useMemo} from 'react';
 import Image from 'next/image';
 import {motion} from 'framer-motion';
 import {
@@ -23,33 +23,35 @@ import Link from './link';
 import Switch from './switch';
 
 function Sidebar() {
-  const [hoverNav, setHoverNav] = useState<number | null>(null);
   const {theme, setTheme} = useTheme();
   const t = useTranslations('sidebar');
   const pathname = usePathname();
 
-  const navLinks = [
-    {
-      label: t('home'),
-      href: '/',
-      icon: <LucideHome size={16} />,
-    },
-    {
-      label: t('about'),
-      href: '/about',
-      icon: <LucideUser size={16} />,
-    },
-    {
-      label: t('skill'),
-      href: '/skill',
-      icon: <LucideBarChart2 size={16} />,
-    },
-    {
-      label: t('project'),
-      href: '/project',
-      icon: <LucideLayoutGrid size={16} />,
-    },
-  ];
+  const navLinks = useMemo(
+    () => [
+      {
+        label: t('home'),
+        href: '/',
+        icon: <LucideHome size={16} />,
+      },
+      {
+        label: t('about'),
+        href: '/about',
+        icon: <LucideUser size={16} />,
+      },
+      {
+        label: t('skill'),
+        href: '/skill',
+        icon: <LucideBarChart2 size={16} />,
+      },
+      {
+        label: t('project'),
+        href: '/project',
+        icon: <LucideLayoutGrid size={16} />,
+      },
+    ],
+    [t]
+  );
 
   return (
     <aside className="px-6 md:w-[150px] md:shrink-0 lg:px-0">
@@ -66,17 +68,9 @@ function Sidebar() {
           </Link>
         </div>
         <nav className="mb-4 md:mb-8">
-          <div
-            className="-ml-2 flex flex-wrap items-start gap-x-px md:flex-col md:gap-x-0 md:gap-y-2"
-            onMouseLeave={() => setHoverNav(null)}
-          >
+          <div className="-ml-2 flex flex-wrap items-start gap-x-px md:flex-col md:gap-x-0 md:gap-y-2">
             {navLinks.map(({label, href, icon}, index) => (
-              <Link
-                className="flex transition-colors"
-                href={href}
-                key={href}
-                onMouseEnter={() => setHoverNav(index)}
-              >
+              <Link className="flex transition-colors" href={href} key={href}>
                 <span
                   className={cn(
                     'font-work-sans relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide',
@@ -90,7 +84,7 @@ function Sidebar() {
                   {label}
                   {pathname === href ? (
                     <motion.div
-                      className="bg-mauve-4 dark:bg-mauveDark-4 absolute inset-0 z-[-1] rounded-md"
+                      className="absolute inset-0 z-[-1] rounded-md bg-mauve-4 dark:bg-mauveDark-4"
                       layoutId="active-pill"
                     />
                   ) : null}

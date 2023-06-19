@@ -61,7 +61,7 @@ function ProjectPage() {
   return (
     <MainWrapper>
       <MotionWrapper>
-        <div className="m-container flex flex-col gap-y-6">
+        <div id="m-container" className="flex flex-col gap-y-6">
           <PageTitle label={t('title')} />
           <div className="grid gap-4 md:grid-cols-2">
             {projects.map((project) => (

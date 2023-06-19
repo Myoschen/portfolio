@@ -14,9 +14,9 @@ function AboutPage() {
   return (
     <MainWrapper>
       <MotionWrapper>
-        <div className="m-container flex flex-col gap-y-6">
+        <div id="m-container" className="flex flex-col gap-y-6">
           <PageTitle label={t('title')} />
-          <div className="m-item relative h-80 overflow-hidden">
+          <div id="m-item" className="relative h-80 overflow-hidden">
             <Image
               className="object-cover"
               src="/programming.svg"
@@ -24,7 +24,7 @@ function AboutPage() {
               fill
             />
           </div>
-          <div className="font-work-sans m-item space-y-4 tracking-wide">
+          <div id="m-item" className=" space-y-4 font-work-sans tracking-wide">
             <p>{t('paragraph.degree')}</p>
             <p>{t('paragraph.programming')}</p>
             <p>{t('paragraph.cause')}</p>
@@ -32,7 +32,7 @@ function AboutPage() {
             <p>{t('paragraph.addition')}</p>
             <p>{t('paragraph.future')}</p>
           </div>
-          <div className="m-item inline-block self-end">
+          <div id="m-item" className="inline-block self-end">
             <NextLink next="skill" label={t('next')} />
           </div>
         </div>

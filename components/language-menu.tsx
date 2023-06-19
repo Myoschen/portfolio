@@ -14,7 +14,7 @@ function LanguageMenu() {
 
   return (
     <DropdownMenuPrimitive.Root open={open} onOpenChange={setOpen}>
-      <DropdownMenuPrimitive.Trigger className="font-work-sans inline-flex items-center gap-x-2 font-medium tracking-wide outline-none">
+      <DropdownMenuPrimitive.Trigger className="inline-flex items-center gap-x-2 font-work-sans font-medium tracking-wide outline-none">
         <LucideLanguages size={16} />
         {nextLocale === 'en' ? '語言' : 'Language'}
       </DropdownMenuPrimitive.Trigger>
@@ -22,7 +22,7 @@ function LanguageMenu() {
         {open && (
           <DropdownMenuPrimitive.Portal forceMount>
             <DropdownMenuPrimitive.Content
-              className="bg-mauveA-4 dark:bg-mauveDarkA-4 min-w-[100px] rounded-md p-1 backdrop-blur"
+              className="min-w-[100px] rounded-md bg-mauveA-4 p-1 backdrop-blur dark:bg-mauveDarkA-4"
               sideOffset={5}
               align="start"
               asChild
@@ -44,7 +44,7 @@ function LanguageMenu() {
               >
                 <DropdownMenuPrimitive.Item asChild>
                   <Link
-                    className="font-work-sans data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violetDark-8 relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
+                    className="relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] font-work-sans text-sm font-medium leading-none tracking-wide outline-none data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violetDark-8"
                     href="/"
                     locale="tw"
                   >
@@ -53,7 +53,7 @@ function LanguageMenu() {
                 </DropdownMenuPrimitive.Item>
                 <DropdownMenuPrimitive.Item asChild>
                   <Link
-                    className="font-work-sans data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violetDark-8 relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
+                    className="relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] font-work-sans text-sm font-medium leading-none tracking-wide outline-none data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violetDark-8"
                     href="/"
                     locale="en"
                   >

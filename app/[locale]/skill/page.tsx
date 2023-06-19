@@ -103,14 +103,14 @@ function SkillPage() {
   return (
     <MainWrapper>
       <MotionWrapper>
-        <div className="m-container flex flex-col gap-y-6">
+        <div id="m-container" className="flex flex-col gap-y-6">
           <PageTitle label={t('title')} />
           <div className="grid gap-y-4">
             {skills.map((skill) => (
               <SkillCard key={skill.title} info={skill} />
             ))}
           </div>
-          <div className="m-item inline-block self-end">
+          <div id="m-item" className="inline-block self-end">
             <NextLink next="project" label={t('next')} />
           </div>
         </div>

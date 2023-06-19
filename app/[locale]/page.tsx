@@ -34,14 +34,17 @@ export default function HomePage() {
   return (
     <MainWrapper>
       <MotionWrapper>
-        <div className="m-container flex flex-col gap-y-6">
+        <div id="m-container" className="flex flex-col gap-y-6">
           <PageTitle label={t('title')} />
-          <div className="font-work-sans m-item tracking-wide">
+          <div id="m-item" className="font-work-sans tracking-wide">
             <p>{t('name')}</p>
             <p>{t('major')}</p>
           </div>
-          <div className="m-item grid gap-y-4 md:grid-cols-[180px_auto] md:gap-x-2 md:gap-y-0">
-            <div className="ring-violet-7 dark:via-violetDark-7 relative aspect-square w-40 overflow-hidden rounded-full ring-4">
+          <div
+            id="m-item"
+            className="grid gap-y-4 md:grid-cols-[180px_auto] md:gap-x-2 md:gap-y-0"
+          >
+            <div className="relative aspect-square w-40 overflow-hidden rounded-full ring-4 ring-violet-7 dark:via-violetDark-7">
               <Image
                 className="object-cover"
                 src="/ryan-chen.png"
@@ -57,10 +60,10 @@ export default function HomePage() {
               ))}
             </ul>
           </div>
-          <div className="font-work-sans m-item tracking-wide">
+          <div id="m-item" className="font-work-sans tracking-wide">
             <p>{t('currently')}</p>
           </div>
-          <div className="m-item inline-block self-end">
+          <div id="m-item" className="inline-block self-end">
             <NextLink next="about" label={t('next')} />
           </div>
         </div>
