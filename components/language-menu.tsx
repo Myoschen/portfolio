@@ -13,7 +13,7 @@ function LanguageMenu() {
   const pathname = usePathname();
   const locale = useLocale();
   const nextLocale = useMemo(
-    () => (locale === 'en' ? 'zh-tw' : 'en'),
+    () => (locale === 'en' ? 'zh-TW' : 'en'),
     [locale]
   );
 
@@ -51,7 +51,7 @@ function LanguageMenu() {
                   <Link
                     className="relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] font-work-sans text-sm font-medium leading-none tracking-wide outline-none data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violetDark-8"
                     href={pathname}
-                    locale="zh-tw"
+                    locale="zh-TW"
                     replace={true}
                   >
                     繁體中文

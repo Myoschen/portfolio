@@ -124,7 +124,7 @@ function CommandPalette({children}: Props) {
         icon: <LucideLanguages size={16} />,
         parent: 'language',
         section: t('operation'),
-        perform: () => router.replace(`/zh-tw${pathname}`),
+        perform: () => router.replace(`/zh-TW${pathname}`),
       },
     ];
   }, [router, pathname, setTheme, t]);
