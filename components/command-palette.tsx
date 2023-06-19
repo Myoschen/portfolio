@@ -107,7 +107,7 @@ function CommandPalette({ children }: Props) {
         section: t('operation')
       },
       {
-        id: 'english',
+        id: 'en',
         name: t('en'),
         keywords: 'English 英文',
         icon: <LucideLanguages size={16} />,
@@ -122,7 +122,7 @@ function CommandPalette({ children }: Props) {
         icon: <LucideLanguages size={16} />,
         parent: 'language',
         section: t('operation'),
-        perform: () => router.push('/zh-TW')
+        perform: () => router.push('/zh-tw')
       }
     ]
   }, [router, t, setTheme])

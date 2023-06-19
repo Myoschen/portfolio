@@ -10,7 +10,7 @@ import Link from 'next-intl/link'
 function LanguageMenu() {
   const [open, setOpen] = useState(false)
   const locale = useLocale()
-  const nextLocale = locale === 'en' ? 'zh-TW' : 'en'
+  const nextLocale = locale === 'en' ? 'zh-tw' : 'en'
 
   return (
     <DropdownMenuPrimitive.Root open={open} onOpenChange={setOpen}>
@@ -46,7 +46,7 @@ function LanguageMenu() {
                   <Link
                     className="font-work-sans data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violetDark-8 relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] text-sm font-medium leading-none tracking-wide outline-none"
                     href="/"
-                    locale="zh-TW"
+                    locale="tw"
                   >
                     繁體中文
                   </Link>
