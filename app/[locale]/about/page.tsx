@@ -19,7 +19,7 @@ function AboutPage() {
           <div id="m-item" className="relative h-80 overflow-hidden">
             <Image
               className="object-cover"
-              src="/programming.svg"
+              src="/images/programming.svg"
               alt="Programming"
               fill
             />

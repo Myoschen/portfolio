@@ -60,7 +60,7 @@ function Sidebar() {
           <Link href="/">
             <Image
               className="object-cover"
-              src="/icon.png"
+              src="/images/icon.png"
               alt="icon"
               width={60}
               height={60}
