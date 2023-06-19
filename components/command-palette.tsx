@@ -1,6 +1,6 @@
 'use client';
 
-import {forwardRef, Fragment, ReactNode, useMemo} from 'react';
+import {forwardRef, Fragment, useMemo, type ReactNode} from 'react';
 import {useRouter} from 'next/navigation';
 import {
   Action,
@@ -27,6 +27,7 @@ import {
   LucideUser,
 } from 'lucide-react';
 import {useTranslations} from 'next-intl';
+import {usePathname} from 'next-intl/client';
 
 import {cn} from '@/utils/classnames';
 import useTheme from '@/hooks/use-theme';
@@ -37,6 +38,7 @@ interface Props {
 
 function CommandPalette({children}: Props) {
   const router = useRouter();
+  const pathname = usePathname();
   const t = useTranslations('command.action');
   const {setTheme} = useTheme();
 
@@ -113,7 +115,7 @@ function CommandPalette({children}: Props) {
         icon: <LucideLanguages size={16} />,
         parent: 'language',
         section: t('operation'),
-        perform: () => router.push('/en'),
+        perform: () => router.replace(`/en${pathname}`),
       },
       {
         id: 'zh-tw',
@@ -122,10 +124,10 @@ function CommandPalette({children}: Props) {
         icon: <LucideLanguages size={16} />,
         parent: 'language',
         section: t('operation'),
-        perform: () => router.push('/zh-tw'),
+        perform: () => router.replace(`/zh-tw${pathname}`),
       },
     ];
-  }, [router, t, setTheme]);
+  }, [router, pathname, setTheme, t]);
 
   return (
     <KBarProvider actions={actions}>

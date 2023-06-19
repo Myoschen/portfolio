@@ -1,16 +1,21 @@
 'use client';
 
-import {useState} from 'react';
+import {useMemo, useState} from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import {AnimatePresence, motion} from 'framer-motion';
 import {LucideLanguages} from 'lucide-react';
 import {useLocale} from 'next-intl';
+import {usePathname} from 'next-intl/client';
 import Link from 'next-intl/link';
 
 function LanguageMenu() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
   const locale = useLocale();
-  const nextLocale = locale === 'en' ? 'zh-tw' : 'en';
+  const nextLocale = useMemo(
+    () => (locale === 'en' ? 'zh-tw' : 'en'),
+    [locale]
+  );
 
   return (
     <DropdownMenuPrimitive.Root open={open} onOpenChange={setOpen}>
@@ -45,8 +50,9 @@ function LanguageMenu() {
                 <DropdownMenuPrimitive.Item asChild>
                   <Link
                     className="relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] font-work-sans text-sm font-medium leading-none tracking-wide outline-none data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violetDark-8"
-                    href="/"
+                    href={pathname}
                     locale="zh-tw"
+                    replace={true}
                   >
                     繁體中文
                   </Link>
@@ -54,8 +60,9 @@ function LanguageMenu() {
                 <DropdownMenuPrimitive.Item asChild>
                   <Link
                     className="relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] font-work-sans text-sm font-medium leading-none tracking-wide outline-none data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violetDark-8"
-                    href="/"
+                    href={pathname}
                     locale="en"
+                    replace={true}
                   >
                     English
                   </Link>
