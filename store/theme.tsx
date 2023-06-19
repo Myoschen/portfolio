@@ -1,5 +1,7 @@
 'use client';
-import { createContext, ReactNode, useCallback, useEffect } from 'react';
+
+import {createContext, useCallback, useEffect, type ReactNode} from 'react';
+
 import useLocalStorage from '@/hooks/use-local-storage';
 
 type ThemeContextType = {
@@ -13,7 +15,7 @@ interface ProviderProps {
   children: ReactNode;
 }
 
-function ThemeProvider({ children }: ProviderProps) {
+function ThemeProvider({children}: ProviderProps) {
   const [theme, set] = useLocalStorage('theme', 'light');
 
   const setTheme = useCallback((theme: string) => set(theme), [set]);
@@ -24,11 +26,11 @@ function ThemeProvider({ children }: ProviderProps) {
   }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{theme, setTheme}}>
       {children}
     </ThemeContext.Provider>
   );
 }
 
 export default ThemeProvider;
-export { ThemeContext };
+export {ThemeContext};

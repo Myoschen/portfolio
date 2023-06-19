@@ -1,13 +1,13 @@
-'use client'
+'use client';
 
-import { motion, Variants } from 'framer-motion'
-import { LucideArrowRight } from 'lucide-react'
+import {motion, type Variants} from 'framer-motion';
+import {LucideArrowRight} from 'lucide-react';
 
-import Link from './link'
+import Link from './link';
 
 interface Props {
-  next: string
-  label: string
+  next: string;
+  label: string;
 }
 
 const arrow = {
@@ -17,22 +17,24 @@ const arrow = {
       duration: 0.75,
       times: [0, 0.6, 1],
       repeat: Infinity,
-      repeatType: 'reverse'
-    }
-  }
-} satisfies Variants
+      repeatType: 'reverse',
+    },
+  },
+} satisfies Variants;
 
-function NextLink({ next, label }: Props) {
+function NextLink({next, label}: Props) {
   return (
     <Link href={`/${next}`}>
       <motion.div className="flex items-center gap-x-1" whileHover="hover">
-        <span className="font-work-sans font-medium capitalize tracking-wider">{label}</span>
+        <span className="font-work-sans font-medium capitalize tracking-wider">
+          {label}
+        </span>
         <motion.div variants={arrow}>
           <LucideArrowRight size={16} />
         </motion.div>
       </motion.div>
     </Link>
-  )
+  );
 }
 
-export default NextLink
+export default NextLink;

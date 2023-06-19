@@ -1,15 +1,15 @@
-'use client'
+'use client';
 
-import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import Image from 'next/image';
+import {useTranslations} from 'next-intl';
 
-import MainWrapper from '@/components/main-wrapper'
-import MotionWrapper from '@/components/motion-wrapper'
-import NextLink from '@/components/next-link'
-import PageTitle from '@/components/page-title'
+import MainWrapper from '@/components/main-wrapper';
+import MotionWrapper from '@/components/motion-wrapper';
+import NextLink from '@/components/next-link';
+import PageTitle from '@/components/page-title';
 
 function AboutPage() {
-  const t = useTranslations('about')
+  const t = useTranslations('about');
 
   return (
     <MainWrapper>
@@ -17,7 +17,12 @@ function AboutPage() {
         <div className="m-container flex flex-col gap-y-6">
           <PageTitle label={t('title')} />
           <div className="m-item relative h-80 overflow-hidden">
-            <Image className="object-cover" src="/programming.svg" alt="Programming" fill />
+            <Image
+              className="object-cover"
+              src="/programming.svg"
+              alt="Programming"
+              fill
+            />
           </div>
           <div className="font-work-sans m-item space-y-4 tracking-wide">
             <p>{t('paragraph.degree')}</p>
@@ -33,7 +38,7 @@ function AboutPage() {
         </div>
       </MotionWrapper>
     </MainWrapper>
-  )
+  );
 }
 
-export default AboutPage
+export default AboutPage;

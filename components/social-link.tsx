@@ -1,15 +1,15 @@
-export type SocialLinkInfo = {
-  label: string
-  href: string
-  icon: JSX.Element
+export interface SocialLinkInfo {
+  label: string;
+  href: string;
+  icon: JSX.Element;
 }
 
 interface Props {
-  info: SocialLinkInfo
+  info: SocialLinkInfo;
 }
 
-function SocialLink({ info }: Props) {
-  const { label, href, icon } = info
+function SocialLink({info}: Props) {
+  const {label, href, icon} = info;
   return (
     <a
       className="flex max-w-min items-center gap-x-2"
@@ -21,7 +21,7 @@ function SocialLink({ info }: Props) {
       {icon}
       <span className="font-work-sans tracking-wide">{label}</span>
     </a>
-  )
+  );
 }
 
-export default SocialLink
+export default SocialLink;

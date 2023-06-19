@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import {
   IconBrandCss3,
@@ -14,91 +14,91 @@ import {
   IconBrandRust,
   IconBrandTailwind,
   IconBrandTypescript,
-  IconBrandVue
-} from '@tabler/icons-react'
-import { useTranslations } from 'next-intl'
+  IconBrandVue,
+} from '@tabler/icons-react';
+import {useTranslations} from 'next-intl';
 
-import MainWrapper from '@/components/main-wrapper'
-import MotionWrapper from '@/components/motion-wrapper'
-import NextLink from '@/components/next-link'
-import PageTitle from '@/components/page-title'
-import SkillCard, { SkillInfo } from '@/components/skill-card'
+import MainWrapper from '@/components/main-wrapper';
+import MotionWrapper from '@/components/motion-wrapper';
+import NextLink from '@/components/next-link';
+import PageTitle from '@/components/page-title';
+import SkillCard, {type SkillInfo} from '@/components/skill-card';
+
+const skills: SkillInfo[] = [
+  {
+    title: 'HTML',
+    icon: <IconBrandHtml5 color="#dd4a25" size={60} />,
+    level: 'advanced',
+  },
+  {
+    title: 'CSS',
+    icon: <IconBrandCss3 color="#254bdd" size={60} />,
+    level: 'master',
+  },
+  {
+    title: 'JavaScript',
+    icon: <IconBrandJavascript color="#f4cd00" size={60} />,
+    level: 'master',
+  },
+  {
+    title: 'TypeScript',
+    icon: <IconBrandTypescript color="#2f74c0" size={60} />,
+    level: 'intermediate',
+  },
+  {
+    title: 'React',
+    icon: <IconBrandReact color="#5ed3f3" size={60} />,
+    level: 'master',
+  },
+  {
+    title: 'Next.js',
+    icon: <IconBrandNextjs size={60} />,
+    level: 'advanced',
+  },
+  {
+    title: 'Vue.js',
+    icon: <IconBrandVue color="#42d392" size={60} />,
+    level: 'newbie',
+  },
+  {
+    title: 'React Redux',
+    icon: <IconBrandRedux color="#7248b7" size={60} />,
+    level: 'advanced',
+  },
+  {
+    title: 'Tailwind CSS',
+    icon: <IconBrandTailwind color="#38bdf8" size={60} />,
+    level: 'master',
+  },
+  {
+    title: 'Firebase',
+    icon: <IconBrandFirebase color="#ffcb2f" size={60} />,
+    level: 'intermediate',
+  },
+  {
+    title: 'Mongodb',
+    icon: <IconBrandMongodb color="#10aa50" size={60} />,
+    level: 'intermediate',
+  },
+  {
+    title: 'Python',
+    icon: <IconBrandPython color="#4481b2" size={60} />,
+    level: 'master',
+  },
+  {
+    title: 'Golang',
+    icon: <IconBrandGolang color="#00a7d0" size={60} />,
+    level: 'intermediate',
+  },
+  {
+    title: 'Rust',
+    icon: <IconBrandRust color="#ec4d09" size={60} />,
+    level: 'newbie',
+  },
+];
 
 function SkillPage() {
-  const t = useTranslations('skill')
-
-  const skills: SkillInfo[] = [
-    {
-      title: 'HTML',
-      icon: <IconBrandHtml5 color="#dd4a25" size={60} />,
-      level: 'advanced'
-    },
-    {
-      title: 'CSS',
-      icon: <IconBrandCss3 color="#254bdd" size={60} />,
-      level: 'master'
-    },
-    {
-      title: 'JavaScript',
-      icon: <IconBrandJavascript color="#f4cd00" size={60} />,
-      level: 'master'
-    },
-    {
-      title: 'TypeScript',
-      icon: <IconBrandTypescript color="#2f74c0" size={60} />,
-      level: 'intermediate'
-    },
-    {
-      title: 'React',
-      icon: <IconBrandReact color="#5ed3f3" size={60} />,
-      level: 'master'
-    },
-    {
-      title: 'Next.js',
-      icon: <IconBrandNextjs size={60} />,
-      level: 'advanced'
-    },
-    {
-      title: 'Vue.js',
-      icon: <IconBrandVue color="#42d392" size={60} />,
-      level: 'newbie'
-    },
-    {
-      title: 'React Redux',
-      icon: <IconBrandRedux color="#7248b7" size={60} />,
-      level: 'advanced'
-    },
-    {
-      title: 'Tailwind CSS',
-      icon: <IconBrandTailwind color="#38bdf8" size={60} />,
-      level: 'master'
-    },
-    {
-      title: 'Firebase',
-      icon: <IconBrandFirebase color="#ffcb2f" size={60} />,
-      level: 'intermediate'
-    },
-    {
-      title: 'Mongodb',
-      icon: <IconBrandMongodb color="#10aa50" size={60} />,
-      level: 'intermediate'
-    },
-    {
-      title: 'Python',
-      icon: <IconBrandPython color="#4481b2" size={60} />,
-      level: 'master'
-    },
-    {
-      title: 'Golang',
-      icon: <IconBrandGolang color="#00a7d0" size={60} />,
-      level: 'intermediate'
-    },
-    {
-      title: 'Rust',
-      icon: <IconBrandRust color="#ec4d09" size={60} />,
-      level: 'newbie'
-    }
-  ]
+  const t = useTranslations('skill');
 
   return (
     <MainWrapper>
@@ -116,7 +116,7 @@ function SkillPage() {
         </div>
       </MotionWrapper>
     </MainWrapper>
-  )
+  );
 }
 
-export default SkillPage
+export default SkillPage;

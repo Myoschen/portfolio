@@ -1,9 +1,11 @@
+import {type ReactNode} from 'react';
+
 export const metadata = {
-  title: 'Ryan Chen | About'
+  title: 'Ryan Chen | About',
+};
+
+function Layout({children}: {children: ReactNode}) {
+  return <>{children}</>;
 }
 
-function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
-}
-
-export default Layout
+export default Layout;

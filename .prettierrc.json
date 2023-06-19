@@ -1,10 +1,6 @@
 {
-  "endOfLine": "lf",
-  "printWidth": 120,
-  "semi": false,
   "singleQuote": true,
-  "tabWidth": 2,
-  "trailingComma": "none",
+  "bracketSpacing": false,
   "importOrder": [
     "<BUILT_IN_MODULES>",
     "^(react/(.*)$)|^(react$)",
@@ -12,9 +8,10 @@
     "<THIRD_PARTY_MODULES>",
     "",
     "^@/types/(.*)$",
+    "^@/constants/(.*)$",
     "^@/utils/(.*)$",
     "^@/hooks/(.*)$",
-    "^@/contexts/(.*)$",
+    "^@/store/(.*)$",
     "^@/components/(.*)$",
     "",
     "^[./]"

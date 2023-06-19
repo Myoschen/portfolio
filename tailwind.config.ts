@@ -1,7 +1,14 @@
-import { mauve, mauveA, mauveDark, mauveDarkA, violet, violetDark } from '@radix-ui/colors'
-import { Config } from 'tailwindcss'
+import {
+  mauve,
+  mauveA,
+  mauveDark,
+  mauveDarkA,
+  violet,
+  violetDark,
+} from '@radix-ui/colors';
+import {Config} from 'tailwindcss';
 
-import { toTailwindColors } from './utils/colors'
+import {toTailwindColors} from './utils/colors';
 
 export default {
   content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
@@ -9,7 +16,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'work-sans': ['var(--ff-work-sans)', 'var(--ff-noto)', 'serif']
+        'work-sans': ['var(--ff-work-sans)', 'var(--ff-noto)', 'serif'],
       },
       colors: {
         ...toTailwindColors({
@@ -18,10 +25,10 @@ export default {
           mauveDark,
           mauveDarkA,
           violet,
-          violetDark
-        })
-      }
-    }
+          violetDark,
+        }),
+      },
+    },
   },
-  plugins: []
-} satisfies Config
+  plugins: [],
+} satisfies Config;

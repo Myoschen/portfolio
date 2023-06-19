@@ -1,16 +1,16 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
-import { AnimatePresence, motion } from 'framer-motion'
-import { LucideLanguages } from 'lucide-react'
-import { useLocale } from 'next-intl'
-import Link from 'next-intl/link'
+import {useState} from 'react';
+import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import {AnimatePresence, motion} from 'framer-motion';
+import {LucideLanguages} from 'lucide-react';
+import {useLocale} from 'next-intl';
+import Link from 'next-intl/link';
 
 function LanguageMenu() {
-  const [open, setOpen] = useState(false)
-  const locale = useLocale()
-  const nextLocale = locale === 'en' ? 'zh-tw' : 'en'
+  const [open, setOpen] = useState(false);
+  const locale = useLocale();
+  const nextLocale = locale === 'en' ? 'zh-tw' : 'en';
 
   return (
     <DropdownMenuPrimitive.Root open={open} onOpenChange={setOpen}>
@@ -34,12 +34,12 @@ function LanguageMenu() {
                 variants={{
                   close: {
                     opacity: 0,
-                    transition: { ease: 'easeIn', duration: 0.1 }
+                    transition: {ease: 'easeIn', duration: 0.1},
                   },
                   open: {
                     opacity: 1,
-                    transition: { ease: 'easeOut', duration: 0.2 }
-                  }
+                    transition: {ease: 'easeOut', duration: 0.2},
+                  },
                 }}
               >
                 <DropdownMenuPrimitive.Item asChild>
@@ -67,7 +67,7 @@ function LanguageMenu() {
         )}
       </AnimatePresence>
     </DropdownMenuPrimitive.Root>
-  )
+  );
 }
 
-export default LanguageMenu
+export default LanguageMenu;

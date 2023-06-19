@@ -1,34 +1,35 @@
-import './globals.css'
+import './globals.css';
 
-import { notFound } from 'next/navigation'
-import { NextIntlClientProvider } from 'next-intl'
+import {type ReactNode} from 'react';
+import {notFound} from 'next/navigation';
+import {NextIntlClientProvider} from 'next-intl';
 
-import { noto, work_sans } from '@/utils/fonts'
-import ThemeProvider from '@/contexts/theme'
-import CommandPalette from '@/components/command-palette'
-import Sidebar from '@/components/sidebar'
+import {noto, work_sans} from '@/utils/fonts';
+import ThemeProvider from '@/store/theme';
+import CommandPalette from '@/components/command-palette';
+import Sidebar from '@/components/sidebar';
 
 export const metadata = {
   title: 'Ryan Chen',
-  description: 'Welcome, this is my portfolio.'
-}
+  description: 'Welcome, this is my portfolio.',
+};
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'zh-tw' }]
+  return [{locale: 'en'}, {locale: 'zh-tw'}];
 }
 
-export default async function RootLayout({
+export default async function Layout({
   children,
-  params: { locale }
+  params: {locale},
 }: {
-  children: React.ReactNode
-  params: { locale: string }
+  children: ReactNode;
+  params: {locale: string};
 }) {
-  let messages
+  let messages;
   try {
-    messages = (await import(`../../messages/${locale}.json`)).default
+    messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
-    notFound()
+    notFound();
   }
 
   return (
@@ -46,5 +47,5 @@ export default async function RootLayout({
         </div>
       </body>
     </html>
-  )
+  );
 }

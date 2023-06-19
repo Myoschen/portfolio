@@ -1,55 +1,68 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { LucideBarChart2, LucideHome, LucideLayoutGrid, LucideMoon, LucideSun, LucideUser } from 'lucide-react'
-import { useTranslations } from 'next-intl'
-import { usePathname } from 'next-intl/client'
+import {useState} from 'react';
+import Image from 'next/image';
+import {motion} from 'framer-motion';
+import {
+  LucideBarChart2,
+  LucideHome,
+  LucideLayoutGrid,
+  LucideMoon,
+  LucideSun,
+  LucideUser,
+} from 'lucide-react';
+import {useTranslations} from 'next-intl';
+import {usePathname} from 'next-intl/client';
 
-import { cn } from '@/utils/classnames'
-import useTheme from '@/hooks/use-theme'
+import {cn} from '@/utils/classnames';
+import useTheme from '@/hooks/use-theme';
 
-import { CommandPaletteTrigger } from './command-palette'
-import LanguageMenu from './language-menu'
-import Link from './link'
-import Switch from './switch'
+import {CommandPaletteTrigger} from './command-palette';
+import LanguageMenu from './language-menu';
+import Link from './link';
+import Switch from './switch';
 
 function Sidebar() {
-  const [hoverNav, setHoverNav] = useState<number | null>(null)
-  const { theme, setTheme } = useTheme()
-  const t = useTranslations('sidebar')
-  const pathname = usePathname()
+  const [hoverNav, setHoverNav] = useState<number | null>(null);
+  const {theme, setTheme} = useTheme();
+  const t = useTranslations('sidebar');
+  const pathname = usePathname();
 
   const navLinks = [
     {
       label: t('home'),
       href: '/',
-      icon: <LucideHome size={16} />
+      icon: <LucideHome size={16} />,
     },
     {
       label: t('about'),
       href: '/about',
-      icon: <LucideUser size={16} />
+      icon: <LucideUser size={16} />,
     },
     {
       label: t('skill'),
       href: '/skill',
-      icon: <LucideBarChart2 size={16} />
+      icon: <LucideBarChart2 size={16} />,
     },
     {
       label: t('project'),
       href: '/project',
-      icon: <LucideLayoutGrid size={16} />
-    }
-  ]
+      icon: <LucideLayoutGrid size={16} />,
+    },
+  ];
 
   return (
     <aside className="px-6 md:w-[150px] md:shrink-0 lg:px-0">
       <div className="md:sticky md:top-20">
         <div className="-ml-2 mb-4 flex justify-start md:mb-8">
           <Link href="/">
-            <Image className="object-cover" src="/icon.png" alt="icon" width={60} height={60} />
+            <Image
+              className="object-cover"
+              src="/icon.png"
+              alt="icon"
+              width={60}
+              height={60}
+            />
           </Link>
         </div>
         <nav className="mb-4 md:mb-8">
@@ -57,13 +70,19 @@ function Sidebar() {
             className="-ml-2 flex flex-wrap items-start gap-x-px md:flex-col md:gap-x-0 md:gap-y-2"
             onMouseLeave={() => setHoverNav(null)}
           >
-            {navLinks.map(({ label, href, icon }, index) => (
-              <Link className="flex transition-colors" href={href} key={href} onMouseEnter={() => setHoverNav(index)}>
+            {navLinks.map(({label, href, icon}, index) => (
+              <Link
+                className="flex transition-colors"
+                href={href}
+                key={href}
+                onMouseEnter={() => setHoverNav(index)}
+              >
                 <span
                   className={cn(
                     'font-work-sans relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide',
                     {
-                      'hover:text-violet-11 dark:hover:text-violetDark-11': pathname !== href
+                      'hover:text-violet-11 dark:hover:text-violetDark-11':
+                        pathname !== href,
                     }
                   )}
                 >
@@ -88,12 +107,14 @@ function Sidebar() {
             leftIcon={<LucideSun size={16} />}
             rightIcon={<LucideMoon size={16} />}
             checked={theme === 'dark'}
-            onCheckedChange={(checked) => (checked ? setTheme('dark') : setTheme('light'))}
+            onCheckedChange={(checked) =>
+              checked ? setTheme('dark') : setTheme('light')
+            }
           />
         </div>
       </div>
     </aside>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;

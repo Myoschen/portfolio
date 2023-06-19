@@ -1,35 +1,35 @@
-'use client'
+'use client';
 
-import Image from 'next/image'
-import { LucideGithub, LucideMail, LucideTwitter } from 'lucide-react'
-import { useTranslations } from 'next-intl'
+import Image from 'next/image';
+import {LucideGithub, LucideMail, LucideTwitter} from 'lucide-react';
+import {useTranslations} from 'next-intl';
 
-import MainWrapper from '@/components/main-wrapper'
-import MotionWrapper from '@/components/motion-wrapper'
-import NextLink from '@/components/next-link'
-import PageTitle from '@/components/page-title'
-import SocialLink, { SocialLinkInfo } from '@/components/social-link'
+import MainWrapper from '@/components/main-wrapper';
+import MotionWrapper from '@/components/motion-wrapper';
+import NextLink from '@/components/next-link';
+import PageTitle from '@/components/page-title';
+import SocialLink, {type SocialLinkInfo} from '@/components/social-link';
 
 const socialLinks: SocialLinkInfo[] = [
   {
     label: 'Myoschen',
     href: 'https://github.com/Myoschen',
-    icon: <LucideGithub size={16} />
+    icon: <LucideGithub size={16} />,
   },
   {
     label: 'myos.chen@gmail.com',
     href: 'mailto:myos.chen@gmail.com',
-    icon: <LucideMail size={16} />
+    icon: <LucideMail size={16} />,
   },
   {
     label: 'MyosChen',
     href: 'https://twitter.com/MyosChen',
-    icon: <LucideTwitter size={16} />
-  }
-]
+    icon: <LucideTwitter size={16} />,
+  },
+];
 
 export default function HomePage() {
-  const t = useTranslations('home')
+  const t = useTranslations('home');
 
   return (
     <MainWrapper>
@@ -42,7 +42,12 @@ export default function HomePage() {
           </div>
           <div className="m-item grid gap-y-4 md:grid-cols-[180px_auto] md:gap-x-2 md:gap-y-0">
             <div className="ring-violet-7 dark:via-violetDark-7 relative aspect-square w-40 overflow-hidden rounded-full ring-4">
-              <Image className="object-cover" src="/ryan-chen.png" alt="Ryan Chen" fill />
+              <Image
+                className="object-cover"
+                src="/ryan-chen.png"
+                alt="Ryan Chen"
+                fill
+              />
             </div>
             <ul className="flex flex-wrap  justify-start gap-x-4 md:flex-col md:justify-center md:gap-y-2">
               {socialLinks.map((socialLink) => (
@@ -61,5 +66,5 @@ export default function HomePage() {
         </div>
       </MotionWrapper>
     </MainWrapper>
-  )
+  );
 }

@@ -2,7 +2,7 @@ interface Props {
   label: string;
 }
 
-function PageTitle({ label }: Props) {
+function PageTitle({label}: Props) {
   return (
     <h1 className="font-work-sans text-4xl font-bold leading-relaxed">
       {label}
