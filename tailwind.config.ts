@@ -16,7 +16,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'work-sans': ['var(--ff-work-sans)', 'var(--ff-noto)', 'serif'],
+        'work-sans': [
+          'var(--ff-work-sans)',
+          'var(--ff-sarasa-gothic-tc)',
+          'sans-serif',
+        ],
       },
       colors: {
         ...toTailwindColors({

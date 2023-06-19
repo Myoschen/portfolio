@@ -4,7 +4,7 @@ import {type ReactNode} from 'react';
 import {notFound} from 'next/navigation';
 import {NextIntlClientProvider} from 'next-intl';
 
-import {noto, work_sans} from '@/utils/fonts';
+import {sarasa, work_sans} from '@/utils/fonts';
 import ThemeProvider from '@/store/theme';
 import CommandPalette from '@/components/command-palette';
 import Sidebar from '@/components/sidebar';
@@ -33,7 +33,7 @@ export default async function Layout({
   }
 
   return (
-    <html lang={locale} className={`${work_sans.variable} ${noto.variable}`}>
+    <html lang={locale} className={`${work_sans.variable} ${sarasa.variable}`}>
       <body className="bg-mauve-1 text-mauve-12 dark:bg-mauveDark-1 dark:text-mauveDark-12">
         <div className="mb-20 mt-8 flex max-w-4xl flex-col antialiased transition-colors md:mx-auto md:mt-20 md:flex-row lg:mt-32">
           <NextIntlClientProvider locale={locale} messages={messages}>
