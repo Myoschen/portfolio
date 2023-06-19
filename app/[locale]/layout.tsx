@@ -9,13 +9,21 @@ import ThemeProvider from '@/store/theme';
 import CommandPalette from '@/components/command-palette';
 import Sidebar from '@/components/sidebar';
 
+async function getMessages(locale: string) {
+  try {
+    return (await import(`../../messages/${locale}.json`)).default;
+  } catch (error) {
+    notFound();
+  }
+}
+
 export const metadata = {
   title: 'Ryan Chen',
   description: 'Welcome, this is my portfolio.',
 };
 
-export function generateStaticParams() {
-  return [{locale: 'en'}, {locale: 'zh-tw'}];
+export async function generateStaticParams() {
+  return ['en', 'zh-tw'].map((locale) => ({locale}));
 }
 
 export default async function Layout({
@@ -25,12 +33,7 @@ export default async function Layout({
   children: ReactNode;
   params: {locale: string};
 }) {
-  let messages;
-  try {
-    messages = (await import(`../../messages/${locale}.json`)).default;
-  } catch (error) {
-    notFound();
-  }
+  const messages = await getMessages(locale);
 
   return (
     <html lang={locale} className={`${work_sans.variable} ${sarasa.variable}`}>
