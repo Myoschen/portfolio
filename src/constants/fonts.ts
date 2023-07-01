@@ -1,37 +1,13 @@
+import {Work_Sans} from 'next/font/google';
 import localFont from 'next/font/local';
 
-export const work_sans = localFont({
-  src: [
-    {
-      path: '../../public/fonts/WorkSans/WorkSans-Light.ttf',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/WorkSans/WorkSans-Regular.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/WorkSans/WorkSans-Medium.ttf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/WorkSans/WorkSans-SemiBold.ttf',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/WorkSans/WorkSans-Bold.ttf',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
+export const work_sans = Work_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   variable: '--ff-work-sans',
 });
 
-export const sarasa = localFont({
+export const sarasa_gothic = localFont({
   src: [
     {
       path: '../../public/fonts/SarasaGothic/sarasa-gothic-tc-light.ttf',

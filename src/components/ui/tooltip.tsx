@@ -27,7 +27,7 @@ function Tooltip({children, text}: Props) {
           {open && (
             <TooltipPrimitive.Portal forceMount>
               <TooltipPrimitive.Content
-                className="bg-mauveA-4 font-work-sans dark:bg-mauveDarkA-4 select-none rounded-[4px] px-4 py-2 text-sm font-medium leading-none backdrop-blur"
+                className="select-none rounded-[4px] bg-mauveA-4 px-4 py-2 font-work-sans text-sm font-medium leading-none backdrop-blur dark:bg-mauveDarkA-4"
                 side="bottom"
                 sideOffset={5}
                 asChild

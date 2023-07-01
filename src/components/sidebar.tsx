@@ -3,14 +3,6 @@
 import {useMemo} from 'react';
 import Image from 'next/image';
 import {motion} from 'framer-motion';
-import {
-  LucideBarChart2,
-  LucideHome,
-  LucideLayoutGrid,
-  LucideMoon,
-  LucideSun,
-  LucideUser,
-} from 'lucide-react';
 import {cn} from 'mxcn';
 import {useTranslations} from 'next-intl';
 import {usePathname} from 'next-intl/client';
@@ -18,8 +10,9 @@ import {usePathname} from 'next-intl/client';
 import useTheme from '@/hooks/use-theme';
 import {CommandPaletteTrigger} from '@/components/command-palette';
 import LanguageMenu from '@/components/language-menu';
-import Link from '@/components/link';
-import Switch from '@/components/switch';
+import Icon from '@/components/ui/icon';
+import Link from '@/components/ui/link';
+import Switch from '@/components/ui/switch';
 
 function Sidebar() {
   const {theme, setTheme} = useTheme();
@@ -31,22 +24,22 @@ function Sidebar() {
       {
         label: t('home'),
         href: '/',
-        icon: <LucideHome size={16} />,
+        icon: <Icon name="home" />,
       },
       {
         label: t('about'),
         href: '/about',
-        icon: <LucideUser size={16} />,
+        icon: <Icon name="profile" />,
       },
       {
         label: t('skill'),
         href: '/skill',
-        icon: <LucideBarChart2 size={16} />,
+        icon: <Icon name="chart" />,
       },
       {
         label: t('project'),
         href: '/project',
-        icon: <LucideLayoutGrid size={16} />,
+        icon: <Icon name="listDetails" />,
       },
     ],
     [t]
@@ -97,8 +90,8 @@ function Sidebar() {
           <LanguageMenu />
           <Switch
             id="dark-mode"
-            leftIcon={<LucideSun size={16} />}
-            rightIcon={<LucideMoon size={16} />}
+            leftIcon={<Icon name="sun" />}
+            rightIcon={<Icon name="moon" />}
             checked={theme === 'dark'}
             onCheckedChange={(checked) =>
               checked ? setTheme('dark') : setTheme('light')

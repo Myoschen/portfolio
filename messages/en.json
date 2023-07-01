@@ -1,4 +1,10 @@
 {
+  "title": {
+    "home": "Ryan Chen | Home",
+    "about": "Ryan Chen | About",
+    "skill": "Ryan Chen | Skill",
+    "project": "Ryan Chen | Project"
+  },
   "sidebar": {
     "home": "Home",
     "about": "About",

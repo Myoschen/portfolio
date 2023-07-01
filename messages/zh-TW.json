@@ -1,4 +1,10 @@
 {
+  "title": {
+    "home": "Ryan Chen | 主頁",
+    "about": "Ryan Chen | 關於",
+    "skill": "Ryan Chen | 技能",
+    "project": "Ryan Chen | 作品"
+  },
   "sidebar": {
     "home": "首頁",
     "about": "關於",

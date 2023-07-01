@@ -1,11 +1,21 @@
 import {type ReactNode} from 'react';
+import {createTranslator} from 'next-intl';
 
-export const metadata = {
-  title: 'Ryan Chen | Skill',
+import {getMessages} from '@/helpers/i18n';
+
+type Props = {
+  children: ReactNode;
+  params: {locale: string};
 };
 
-function Layout({children}: {children: ReactNode}) {
-  return <>{children}</>;
+export async function generateMetadata({params: {locale}}: Props) {
+  const messages = await getMessages(locale);
+  const t = createTranslator({locale, messages});
+  return {
+    title: t('title.skill'),
+  };
 }
 
-export default Layout;
+export default function Layout({children}: {children: ReactNode}) {
+  return children;
+}

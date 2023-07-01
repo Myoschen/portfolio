@@ -3,15 +3,16 @@
 import {useMemo} from 'react';
 import {useTranslations} from 'next-intl';
 
-import MainWrapper from '@/components/main-wrapper';
-import MotionWrapper from '@/components/motion-wrapper';
+import {ProjectList} from '@/types/common';
+import MainLayout from '@/components/layout/main';
+import MotionLayout from '@/components/layout/motion';
 import PageTitle from '@/components/page-title';
-import ProjectCard, {type ProjectInfo} from '@/components/project-card';
+import ProjectCard from '@/components/project-card';
 
 function ProjectPage() {
   const t = useTranslations('project');
 
-  const projects: ProjectInfo[] = useMemo(
+  const projectList: ProjectList = useMemo(
     () => [
       {
         image: '/images/project/muser.png',
@@ -59,18 +60,18 @@ function ProjectPage() {
   );
 
   return (
-    <MainWrapper>
-      <MotionWrapper>
+    <MainLayout>
+      <MotionLayout>
         <div id="m-container" className="flex flex-col gap-y-6">
           <PageTitle label={t('title')} />
           <div className="grid gap-4 md:grid-cols-2">
-            {projects.map((project) => (
-              <ProjectCard key={project.repo} info={project} />
+            {projectList.map((project, index) => (
+              <ProjectCard key={index} {...project} />
             ))}
           </div>
         </div>
-      </MotionWrapper>
-    </MainWrapper>
+      </MotionLayout>
+    </MainLayout>
   );
 }
 

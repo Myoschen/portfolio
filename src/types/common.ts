@@ -1,0 +1,24 @@
+export type SkillLevel =
+  | 'newbie'
+  | 'junior'
+  | 'intermediate'
+  | 'advanced'
+  | 'master';
+
+export interface Skill {
+  icon: JSX.Element;
+  title: string;
+  level: SkillLevel;
+}
+
+export type SkillList = Array<Skill>;
+
+export interface Project {
+  title: string;
+  description: string;
+  image: string;
+  repo: string;
+  demo?: string;
+}
+
+export type ProjectList = Array<Project>;

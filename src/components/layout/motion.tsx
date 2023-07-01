@@ -7,7 +7,7 @@ interface Props {
   children: ReactNode;
 }
 
-function MotionWrapper({children}: Props) {
+function MotionLayout({children}: Props) {
   const [scope, animate] = useAnimate<HTMLDivElement>();
 
   useEffect(() => {
@@ -22,4 +22,4 @@ function MotionWrapper({children}: Props) {
   return <div ref={scope}>{children}</div>;
 }
 
-export default MotionWrapper;
+export default MotionLayout;

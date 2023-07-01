@@ -1,9 +1,9 @@
 'use client';
 
 import {motion, type Variants} from 'framer-motion';
-import {LucideArrowRight} from 'lucide-react';
 
-import Link from './link';
+import Icon from '@/components/ui/icon';
+import Link from '@/components/ui/link';
 
 interface Props {
   next: string;
@@ -30,7 +30,7 @@ function NextLink({next, label}: Props) {
           {label}
         </span>
         <motion.div variants={arrow}>
-          <LucideArrowRight size={16} />
+          <Icon name="arrowRight" />
         </motion.div>
       </motion.div>
     </Link>

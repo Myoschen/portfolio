@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 
-import MainWrapper from '@/components/main-wrapper';
-import MotionWrapper from '@/components/motion-wrapper';
+import MainLayout from '@/components/layout/main';
+import MotionLayout from '@/components/layout/motion';
 import NextLink from '@/components/next-link';
 import PageTitle from '@/components/page-title';
 
@@ -12,8 +12,8 @@ function AboutPage() {
   const t = useTranslations('about');
 
   return (
-    <MainWrapper>
-      <MotionWrapper>
+    <MainLayout>
+      <MotionLayout>
         <div id="m-container" className="flex flex-col gap-y-6">
           <PageTitle label={t('title')} />
           <div id="m-item" className="relative h-80 overflow-hidden">
@@ -24,7 +24,7 @@ function AboutPage() {
               fill
             />
           </div>
-          <div id="m-item" className=" font-work-sans space-y-4 tracking-wide">
+          <div id="m-item" className=" space-y-4 font-work-sans tracking-wide">
             <p>{t('paragraph.degree')}</p>
             <p>{t('paragraph.programming')}</p>
             <p>{t('paragraph.cause')}</p>
@@ -36,8 +36,8 @@ function AboutPage() {
             <NextLink next="skill" label={t('next')} />
           </div>
         </div>
-      </MotionWrapper>
-    </MainWrapper>
+      </MotionLayout>
+    </MainLayout>
   );
 }
 

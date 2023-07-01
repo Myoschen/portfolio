@@ -1,28 +1,18 @@
 'use client';
 
 import Image from 'next/image';
-import {LucideCode, LucideRocket} from 'lucide-react';
 
-import Tooltip from './tooltip';
+import {Project} from '@/types/common';
+import Icon from '@/components/ui/icon';
+import Tooltip from '@/components/ui/tooltip';
 
-export type ProjectInfo = {
-  image: string;
-  title: string;
-  description: string;
-  repo: string;
-  demo?: string;
-};
+interface Props extends Project {}
 
-interface Props {
-  info: ProjectInfo;
-}
-
-function ProjectCard({info}: Props) {
-  const {image, title, description, repo, demo} = info;
+function ProjectCard({image, title, description, repo, demo}: Props) {
   return (
     <div
       id="m-item"
-      className="border-mauve-7 hover:border-violet-7 dark:border-mauveDark-7 dark:hover:border-violetDark-7 group space-y-4 rounded border-2 transition-colors"
+      className="group space-y-4 rounded border-2 border-mauve-7 transition-colors hover:border-violet-7 dark:border-mauveDark-7 dark:hover:border-violetDark-7"
     >
       <div className="relative aspect-video overflow-hidden">
         <Image
@@ -40,26 +30,26 @@ function ProjectCard({info}: Props) {
         <div className="flex items-center justify-start gap-x-1">
           <Tooltip text="Repository">
             <a
-              className="hover:bg-mauve-3 dark:hover:bg-mauveDark-3 flex items-center justify-center rounded-md p-2 transition-colors"
+              className="flex items-center justify-center rounded-md p-2 transition-colors hover:bg-mauve-3 dark:hover:bg-mauveDark-3"
               href={repo}
               target="_blank"
               rel="noreferrer noopener"
             >
-              <LucideCode size={16} />
+              <Icon name="folderCode" />
             </a>
           </Tooltip>
-          {demo ? (
+          {demo && (
             <Tooltip text="Demo">
               <a
-                className="hover:bg-mauve-3 dark:hover:bg-mauveDark-3 flex items-center justify-center rounded-md p-2 transition-colors"
+                className="flex items-center justify-center rounded-md p-2 transition-colors hover:bg-mauve-3 dark:hover:bg-mauveDark-3"
                 href={demo}
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <LucideRocket size={16} />
+                <Icon name="demo" />
               </a>
             </Tooltip>
-          ) : null}
+          )}
         </div>
       </div>
     </div>

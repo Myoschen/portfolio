@@ -15,22 +15,12 @@ import {
   useKBar,
   useMatches,
 } from 'kbar';
-import {
-  LucideBarChart2,
-  LucideCommand,
-  LucideHome,
-  LucideLanguages,
-  LucideLayoutGrid,
-  LucideMoon,
-  LucidePalette,
-  LucideSun,
-  LucideUser,
-} from 'lucide-react';
 import {cn} from 'mxcn';
 import {useTranslations} from 'next-intl';
 import {usePathname} from 'next-intl/client';
 
 import useTheme from '@/hooks/use-theme';
+import Icon from '@/components/ui/icon';
 
 interface Props {
   children: ReactNode;
@@ -48,7 +38,7 @@ function CommandPalette({children}: Props) {
         id: 'home',
         name: t('home'),
         keywords: 'home page',
-        icon: <LucideHome size={16} />,
+        icon: <Icon name="home" />,
         perform: () => router.push('/'),
         section: t('page'),
       },
@@ -56,7 +46,7 @@ function CommandPalette({children}: Props) {
         id: 'about',
         name: t('about'),
         keywords: 'about page',
-        icon: <LucideUser size={16} />,
+        icon: <Icon name="profile" />,
         perform: () => router.push('/about'),
         section: t('page'),
       },
@@ -64,7 +54,7 @@ function CommandPalette({children}: Props) {
         id: 'skill',
         name: t('skill'),
         keywords: 'skill page',
-        icon: <LucideBarChart2 size={16} />,
+        icon: <Icon name="chart" />,
         perform: () => router.push('/skill'),
         section: t('page'),
       },
@@ -72,7 +62,7 @@ function CommandPalette({children}: Props) {
         id: 'project',
         name: t('project'),
         keywords: 'project page ',
-        icon: <LucideLayoutGrid size={16} />,
+        icon: <Icon name="listDetails" />,
         perform: () => router.push('/project'),
         section: t('page'),
       },
@@ -80,7 +70,7 @@ function CommandPalette({children}: Props) {
         id: 'theme',
         name: t('toggle-theme'),
         keywords: 'toggle theme 切換 主題',
-        icon: <LucidePalette size={16} />,
+        icon: <Icon name="palette" />,
         section: t('operation'),
       },
       {
@@ -88,7 +78,7 @@ function CommandPalette({children}: Props) {
         name: t('light-theme'),
         keywords: 'light theme 明亮 主題',
         perform: () => setTheme('light'),
-        icon: <LucideSun size={16} />,
+        icon: <Icon name="sun" />,
         parent: 'theme',
         section: t('operation'),
       },
@@ -97,7 +87,7 @@ function CommandPalette({children}: Props) {
         name: t('dark-theme'),
         keywords: 'dark theme 暗黑 主題',
         perform: () => setTheme('dark'),
-        icon: <LucideMoon size={16} />,
+        icon: <Icon name="moon" />,
         parent: 'theme',
         section: t('operation'),
       },
@@ -105,14 +95,14 @@ function CommandPalette({children}: Props) {
         id: 'language',
         name: t('toggle-language'),
         keywords: 'change language 切換 語言 語系',
-        icon: <LucideLanguages size={16} />,
+        icon: <Icon name="language" />,
         section: t('operation'),
       },
       {
         id: 'en',
         name: t('en'),
         keywords: 'English 英文',
-        icon: <LucideLanguages size={16} />,
+        icon: <Icon name="language" />,
         parent: 'language',
         section: t('operation'),
         perform: () => router.replace(`/en${pathname}`),
@@ -121,7 +111,7 @@ function CommandPalette({children}: Props) {
         id: 'zh-tw',
         name: t('zh-tw'),
         keywords: 'Traditional Chinese 繁體中文',
-        icon: <LucideLanguages size={16} />,
+        icon: <Icon name="language" />,
         parent: 'language',
         section: t('operation'),
         perform: () => router.replace(`/zh-TW${pathname}`),
@@ -246,7 +236,7 @@ function CommandPaletteTrigger() {
       onClick={query.toggle}
       aria-label="trigger command palette"
     >
-      <LucideCommand size={16} />
+      <Icon name="command" />
       <span className="font-work-sans font-medium tracking-wide">
         {t('trigger')}
       </span>
