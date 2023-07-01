@@ -132,9 +132,9 @@ function CommandPalette({children}: Props) {
   return (
     <KBarProvider actions={actions}>
       <KBarPortal>
-        <KBarPositioner className="z-20 flex items-center bg-mauveA-2 p-2 backdrop-blur-sm dark:bg-mauveDarkA-2">
-          <KBarAnimator className="box-content w-full max-w-xl overflow-hidden rounded-md bg-mauve-4 p-2 shadow dark:bg-mauveDark-4">
-            <KBarSearch className="h-16 w-full bg-transparent px-4 font-work-sans outline-none" />
+        <KBarPositioner className="bg-mauveA-2 dark:bg-mauveDarkA-2 z-20 flex items-center p-2 backdrop-blur-sm">
+          <KBarAnimator className="bg-mauve-4 dark:bg-mauveDark-4 box-content w-full max-w-xl overflow-hidden rounded-md p-2 shadow">
+            <KBarSearch className="font-work-sans h-16 w-full bg-transparent px-4 outline-none" />
             <SearchResults />
           </KBarAnimator>
         </KBarPositioner>
@@ -153,7 +153,7 @@ function SearchResults() {
       items={results}
       onRender={({item, active}) =>
         typeof item === 'string' ? (
-          <div className="px-4 pb-2 pt-4 font-work-sans font-medium">
+          <div className="font-work-sans px-4 pb-2 pt-4 font-medium">
             {item}
           </div>
         ) : (
@@ -198,7 +198,7 @@ const ResultItem = forwardRef<HTMLDivElement, ResultItemProps>(
       >
         <div className="flex items-center gap-2">
           {action.icon && action.icon}
-          <div className="flex flex-col font-work-sans font-medium tracking-wide">
+          <div className="font-work-sans flex flex-col font-medium tracking-wide">
             <div className="line-clamp-1">
               {ancestors.length > 0 &&
                 ancestors.map((ancestor) => (

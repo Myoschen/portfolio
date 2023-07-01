@@ -24,7 +24,7 @@ function AboutPage() {
               fill
             />
           </div>
-          <div id="m-item" className=" space-y-4 font-work-sans tracking-wide">
+          <div id="m-item" className=" font-work-sans space-y-4 tracking-wide">
             <p>{t('paragraph.degree')}</p>
             <p>{t('paragraph.programming')}</p>
             <p>{t('paragraph.cause')}</p>

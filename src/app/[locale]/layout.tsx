@@ -9,7 +9,7 @@ import Sidebar from '@/components/sidebar';
 
 async function getMessages(locale: string) {
   try {
-    return (await import(`../../messages/${locale}.json`)).default;
+    return (await import(`../../../messages/${locale}.json`)).default;
   } catch (error) {
     notFound();
   }

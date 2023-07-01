@@ -8,10 +8,10 @@ import {
 } from '@radix-ui/colors';
 import {Config} from 'tailwindcss';
 
-import {toTailwindColors} from './utils/colors';
+import {toTailwindColors} from './src/utils/colors';
 
 export default {
-  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
+  content: ['./src/**/*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {

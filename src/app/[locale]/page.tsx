@@ -44,7 +44,7 @@ export default function HomePage() {
             id="m-item"
             className="grid gap-y-4 md:grid-cols-[180px_auto] md:gap-x-2 md:gap-y-0"
           >
-            <div className="relative aspect-square w-40 overflow-hidden rounded-full ring-4 ring-violet-7 dark:via-violetDark-7">
+            <div className="ring-violet-7 dark:via-violetDark-7 relative aspect-square w-40 overflow-hidden rounded-full ring-4">
               <Image
                 className="object-cover"
                 src="/images/ryan-chen.png"

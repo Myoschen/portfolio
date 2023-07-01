@@ -22,7 +22,7 @@ function ProjectCard({info}: Props) {
   return (
     <div
       id="m-item"
-      className="group space-y-4 rounded border-2 border-mauve-7 transition-colors hover:border-violet-7 dark:border-mauveDark-7 dark:hover:border-violetDark-7"
+      className="border-mauve-7 hover:border-violet-7 dark:border-mauveDark-7 dark:hover:border-violetDark-7 group space-y-4 rounded border-2 transition-colors"
     >
       <div className="relative aspect-video overflow-hidden">
         <Image
@@ -40,7 +40,7 @@ function ProjectCard({info}: Props) {
         <div className="flex items-center justify-start gap-x-1">
           <Tooltip text="Repository">
             <a
-              className="flex items-center justify-center rounded-md p-2 transition-colors hover:bg-mauve-3 dark:hover:bg-mauveDark-3"
+              className="hover:bg-mauve-3 dark:hover:bg-mauveDark-3 flex items-center justify-center rounded-md p-2 transition-colors"
               href={repo}
               target="_blank"
               rel="noreferrer noopener"
@@ -51,7 +51,7 @@ function ProjectCard({info}: Props) {
           {demo ? (
             <Tooltip text="Demo">
               <a
-                className="flex items-center justify-center rounded-md p-2 transition-colors hover:bg-mauve-3 dark:hover:bg-mauveDark-3"
+                className="hover:bg-mauve-3 dark:hover:bg-mauveDark-3 flex items-center justify-center rounded-md p-2 transition-colors"
                 href={demo}
                 target="_blank"
                 rel="noreferrer noopener"

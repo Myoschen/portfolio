@@ -16,11 +16,10 @@ import {usePathname} from 'next-intl/client';
 
 import {cn} from '@/utils/classnames';
 import useTheme from '@/hooks/use-theme';
-
-import {CommandPaletteTrigger} from './command-palette';
-import LanguageMenu from './language-menu';
-import Link from './link';
-import Switch from './switch';
+import {CommandPaletteTrigger} from '@/components/command-palette';
+import LanguageMenu from '@/components/language-menu';
+import Link from '@/components/link';
+import Switch from '@/components/switch';
 
 function Sidebar() {
   const {theme, setTheme} = useTheme();
@@ -84,7 +83,7 @@ function Sidebar() {
                   {label}
                   {pathname === href ? (
                     <motion.div
-                      className="absolute inset-0 z-[-1] rounded-md bg-mauve-4 dark:bg-mauveDark-4"
+                      className="bg-mauve-4 dark:bg-mauveDark-4 absolute inset-0 z-[-1] rounded-md"
                       layoutId="active-pill"
                     />
                   ) : null}
