@@ -2,7 +2,7 @@ import {type ReactNode} from 'react';
 import {notFound} from 'next/navigation';
 import {NextIntlClientProvider} from 'next-intl';
 
-import {sarasa, work_sans} from '@/utils/fonts';
+import {sarasa, work_sans} from '@/constants/fonts';
 import ThemeProvider from '@/store/theme';
 import CommandPalette from '@/components/command-palette';
 import Sidebar from '@/components/sidebar';

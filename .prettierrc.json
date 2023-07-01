@@ -9,7 +9,7 @@
     "",
     "^@/types/(.*)$",
     "^@/constants/(.*)$",
-    "^@/utils/(.*)$",
+    "^@/helpers/(.*)$",
     "^@/hooks/(.*)$",
     "^@/store/(.*)$",
     "^@/components/(.*)$",
