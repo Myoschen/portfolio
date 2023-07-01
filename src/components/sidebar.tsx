@@ -11,10 +11,10 @@ import {
   LucideSun,
   LucideUser,
 } from 'lucide-react';
+import {cn} from 'mxcn';
 import {useTranslations} from 'next-intl';
 import {usePathname} from 'next-intl/client';
 
-import {cn} from '@/utils/classnames';
 import useTheme from '@/hooks/use-theme';
 import {CommandPaletteTrigger} from '@/components/command-palette';
 import LanguageMenu from '@/components/language-menu';
@@ -83,7 +83,7 @@ function Sidebar() {
                   {label}
                   {pathname === href ? (
                     <motion.div
-                      className="bg-mauve-4 dark:bg-mauveDark-4 absolute inset-0 z-[-1] rounded-md"
+                      className="absolute inset-0 z-[-1] rounded-md bg-mauve-4 dark:bg-mauveDark-4"
                       layoutId="active-pill"
                     />
                   ) : null}
