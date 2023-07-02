@@ -22,3 +22,20 @@ export interface Project {
 }
 
 export type ProjectList = Array<Project>;
+
+export interface SocialLink {
+  icon: JSX.Element;
+  label: string;
+  href: string;
+}
+
+export type SocialLinkList = Array<SocialLink>;
+
+export interface Action {
+  id: string;
+  icon: JSX.Element;
+  title: string;
+  perform: () => void;
+}
+
+export type ActionList = Array<Action>;

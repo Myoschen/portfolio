@@ -13,17 +13,21 @@
   },
   "command": {
     "trigger": "Command",
-    "action": {
+    "placeholder": "Type a command or search...",
+    "empty": "No results found.",
+    "group": {
       "page": "Page",
+      "toggle-theme": "Toggle theme",
+      "toggle-language": "Toggle language"
+    },
+    "action": {
       "home": "Home",
       "about": "About",
       "skill": "Skill",
       "project": "Project",
       "operation": "Operation",
-      "toggle-theme": "Toggle theme",
       "light-theme": "Light theme",
       "dark-theme": "Dark theme",
-      "toggle-language": "Toggle language",
       "en": "English",
       "zh-tw": "Traditional Chinese"
     }

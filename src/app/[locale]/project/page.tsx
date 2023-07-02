@@ -3,7 +3,7 @@
 import {useMemo} from 'react';
 import {useTranslations} from 'next-intl';
 
-import {ProjectList} from '@/types/common';
+import type {ProjectList} from '@/types/common';
 import MainLayout from '@/components/layout/main';
 import MotionLayout from '@/components/layout/motion';
 import PageTitle from '@/components/page-title';

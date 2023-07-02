@@ -4,7 +4,6 @@ import {createTranslator, NextIntlClientProvider} from 'next-intl';
 import {sarasa_gothic, work_sans} from '@/constants/fonts';
 import {getMessages} from '@/helpers/i18n';
 import ThemeProvider from '@/store/theme';
-import CommandPalette from '@/components/command-palette';
 import Sidebar from '@/components/sidebar';
 
 type Props = {
@@ -38,14 +37,12 @@ export default async function Layout({
       lang={locale}
       className={`${work_sans.variable} ${sarasa_gothic.variable}`}
     >
-      <body className="bg-mauve-1 text-mauve-12 dark:bg-mauveDark-1 dark:text-mauveDark-12">
-        <div className="mb-20 mt-8 flex max-w-4xl flex-col antialiased transition-colors md:mx-auto md:mt-20 md:flex-row lg:mt-32">
+      <body className="bg-mauve-1 font-main text-mauve-12 dark:bg-mauve-dark-1 dark:text-mauve-dark-12">
+        <div className="flex max-w-4xl flex-col pb-20 pt-8 antialiased transition-colors md:mx-auto md:flex-row md:pt-20 lg:pt-32">
           <NextIntlClientProvider locale={locale} messages={messages}>
             <ThemeProvider>
-              <CommandPalette>
-                <Sidebar />
-                {children}
-              </CommandPalette>
+              <Sidebar />
+              {children}
             </ThemeProvider>
           </NextIntlClientProvider>
         </div>

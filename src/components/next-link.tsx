@@ -26,9 +26,7 @@ function NextLink({next, label}: Props) {
   return (
     <Link href={`/${next}`}>
       <motion.div className="flex items-center gap-x-1" whileHover="hover">
-        <span className="font-work-sans font-medium capitalize tracking-wider">
-          {label}
-        </span>
+        <span className="font-medium capitalize tracking-wider">{label}</span>
         <motion.div variants={arrow}>
           <Icon name="arrowRight" />
         </motion.div>

@@ -13,17 +13,21 @@
   },
   "command": {
     "trigger": "指令",
-    "action": {
+    "placeholder": "輸入命令或搜索...",
+    "empty": "未找到相關內容。",
+    "group": {
       "page": "頁面",
+      "toggle-theme": "切換主題",
+      "toggle-language": "切換語言"
+    },
+    "action": {
       "home": "首頁",
       "about": "關於",
       "skill": "技能",
       "project": "作品",
       "operation": "操作",
-      "toggle-theme": "切換主題",
       "light-theme": "明亮主題",
       "dark-theme": "暗黑主題",
-      "toggle-language": "切換語言",
       "en": "英文",
       "zh-tw": "繁體中文"
     }

@@ -1,27 +1,19 @@
-export interface SocialLinkInfo {
-  label: string;
-  href: string;
-  icon: JSX.Element;
-}
+import type {SocialLink} from '@/types/common';
 
-interface Props {
-  info: SocialLinkInfo;
-}
+interface Props extends SocialLink {}
 
-function SocialLink({info}: Props) {
-  const {label, href, icon} = info;
+export default function SocialLink({label, href, icon}: Props) {
   return (
     <a
-      className="flex max-w-min items-center gap-x-2"
+      className="flex max-w-min items-center gap-x-2 transition-all will-change-transform hover:-translate-y-1 hover:text-violet-9 dark:hover:text-violet-dark-9"
       href={href}
       target="_blank"
       // https://pjchender.blogspot.com/2020/05/relnoreferrer-targetblank.html
       rel="noreferrer noopener"
     >
       {icon}
-      <span className="font-work-sans tracking-wide">{label}</span>
+      <span className="tracking-wide">{label}</span>
     </a>
   );
 }
-
-export default SocialLink;
+//

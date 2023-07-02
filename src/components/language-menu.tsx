@@ -20,7 +20,7 @@ function LanguageMenu() {
 
   return (
     <DropdownMenuPrimitive.Root open={open} onOpenChange={setOpen}>
-      <DropdownMenuPrimitive.Trigger className="inline-flex items-center gap-x-2 font-work-sans font-medium tracking-wide outline-none">
+      <DropdownMenuPrimitive.Trigger className="inline-flex items-center gap-x-2 font-medium tracking-wide outline-none">
         <Icon name="language" />
         {nextLocale === 'en' ? '語言' : 'Language'}
       </DropdownMenuPrimitive.Trigger>
@@ -28,8 +28,7 @@ function LanguageMenu() {
         {open && (
           <DropdownMenuPrimitive.Portal forceMount>
             <DropdownMenuPrimitive.Content
-              className="min-w-[100px] rounded-md bg-mauveA-4 p-1 backdrop-blur dark:bg-mauveDarkA-4"
-              sideOffset={5}
+              className="rounded bg-mauve-alpha-6 p-1 backdrop-blur dark:bg-mauve-dark-alpha-6"
               align="start"
               asChild
             >
@@ -50,7 +49,7 @@ function LanguageMenu() {
               >
                 <DropdownMenuPrimitive.Item asChild>
                   <Link
-                    className="relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] font-work-sans text-sm font-medium leading-none tracking-wide outline-none data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violetDark-8"
+                    className="relative flex cursor-default select-none items-center justify-center rounded px-2 py-1 text-sm font-medium leading-none tracking-wide outline-none data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violet-dark-8"
                     href={pathname}
                     locale="zh-TW"
                     replace={true}
@@ -60,7 +59,7 @@ function LanguageMenu() {
                 </DropdownMenuPrimitive.Item>
                 <DropdownMenuPrimitive.Item asChild>
                   <Link
-                    className="relative flex h-6 cursor-default select-none items-center justify-center rounded-[3px] font-work-sans text-sm font-medium leading-none tracking-wide outline-none data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violetDark-8"
+                    className="relative flex cursor-default select-none items-center justify-center rounded px-2 py-1 text-sm font-medium leading-none tracking-wide outline-none data-[highlighted]:bg-violet-8 dark:data-[highlighted]:bg-violet-dark-8"
                     href={pathname}
                     locale="en"
                     replace={true}
@@ -68,7 +67,7 @@ function LanguageMenu() {
                     English
                   </Link>
                 </DropdownMenuPrimitive.Item>
-                <DropdownMenuPrimitive.Arrow className="fill-mauveA-4 dark:fill-mauveDarkA-4" />
+                <DropdownMenuPrimitive.Arrow className="fill-mauve-alpha-6 dark:fill-mauve-dark-alpha-6" />
               </motion.div>
             </DropdownMenuPrimitive.Content>
           </DropdownMenuPrimitive.Portal>

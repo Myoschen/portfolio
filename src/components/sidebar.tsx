@@ -8,13 +8,13 @@ import {useTranslations} from 'next-intl';
 import {usePathname} from 'next-intl/client';
 
 import useTheme from '@/hooks/use-theme';
-import {CommandPaletteTrigger} from '@/components/command-palette';
+import CommandMenu from '@/components/cmdk';
 import LanguageMenu from '@/components/language-menu';
 import Icon from '@/components/ui/icon';
 import Link from '@/components/ui/link';
 import Switch from '@/components/ui/switch';
 
-function Sidebar() {
+export default function Sidebar() {
   const {theme, setTheme} = useTheme();
   const t = useTranslations('sidebar');
   const pathname = usePathname();
@@ -50,13 +50,7 @@ function Sidebar() {
       <div className="md:sticky md:top-20">
         <div className="-ml-2 mb-4 flex justify-start md:mb-8">
           <Link href="/">
-            <Image
-              className="object-cover"
-              src="/images/icon.png"
-              alt="icon"
-              width={60}
-              height={60}
-            />
+            <Image src="/images/icon.png" alt="icon" width={60} height={60} />
           </Link>
         </div>
         <nav className="mb-4 md:mb-8">
@@ -65,18 +59,16 @@ function Sidebar() {
               <Link className="flex transition-colors" href={href} key={href}>
                 <span
                   className={cn(
-                    'font-work-sans relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide',
-                    {
-                      'hover:text-violet-11 dark:hover:text-violetDark-11':
-                        pathname !== href,
-                    }
+                    'relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide',
+                    'hover:text-violet-11 dark:hover:text-violet-dark-11' &&
+                      pathname !== href
                   )}
                 >
                   {icon}
                   {label}
                   {pathname === href ? (
                     <motion.div
-                      className="absolute inset-0 z-[-1] rounded-md bg-mauve-4 dark:bg-mauveDark-4"
+                      className="absolute inset-0 z-[-1] rounded-md bg-mauve-4 dark:bg-mauve-dark-4"
                       layoutId="active-pill"
                     />
                   ) : null}
@@ -86,7 +78,7 @@ function Sidebar() {
           </div>
         </nav>
         <div className="inline-flex items-center gap-x-4 md:flex-col md:items-start md:gap-y-4">
-          <CommandPaletteTrigger />
+          <CommandMenu />
           <LanguageMenu />
           <Switch
             id="dark-mode"
@@ -102,5 +94,3 @@ function Sidebar() {
     </aside>
   );
 }
-
-export default Sidebar;

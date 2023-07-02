@@ -2,7 +2,7 @@
 
 import {useTranslations} from 'next-intl';
 
-import {SkillList} from '@/types/common';
+import type {SkillList} from '@/types/common';
 import MainLayout from '@/components/layout/main';
 import MotionLayout from '@/components/layout/motion';
 import NextLink from '@/components/next-link';
