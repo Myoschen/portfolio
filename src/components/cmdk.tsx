@@ -121,8 +121,8 @@ export default function CommandMenu() {
         <span className="font-medium tracking-wide">{t('trigger')}</span>
       </button>
       <Command.Dialog
-        contentClassName="absolute top-40 left-1/2 -translate-x-1/2 overflow-hidden p-0 flex w-full flex-col max-w-xs sm:max-w-md md:max-w-lg rounded-md bg-mauve-4 dark:bg-mauve-dark-4 text-mauve-12 dark:text-mauve-dark-12"
-        overlayClassName="absolute inset-0 bg-black/30 backdrop:blur"
+        contentClassName="fixed top-40 left-1/2 -translate-x-1/2 overflow-hidden p-0 flex w-full flex-col max-w-xs sm:max-w-md md:max-w-lg rounded-md bg-mauve-3 dark:bg-mauve-dark-3 text-mauve-12 dark:text-mauve-dark-12"
+        overlayClassName="fixed inset-0 bg-black/30 backdrop:blur"
         open={open}
         onOpenChange={setOpen}
       >
@@ -206,7 +206,7 @@ const CommandGroup = forwardRef<
   <Command.Group
     ref={ref}
     className={cn(
-      'overflow-hidden p-1 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium',
+      'overflow-hidden p-1 text-mauve-11 dark:text-mauve-11 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium',
       className
     )}
     {...props}
@@ -222,7 +222,7 @@ const CommandItem = forwardRef<
   <Command.Item
     ref={ref}
     className={cn(
-      'flex cursor-default select-none items-center gap-x-2 rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-mauve-8 dark:aria-selected:bg-mauve-dark-8',
+      'flex cursor-default select-none items-center gap-x-2 rounded-sm px-2 py-1.5 text-sm text-mauve-12 outline-none aria-selected:bg-mauve-5 aria-selected:text-violet-10 dark:text-mauve-dark-12 dark:aria-selected:bg-mauve-dark-5 dark:aria-selected:text-violet-dark-10',
       className
     )}
     {...props}
