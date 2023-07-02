@@ -65,5 +65,10 @@
       "social-media": "這是一個社群媒體應用，使用 React.js、Firebase 及 Chakra UI 所製作的。",
       "github-explorer": "這是一個 Github 儲存庫探索應用，使用 React, axios, Tailwind CSS, Github Search API 所製作的。"
     }
+  },
+  "menu": {
+    "language": "Language",
+    "zh-tw": "繁體中文",
+    "en": "English"
   }
 }

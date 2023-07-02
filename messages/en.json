@@ -65,5 +65,10 @@
       "social-media": "This is a social media built with React, Firebase and Chakra UI.",
       "github-explorer": "This is a github repository explorer built with React, axios, Tailwind CSS, Github Search API."
     }
+  },
+  "menu": {
+    "language": "Language",
+    "zh-tw": "繁體中文",
+    "en": "English"
   }
 }
