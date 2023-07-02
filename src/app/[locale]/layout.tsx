@@ -37,7 +37,7 @@ export default async function Layout({
       lang={locale}
       className={`${work_sans.variable} ${sarasa_gothic.variable}`}
     >
-      <body className="bg-mauve-1 font-main text-mauve-12 dark:bg-mauve-dark-1 dark:text-mauve-dark-12">
+      <body className="min-h-screen bg-mauve-1 font-main text-mauve-12 dark:bg-mauve-dark-1 dark:text-mauve-dark-12">
         <div className="flex max-w-4xl flex-col pb-20 pt-8 antialiased transition-colors md:mx-auto md:flex-row md:pt-20 lg:pt-32">
           <NextIntlClientProvider locale={locale} messages={messages}>
             <ThemeProvider>

@@ -77,7 +77,7 @@ export default function Sidebar() {
             ))}
           </div>
         </nav>
-        <div className="inline-flex items-center gap-x-4 md:flex-col md:items-start md:gap-y-4">
+        <div className="inline-flex flex-wrap items-center gap-x-4 gap-y-2 md:flex-col md:items-start md:gap-y-4">
           <CommandMenu />
           <LanguageMenu />
           <Switch
