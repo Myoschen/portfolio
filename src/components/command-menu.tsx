@@ -1,24 +1,21 @@
 'use client';
 
-import {
-  forwardRef,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-  type ComponentPropsWithoutRef,
-  type ElementRef,
-} from 'react';
+import {useCallback, useEffect, useMemo, useState} from 'react';
 import {useRouter} from 'next/navigation';
-// https://github.com/pacocoursey/cmdk/issues/129
-import {Command} from 'carloslfu-cmdk-internal';
-import {cn} from 'mxcn';
 import {useTranslations} from 'next-intl';
 import {usePathname} from 'next-intl/client';
 
 import type {ActionList} from '@/types/common';
 import useTheme from '@/hooks/use-theme';
 import Icon from '@/components/ui/icon';
+import {
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from '@/components/ui/command';
 
 export default function CommandMenu() {
   const [open, setOpen] = useState(false);
@@ -32,25 +29,25 @@ export default function CommandMenu() {
       {
         id: 'home-page',
         title: t('action.home'),
-        icon: <Icon name="home" />,
+        icon: <Icon name="home" className="mr-2" />,
         perform: () => router.push('/'),
       },
       {
         id: 'about-page',
         title: t('action.about'),
-        icon: <Icon name="profile" />,
+        icon: <Icon name="profile" className="mr-2" />,
         perform: () => router.push('/about'),
       },
       {
         id: 'skill-page',
         title: t('action.skill'),
-        icon: <Icon name="chart" />,
+        icon: <Icon name="chart" className="mr-2" />,
         perform: () => router.push('/skill'),
       },
       {
         id: 'project-page',
         title: t('action.project'),
-        icon: <Icon name="listDetails" />,
+        icon: <Icon name="list-details" className="mr-2" />,
         perform: () => router.push('/project'),
       },
     ];
@@ -62,16 +59,16 @@ export default function CommandMenu() {
         id: 'light-theme',
         title: t('action.light-theme'),
         perform: () => setTheme('light'),
-        icon: <Icon name="sun" />,
+        icon: <Icon name="sun" className="mr-2" />,
       },
       {
         id: 'dark-theme',
         title: t('action.dark-theme'),
         perform: () => setTheme('dark'),
-        icon: <Icon name="moon" />,
+        icon: <Icon name="moon" className="mr-2" />,
       },
     ],
-    [setTheme, t]
+    [setTheme, t],
   );
 
   const languageActions: ActionList = useMemo(
@@ -79,17 +76,17 @@ export default function CommandMenu() {
       {
         id: 'en',
         title: t('action.en'),
-        icon: <Icon name="language" />,
+        icon: <Icon name="language" className="mr-2" />,
         perform: () => router.replace(`/en${pathname}`),
       },
       {
         id: 'zh-tw',
         title: t('action.zh-tw'),
-        icon: <Icon name="language" />,
+        icon: <Icon name="language" className="mr-2" />,
         perform: () => router.replace(`/zh-TW${pathname}`),
       },
     ],
-    [router, pathname, t]
+    [router, pathname, t],
   );
 
   useEffect(() => {
@@ -108,7 +105,7 @@ export default function CommandMenu() {
       setOpen(false);
       cb();
     },
-    []
+    [],
   );
 
   return (
@@ -120,12 +117,7 @@ export default function CommandMenu() {
         <Icon name="command" />
         <span className="font-medium tracking-wide">{t('trigger')}</span>
       </button>
-      <Command.Dialog
-        contentClassName="fixed top-40 left-1/2 -translate-x-1/2 overflow-hidden p-0 flex w-full flex-col max-w-xs sm:max-w-md md:max-w-lg rounded-md bg-mauve-3 dark:bg-mauve-dark-3 text-mauve-12 dark:text-mauve-dark-12"
-        overlayClassName="fixed inset-0 bg-black/30 backdrop:blur"
-        open={open}
-        onOpenChange={setOpen}
-      >
+      <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder={t('placeholder')} />
         <CommandList>
           <CommandEmpty>{t('empty')}</CommandEmpty>
@@ -154,79 +146,7 @@ export default function CommandMenu() {
             ))}
           </CommandGroup>
         </CommandList>
-      </Command.Dialog>
+      </CommandDialog>
     </>
   );
 }
-
-const CommandInput = forwardRef<
-  ElementRef<typeof Command.Input>,
-  ComponentPropsWithoutRef<typeof Command.Input>
->(({className, ...props}, ref) => (
-  <div className="flex items-center gap-x-2 border-b border-mauve-alpha-6 px-3 dark:border-mauve-dark-alpha-6">
-    <Icon name="input" />
-    <Command.Input
-      className={cn(
-        'flex h-10 w-full bg-transparent py-3 text-sm outline-none',
-        className
-      )}
-      {...props}
-    />
-  </div>
-));
-
-CommandInput.displayName = Command.Input.displayName;
-
-const CommandList = forwardRef<
-  ElementRef<typeof Command.List>,
-  ComponentPropsWithoutRef<typeof Command.List>
->(({className, ...props}, ref) => (
-  <Command.List
-    ref={ref}
-    className={cn('max-h-[300px] overflow-y-auto overflow-x-hidden', className)}
-    {...props}
-  />
-));
-
-CommandList.displayName = Command.List.displayName;
-
-const CommandEmpty = forwardRef<
-  ElementRef<typeof Command.Empty>,
-  ComponentPropsWithoutRef<typeof Command.Empty>
->((props, ref) => (
-  <Command.Empty ref={ref} className="py-6 text-center text-sm" {...props} />
-));
-
-CommandEmpty.displayName = Command.Empty.displayName;
-
-const CommandGroup = forwardRef<
-  ElementRef<typeof Command.Group>,
-  ComponentPropsWithoutRef<typeof Command.Group>
->(({className, ...props}, ref) => (
-  <Command.Group
-    ref={ref}
-    className={cn(
-      'overflow-hidden p-1 text-mauve-11 dark:text-mauve-11 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium',
-      className
-    )}
-    {...props}
-  />
-));
-
-CommandGroup.displayName = Command.Group.displayName;
-
-const CommandItem = forwardRef<
-  ElementRef<typeof Command.Item>,
-  ComponentPropsWithoutRef<typeof Command.Item>
->(({className, ...props}, ref) => (
-  <Command.Item
-    ref={ref}
-    className={cn(
-      'flex cursor-default select-none items-center gap-x-2 rounded-sm px-2 py-1.5 text-sm text-mauve-12 outline-none aria-selected:bg-mauve-5 aria-selected:text-violet-10 dark:text-mauve-dark-12 dark:aria-selected:bg-mauve-dark-5 dark:aria-selected:text-violet-dark-10',
-      className
-    )}
-    {...props}
-  />
-));
-
-CommandItem.displayName = Command.Item.displayName;
