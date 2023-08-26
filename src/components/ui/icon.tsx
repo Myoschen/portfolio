@@ -29,25 +29,26 @@ import {
   IconSearch,
   IconSun,
   IconUserCircle,
+  IconX,
   type TablerIconsProps,
 } from '@tabler/icons-react';
 
 const IconMap = {
-  arrowRight: IconArrowRight,
+  'arrow-right': IconArrowRight,
   chart: IconChartBar,
   command: IconCommand,
   css: IconBrandCss3,
   demo: IconRocket,
   firebase: IconBrandFirebase,
-  folderCode: IconFolderCode,
+  'folder-code': IconFolderCode,
   github: IconBrandGithub,
   golang: IconBrandGolang,
   home: IconHome,
   html: IconBrandHtml5,
-  input: IconSearch,
+  search: IconSearch,
   javascript: IconBrandJavascript,
   language: IconLanguage,
-  listDetails: IconListDetails,
+  'list-details': IconListDetails,
   mail: IconMail,
   mongodb: IconBrandMongodb,
   moon: IconMoon,
@@ -63,6 +64,7 @@ const IconMap = {
   twitter: IconBrandTwitter,
   typescript: IconBrandTypescript,
   vue: IconBrandVue,
+  close: IconX,
 };
 
 interface Props extends TablerIconsProps {
