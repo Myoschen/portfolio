@@ -33,7 +33,7 @@ function ProjectCard({image, title, description, repo, demo}: Props) {
               target="_blank"
               rel="noreferrer noopener"
             >
-              <Icon name="folderCode" />
+              <Icon name="folder-code" />
             </a>
           </Tooltip>
           {demo && (
