@@ -13,27 +13,27 @@ import Icon from '@/components/ui/icon';
 const skillList: SkillList = [
   {
     title: 'HTML',
-    icon: <Icon name="html" color="#dd4a25" size={60} />,
-    level: 'advanced',
+    icon: <Icon name="html" size={60} />,
+    level: 'master',
   },
   {
     title: 'CSS',
-    icon: <Icon name="css" color="#254bdd" size={60} />,
+    icon: <Icon name="css" size={60} />,
     level: 'master',
   },
   {
     title: 'JavaScript',
-    icon: <Icon name="javascript" color="#f4cd00" size={60} />,
+    icon: <Icon name="javascript" size={60} />,
     level: 'master',
   },
   {
     title: 'TypeScript',
-    icon: <Icon name="typescript" color="#2f74c0" size={60} />,
-    level: 'intermediate',
+    icon: <Icon name="typescript" size={60} />,
+    level: 'advanced',
   },
   {
     title: 'React',
-    icon: <Icon name="react" color="#5ed3f3" size={60} />,
+    icon: <Icon name="react" size={60} />,
     level: 'master',
   },
   {
@@ -43,42 +43,42 @@ const skillList: SkillList = [
   },
   {
     title: 'Vue',
-    icon: <Icon name="vue" color="#42d392" size={60} />,
+    icon: <Icon name="vue" size={60} />,
     level: 'newbie',
   },
   {
     title: 'React Redux',
-    icon: <Icon name="redux" color="#7248b7" size={60} />,
+    icon: <Icon name="redux" size={60} />,
     level: 'advanced',
   },
   {
     title: 'Tailwind CSS',
-    icon: <Icon name="tailwindcss" color="#38bdf8" size={60} />,
+    icon: <Icon name="tailwindcss" size={60} />,
     level: 'master',
   },
   {
     title: 'Firebase',
-    icon: <Icon name="firebase" color="#ffcb2f" size={60} />,
+    icon: <Icon name="firebase" size={60} />,
     level: 'intermediate',
   },
   {
     title: 'Mongodb',
-    icon: <Icon name="mongodb" color="#10aa50" size={60} />,
+    icon: <Icon name="mongodb" size={60} />,
     level: 'intermediate',
   },
   {
     title: 'Python',
-    icon: <Icon name="python" color="#4481b2" size={60} />,
-    level: 'master',
+    icon: <Icon name="python" size={60} />,
+    level: 'advanced',
   },
   {
     title: 'Golang',
-    icon: <Icon name="golang" color="#00a7d0" size={60} />,
-    level: 'intermediate',
+    icon: <Icon name="golang" size={60} />,
+    level: 'newbie',
   },
   {
     title: 'Rust',
-    icon: <Icon name="rust" color="#ec4d09" size={60} />,
+    icon: <Icon name="rust" size={60} />,
     level: 'newbie',
   },
 ];
