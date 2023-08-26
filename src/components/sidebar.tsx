@@ -8,7 +8,7 @@ import {useTranslations} from 'next-intl';
 import {usePathname} from 'next-intl/client';
 
 import useTheme from '@/hooks/use-theme';
-import CommandMenu from '@/components/cmdk';
+import CommandMenu from '@/components/command-menu';
 import LanguageMenu from '@/components/language-menu';
 import Icon from '@/components/ui/icon';
 import Link from '@/components/ui/link';
@@ -39,10 +39,10 @@ export default function Sidebar() {
       {
         label: t('project'),
         href: '/project',
-        icon: <Icon name="listDetails" />,
+        icon: <Icon name="list-details" />,
       },
     ],
-    [t]
+    [t],
   );
 
   return (
@@ -56,12 +56,14 @@ export default function Sidebar() {
         <nav className="mb-4 md:mb-8">
           <div className="-ml-2 flex flex-wrap items-start gap-x-px md:flex-col md:gap-x-0 md:gap-y-2">
             {navLinks.map(({label, href, icon}, index) => (
-              <Link className="flex transition-colors" href={href} key={href}>
+              <Link className="flex transition-colors" href={href} key={index}>
                 <span
                   className={cn(
                     'relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide',
-                    'hover:text-violet-11 dark:hover:text-violet-dark-11' &&
-                      pathname !== href
+                    {
+                      'text-violet-11 dark:text-violet-dark-11':
+                        pathname === href,
+                    },
                   )}
                 >
                   {icon}
