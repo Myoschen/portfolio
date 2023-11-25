@@ -1,21 +1,19 @@
 import {type ReactNode} from 'react';
-import {createTranslator} from 'next-intl';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
-import {getMessages} from '@/helpers/i18n';
-
-type Props = {
+type LayoutProps = {
   children: ReactNode;
   params: {locale: string};
 };
 
-export async function generateMetadata({params: {locale}}: Props) {
-  const messages = await getMessages(locale);
-  const t = createTranslator({locale, messages});
+export async function generateMetadata({params: {locale}}: LayoutProps) {
+  const t = await getTranslations({locale})
   return {
     title: t('title.skill'),
   };
 }
 
-export default function Layout({children}: {children: ReactNode}) {
+export default function Layout({children, params: {locale}}: LayoutProps) {
+  unstable_setRequestLocale(locale)
   return children;
 }

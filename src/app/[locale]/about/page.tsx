@@ -7,8 +7,10 @@ import MainLayout from '@/components/layout/main';
 import MotionLayout from '@/components/layout/motion';
 import NextLink from '@/components/next-link';
 import PageTitle from '@/components/page-title';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
-function AboutPage() {
+function AboutPage({params: {locale}}: {params: {locale: string}}) {
+  unstable_setRequestLocale(locale)
   const t = useTranslations('about');
 
   return (

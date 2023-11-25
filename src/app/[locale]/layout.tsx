@@ -1,36 +1,41 @@
 import {type ReactNode} from 'react';
-import {createTranslator, NextIntlClientProvider} from 'next-intl';
+import { NextIntlClientProvider, useMessages} from 'next-intl';
 
 import {sarasa_gothic, work_sans} from '@/constants/fonts';
-import {getMessages} from '@/helpers/i18n';
 import ThemeProvider from '@/store/theme';
 import Sidebar from '@/components/sidebar';
+import { locales } from '@/utils/i18n';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
-type Props = {
+interface LayoutProps {
   children: ReactNode;
   params: {locale: string};
-};
-
-export async function generateStaticParams() {
-  return ['en', 'zh-TW'].map((locale) => ({locale}));
 }
 
-export async function generateMetadata({params: {locale}}: Props) {
-  const messages = await getMessages(locale);
-  const t = createTranslator({locale, messages});
+export async function generateStaticParams() {
+  return locales.map((locale) => ({locale}));
+}
+
+export async function generateMetadata({params: {locale}}: LayoutProps) {
+  const t = await getTranslations({locale})
   return {
     title: t('title.home'),
   };
 }
 
-export default async function Layout({
+export default async function RootLayout({
   children,
   params: {locale},
-}: {
-  children: ReactNode;
-  params: {locale: string};
-}) {
-  const messages = await getMessages(locale);
+}: LayoutProps) {
+  let messages;
+  try {
+    messages = (await import(`../../../messages/${locale}.json`)).default
+  }
+  catch(error) {
+    notFound()
+  }
+  unstable_setRequestLocale(locale)
 
   return (
     <html

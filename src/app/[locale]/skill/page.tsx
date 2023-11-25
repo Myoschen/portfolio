@@ -9,6 +9,7 @@ import NextLink from '@/components/next-link';
 import PageTitle from '@/components/page-title';
 import SkillItem from '@/components/skill-item';
 import Icon from '@/components/ui/icon';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 const skillList: SkillList = [
   {
@@ -83,7 +84,8 @@ const skillList: SkillList = [
   },
 ];
 
-function SkillPage() {
+function SkillPage({params: {locale}}: {params: {locale: string}}) {
+  unstable_setRequestLocale(locale)
   const t = useTranslations('skill');
 
   return (

@@ -8,8 +8,10 @@ import MainLayout from '@/components/layout/main';
 import MotionLayout from '@/components/layout/motion';
 import PageTitle from '@/components/page-title';
 import ProjectCard from '@/components/project-card';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
-function ProjectPage() {
+function ProjectPage({params: {locale}}: {params: {locale: string}}) {
+    unstable_setRequestLocale(locale)
   const t = useTranslations('project');
 
   const projectList: ProjectList = useMemo(

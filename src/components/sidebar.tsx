@@ -5,7 +5,6 @@ import Image from 'next/image';
 import {motion} from 'framer-motion';
 import {cn} from 'mxcn';
 import {useTranslations} from 'next-intl';
-import {usePathname} from 'next-intl/client';
 
 import useTheme from '@/hooks/use-theme';
 import CommandMenu from '@/components/command-menu';
@@ -13,8 +12,10 @@ import LanguageMenu from '@/components/language-menu';
 import Icon from '@/components/ui/icon';
 import Link from '@/components/ui/link';
 import Switch from '@/components/ui/switch';
+import { navigation } from '@/utils/i18n';
 
 export default function Sidebar() {
+  const {usePathname} = navigation
   const {theme, setTheme} = useTheme();
   const t = useTranslations('sidebar');
   const pathname = usePathname();

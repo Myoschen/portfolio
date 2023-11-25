@@ -1,9 +1,7 @@
 'use client';
 
 import {useCallback, useEffect, useMemo, useState} from 'react';
-import {useRouter} from 'next/navigation';
 import {useTranslations} from 'next-intl';
-import {usePathname} from 'next-intl/client';
 
 import type {ActionList} from '@/types/common';
 import useTheme from '@/hooks/use-theme';
@@ -16,8 +14,10 @@ import {
   CommandItem,
   CommandList,
 } from '@/components/ui/command';
+import { navigation } from '@/utils/i18n';
 
 export default function CommandMenu() {
+  const {usePathname, useRouter} = navigation
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -77,13 +77,13 @@ export default function CommandMenu() {
         id: 'en',
         title: t('action.en'),
         icon: <Icon name="language" className="mr-2" />,
-        perform: () => router.replace(`/en${pathname}`),
+        perform: () => router.replace(`${pathname}`, {locale: 'en'}),
       },
       {
         id: 'zh-tw',
         title: t('action.zh-tw'),
         icon: <Icon name="language" className="mr-2" />,
-        perform: () => router.replace(`/zh-TW${pathname}`),
+        perform: () => router.replace(`${pathname}`, {locale: 'zh-TW'}),
       },
     ],
     [router, pathname, t],

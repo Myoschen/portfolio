@@ -4,10 +4,9 @@ import {useMemo, useState} from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import {AnimatePresence, motion} from 'framer-motion';
 import {useTranslations} from 'next-intl';
-import {usePathname} from 'next-intl/client';
-import Link from 'next-intl/link';
 
 import Icon from '@/components/ui/icon';
+import { navigation } from '@/utils/i18n';
 
 export default function LanguageMenu() {
   const [open, setOpen] = useState(false);
@@ -22,7 +21,7 @@ export default function LanguageMenu() {
         title: t('zh-tw'),
         locale: 'zh-TW',
       },
-    ],
+    ] as const,
     [t]
   );
 
@@ -70,10 +69,11 @@ export default function LanguageMenu() {
 
 interface MenuItemProps {
   title: string;
-  locale: string;
+  locale: 'en' | 'zh-TW'
 }
 
 function MenuItem({title, locale}: MenuItemProps) {
+  const {Link, usePathname} = navigation
   const pathname = usePathname();
 
   return (

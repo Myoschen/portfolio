@@ -10,6 +10,7 @@ import NextLink from '@/components/next-link';
 import PageTitle from '@/components/page-title';
 import SocialLink from '@/components/social-link';
 import Icon from '@/components/ui/icon';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 const socialLinks: SocialLinkList = [
   {
@@ -29,7 +30,8 @@ const socialLinks: SocialLinkList = [
   },
 ];
 
-export default function HomePage() {
+export default function HomePage({params: {locale}}: {params: {locale: string}}) {
+  unstable_setRequestLocale(locale)
   const t = useTranslations('home');
 
   return (
