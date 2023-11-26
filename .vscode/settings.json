@@ -19,7 +19,7 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "json",
-    "jsonc"
+    // "json",
+    // "jsonc"
   ]
 }
