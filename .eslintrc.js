@@ -1,24 +1,26 @@
-// https://stackoverflow.com/questions/74316697/eslint-types-for-eslintrc-js
-// @ts-check
-const {defineConfig} = require('eslint-define-config');
+const stylistic = require('@stylistic/eslint-plugin')
 
-module.exports = defineConfig({
+const customized = stylistic.configs.customize({
+  flat: false,
+  indent: 2,
+  jsx: true,
+  quotes: 'single',
+  semi: false,
+})
+
+module.exports = {
   root: true,
-  extends: [
-    'next/core-web-vitals',
-    'prettier',
-    'plugin:tailwindcss/recommended',
-  ],
-  plugins: ['tailwindcss'],
-  rules: {
-    'tailwindcss/no-custom-classname': 'off',
-    'tailwindcss/classnames-order': 'error',
-  },
+  extends: ['next/core-web-vitals', 'plugin:tailwindcss/recommended'],
+  plugins: ['@stylistic', 'simple-import-sort'],
   settings: {
     tailwindcss: {
       callees: ['cn', 'cva'],
       config: 'tailwind.config.js',
     },
   },
-  overrides: [{files: ['*.ts', '*.tsx'], parser: '@typescript-eslint/parser'}],
-});
+  rules: {
+    ...customized.rules,
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
+  },
+}

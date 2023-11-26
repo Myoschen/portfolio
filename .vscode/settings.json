@@ -1,5 +1,25 @@
 {
   "i18n-ally.localesPaths": [
     "messages"
+  ],
+  
+  // disable prettier, format on save
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+
+  // enable eslint auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": false
+  },
+
+  // enable eslint for all supported languges
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "jsonc"
   ]
 }
