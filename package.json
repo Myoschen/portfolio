@@ -1,15 +1,17 @@
 {
   "name": "portfolio",
+  "description": "my portfolio website",
   "version": "0.1.0",
   "private": true,
+  "author": "Myoschen <myos.chen@gmail.com> (https://github.com/Myoschen)",
+  "license":"MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "analyze": "cross-env ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "format": "prettier --write ./src"
+    "lint:fix": "next lint --fix"
   },
   "dependencies": {
     "@radix-ui/colors": "^3.0.0",
