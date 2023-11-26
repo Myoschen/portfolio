@@ -29,25 +29,25 @@ export default function CommandMenu() {
       {
         id: 'home-page',
         title: t('action.home'),
-        icon: <Icon name="home" className="mr-2" />,
+        icon: <Icon name={'home'} className={'mr-2'} />,
         perform: () => router.push('/'),
       },
       {
         id: 'about-page',
         title: t('action.about'),
-        icon: <Icon name="profile" className="mr-2" />,
+        icon: <Icon name={'profile'} className={'mr-2'} />,
         perform: () => router.push('/about'),
       },
       {
         id: 'skill-page',
         title: t('action.skill'),
-        icon: <Icon name="chart" className="mr-2" />,
+        icon: <Icon name={'chart'} className={'mr-2'} />,
         perform: () => router.push('/skill'),
       },
       {
         id: 'project-page',
         title: t('action.project'),
-        icon: <Icon name="list-details" className="mr-2" />,
+        icon: <Icon name={'list-details'} className={'mr-2'} />,
         perform: () => router.push('/project'),
       },
     ]
@@ -59,13 +59,13 @@ export default function CommandMenu() {
         id: 'light-theme',
         title: t('action.light-theme'),
         perform: () => setTheme('light'),
-        icon: <Icon name="sun" className="mr-2" />,
+        icon: <Icon name={'sun'} className={'mr-2'} />,
       },
       {
         id: 'dark-theme',
         title: t('action.dark-theme'),
         perform: () => setTheme('dark'),
-        icon: <Icon name="moon" className="mr-2" />,
+        icon: <Icon name={'moon'} className={'mr-2'} />,
       },
     ],
     [setTheme, t],
@@ -76,13 +76,13 @@ export default function CommandMenu() {
       {
         id: 'en',
         title: t('action.en'),
-        icon: <Icon name="language" className="mr-2" />,
+        icon: <Icon name={'language'} className={'mr-2'} />,
         perform: () => router.replace(`${pathname}`, { locale: 'en' }),
       },
       {
         id: 'zh-tw',
         title: t('action.zh-tw'),
-        icon: <Icon name="language" className="mr-2" />,
+        icon: <Icon name={'language'} className={'mr-2'} />,
         perform: () => router.replace(`${pathname}`, { locale: 'zh-TW' }),
       },
     ],
@@ -111,11 +111,11 @@ export default function CommandMenu() {
   return (
     <>
       <button
-        className="inline-flex items-center gap-x-2"
+        className={'inline-flex items-center gap-x-2'}
         onClick={() => setOpen(true)}
       >
-        <Icon name="command" />
-        <span className="font-medium tracking-wide">{t('trigger')}</span>
+        <Icon name={'command'} />
+        <span className={'font-medium tracking-wide'}>{t('trigger')}</span>
       </button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder={t('placeholder')} />

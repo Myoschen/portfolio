@@ -44,9 +44,9 @@ const DialogContent = React.forwardRef<
       {...props}
     >
       {children}
-      <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-mauve-3 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-violet-7 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-mauve-alpha-4 data-[state=open]:text-mauve-11 dark:ring-offset-mauve-dark-3 dark:focus:ring-violet-dark-7 dark:data-[state=open]:bg-mauve-dark-alpha-4 dark:data-[state=open]:text-mauve-dark-11">
-        <Icon name="close" />
-        <span className="sr-only">Close</span>
+      <DialogPrimitive.Close className={'absolute right-4 top-4 rounded-sm opacity-70 ring-offset-mauve-3 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-violet-7 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-mauve-alpha-4 data-[state=open]:text-mauve-11 dark:ring-offset-mauve-dark-3 dark:focus:ring-violet-dark-7 dark:data-[state=open]:bg-mauve-dark-alpha-4 dark:data-[state=open]:text-mauve-dark-11'}>
+        <Icon name={'close'} />
+        <span className={'sr-only'}>{'Close'}</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
   </DialogPortal>

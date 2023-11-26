@@ -27,22 +27,22 @@ export default function LanguageMenu() {
 
   return (
     <DropdownMenuPrimitive.Root open={open} onOpenChange={setOpen}>
-      <DropdownMenuPrimitive.Trigger className="inline-flex items-center gap-x-2 font-medium tracking-wide outline-none">
-        <Icon name="language" />
+      <DropdownMenuPrimitive.Trigger className={'inline-flex items-center gap-x-2 font-medium tracking-wide outline-none'}>
+        <Icon name={'language'} />
         {t('language')}
       </DropdownMenuPrimitive.Trigger>
       <AnimatePresence>
         {open && (
           <DropdownMenuPrimitive.Portal forceMount>
             <DropdownMenuPrimitive.Content
-              className="rounded bg-mauve-alpha-3 p-1 backdrop-blur dark:bg-mauve-dark-alpha-3"
-              align="start"
+              className={'rounded bg-mauve-alpha-3 p-1 backdrop-blur dark:bg-mauve-dark-alpha-3'}
+              align={'start'}
               asChild
             >
               <motion.div
-                initial="close"
-                animate="open"
-                exit="close"
+                initial={'close'}
+                animate={'open'}
+                exit={'close'}
                 variants={{
                   close: {
                     opacity: 0,
@@ -57,7 +57,7 @@ export default function LanguageMenu() {
                 {languages.map(lang => (
                   <MenuItem key={lang.locale} {...lang} />
                 ))}
-                <DropdownMenuPrimitive.Arrow className="fill-mauve-alpha-3 dark:fill-mauve-dark-alpha-3" />
+                <DropdownMenuPrimitive.Arrow className={'fill-mauve-alpha-3 dark:fill-mauve-dark-alpha-3'} />
               </motion.div>
             </DropdownMenuPrimitive.Content>
           </DropdownMenuPrimitive.Portal>
@@ -79,7 +79,7 @@ function MenuItem({ title, locale }: MenuItemProps) {
   return (
     <DropdownMenuPrimitive.Item asChild>
       <Link
-        className="relative flex cursor-default select-none items-center justify-center rounded px-3 py-1 text-sm font-medium leading-none tracking-wide outline-none data-[highlighted]:bg-violet-10 data-[highlighted]:text-mauve-dark-12 dark:data-[highlighted]:bg-violet-dark-10 dark:data-[highlighted]:text-mauve-12"
+        className={'relative flex cursor-default select-none items-center justify-center rounded px-3 py-1 text-sm font-medium leading-none tracking-wide outline-none data-[highlighted]:bg-violet-10 data-[highlighted]:text-mauve-dark-12 dark:data-[highlighted]:bg-violet-dark-10 dark:data-[highlighted]:text-mauve-12'}
         href={pathname}
         locale={locale}
         replace={true}

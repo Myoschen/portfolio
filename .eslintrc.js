@@ -20,6 +20,7 @@ module.exports = {
   },
   rules: {
     ...customized.rules,
+    '@stylistic/jsx-curly-brace-presence': ['error', 'always'],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
   },

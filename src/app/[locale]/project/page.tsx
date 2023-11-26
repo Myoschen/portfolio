@@ -64,9 +64,9 @@ function ProjectPage({ params: { locale } }: { params: { locale: string } }) {
   return (
     <MainLayout>
       <MotionLayout>
-        <div id="m-container" className="flex flex-col gap-y-6">
+        <div id={'m-container'} className={'flex flex-col gap-y-6'}>
           <PageTitle label={t('title')} />
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className={'grid gap-4 md:grid-cols-2'}>
             {projectList.map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
