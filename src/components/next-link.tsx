@@ -3,7 +3,7 @@
 import { motion, type Variants } from 'framer-motion'
 
 import Icon from '@/components/ui/icon'
-import { navigation } from '@/utils/i18n'
+import { navigation } from '@/lib/i18n'
 
 interface Props {
   next: string

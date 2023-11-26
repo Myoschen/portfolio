@@ -5,8 +5,8 @@ import { type ReactNode } from 'react'
 
 import Sidebar from '@/components/sidebar'
 import { sarasa_gothic, work_sans } from '@/constants/fonts'
+import { locales } from '@/lib/i18n'
 import ThemeProvider from '@/store/theme'
-import { locales } from '@/utils/i18n'
 
 interface LayoutProps {
   children: ReactNode

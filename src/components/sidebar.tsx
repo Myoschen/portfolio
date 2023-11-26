@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { cn } from 'mxcn'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { useMemo } from 'react'
@@ -12,7 +11,8 @@ import Icon from '@/components/ui/icon'
 import Link from '@/components/ui/link'
 import Switch from '@/components/ui/switch'
 import useTheme from '@/hooks/use-theme'
-import { navigation } from '@/utils/i18n'
+import { navigation } from '@/lib/i18n'
+import { cn } from '@/lib/utils'
 
 export default function Sidebar() {
   const { usePathname } = navigation

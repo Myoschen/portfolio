@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 import { useMemo, useState } from 'react'
 
 import Icon from '@/components/ui/icon'
-import { navigation } from '@/utils/i18n'
+import { navigation } from '@/lib/i18n'
 
 export default function LanguageMenu() {
   const [open, setOpen] = useState(false)
