@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "author": "Myoschen <myos.chen@gmail.com> (https://github.com/Myoschen)",
-  "license":"MIT",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

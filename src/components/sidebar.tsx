@@ -10,11 +10,10 @@ import LanguageMenu from '@/components/language-menu'
 import Icon from '@/components/ui/icon'
 import Switch from '@/components/ui/switch'
 import useTheme from '@/hooks/use-theme'
-import { navigation } from '@/lib/i18n'
+import { Link, usePathname } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 
 export default function Sidebar() {
-  const { Link, usePathname } = navigation
   const { theme, setTheme } = useTheme()
   const t = useTranslations('sidebar')
   const pathname = usePathname()

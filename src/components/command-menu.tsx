@@ -13,11 +13,10 @@ import {
 } from '@/components/ui/command'
 import Icon from '@/components/ui/icon'
 import useTheme from '@/hooks/use-theme'
-import { navigation } from '@/lib/i18n'
+import { usePathname, useRouter } from '@/lib/i18n'
 import type { ActionList } from '@/types/common'
 
 export default function CommandMenu() {
-  const { usePathname, useRouter } = navigation
   const [open, setOpen] = useState(false)
   const router = useRouter()
   const pathname = usePathname()

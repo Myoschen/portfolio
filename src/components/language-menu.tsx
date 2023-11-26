@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl'
 import { useMemo, useState } from 'react'
 
 import Icon from '@/components/ui/icon'
-import { navigation } from '@/lib/i18n'
+import { Link, usePathname } from '@/lib/i18n'
 
 export default function LanguageMenu() {
   const [open, setOpen] = useState(false)
@@ -73,7 +73,6 @@ interface MenuItemProps {
 }
 
 function MenuItem({ title, locale }: MenuItemProps) {
-  const { Link, usePathname } = navigation
   const pathname = usePathname()
 
   return (

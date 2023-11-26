@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation'
+import { redirect } from '@/lib/i18n'
 
 export default function Page() {
-  redirect('/en')
+  redirect('/')
 }

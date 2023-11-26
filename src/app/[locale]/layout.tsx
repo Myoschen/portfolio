@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { NextIntlClientProvider, useMessages } from 'next-intl'
+import { NextIntlClientProvider } from 'next-intl'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { type ReactNode } from 'react'
 

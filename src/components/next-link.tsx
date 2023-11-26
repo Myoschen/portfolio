@@ -3,7 +3,7 @@
 import { motion, type Variants } from 'framer-motion'
 
 import Icon from '@/components/ui/icon'
-import { navigation } from '@/lib/i18n'
+import { Link } from '@/lib/i18n'
 
 interface Props {
   next: string
@@ -23,8 +23,6 @@ const arrow = {
 } satisfies Variants
 
 function NextLink({ next, label }: Props) {
-  const { Link } = navigation
-
   return (
     <Link href={`/${next}`}>
       <motion.div className={'flex items-center gap-x-1'} whileHover={'hover'}>
