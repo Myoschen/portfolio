@@ -1,15 +1,15 @@
-'use client';
+'use client'
 
-import {useTranslations} from 'next-intl';
+import { useTranslations } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
-import type {SkillList} from '@/types/common';
-import MainLayout from '@/components/layout/main';
-import MotionLayout from '@/components/layout/motion';
-import NextLink from '@/components/next-link';
-import PageTitle from '@/components/page-title';
-import SkillItem from '@/components/skill-item';
-import Icon from '@/components/ui/icon';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import MainLayout from '@/components/layout/main'
+import MotionLayout from '@/components/layout/motion'
+import NextLink from '@/components/next-link'
+import PageTitle from '@/components/page-title'
+import SkillItem from '@/components/skill-item'
+import Icon from '@/components/ui/icon'
+import type { SkillList } from '@/types/common'
 
 const skillList: SkillList = [
   {
@@ -82,11 +82,11 @@ const skillList: SkillList = [
     icon: <Icon name="rust" size={60} />,
     level: 'newbie',
   },
-];
+]
 
-function SkillPage({params: {locale}}: {params: {locale: string}}) {
+function SkillPage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale)
-  const t = useTranslations('skill');
+  const t = useTranslations('skill')
 
   return (
     <MainLayout>
@@ -104,7 +104,7 @@ function SkillPage({params: {locale}}: {params: {locale: string}}) {
         </div>
       </MotionLayout>
     </MainLayout>
-  );
+  )
 }
 
-export default SkillPage;
+export default SkillPage

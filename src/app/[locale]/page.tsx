@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
-import {useTranslations} from 'next-intl';
+import Image from 'next/image'
+import { useTranslations } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
-import type {SocialLinkList} from '@/types/common';
-import MainLayout from '@/components/layout/main';
-import MotionLayout from '@/components/layout/motion';
-import NextLink from '@/components/next-link';
-import PageTitle from '@/components/page-title';
-import SocialLink from '@/components/social-link';
-import Icon from '@/components/ui/icon';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import MainLayout from '@/components/layout/main'
+import MotionLayout from '@/components/layout/motion'
+import NextLink from '@/components/next-link'
+import PageTitle from '@/components/page-title'
+import SocialLink from '@/components/social-link'
+import Icon from '@/components/ui/icon'
+import type { SocialLinkList } from '@/types/common'
 
 const socialLinks: SocialLinkList = [
   {
@@ -28,11 +28,11 @@ const socialLinks: SocialLinkList = [
     label: 'MyosChen',
     href: 'https://twitter.com/MyosChen',
   },
-];
+]
 
-export default function HomePage({params: {locale}}: {params: {locale: string}}) {
+export default function HomePage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale)
-  const t = useTranslations('home');
+  const t = useTranslations('home')
 
   return (
     <MainLayout>
@@ -57,7 +57,7 @@ export default function HomePage({params: {locale}}: {params: {locale: string}})
               />
             </div>
             <ul className="flex flex-wrap  justify-start gap-x-4 md:flex-col md:justify-center md:gap-y-2">
-              {socialLinks.map((socialLink) => (
+              {socialLinks.map(socialLink => (
                 <li key={socialLink.href}>
                   <SocialLink {...socialLink} />
                 </li>
@@ -73,5 +73,5 @@ export default function HomePage({params: {locale}}: {params: {locale: string}})
         </div>
       </MotionLayout>
     </MainLayout>
-  );
+  )
 }

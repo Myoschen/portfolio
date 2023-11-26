@@ -1,5 +1,5 @@
-import type {Skill} from '@/types/common';
-import Progress from '@/components/ui/progress';
+import Progress from '@/components/ui/progress'
+import type { Skill } from '@/types/common'
 
 const levelMap = {
   newbie: 15,
@@ -7,11 +7,11 @@ const levelMap = {
   intermediate: 50,
   advanced: 70,
   master: 90,
-};
+}
 
 interface Props extends Skill {}
 
-function SkillItem({icon, title, level}: Props) {
+function SkillItem({ icon, title, level }: Props) {
   return (
     <div
       id="m-item"
@@ -25,7 +25,7 @@ function SkillItem({icon, title, level}: Props) {
         <Progress value={levelMap[level]} />
       </div>
     </div>
-  );
+  )
 }
 
-export default SkillItem;
+export default SkillItem

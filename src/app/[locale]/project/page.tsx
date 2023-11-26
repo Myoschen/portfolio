@@ -1,18 +1,18 @@
-'use client';
+'use client'
 
-import {useMemo} from 'react';
-import {useTranslations} from 'next-intl';
+import { useTranslations } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
+import { useMemo } from 'react'
 
-import type {ProjectList} from '@/types/common';
-import MainLayout from '@/components/layout/main';
-import MotionLayout from '@/components/layout/motion';
-import PageTitle from '@/components/page-title';
-import ProjectCard from '@/components/project-card';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import MainLayout from '@/components/layout/main'
+import MotionLayout from '@/components/layout/motion'
+import PageTitle from '@/components/page-title'
+import ProjectCard from '@/components/project-card'
+import type { ProjectList } from '@/types/common'
 
-function ProjectPage({params: {locale}}: {params: {locale: string}}) {
-    unstable_setRequestLocale(locale)
-  const t = useTranslations('project');
+function ProjectPage({ params: { locale } }: { params: { locale: string } }) {
+  unstable_setRequestLocale(locale)
+  const t = useTranslations('project')
 
   const projectList: ProjectList = useMemo(
     () => [
@@ -59,7 +59,7 @@ function ProjectPage({params: {locale}}: {params: {locale: string}}) {
       },
     ],
     [t]
-  );
+  )
 
   return (
     <MainLayout>
@@ -74,7 +74,7 @@ function ProjectPage({params: {locale}}: {params: {locale: string}}) {
         </div>
       </MotionLayout>
     </MainLayout>
-  );
+  )
 }
 
-export default ProjectPage;
+export default ProjectPage

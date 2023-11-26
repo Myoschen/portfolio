@@ -1,13 +1,13 @@
-'use client';
+'use client'
 
-import {motion, type Variants} from 'framer-motion';
+import { motion, type Variants } from 'framer-motion'
 
-import Icon from '@/components/ui/icon';
-import { navigation } from '@/utils/i18n';
+import Icon from '@/components/ui/icon'
+import { navigation } from '@/utils/i18n'
 
 interface Props {
-  next: string;
-  label: string;
+  next: string
+  label: string
 }
 
 const arrow = {
@@ -20,10 +20,10 @@ const arrow = {
       repeatType: 'reverse',
     },
   },
-} satisfies Variants;
+} satisfies Variants
 
-function NextLink({next, label}: Props) {
-  const {Link} = navigation
+function NextLink({ next, label }: Props) {
+  const { Link } = navigation
 
   return (
     <Link href={`/${next}`}>
@@ -34,7 +34,7 @@ function NextLink({next, label}: Props) {
         </motion.div>
       </motion.div>
     </Link>
-  );
+  )
 }
 
-export default NextLink;
+export default NextLink

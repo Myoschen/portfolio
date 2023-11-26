@@ -1,10 +1,10 @@
-import * as ProgressPrimitive from '@radix-ui/react-progress';
+import * as ProgressPrimitive from '@radix-ui/react-progress'
 
 interface Props {
-  value: number;
+  value: number
 }
 
-function Progress({value}: Props) {
+function Progress({ value }: Props) {
   return (
     <ProgressPrimitive.Root
       className="relative h-[25px] w-full overflow-hidden rounded bg-mauve-3 dark:bg-mauve-dark-3"
@@ -17,10 +17,10 @@ function Progress({value}: Props) {
     >
       <ProgressPrimitive.Indicator
         className="h-full w-full bg-violet-9 dark:bg-violet-9"
-        style={{transform: `translateX(-${100 - value}%)`}}
+        style={{ transform: `translateX(-${100 - value}%)` }}
       />
     </ProgressPrimitive.Root>
-  );
+  )
 }
 
-export default Progress;
+export default Progress

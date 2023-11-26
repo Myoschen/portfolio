@@ -1,36 +1,36 @@
-'use client';
+'use client'
 
-import {createContext, useCallback, useEffect, type ReactNode} from 'react';
+import { createContext, type ReactNode, useCallback, useEffect } from 'react'
 
-import useLocalStorage from '@/hooks/use-local-storage';
+import useLocalStorage from '@/hooks/use-local-storage'
 
 type ThemeContextType = {
-  theme: string;
-  setTheme: (theme: string) => void;
-};
+  theme: string
+  setTheme: (theme: string) => void
+}
 
-const ThemeContext = createContext<ThemeContextType | null>(null);
+const ThemeContext = createContext<ThemeContextType | null>(null)
 
 interface ProviderProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
-function ThemeProvider({children}: ProviderProps) {
-  const [theme, set] = useLocalStorage('theme', 'light');
+function ThemeProvider({ children }: ProviderProps) {
+  const [theme, set] = useLocalStorage('theme', 'light')
 
-  const setTheme = useCallback((theme: string) => set(theme), [set]);
+  const setTheme = useCallback((theme: string) => set(theme), [set])
 
   useEffect(() => {
-    document.documentElement.classList.remove('light', 'dark');
-    document.documentElement.classList.add(theme);
-  }, [theme]);
+    document.documentElement.classList.remove('light', 'dark')
+    document.documentElement.classList.add(theme)
+  }, [theme])
 
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ThemeContext.Provider>
-  );
+  )
 }
 
-export default ThemeProvider;
-export {ThemeContext};
+export default ThemeProvider
+export { ThemeContext }

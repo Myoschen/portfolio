@@ -1,15 +1,15 @@
-'use client';
+'use client'
 
-import {useContext} from 'react';
+import { useContext } from 'react'
 
-import {ThemeContext} from '@/store/theme';
+import { ThemeContext } from '@/store/theme'
 
 function useTheme() {
-  const context = useContext(ThemeContext);
+  const context = useContext(ThemeContext)
   if (!context) {
-    throw new Error('useTheme must to be use within ThemeProvider!');
+    throw new Error('useTheme must to be use within ThemeProvider!')
   }
-  return context;
+  return context
 }
 
-export default useTheme;
+export default useTheme

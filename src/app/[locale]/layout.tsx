@@ -1,38 +1,38 @@
-import {type ReactNode} from 'react';
-import { NextIntlClientProvider, useMessages} from 'next-intl';
+import { notFound } from 'next/navigation'
+import { NextIntlClientProvider, useMessages } from 'next-intl'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
+import { type ReactNode } from 'react'
 
-import {sarasa_gothic, work_sans} from '@/constants/fonts';
-import ThemeProvider from '@/store/theme';
-import Sidebar from '@/components/sidebar';
-import { locales } from '@/utils/i18n';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import { notFound } from 'next/navigation';
+import Sidebar from '@/components/sidebar'
+import { sarasa_gothic, work_sans } from '@/constants/fonts'
+import ThemeProvider from '@/store/theme'
+import { locales } from '@/utils/i18n'
 
 interface LayoutProps {
-  children: ReactNode;
-  params: {locale: string};
+  children: ReactNode
+  params: { locale: string }
 }
 
 export async function generateStaticParams() {
-  return locales.map((locale) => ({locale}));
+  return locales.map(locale => ({ locale }))
 }
 
-export async function generateMetadata({params: {locale}}: LayoutProps) {
-  const t = await getTranslations({locale})
+export async function generateMetadata({ params: { locale } }: LayoutProps) {
+  const t = await getTranslations({ locale })
   return {
     title: t('title.home'),
-  };
+  }
 }
 
 export default async function RootLayout({
   children,
-  params: {locale},
+  params: { locale },
 }: LayoutProps) {
-  let messages;
+  let messages
   try {
     messages = (await import(`../../../messages/${locale}.json`)).default
   }
-  catch(error) {
+  catch (error) {
     notFound()
   }
   unstable_setRequestLocale(locale)
@@ -53,5 +53,5 @@ export default async function RootLayout({
         </div>
       </body>
     </html>
-  );
+  )
 }

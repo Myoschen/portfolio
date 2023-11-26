@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import {useState, type ReactNode} from 'react';
-import * as TooltipPrimitive from '@radix-ui/react-tooltip';
-import {AnimatePresence, motion} from 'framer-motion';
+import * as TooltipPrimitive from '@radix-ui/react-tooltip'
+import { AnimatePresence, motion } from 'framer-motion'
+import { type ReactNode, useState } from 'react'
 
 interface Props {
-  children: ReactNode;
-  text: string;
+  children: ReactNode
+  text: string
 }
 
-function Tooltip({children, text}: Props) {
-  const [open, setOpen] = useState(false);
+function Tooltip({ children, text }: Props) {
+  const [open, setOpen] = useState(false)
 
   return (
     <TooltipPrimitive.Provider delayDuration={0.4}>
@@ -38,12 +38,12 @@ function Tooltip({children, text}: Props) {
                     close: {
                       opacity: 0,
                       y: -2,
-                      transition: {ease: 'easeIn', duration: 0.1},
+                      transition: { ease: 'easeIn', duration: 0.1 },
                     },
                     open: {
                       opacity: 1,
                       y: 0,
-                      transition: {ease: 'easeOut', duration: 0.2},
+                      transition: { ease: 'easeOut', duration: 0.2 },
                     },
                   }}
                 >
@@ -56,7 +56,7 @@ function Tooltip({children, text}: Props) {
         </AnimatePresence>
       </TooltipPrimitive.Root>
     </TooltipPrimitive.Provider>
-  );
+  )
 }
 
-export default Tooltip;
+export default Tooltip

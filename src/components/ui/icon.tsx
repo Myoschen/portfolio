@@ -31,47 +31,47 @@ import {
   IconUserCircle,
   IconX,
   type TablerIconsProps,
-} from '@tabler/icons-react';
+} from '@tabler/icons-react'
 
 const IconMap = {
   'arrow-right': IconArrowRight,
-  chart: IconChartBar,
-  command: IconCommand,
-  css: IconBrandCss3,
-  demo: IconRocket,
-  firebase: IconBrandFirebase,
+  'chart': IconChartBar,
+  'command': IconCommand,
+  'css': IconBrandCss3,
+  'demo': IconRocket,
+  'firebase': IconBrandFirebase,
   'folder-code': IconFolderCode,
-  github: IconBrandGithub,
-  golang: IconBrandGolang,
-  home: IconHome,
-  html: IconBrandHtml5,
-  search: IconSearch,
-  javascript: IconBrandJavascript,
-  language: IconLanguage,
+  'github': IconBrandGithub,
+  'golang': IconBrandGolang,
+  'home': IconHome,
+  'html': IconBrandHtml5,
+  'search': IconSearch,
+  'javascript': IconBrandJavascript,
+  'language': IconLanguage,
   'list-details': IconListDetails,
-  mail: IconMail,
-  mongodb: IconBrandMongodb,
-  moon: IconMoon,
-  nextjs: IconBrandNextjs,
-  palette: IconPalette,
-  profile: IconUserCircle,
-  python: IconBrandPython,
-  react: IconBrandReact,
-  redux: IconBrandRedux,
-  rust: IconBrandRust,
-  sun: IconSun,
-  tailwindcss: IconBrandTailwind,
-  twitter: IconBrandTwitter,
-  typescript: IconBrandTypescript,
-  vue: IconBrandVue,
-  close: IconX,
-};
-
-interface Props extends TablerIconsProps {
-  name: keyof typeof IconMap;
+  'mail': IconMail,
+  'mongodb': IconBrandMongodb,
+  'moon': IconMoon,
+  'nextjs': IconBrandNextjs,
+  'palette': IconPalette,
+  'profile': IconUserCircle,
+  'python': IconBrandPython,
+  'react': IconBrandReact,
+  'redux': IconBrandRedux,
+  'rust': IconBrandRust,
+  'sun': IconSun,
+  'tailwindcss': IconBrandTailwind,
+  'twitter': IconBrandTwitter,
+  'typescript': IconBrandTypescript,
+  'vue': IconBrandVue,
+  'close': IconX,
 }
 
-export default function Icon({name, size = 18, ...props}: Props) {
-  const Comp = IconMap[name];
-  return <Comp size={size} {...props} />;
+interface Props extends TablerIconsProps {
+  name: keyof typeof IconMap
+}
+
+export default function Icon({ name, size = 18, ...props }: Props) {
+  const Comp = IconMap[name]
+  return <Comp size={size} {...props} />
 }

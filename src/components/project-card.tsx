@@ -1,14 +1,14 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
+import Image from 'next/image'
 
-import type {Project} from '@/types/common';
-import Icon from '@/components/ui/icon';
-import Tooltip from '@/components/ui/tooltip';
+import Icon from '@/components/ui/icon'
+import Tooltip from '@/components/ui/tooltip'
+import type { Project } from '@/types/common'
 
 interface Props extends Project {}
 
-function ProjectCard({image, title, description, repo, demo}: Props) {
+function ProjectCard({ image, title, description, repo, demo }: Props) {
   return (
     <div
       id="m-item"
@@ -51,7 +51,7 @@ function ProjectCard({image, title, description, repo, demo}: Props) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default ProjectCard;
+export default ProjectCard

@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import {useMemo, useState} from 'react';
-import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
-import {AnimatePresence, motion} from 'framer-motion';
-import {useTranslations} from 'next-intl';
+import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
+import { useMemo, useState } from 'react'
 
-import Icon from '@/components/ui/icon';
-import { navigation } from '@/utils/i18n';
+import Icon from '@/components/ui/icon'
+import { navigation } from '@/utils/i18n'
 
 export default function LanguageMenu() {
-  const [open, setOpen] = useState(false);
-  const t = useTranslations('menu');
+  const [open, setOpen] = useState(false)
+  const t = useTranslations('menu')
   const languages = useMemo(
     () => [
       {
@@ -23,7 +23,7 @@ export default function LanguageMenu() {
       },
     ] as const,
     [t]
-  );
+  )
 
   return (
     <DropdownMenuPrimitive.Root open={open} onOpenChange={setOpen}>
@@ -46,15 +46,15 @@ export default function LanguageMenu() {
                 variants={{
                   close: {
                     opacity: 0,
-                    transition: {ease: 'easeIn', duration: 0.1},
+                    transition: { ease: 'easeIn', duration: 0.1 },
                   },
                   open: {
                     opacity: 1,
-                    transition: {ease: 'easeOut', duration: 0.2},
+                    transition: { ease: 'easeOut', duration: 0.2 },
                   },
                 }}
               >
-                {languages.map((lang) => (
+                {languages.map(lang => (
                   <MenuItem key={lang.locale} {...lang} />
                 ))}
                 <DropdownMenuPrimitive.Arrow className="fill-mauve-alpha-3 dark:fill-mauve-dark-alpha-3" />
@@ -64,17 +64,17 @@ export default function LanguageMenu() {
         )}
       </AnimatePresence>
     </DropdownMenuPrimitive.Root>
-  );
+  )
 }
 
 interface MenuItemProps {
-  title: string;
+  title: string
   locale: 'en' | 'zh-TW'
 }
 
-function MenuItem({title, locale}: MenuItemProps) {
-  const {Link, usePathname} = navigation
-  const pathname = usePathname();
+function MenuItem({ title, locale }: MenuItemProps) {
+  const { Link, usePathname } = navigation
+  const pathname = usePathname()
 
   return (
     <DropdownMenuPrimitive.Item asChild>
@@ -87,5 +87,5 @@ function MenuItem({title, locale}: MenuItemProps) {
         {title}
       </Link>
     </DropdownMenuPrimitive.Item>
-  );
+  )
 }

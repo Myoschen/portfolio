@@ -1,11 +1,11 @@
-import {Work_Sans} from 'next/font/google';
-import localFont from 'next/font/local';
+import { Work_Sans } from 'next/font/google'
+import localFont from 'next/font/local'
 
 export const work_sans = Work_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--ff-work-sans',
-});
+})
 
 export const sarasa_gothic = localFont({
   src: [
@@ -31,4 +31,4 @@ export const sarasa_gothic = localFont({
     },
   ],
   variable: '--ff-sarasa-gothic-tc',
-});
+})

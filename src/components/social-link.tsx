@@ -1,8 +1,8 @@
-import type {SocialLink} from '@/types/common';
+import type { SocialLink } from '@/types/common'
 
 interface Props extends SocialLink {}
 
-export default function SocialLink({label, href, icon}: Props) {
+export default function SocialLink({ label, href, icon }: Props) {
   return (
     <a
       className="flex max-w-min items-center gap-x-2 underline transition-colors ease-out hover:text-violet-10 dark:hover:text-violet-dark-10"
@@ -14,6 +14,6 @@ export default function SocialLink({label, href, icon}: Props) {
       {icon}
       <span className="tracking-wide">{label}</span>
     </a>
-  );
+  )
 }
 //

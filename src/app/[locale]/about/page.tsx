@@ -1,17 +1,17 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
-import {useTranslations} from 'next-intl';
+import Image from 'next/image'
+import { useTranslations } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
-import MainLayout from '@/components/layout/main';
-import MotionLayout from '@/components/layout/motion';
-import NextLink from '@/components/next-link';
-import PageTitle from '@/components/page-title';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import MainLayout from '@/components/layout/main'
+import MotionLayout from '@/components/layout/motion'
+import NextLink from '@/components/next-link'
+import PageTitle from '@/components/page-title'
 
-function AboutPage({params: {locale}}: {params: {locale: string}}) {
+function AboutPage({ params: { locale } }: { params: { locale: string } }) {
   unstable_setRequestLocale(locale)
-  const t = useTranslations('about');
+  const t = useTranslations('about')
 
   return (
     <MainLayout>
@@ -40,7 +40,7 @@ function AboutPage({params: {locale}}: {params: {locale: string}}) {
         </div>
       </MotionLayout>
     </MainLayout>
-  );
+  )
 }
 
-export default AboutPage;
+export default AboutPage

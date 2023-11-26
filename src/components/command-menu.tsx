@@ -1,11 +1,8 @@
-'use client';
+'use client'
 
-import {useCallback, useEffect, useMemo, useState} from 'react';
-import {useTranslations} from 'next-intl';
+import { useTranslations } from 'next-intl'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
-import type {ActionList} from '@/types/common';
-import useTheme from '@/hooks/use-theme';
-import Icon from '@/components/ui/icon';
 import {
   CommandDialog,
   CommandEmpty,
@@ -13,16 +10,19 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from '@/components/ui/command';
-import { navigation } from '@/utils/i18n';
+} from '@/components/ui/command'
+import Icon from '@/components/ui/icon'
+import useTheme from '@/hooks/use-theme'
+import type { ActionList } from '@/types/common'
+import { navigation } from '@/utils/i18n'
 
 export default function CommandMenu() {
-  const {usePathname, useRouter} = navigation
-  const [open, setOpen] = useState(false);
-  const router = useRouter();
-  const pathname = usePathname();
-  const t = useTranslations('command');
-  const {setTheme} = useTheme();
+  const { usePathname, useRouter } = navigation
+  const [open, setOpen] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
+  const t = useTranslations('command')
+  const { setTheme } = useTheme()
 
   const pageActions: ActionList = useMemo(() => {
     return [
@@ -50,8 +50,8 @@ export default function CommandMenu() {
         icon: <Icon name="list-details" className="mr-2" />,
         perform: () => router.push('/project'),
       },
-    ];
-  }, [router, t]);
+    ]
+  }, [router, t])
 
   const themeActions: ActionList = useMemo(
     () => [
@@ -69,7 +69,7 @@ export default function CommandMenu() {
       },
     ],
     [setTheme, t],
-  );
+  )
 
   const languageActions: ActionList = useMemo(
     () => [
@@ -77,36 +77,36 @@ export default function CommandMenu() {
         id: 'en',
         title: t('action.en'),
         icon: <Icon name="language" className="mr-2" />,
-        perform: () => router.replace(`${pathname}`, {locale: 'en'}),
+        perform: () => router.replace(`${pathname}`, { locale: 'en' }),
       },
       {
         id: 'zh-tw',
         title: t('action.zh-tw'),
         icon: <Icon name="language" className="mr-2" />,
-        perform: () => router.replace(`${pathname}`, {locale: 'zh-TW'}),
+        perform: () => router.replace(`${pathname}`, { locale: 'zh-TW' }),
       },
     ],
     [router, pathname, t],
-  );
+  )
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault();
-        setOpen((open) => !open);
+        e.preventDefault()
+        setOpen(open => !open)
       }
-    };
-    document.addEventListener('keydown', down);
-    return () => document.removeEventListener('keydown', down);
-  }, []);
+    }
+    document.addEventListener('keydown', down)
+    return () => document.removeEventListener('keydown', down)
+  }, [])
 
   const onSelect = useCallback(
     (cb: () => void) => () => {
-      setOpen(false);
-      cb();
+      setOpen(false)
+      cb()
     },
     [],
-  );
+  )
 
   return (
     <>
@@ -122,7 +122,7 @@ export default function CommandMenu() {
         <CommandList>
           <CommandEmpty>{t('empty')}</CommandEmpty>
           <CommandGroup heading={t('group.page')}>
-            {pageActions.map(({id, icon, title, perform}) => (
+            {pageActions.map(({ id, icon, title, perform }) => (
               <CommandItem key={id} value={title} onSelect={onSelect(perform)}>
                 {icon}
                 {title}
@@ -130,7 +130,7 @@ export default function CommandMenu() {
             ))}
           </CommandGroup>
           <CommandGroup heading={t('group.toggle-theme')}>
-            {themeActions.map(({id, icon, title, perform}, index) => (
+            {themeActions.map(({ id, icon, title, perform }, index) => (
               <CommandItem key={id} value={title} onSelect={onSelect(perform)}>
                 {icon}
                 {title}
@@ -138,7 +138,7 @@ export default function CommandMenu() {
             ))}
           </CommandGroup>
           <CommandGroup heading={t('group.toggle-language')}>
-            {languageActions.map(({id, icon, title, perform}, index) => (
+            {languageActions.map(({ id, icon, title, perform }, index) => (
               <CommandItem key={id} value={title} onSelect={onSelect(perform)}>
                 {icon}
                 {title}
@@ -148,5 +148,5 @@ export default function CommandMenu() {
         </CommandList>
       </CommandDialog>
     </>
-  );
+  )
 }

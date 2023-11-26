@@ -1,14 +1,14 @@
-import * as SwitchPrimitive from '@radix-ui/react-switch';
+import * as SwitchPrimitive from '@radix-ui/react-switch'
 
 interface Props {
-  id: string;
-  leftIcon?: JSX.Element;
-  rightIcon?: JSX.Element;
-  checked: boolean;
-  onCheckedChange: (checked: boolean) => void;
+  id: string
+  leftIcon?: JSX.Element
+  rightIcon?: JSX.Element
+  checked: boolean
+  onCheckedChange: (checked: boolean) => void
 }
 
-function Switch({id, leftIcon, rightIcon, checked, onCheckedChange}: Props) {
+function Switch({ id, leftIcon, rightIcon, checked, onCheckedChange }: Props) {
   return (
     <div className="flex items-center gap-x-2">
       {leftIcon && (
@@ -30,7 +30,7 @@ function Switch({id, leftIcon, rightIcon, checked, onCheckedChange}: Props) {
         </label>
       )}
     </div>
-  );
+  )
 }
 
-export default Switch;
+export default Switch
