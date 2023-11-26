@@ -14,4 +14,4 @@ module.exports = {
     },
   },
   plugins: [require('./radixui-colors'), require('tailwindcss-animate')],
-};
+}

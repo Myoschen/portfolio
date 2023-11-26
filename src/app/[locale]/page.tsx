@@ -50,7 +50,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
             <div className="relative aspect-square w-40 overflow-hidden rounded-full ring-4 ring-violet-7 dark:via-violet-dark-7">
               <Image
                 className="object-cover"
-                src="/images/ryan-chen.png"
+                src="/images/myos.png"
                 alt="Ryan Chen"
                 width={160}
                 height={160}

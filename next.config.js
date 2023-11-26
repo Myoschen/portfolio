@@ -6,11 +6,11 @@ const nextConfig = {
     },
   },
   transpilePackages: ['@tabler/icons-react'],
-};
+}
 
-const withNextIntl = require('next-intl/plugin')('./src/utils/i18n.ts')
+const withNextIntl = require('next-intl/plugin')('./src/lib/i18n.ts')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
-});
+})
 
-module.exports = withBundleAnalyzer(withNextIntl(nextConfig));
+module.exports = withBundleAnalyzer(withNextIntl(nextConfig))

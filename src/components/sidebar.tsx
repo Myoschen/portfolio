@@ -8,14 +8,13 @@ import { useMemo } from 'react'
 import CommandMenu from '@/components/command-menu'
 import LanguageMenu from '@/components/language-menu'
 import Icon from '@/components/ui/icon'
-import Link from '@/components/ui/link'
 import Switch from '@/components/ui/switch'
 import useTheme from '@/hooks/use-theme'
 import { navigation } from '@/lib/i18n'
 import { cn } from '@/lib/utils'
 
 export default function Sidebar() {
-  const { usePathname } = navigation
+  const { Link, usePathname } = navigation
   const { theme, setTheme } = useTheme()
   const t = useTranslations('sidebar')
   const pathname = usePathname()
@@ -51,7 +50,7 @@ export default function Sidebar() {
       <div className="md:sticky md:top-20">
         <div className="-ml-2 mb-4 flex justify-start md:mb-8">
           <Link href="/">
-            <Image src="/images/icon.png" alt="icon" width={60} height={60} />
+            <Image src="/images/icon.png" className="rounded-full" alt="icon" width={60} height={60} />
           </Link>
         </div>
         <nav className="mb-4 md:mb-8">
