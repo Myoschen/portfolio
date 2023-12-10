@@ -1,4 +1,9 @@
 {
+  "Metadata": {
+    "Title": "Ryan Chen",
+    "TitleTemplate": "%s / Ryan Chen",
+    "Description": "Hello, I'm Ryan. Welcome to my portfolio website!"
+  },
   "Sidebar": {
     "Home": "Home",
     "About": "About",
@@ -38,7 +43,7 @@
     "ZHTW": "繁體中文"
   },
   "Home": {
-    "Name": "Ryan Chen",
+    "Title": "Ryan Chen",
     "Intro": "Hello 👋, I'm Ryan.\nI am a developer passionate about front-end!",
     "Status": "I am still continuing to learn React and Next.js related technologies, and I will also use time to learn back-end knowledge.",
     "NextPage": "About"
@@ -72,13 +77,5 @@
     },
     "NextSocialMedia": {},
     "Charts": {}
-  },
-
-
-  "title": {
-    "home": "Ryan Chen | Home",
-    "about": "Ryan Chen | About",
-    "skill": "Ryan Chen | Skill",
-    "project": "Ryan Chen | Project"
   }
 }

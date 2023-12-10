@@ -1,5 +1,6 @@
 import '@/constants/globals.css'
 
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
@@ -15,12 +16,18 @@ interface RootLayoutProps {
   params: { locale: Locale }
 }
 
+// https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadata-fields
 export async function generateMetadata({ params: { locale } }: RootLayoutProps) {
   const t = await getTranslations({ locale })
-
-  return {
-    title: t('title.home'),
+  const metadata: Metadata = {
+    title: {
+      default: t('Metadata.Title'),
+      template: t('Metadata.TitleTemplate'),
+    },
+    description: t('Metadata.Description'),
+    keywords: ['Portfolio', 'Frontend Developer'],
   }
+  return metadata
 }
 
 export async function generateStaticParams() {

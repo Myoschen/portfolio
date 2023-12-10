@@ -13,8 +13,9 @@ import {
   IconBrandTypescript,
   IconBrandVue,
 } from '@tabler/icons-react'
+import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
-import { unstable_setRequestLocale } from 'next-intl/server'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
 import NextPage from '@/components/next-page'
 import Skill from '@/components/skill'
@@ -87,8 +88,17 @@ const skills: SkillItem[] = [
     level: 'newbie',
   },
 ]
+
 interface SkillPageProps {
   params: { locale: Locale }
+}
+
+export async function generateMetadata({ params: { locale } }: SkillPageProps) {
+  const t = await getTranslations({ locale })
+  const metadata: Metadata = {
+    title: t('Skill.Title'),
+  }
+  return metadata
 }
 
 export default function SkillPage({ params: { locale } }: SkillPageProps) {

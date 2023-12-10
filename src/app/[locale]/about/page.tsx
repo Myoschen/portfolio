@@ -1,12 +1,21 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
-import { unstable_setRequestLocale } from 'next-intl/server'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
 import NextPage from '@/components/next-page'
 import type { Locale } from '@/lib/types'
 
 interface AboutPageProps {
   params: { locale: Locale }
+}
+
+export async function generateMetadata({ params: { locale } }: AboutPageProps) {
+  const t = await getTranslations({ locale })
+  const metadata: Metadata = {
+    title: t('About.Title'),
+  }
+  return metadata
 }
 
 export default function AboutPage({ params: { locale } }: AboutPageProps) {

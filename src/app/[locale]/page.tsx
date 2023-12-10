@@ -24,7 +24,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
   return (
     <main className={'mt-6 flex min-w-0 flex-auto flex-col px-6 md:mt-0'}>
       <div className={'flex flex-col gap-y-6'}>
-        <h1 className={'text-4xl font-bold leading-relaxed'}>{t('Name')}</h1>
+        <h1 className={'text-4xl font-bold leading-relaxed'}>{t('Title')}</h1>
         <p className={'whitespace-pre-line tracking-wide'}>{t('Intro')}</p>
         <div className={'grid gap-y-4 md:grid-cols-[180px_auto] md:gap-x-2 md:gap-y-0'}>
           <div className={'relative aspect-square w-40 overflow-hidden rounded-full ring-4 ring-violet-7 dark:via-violet-dark-7'}>

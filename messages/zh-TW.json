@@ -1,4 +1,9 @@
 {
+  "Metadata": {
+    "Title": "Ryan Chen",
+    "TitleTemplate": "%s / Ryan Chen",
+    "Description": "你好，我是 Ryan。歡迎來到我的作品集網站！"
+  },
   "Sidebar": {
     "Home": "首頁",
     "About": "關於",
@@ -38,7 +43,7 @@
     "ZHTW": "繁體中文"
   },
   "Home": {
-    "Name": "Ryan Chen",
+    "Title": "Ryan Chen",
     "Intro": "你好 👋, 我是 Ryan。\n我是一個對於前端充滿熱情的開發者！",
     "Status": "我還在繼續學習 React 和 Next.js 相關技術，我也會利用時間學習後端知識。",
     "NextPage": "關於"
@@ -72,13 +77,5 @@
     },
     "NextSocialMedia": {},
     "Charts": {}
-  },
-
-
-  "title": {
-    "home": "Ryan Chen | 主頁",
-    "about": "Ryan Chen | 關於",
-    "skill": "Ryan Chen | 技能",
-    "project": "Ryan Chen | 作品"
   }
 }

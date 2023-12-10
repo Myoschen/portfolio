@@ -1,11 +1,20 @@
+import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
-import { unstable_setRequestLocale } from 'next-intl/server'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
 import Project from '@/components/project'
 import type { Locale, ProjectItem } from '@/lib/types'
 
 interface ProjectPageProps {
   params: { locale: Locale }
+}
+
+export async function generateMetadata({ params: { locale } }: ProjectPageProps) {
+  const t = await getTranslations({ locale })
+  const metadata: Metadata = {
+    title: t('Project.Title'),
+  }
+  return metadata
 }
 
 export default function ProjectPage({ params: { locale } }: ProjectPageProps) {
