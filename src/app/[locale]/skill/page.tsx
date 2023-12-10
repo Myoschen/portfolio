@@ -1,110 +1,111 @@
-'use client'
-
+import {
+  IconBrandCss3,
+  IconBrandFirebase,
+  IconBrandGolang,
+  IconBrandHtml5,
+  IconBrandJavascript,
+  IconBrandNextjs,
+  IconBrandPython,
+  IconBrandReact,
+  IconBrandReactNative,
+  IconBrandRust,
+  IconBrandTailwind,
+  IconBrandTypescript,
+  IconBrandVue,
+} from '@tabler/icons-react'
 import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 
-import MainLayout from '@/components/layout/main'
-import MotionLayout from '@/components/layout/motion'
-import NextLink from '@/components/next-link'
-import PageTitle from '@/components/page-title'
-import SkillItem from '@/components/skill-item'
-import Icon from '@/components/ui/icon'
-import type { SkillList } from '@/types/common'
+import NextPage from '@/components/next-page'
+import Skill from '@/components/skill'
+import type { Locale, SkillItem } from '@/lib/types'
 
-const skillList: SkillList = [
+const skills: SkillItem[] = [
   {
-    title: 'HTML',
-    icon: <Icon name={'html'} size={60} />,
+    label: 'HTML',
+    icon: <IconBrandHtml5 size={60} strokeWidth={1.25} />,
     level: 'master',
   },
   {
-    title: 'CSS',
-    icon: <Icon name={'css'} size={60} />,
+    label: 'CSS',
+    icon: <IconBrandCss3 size={60} strokeWidth={1.25} />,
     level: 'master',
   },
   {
-    title: 'JavaScript',
-    icon: <Icon name={'javascript'} size={60} />,
+    label: 'JavaScript',
+    icon: <IconBrandJavascript size={60} strokeWidth={1.25} />,
     level: 'master',
   },
   {
-    title: 'TypeScript',
-    icon: <Icon name={'typescript'} size={60} />,
+    label: 'TypeScript',
+    icon: <IconBrandTypescript size={60} strokeWidth={1.25} />,
     level: 'advanced',
   },
   {
-    title: 'React',
-    icon: <Icon name={'react'} size={60} />,
+    label: 'React',
+    icon: <IconBrandReact size={60} strokeWidth={1.25} />,
     level: 'master',
   },
   {
-    title: 'Next.js',
-    icon: <Icon name={'nextjs'} size={60} />,
+    label: 'React Native',
+    icon: <IconBrandReactNative size={60} strokeWidth={1.25} />,
+    level: 'junior',
+  },
+  {
+    label: 'Next.js',
+    icon: <IconBrandNextjs size={60} strokeWidth={1.25} />,
     level: 'advanced',
   },
   {
-    title: 'Vue',
-    icon: <Icon name={'vue'} size={60} />,
+    label: 'Vue',
+    icon: <IconBrandVue size={60} strokeWidth={1.25} />,
     level: 'newbie',
   },
   {
-    title: 'React Redux',
-    icon: <Icon name={'redux'} size={60} />,
-    level: 'advanced',
-  },
-  {
-    title: 'Tailwind CSS',
-    icon: <Icon name={'tailwindcss'} size={60} />,
+    label: 'Tailwind CSS',
+    icon: <IconBrandTailwind size={60} strokeWidth={1.25} />,
     level: 'master',
   },
   {
-    title: 'Firebase',
-    icon: <Icon name={'firebase'} size={60} />,
+    label: 'Firebase',
+    icon: <IconBrandFirebase size={60} strokeWidth={1.25} />,
     level: 'intermediate',
   },
   {
-    title: 'Mongodb',
-    icon: <Icon name={'mongodb'} size={60} />,
-    level: 'intermediate',
-  },
-  {
-    title: 'Python',
-    icon: <Icon name={'python'} size={60} />,
+    label: 'Python',
+    icon: <IconBrandPython size={60} strokeWidth={1.25} />,
     level: 'advanced',
   },
   {
-    title: 'Golang',
-    icon: <Icon name={'golang'} size={60} />,
+    label: 'Golang',
+    icon: <IconBrandGolang size={60} strokeWidth={1.25} />,
     level: 'newbie',
   },
   {
-    title: 'Rust',
-    icon: <Icon name={'rust'} size={60} />,
+    label: 'Rust',
+    icon: <IconBrandRust size={60} strokeWidth={1.25} />,
     level: 'newbie',
   },
 ]
-
-function SkillPage({ params: { locale } }: { params: { locale: string } }) {
-  unstable_setRequestLocale(locale)
-  const t = useTranslations('skill')
-
-  return (
-    <MainLayout>
-      <MotionLayout>
-        <div id={'m-container'} className={'flex flex-col gap-y-6'}>
-          <PageTitle label={t('title')} />
-          <div className={'grid gap-y-4'}>
-            {skillList.map((skill, index) => (
-              <SkillItem key={index} {...skill} />
-            ))}
-          </div>
-          <div id={'m-item'} className={'inline-block self-end'}>
-            <NextLink next={'project'} label={t('next')} />
-          </div>
-        </div>
-      </MotionLayout>
-    </MainLayout>
-  )
+interface SkillPageProps {
+  params: { locale: Locale }
 }
 
-export default SkillPage
+export default function SkillPage({ params: { locale } }: SkillPageProps) {
+  unstable_setRequestLocale(locale)
+  const t = useTranslations('Skill')
+
+  return (
+    <main className={'mt-6 flex min-w-0 flex-auto flex-col px-6 md:mt-0'}>
+      <div className={'flex flex-col gap-y-6'}>
+        <h1 className={'text-4xl font-bold leading-relaxed'}>{t('Title')}</h1>
+        <div className={'grid grid-cols-1 gap-y-4'}>
+          {skills.map((props, index) => (
+            <Skill key={index} {...props} />
+          ))}
+        </div>
+        <NextPage className={'ml-auto'} label={t('NextPage')} url={'/project'} />
+      </div>
+    </main>
+  )
+}

@@ -1,80 +1,65 @@
-'use client'
-
 import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import { useMemo } from 'react'
 
-import MainLayout from '@/components/layout/main'
-import MotionLayout from '@/components/layout/motion'
-import PageTitle from '@/components/page-title'
-import ProjectCard from '@/components/project-card'
-import type { ProjectList } from '@/types/common'
+import Project from '@/components/project'
+import type { Locale, ProjectItem } from '@/lib/types'
 
-function ProjectPage({ params: { locale } }: { params: { locale: string } }) {
+interface ProjectPageProps {
+  params: { locale: Locale }
+}
+
+export default function ProjectPage({ params: { locale } }: ProjectPageProps) {
   unstable_setRequestLocale(locale)
-  const t = useTranslations('project')
+  const t = useTranslations('Project')
 
-  const projectList: ProjectList = useMemo(
-    () => [
-      {
-        image: '/images/project/muser.png',
-        title: 'Muser',
-        description: t('description.muser'),
+  const projects: ProjectItem[] = [
+    {
+      title: t('Muser.Title'),
+      desc: t('Muser.Desc'),
+      img: '/images/project/muser.png',
+      url: {
         repo: 'https://github.com/Myoschen/muser',
       },
-      {
-        image: '/images/project/social-media-app.png',
-        title: 'Social Media',
-        description: t('description.social-media'),
-        repo: 'https://github.com/Myoschen/social-media-app',
-        demo: 'https://social-media-app-myoschen.vercel.app',
-      },
-      {
-        image: '/images/project/github-explorer.png',
-        title: 'Github Explorer',
-        description: t('description.github-explorer'),
-        repo: 'https://github.com/Myoschen/github-explorer',
-        demo: 'https://github-explorer-myoschen.vercel.app/',
-      },
-      {
-        image: '/images/project/react-todo-list.png',
-        title: 'React Todo List',
-        description: t('description.react-todo-list'),
+    },
+    {
+      title: t('ReactTodoList.Title'),
+      desc: t('ReactTodoList.Desc'),
+      img: '/images/project/react-todo-list.png',
+      url: {
         repo: 'https://github.com/Myoschen/react-todo-list',
         demo: 'https://react-todo-list-myoschen.vercel.app/',
       },
-      {
-        image: '/images/project/react-linktree.png',
-        title: 'React Linktree',
-        description: t('description.react-linktree'),
+    },
+    {
+      title: t('ReactLinkTree.Title'),
+      desc: t('ReactLinkTree.Desc'),
+      img: '/images/project/react-linktree.png',
+      url: {
         repo: 'https://github.com/Myoschen/react-linktree',
         demo: 'https://react-linktree.vercel.app/',
       },
-      {
-        image: '/images/project/typing-speed.png',
-        title: 'Typing Speed',
-        description: t('description.typing-speed'),
-        repo: 'https://github.com/Myoschen/typing-speed',
-        demo: 'https://typing-speed-myos.vercel.app/',
+    },
+    {
+      title: t('GithubExplorer.Title'),
+      desc: t('GithubExplorer.Desc'),
+      img: '/images/project/github-explorer.png',
+      url: {
+        repo: 'https://github.com/Myoschen/github-explorer',
+        demo: 'https://github-explorer-myoschen.vercel.app/',
       },
-    ],
-    [t]
-  )
+    },
+  ]
 
   return (
-    <MainLayout>
-      <MotionLayout>
-        <div id={'m-container'} className={'flex flex-col gap-y-6'}>
-          <PageTitle label={t('title')} />
-          <div className={'grid gap-4 md:grid-cols-2'}>
-            {projectList.map((project, index) => (
-              <ProjectCard key={index} {...project} />
-            ))}
-          </div>
+    <main className={'mt-6 flex min-w-0 flex-auto flex-col px-6 md:mt-0'}>
+      <div className={'flex flex-col gap-y-6'}>
+        <h1 className={'text-4xl font-bold leading-relaxed'}>{t('Title')}</h1>
+        <div className={'grid grid-cols-1 gap-4 md:grid-cols-2'}>
+          {projects.map((props, index) => (
+            <Project key={index} {...props} />
+          ))}
         </div>
-      </MotionLayout>
-    </MainLayout>
+      </div>
+    </main>
   )
 }
-
-export default ProjectPage

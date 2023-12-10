@@ -1,46 +1,35 @@
-'use client'
-
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 
-import MainLayout from '@/components/layout/main'
-import MotionLayout from '@/components/layout/motion'
-import NextLink from '@/components/next-link'
-import PageTitle from '@/components/page-title'
+import NextPage from '@/components/next-page'
+import type { Locale } from '@/lib/types'
 
-function AboutPage({ params: { locale } }: { params: { locale: string } }) {
-  unstable_setRequestLocale(locale)
-  const t = useTranslations('about')
-
-  return (
-    <MainLayout>
-      <MotionLayout>
-        <div id={'m-container'} className={'flex flex-col gap-y-6'}>
-          <PageTitle label={t('title')} />
-          <div id={'m-item'} className={'relative h-80 overflow-hidden'}>
-            <Image
-              className={'object-cover'}
-              src={'/images/programming.svg'}
-              alt={'Programming'}
-              fill
-            />
-          </div>
-          <div id={'m-item'} className={' space-y-4 tracking-wide'}>
-            <p>{t('paragraph.degree')}</p>
-            <p>{t('paragraph.programming')}</p>
-            <p>{t('paragraph.cause')}</p>
-            <p>{t('paragraph.currently')}</p>
-            <p>{t('paragraph.addition')}</p>
-            <p>{t('paragraph.future')}</p>
-          </div>
-          <div id={'m-item'} className={'inline-block self-end'}>
-            <NextLink next={'skill'} label={t('next')} />
-          </div>
-        </div>
-      </MotionLayout>
-    </MainLayout>
-  )
+interface AboutPageProps {
+  params: { locale: Locale }
 }
 
-export default AboutPage
+export default function AboutPage({ params: { locale } }: AboutPageProps) {
+  unstable_setRequestLocale(locale)
+  const t = useTranslations('About')
+
+  return (
+    <main className={'mt-6 flex min-w-0 flex-auto flex-col px-6 md:mt-0'}>
+      <div className={'flex flex-col gap-y-6'}>
+        <h1 className={'text-4xl font-bold leading-relaxed'}>{t('Title')}</h1>
+        <div className={'relative h-80 overflow-hidden'}>
+          <Image
+            className={'object-cover'}
+            src={'/images/programming.svg'}
+            alt={'Programming'}
+            fill={true}
+          />
+        </div>
+        <div className={'space-y-4 whitespace-pre-line tracking-wide'}>
+          <p>{t('SelfIntroduction')}</p>
+        </div>
+        <NextPage className={'ml-auto'} label={t('NextPage')} url={'/skill'} />
+      </div>
+    </main>
+  )
+}

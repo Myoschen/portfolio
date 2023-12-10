@@ -1,11 +1,11 @@
 'use client'
 
 import { type DialogProps } from '@radix-ui/react-dialog'
+import { IconSearch } from '@tabler/icons-react'
 import { Command as CommandPrimitive } from 'cmdk'
 import * as React from 'react'
 
 import { Dialog, DialogContent } from '@/components/ui/diglog'
-import Icon from '@/components/ui/icon'
 import { cn } from '@/lib/utils'
 
 const Command = React.forwardRef<
@@ -45,7 +45,7 @@ const CommandInput = React.forwardRef<
     className={'flex items-center border-b border-mauve-alpha-7 px-3 dark:border-mauve-dark-alpha-7'}
     cmdk-input-wrapper={''}
   >
-    <Icon name={'search'} className={'mr-2 shrink-0'} />
+    <IconSearch className={'mr-2 shrink-0'} />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(

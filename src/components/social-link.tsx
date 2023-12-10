@@ -1,19 +1,16 @@
-import type { SocialLink } from '@/types/common'
+import ExternalLink from '@/components/ui/external-link'
+import type { LinkItem } from '@/lib/types'
 
-interface Props extends SocialLink {}
+interface SocialLinkProps extends LinkItem {}
 
-export default function SocialLink({ label, href, icon }: Props) {
+export default function SocialLink({ icon, label, url }: SocialLinkProps) {
   return (
-    <a
-      className={'flex max-w-min items-center gap-x-2 underline transition-colors ease-out hover:text-violet-10 dark:hover:text-violet-dark-10'}
-      href={href}
-      target={'_blank'}
-      // https://pjchender.blogspot.com/2020/05/relnoreferrer-targetblank.html
-      rel={'noreferrer noopener'}
+    <ExternalLink
+      className={'inline-flex items-center gap-x-2 underline transition-colors ease-out hover:text-violet-10 dark:hover:text-violet-dark-10'}
+      href={url}
     >
       {icon}
-      <span className={'tracking-wide'}>{label}</span>
-    </a>
+      <p className={'tracking-wide'}>{label}</p>
+    </ExternalLink>
   )
 }
-//

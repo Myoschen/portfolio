@@ -1,62 +1,30 @@
 'use client'
 
 import * as TooltipPrimitive from '@radix-ui/react-tooltip'
-import { AnimatePresence, motion } from 'framer-motion'
-import { type ReactNode, useState } from 'react'
+import * as React from 'react'
 
-interface Props {
-  children: ReactNode
-  text: string
-}
+import { cn } from '@/lib/utils'
 
-function Tooltip({ children, text }: Props) {
-  const [open, setOpen] = useState(false)
+const TooltipProvider = TooltipPrimitive.Provider
 
-  return (
-    <TooltipPrimitive.Provider delayDuration={0.4}>
-      <TooltipPrimitive.Root open={open} onOpenChange={setOpen}>
-        <TooltipPrimitive.Trigger asChild>
-          <motion.div
-            onHoverStart={() => setOpen(true)}
-            onHoverEnd={() => setOpen(false)}
-          >
-            {children}
-          </motion.div>
-        </TooltipPrimitive.Trigger>
-        <AnimatePresence>
-          {open && (
-            <TooltipPrimitive.Portal forceMount>
-              <TooltipPrimitive.Content
-                className={'select-none rounded bg-mauve-alpha-4 px-4 py-2 text-sm font-medium leading-none backdrop-blur dark:bg-mauve-dark-alpha-4'}
-                asChild
-              >
-                <motion.div
-                  initial={'close'}
-                  animate={'open'}
-                  exit={'close'}
-                  variants={{
-                    close: {
-                      opacity: 0,
-                      y: -2,
-                      transition: { ease: 'easeIn', duration: 0.1 },
-                    },
-                    open: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { ease: 'easeOut', duration: 0.2 },
-                    },
-                  }}
-                >
-                  {text}
-                  <TooltipPrimitive.Arrow className={'fill-mauve-alpha-4 dark:fill-mauve-dark-alpha-4'} />
-                </motion.div>
-              </TooltipPrimitive.Content>
-            </TooltipPrimitive.Portal>
-          )}
-        </AnimatePresence>
-      </TooltipPrimitive.Root>
-    </TooltipPrimitive.Provider>
-  )
-}
+const Tooltip = TooltipPrimitive.Root
 
-export default Tooltip
+const TooltipTrigger = TooltipPrimitive.Trigger
+
+const TooltipContent = React.forwardRef<
+  React.ElementRef<typeof TooltipPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
+>(({ className, sideOffset = 4, ...props }, ref) => (
+  <TooltipPrimitive.Content
+    ref={ref}
+    sideOffset={sideOffset}
+    className={cn(
+      'z-50 overflow-hidden rounded-md border border-mauve-3 bg-mauve-alpha-2 px-3 py-1.5 text-sm shadow backdrop-blur animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 dark:border-mauve-dark-3 dark:bg-mauve-dark-alpha-2',
+      className
+    )}
+    {...props}
+  />
+))
+TooltipContent.displayName = TooltipPrimitive.Content.displayName
+
+export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger }

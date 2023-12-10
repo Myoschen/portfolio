@@ -1,74 +1,84 @@
 {
+  "Sidebar": {
+    "Home": "Home",
+    "About": "About",
+    "Skill": "Skill",
+    "Project": "Project"
+  },
+  "Command": {
+    "Trigger": "Command",
+    "Placeholder": "Type a command or search...",
+    "Empty": "No results found.",
+    "Group": {
+      "Nav": "Page",
+      "Theme": "Toggle theme",
+      "Locale": "Toggle language"
+    },
+    "Action": {
+      "Home": "Home",
+      "About": "About",
+      "Skill": "Skill",
+      "Project": "Project",
+      "Operation": "Operation",
+      "SystemTheme": "System",
+      "LightTheme": "Light theme",
+      "DarkTheme": "Dark theme",
+      "EN": "English",
+      "ZHTW": "繁體中文"
+    }
+  },
+  "Theme": {
+    "Trigger": "Theme",
+    "System": "System",
+    "Light": "Light theme",
+    "Dark": "Dark theme"
+  },
+  "Locale": {
+    "EN": "English",
+    "ZHTW": "繁體中文"
+  },
+  "Home": {
+    "Name": "Ryan Chen",
+    "Intro": "Hello 👋, I'm Ryan.\nI am a developer passionate about front-end!",
+    "Status": "I am still continuing to learn React and Next.js related technologies, and I will also use time to learn back-end knowledge.",
+    "NextPage": "About"
+  },
+  "About": {
+    "Title": "About Me",
+    "SelfIntroduction":"I graduated from Tamkang University in the Department of Computer Science and Information Engineering.\n\nI am passionate about programming, so I tried a lot of different Programming languages such as JavaScript, TypeScript, Python, Golang, etc.\n\nHowever, due to university courses, I was exposed to web front-end development. Until now, I still love web front-end development.\n\nNow, I am still improving my skills, such as learning React.js, Next.js, CSS typography, etc.\n\nIn addition, I am also very interested in back-end technology. Like Golang, Node.js, etc.\n\nSo in the future, I will focus on the front-end. If I have spare time, I will also learn more about the back-end technology.",
+    "NextPage": "Skill"
+  },
+  "Skill": {
+    "Title": "My Skills",
+    "NextPage": "Project"
+  },
+  "Project": {
+    "Title": "Side Projects",
+    "Muser": {
+      "Title": "Muser",
+      "Desc": "This is a simple mp3 player built with Electron and React."
+    },
+    "ReactTodoList": {
+      "Title": "React Todo List",
+      "Desc": "This is a todo list built with React and Tailwind CSS."
+    },
+    "ReactLinkTree": {
+      "Title": "React Link Tree",
+      "Desc": "This is a linktree app built with React and Tailwind CSS."
+    },
+    "GithubExplorer": {
+      "Title": "Github Explorer",
+      "Desc": "This is a github repository explorer built with React, axios, Tailwind CSS, Github Search API."
+    },
+    "NextSocialMedia": {},
+    "Charts": {}
+  },
+
+
   "title": {
     "home": "Ryan Chen | Home",
     "about": "Ryan Chen | About",
     "skill": "Ryan Chen | Skill",
     "project": "Ryan Chen | Project"
-  },
-  "sidebar": {
-    "home": "Home",
-    "about": "About",
-    "skill": "Skill",
-    "project": "Project"
-  },
-  "command": {
-    "trigger": "Command",
-    "placeholder": "Type a command or search...",
-    "empty": "No results found.",
-    "group": {
-      "page": "Page",
-      "toggle-theme": "Toggle theme",
-      "toggle-language": "Toggle language"
-    },
-    "action": {
-      "home": "Home",
-      "about": "About",
-      "skill": "Skill",
-      "project": "Project",
-      "operation": "Operation",
-      "light-theme": "Light theme",
-      "dark-theme": "Dark theme",
-      "en": "English",
-      "zh-tw": "Traditional Chinese"
-    }
-  },
-  "home": {
-    "title": "Ryan Chen",
-    "name": "Hello 👋, I'm Ryan.",
-    "major": "I am a developer passionate about front-end!",
-    "currently": "I am still continuing to learn React and Next.js related technologies, and I will also use time to learn back-end knowledge.",
-    "next": "about"
-  },
-  "about": {
-    "title": "About Me",
-    "paragraph": {
-      "degree": "I graduated from Tamkang University in the Department of Computer Science and Information Engineering.",
-      "programming": "I am passionate about programming, so I tried a lot of different Programming languages such as JavaScript, TypeScript, Python, Golang, etc.",
-      "cause": "However, due to university courses, I was exposed to web front-end development. Until now, I still love web front-end development.",
-      "currently": "Now, I am still improving my skills, such as learning React.js, Next.js, CSS typography, etc.",
-      "addition": "In addition, I am also very interested in back-end technology. Like Golang, Node.js, etc.",
-      "future": "So in the future, I will focus on the front-end. If I have spare time, I will also learn more about the back-end technology."
-    },
-    "next": "skill"
-  },
-  "skill": {
-    "title": "My Skills",
-    "next": "project"
-  },
-  "project": {
-    "title": "Side Projects",
-    "description": {
-      "muser": "This is a simple mp3 player built with Electron and React.",
-      "react-todo-list": "This is a todo list built with React and Tailwind CSS.",
-      "react-linktree": "This is a linktree app built with React and Tailwind CSS.",
-      "typing-speed": "This is a test typing speed app built with React and Tailwind CSS.",
-      "social-media": "This is a social media built with React, Firebase and Chakra UI.",
-      "github-explorer": "This is a github repository explorer built with React, axios, Tailwind CSS, Github Search API."
-    }
-  },
-  "menu": {
-    "language": "Language",
-    "zh-tw": "繁體中文",
-    "en": "English"
   }
 }

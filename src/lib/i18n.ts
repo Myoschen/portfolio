@@ -1,7 +1,10 @@
 import { createSharedPathnamesNavigation } from 'next-intl/navigation'
 import { getRequestConfig } from 'next-intl/server'
 
-export const locales = ['en', 'zh-TW'] as const
+import type { Locale } from '@/lib/types'
+
+export const locales: Locale[] = ['en', 'zh-TW']
+export const defaultLocale = locales[0]
 
 export const { Link, redirect, usePathname, useRouter } = createSharedPathnamesNavigation({ locales })
 

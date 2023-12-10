@@ -1,9 +1,9 @@
 'use client'
 
 import * as DialogPrimitive from '@radix-ui/react-dialog'
+import { IconX } from '@tabler/icons-react'
 import * as React from 'react'
 
-import Icon from '@/components/ui/icon'
 import { cn } from '@/lib/utils'
 
 const Dialog = DialogPrimitive.Root
@@ -45,7 +45,7 @@ const DialogContent = React.forwardRef<
     >
       {children}
       <DialogPrimitive.Close className={'absolute right-4 top-4 rounded-sm opacity-70 ring-offset-mauve-3 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-violet-7 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-mauve-alpha-4 data-[state=open]:text-mauve-11 dark:ring-offset-mauve-dark-3 dark:focus:ring-violet-dark-7 dark:data-[state=open]:bg-mauve-dark-alpha-4 dark:data-[state=open]:text-mauve-dark-11'}>
-        <Icon name={'close'} />
+        <IconX />
         <span className={'sr-only'}>{'Close'}</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>

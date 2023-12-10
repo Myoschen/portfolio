@@ -1,6 +1,17 @@
 'use client'
 
+import {
+  IconChartBar,
+  IconCommand,
+  IconDeviceDesktop,
+  IconHome,
+  IconLanguage,
+  IconListDetails,
+  IconMoon,
+  IconSun,
+  IconUserCircle } from '@tabler/icons-react'
 import { useTranslations } from 'next-intl'
+import { useTheme } from 'next-themes'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import {
@@ -11,82 +22,78 @@ import {
   CommandItem,
   CommandList,
 } from '@/components/ui/command'
-import Icon from '@/components/ui/icon'
-import useTheme from '@/hooks/use-theme'
 import { usePathname, useRouter } from '@/lib/i18n'
-import type { ActionList } from '@/types/common'
+import type { ActionItem } from '@/lib/types'
 
 export default function CommandMenu() {
   const [open, setOpen] = useState(false)
   const router = useRouter()
   const pathname = usePathname()
-  const t = useTranslations('command')
+  const t = useTranslations('Command')
   const { setTheme } = useTheme()
 
-  const pageActions: ActionList = useMemo(() => {
-    return [
-      {
-        id: 'home-page',
-        title: t('action.home'),
-        icon: <Icon name={'home'} className={'mr-2'} />,
-        perform: () => router.push('/'),
-      },
-      {
-        id: 'about-page',
-        title: t('action.about'),
-        icon: <Icon name={'profile'} className={'mr-2'} />,
-        perform: () => router.push('/about'),
-      },
-      {
-        id: 'skill-page',
-        title: t('action.skill'),
-        icon: <Icon name={'chart'} className={'mr-2'} />,
-        perform: () => router.push('/skill'),
-      },
-      {
-        id: 'project-page',
-        title: t('action.project'),
-        icon: <Icon name={'list-details'} className={'mr-2'} />,
-        perform: () => router.push('/project'),
-      },
-    ]
-  }, [router, t])
+  const navActions: ActionItem[] = useMemo(() => [
+    {
+      id: 'go-home',
+      label: t('Action.Home'),
+      icon: <IconHome className={'mr-2'} size={20} />,
+      perform: () => router.push('/'),
+    },
+    {
+      id: 'go-about',
+      label: t('Action.About'),
+      icon: <IconUserCircle className={'mr-2'} size={20} />,
+      perform: () => router.push('/about'),
+    },
+    {
+      id: 'go-skill',
+      label: t('Action.Skill'),
+      icon: <IconChartBar className={'mr-2'} size={20} />,
+      perform: () => router.push('/skill'),
+    },
+    {
+      id: 'go-project',
+      label: t('Action.Project'),
+      icon: <IconListDetails className={'mr-2'} size={20} />,
+      perform: () => router.push('/project'),
+    },
+  ], [router, t])
 
-  const themeActions: ActionList = useMemo(
-    () => [
-      {
-        id: 'light-theme',
-        title: t('action.light-theme'),
-        perform: () => setTheme('light'),
-        icon: <Icon name={'sun'} className={'mr-2'} />,
-      },
-      {
-        id: 'dark-theme',
-        title: t('action.dark-theme'),
-        perform: () => setTheme('dark'),
-        icon: <Icon name={'moon'} className={'mr-2'} />,
-      },
-    ],
-    [setTheme, t],
-  )
+  const themeActions: ActionItem[] = useMemo(() => [
+    {
+      id: 'theme-system',
+      label: t('Action.SystemTheme'),
+      icon: <IconDeviceDesktop className={'mr-2'} size={20} />,
+      perform: () => setTheme('system'),
+    },
+    {
+      id: 'theme-light',
+      label: t('Action.LightTheme'),
+      icon: <IconSun className={'mr-2'} size={20} />,
+      perform: () => setTheme('light'),
+    },
+    {
+      id: 'theme-dark',
+      label: t('Action.DarkTheme'),
+      icon: <IconMoon className={'mr-2'} size={20} />,
+      perform: () => setTheme('dark'),
+    },
+  ], [setTheme, t])
 
-  const languageActions: ActionList = useMemo(
-    () => [
-      {
-        id: 'en',
-        title: t('action.en'),
-        icon: <Icon name={'language'} className={'mr-2'} />,
-        perform: () => router.replace(`${pathname}`, { locale: 'en' }),
-      },
-      {
-        id: 'zh-tw',
-        title: t('action.zh-tw'),
-        icon: <Icon name={'language'} className={'mr-2'} />,
-        perform: () => router.replace(`${pathname}`, { locale: 'zh-TW' }),
-      },
-    ],
-    [router, pathname, t],
-  )
+  const localeActions: ActionItem[] = useMemo(() => [
+    {
+      id: 'locale-en',
+      label: t('Action.EN'),
+      icon: <IconLanguage className={'mr-2'} size={20} />,
+      perform: () => router.replace(`${pathname}`, { locale: 'en' }),
+    },
+    {
+      id: 'locale-zh_tw',
+      label: t('Action.ZHTW'),
+      icon: <IconLanguage className={'mr-2'} size={20} />,
+      perform: () => router.replace(`${pathname}`, { locale: 'zh-TW' }),
+    },
+  ], [pathname, router, t])
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -113,34 +120,46 @@ export default function CommandMenu() {
         className={'inline-flex items-center gap-x-2'}
         onClick={() => setOpen(true)}
       >
-        <Icon name={'command'} />
-        <span className={'font-medium tracking-wide'}>{t('trigger')}</span>
+        <IconCommand size={20} />
+        <span className={'font-medium tracking-wide'}>{t('Trigger')}</span>
       </button>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder={t('placeholder')} />
+        <CommandInput placeholder={t('Placeholder')} />
         <CommandList>
-          <CommandEmpty>{t('empty')}</CommandEmpty>
-          <CommandGroup heading={t('group.page')}>
-            {pageActions.map(({ id, icon, title, perform }) => (
-              <CommandItem key={id} value={title} onSelect={onSelect(perform)}>
-                {icon}
-                {title}
+          <CommandEmpty>{t('Empty')}</CommandEmpty>
+          <CommandGroup heading={t('Group.Nav')}>
+            {navActions.map(action => (
+              <CommandItem
+                key={action.id}
+                value={action.label}
+                onSelect={onSelect(action.perform)}
+              >
+                {action.icon}
+                {action.label}
               </CommandItem>
             ))}
           </CommandGroup>
-          <CommandGroup heading={t('group.toggle-theme')}>
-            {themeActions.map(({ id, icon, title, perform }, index) => (
-              <CommandItem key={id} value={title} onSelect={onSelect(perform)}>
-                {icon}
-                {title}
+          <CommandGroup heading={t('Group.Theme')}>
+            {themeActions.map(action => (
+              <CommandItem
+                key={action.id}
+                value={action.label}
+                onSelect={onSelect(action.perform)}
+              >
+                {action.icon}
+                {action.label}
               </CommandItem>
             ))}
           </CommandGroup>
-          <CommandGroup heading={t('group.toggle-language')}>
-            {languageActions.map(({ id, icon, title, perform }, index) => (
-              <CommandItem key={id} value={title} onSelect={onSelect(perform)}>
-                {icon}
-                {title}
+          <CommandGroup heading={t('Group.Locale')}>
+            {localeActions.map(action => (
+              <CommandItem
+                key={action.id}
+                value={action.label}
+                onSelect={onSelect(action.perform)}
+              >
+                {action.icon}
+                {action.label}
               </CommandItem>
             ))}
           </CommandGroup>

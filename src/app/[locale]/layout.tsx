@@ -1,55 +1,48 @@
-import { notFound } from 'next/navigation'
-import { NextIntlClientProvider } from 'next-intl'
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
-import { type ReactNode } from 'react'
+import '@/constants/globals.css'
 
+import { notFound } from 'next/navigation'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
+
+import Providers from '@/components/providers'
 import Sidebar from '@/components/sidebar'
 import { sarasa_gothic, work_sans } from '@/constants/fonts'
 import { locales } from '@/lib/i18n'
-import ThemeProvider from '@/store/theme'
+import type { Locale } from '@/lib/types'
+import { cn } from '@/lib/utils'
 
-interface LayoutProps {
-  children: ReactNode
-  params: { locale: string }
+interface RootLayoutProps {
+  children: React.ReactNode
+  params: { locale: Locale }
+}
+
+export async function generateMetadata({ params: { locale } }: RootLayoutProps) {
+  const t = await getTranslations({ locale })
+
+  return {
+    title: t('title.home'),
+  }
 }
 
 export async function generateStaticParams() {
   return locales.map(locale => ({ locale }))
 }
 
-export async function generateMetadata({ params: { locale } }: LayoutProps) {
-  const t = await getTranslations({ locale })
-  return {
-    title: t('title.home'),
-  }
-}
+export default function RootLayout({ children, params: { locale } }: RootLayoutProps) {
+  if (!locales.includes(locale)) notFound()
 
-export default async function RootLayout({
-  children,
-  params: { locale },
-}: LayoutProps) {
-  let messages
-  try {
-    messages = (await import(`../../../messages/${locale}.json`)).default
-  }
-  catch (error) {
-    notFound()
-  }
+  // TODO temporary solution
+  // https://next-intl-docs.vercel.app/docs/getting-started/app-router#add-unstable_setrequestlocale-to-all-layouts-and-pages
   unstable_setRequestLocale(locale)
 
   return (
-    <html
-      lang={locale}
-      className={`${work_sans.variable} ${sarasa_gothic.variable}`}
-    >
+    <html lang={locale} className={cn(work_sans.variable, sarasa_gothic.variable)} suppressHydrationWarning={true}>
+
       <body className={'min-h-screen bg-mauve-1 font-main text-mauve-12 dark:bg-mauve-dark-1 dark:text-mauve-dark-12'}>
         <div className={'flex max-w-4xl flex-col pb-20 pt-8 antialiased transition-colors md:mx-auto md:flex-row md:pt-20 lg:pt-32'}>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            <ThemeProvider>
-              <Sidebar />
-              {children}
-            </ThemeProvider>
-          </NextIntlClientProvider>
+          <Providers>
+            <Sidebar />
+            {children}
+          </Providers>
         </div>
       </body>
     </html>
