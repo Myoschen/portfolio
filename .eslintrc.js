@@ -11,17 +11,35 @@ const customized = stylistic.configs.customize({
 module.exports = {
   root: true,
   extends: ['next/core-web-vitals', 'plugin:tailwindcss/recommended'],
-  plugins: ['@stylistic', 'simple-import-sort'],
+  plugins: ['@stylistic', 'simple-import-sort', 'unused-imports'],
   settings: {
     tailwindcss: {
       callees: ['cn', 'cva'],
-      config: 'tailwind.config.js',
     },
   },
   rules: {
     ...customized.rules,
     '@stylistic/jsx-curly-brace-presence': ['error', 'always'],
-    'simple-import-sort/imports': 'error',
+
     'simple-import-sort/exports': 'error',
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          ['^\\u0000'],
+          ['^react', '^next', '@?\\w'],
+          ['^~/.*'],
+          ['^@/.*'],
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+        ],
+      },
+    ],
+
+    'unused-imports/no-unused-imports': 'error',
+    'unused-imports/no-unused-vars': [
+      'warn',
+      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+    ],
   },
 }
