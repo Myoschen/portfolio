@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
-  "description": "my portfolio website",
-  "version": "0.1.0",
+  "description": "my portfolio website.",
+  "version": "1.0.0",
   "private": true,
   "author": "Myoschen <myos.chen@gmail.com> (https://github.com/Myoschen)",
   "license": "MIT",
