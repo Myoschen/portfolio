@@ -1,7 +1,7 @@
+import { useMemo } from 'react'
+import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl'
 import { IconChartBar, IconHome, IconListDetails, IconUserCircle } from '@tabler/icons-react'
 import pick from 'lodash/pick'
-import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl'
-import { useMemo } from 'react'
 
 import LogoImg from '@/../public/images/logo.png'
 import CommandMenu from '@/components/command-menu'

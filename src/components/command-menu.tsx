@@ -1,5 +1,8 @@
 'use client'
 
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useTranslations } from 'next-intl'
+import { useTheme } from 'next-themes'
 import {
   IconChartBar,
   IconCommand,
@@ -10,9 +13,6 @@ import {
   IconMoon,
   IconSun,
   IconUserCircle } from '@tabler/icons-react'
-import { useTranslations } from 'next-intl'
-import { useTheme } from 'next-themes'
-import { useCallback, useEffect, useMemo, useState } from 'react'
 
 import {
   CommandDialog,

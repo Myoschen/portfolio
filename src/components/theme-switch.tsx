@@ -1,8 +1,8 @@
 'use client'
 
-import { IconMoon, IconSun } from '@tabler/icons-react'
 import { useTranslations } from 'next-intl'
 import { useTheme } from 'next-themes'
+import { IconMoon, IconSun } from '@tabler/icons-react'
 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 

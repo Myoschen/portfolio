@@ -1,7 +1,7 @@
 'use client'
 
-import { IconLanguage } from '@tabler/icons-react'
 import { useLocale, useTranslations } from 'next-intl'
+import { IconLanguage } from '@tabler/icons-react'
 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { usePathname, useRouter } from '@/lib/i18n'

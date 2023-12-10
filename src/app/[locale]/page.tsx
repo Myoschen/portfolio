@@ -1,12 +1,13 @@
-import { IconBrandGithub, IconBrandX, IconMail } from '@tabler/icons-react'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
+import { IconBrandGithub, IconBrandX, IconMail } from '@tabler/icons-react'
+
+import AvatarImg from '~/public/images/avatar.png'
 
 import NextPage from '@/components/next-page'
 import SocialLink from '@/components/social-link'
 import type { LinkItem, Locale } from '@/lib/types'
-import AvatarImg from '~/public/images/avatar.png'
 
 const socialLinks: LinkItem[] = [
   { icon: <IconBrandGithub size={20} />, label: 'Myoschen', url: 'https://github.com/Myoschen' },

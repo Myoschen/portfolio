@@ -1,3 +1,6 @@
+import type { Metadata } from 'next'
+import { useTranslations } from 'next-intl'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import {
   IconBrandCss3,
   IconBrandFirebase,
@@ -13,9 +16,6 @@ import {
   IconBrandTypescript,
   IconBrandVue,
 } from '@tabler/icons-react'
-import type { Metadata } from 'next'
-import { useTranslations } from 'next-intl'
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
 import NextPage from '@/components/next-page'
 import Skill from '@/components/skill'

@@ -1,5 +1,5 @@
-import { IconAppWindow, IconCode } from '@tabler/icons-react'
 import Image from 'next/image'
+import { IconAppWindow, IconCode } from '@tabler/icons-react'
 
 import ExternalLink from '@/components/ui/external-link'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'

@@ -3,9 +3,10 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
+import CodeThinkingImg from '~/public/images/code-thinking.png'
+
 import NextPage from '@/components/next-page'
 import type { Locale } from '@/lib/types'
-import CodeThinkingImg from '~/public/images/code-thinking.png'
 
 interface AboutPageProps {
   params: { locale: Locale }
