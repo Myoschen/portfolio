@@ -1,12 +1,12 @@
 'use client'
 
-import Image from 'next/image'
+import Image, { type StaticImageData } from 'next/image'
 
 import { Link } from '@/lib/i18n'
 import { scrollToTop } from '@/lib/utils'
 
 interface LogoProps {
-  src: string
+  src: string | StaticImageData
 }
 
 export default function Logo({ src }: LogoProps) {
@@ -18,6 +18,7 @@ export default function Logo({ src }: LogoProps) {
         alt={'Logo'}
         width={60}
         height={60}
+        placeholder={'blur'}
       />
     </Link>
   )

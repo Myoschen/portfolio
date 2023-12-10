@@ -4,6 +4,10 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
 import Project from '@/components/project'
 import type { Locale, ProjectItem } from '@/lib/types'
+import GithubExplorerImg from '~/public/images/project/github-explorer.png'
+import MuserImg from '~/public/images/project/muser.png'
+import ReactLinkTreeImg from '~/public/images/project/react-linktree.png'
+import ReactTodoListImg from '~/public/images/project/react-todo-list.png'
 
 interface ProjectPageProps {
   params: { locale: Locale }
@@ -25,7 +29,7 @@ export default function ProjectPage({ params: { locale } }: ProjectPageProps) {
     {
       title: t('Muser.Title'),
       desc: t('Muser.Desc'),
-      img: '/images/project/muser.png',
+      img: MuserImg,
       url: {
         repo: 'https://github.com/Myoschen/muser',
       },
@@ -33,7 +37,7 @@ export default function ProjectPage({ params: { locale } }: ProjectPageProps) {
     {
       title: t('ReactTodoList.Title'),
       desc: t('ReactTodoList.Desc'),
-      img: '/images/project/react-todo-list.png',
+      img: ReactTodoListImg,
       url: {
         repo: 'https://github.com/Myoschen/react-todo-list',
         demo: 'https://react-todo-list-myoschen.vercel.app/',
@@ -42,7 +46,7 @@ export default function ProjectPage({ params: { locale } }: ProjectPageProps) {
     {
       title: t('ReactLinkTree.Title'),
       desc: t('ReactLinkTree.Desc'),
-      img: '/images/project/react-linktree.png',
+      img: ReactLinkTreeImg,
       url: {
         repo: 'https://github.com/Myoschen/react-linktree',
         demo: 'https://react-linktree.vercel.app/',
@@ -51,7 +55,7 @@ export default function ProjectPage({ params: { locale } }: ProjectPageProps) {
     {
       title: t('GithubExplorer.Title'),
       desc: t('GithubExplorer.Desc'),
-      img: '/images/project/github-explorer.png',
+      img: GithubExplorerImg,
       url: {
         repo: 'https://github.com/Myoschen/github-explorer',
         demo: 'https://github-explorer-myoschen.vercel.app/',

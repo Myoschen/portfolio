@@ -6,6 +6,7 @@ import { unstable_setRequestLocale } from 'next-intl/server'
 import NextPage from '@/components/next-page'
 import SocialLink from '@/components/social-link'
 import type { LinkItem, Locale } from '@/lib/types'
+import AvatarImg from '~/public/images/avatar.png'
 
 const socialLinks: LinkItem[] = [
   { icon: <IconBrandGithub size={20} />, label: 'Myoschen', url: 'https://github.com/Myoschen' },
@@ -30,10 +31,9 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
           <div className={'relative aspect-square w-40 overflow-hidden rounded-full ring-4 ring-violet-7 dark:via-violet-dark-7'}>
             <Image
               className={'object-cover'}
-              src={'/images/myos.png'}
+              src={AvatarImg}
               alt={'Ryan Chen'}
-              width={160}
-              height={160}
+              placeholder={'blur'}
             />
           </div>
           <ul className={'flex flex-wrap  justify-start gap-x-4 md:flex-col md:justify-center md:gap-y-2'}>

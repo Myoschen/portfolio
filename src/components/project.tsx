@@ -16,6 +16,7 @@ export default function Project({ title, desc, img, url }: ProjectProps) {
           src={img}
           alt={title}
           fill={true}
+          placeholder={'blur'}
         />
       </div>
       <div className={'flex h-[160px] flex-col gap-y-1.5 px-6 pb-4'}>

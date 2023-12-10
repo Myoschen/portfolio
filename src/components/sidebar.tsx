@@ -3,6 +3,7 @@ import pick from 'lodash/pick'
 import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl'
 import { useMemo } from 'react'
 
+import LogoImg from '@/../public/images/logo.png'
 import CommandMenu from '@/components/command-menu'
 import LocaleSwitch from '@/components/locale-switch'
 import Logo from '@/components/logo'
@@ -42,7 +43,7 @@ export default function Sidebar() {
       <aside className={'px-6 md:w-[150px] md:shrink-0 lg:px-0'}>
         <div className={'md:sticky md:top-20'}>
           <div className={'-ml-2 mb-4 flex justify-start md:mb-8'}>
-            <Logo src={'/images/icon.png'} />
+            <Logo src={LogoImg} />
           </div>
           <nav className={'mb-4 md:mb-8'}>
             <div className={'-ml-2 flex flex-wrap items-start gap-x-px md:flex-col md:gap-x-0 md:gap-y-2'}>

@@ -5,6 +5,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
 import NextPage from '@/components/next-page'
 import type { Locale } from '@/lib/types'
+import CodeThinkingImg from '~/public/images/code-thinking.png'
 
 interface AboutPageProps {
   params: { locale: Locale }
@@ -26,12 +27,12 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
     <main className={'mt-6 flex min-w-0 flex-auto flex-col px-6 md:mt-0'}>
       <div className={'flex flex-col gap-y-6'}>
         <h1 className={'text-4xl font-bold leading-relaxed'}>{t('Title')}</h1>
-        <div className={'relative h-80 overflow-hidden'}>
+        <div className={'relative h-80 overflow-hidden rounded-3xl'}>
           <Image
             className={'object-cover'}
-            src={'/images/programming.svg'}
+            src={CodeThinkingImg}
             alt={'Programming'}
-            fill={true}
+            placeholder={'blur'}
           />
         </div>
         <div className={'space-y-4 whitespace-pre-line tracking-wide'}>

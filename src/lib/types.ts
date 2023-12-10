@@ -1,3 +1,5 @@
+import type { StaticImageData } from 'next/image'
+
 export type Locale = 'en' | 'zh-TW'
 
 export type LinkItem = {
@@ -22,7 +24,7 @@ export type SkillItem = {
 export type ProjectItem = {
   title: string
   desc: string
-  img: string
+  img: string | StaticImageData
   url?: {
     repo: string
     demo?: string
