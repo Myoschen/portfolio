@@ -13,5 +13,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('./radixui-colors'), require('tailwindcss-animate')],
+  plugins: [require('./radix-ui-colors'), require('tailwindcss-animate')],
 }
