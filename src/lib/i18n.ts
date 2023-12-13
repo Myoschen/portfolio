@@ -9,5 +9,5 @@ export const defaultLocale = locales[0]
 export const { Link, redirect, usePathname, useRouter } = createSharedPathnamesNavigation({ locales })
 
 export default getRequestConfig(async ({ locale }) => ({
-  messages: (await import(`../../messages/${locale}.json`)).default,
+  messages: (await import(`~/messages/${locale}.json`)).default,
 }))
