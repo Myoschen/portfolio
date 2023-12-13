@@ -1,15 +1,18 @@
 import '@/constants/globals.css'
 
 import type { Metadata } from 'next'
+import { Noto_Sans_TC } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
+import { GeistSans } from 'geist/font/sans'
 
 import Providers from '@/components/providers'
 import Sidebar from '@/components/sidebar'
-import { sarasa_gothic, work_sans } from '@/constants/fonts'
 import { locales } from '@/lib/i18n'
 import type { Locale } from '@/lib/types'
 import { cn } from '@/lib/utils'
+
+const NotoSansTC = Noto_Sans_TC({ variable: '--font-noto-sans-tc', subsets: ['latin'] })
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -42,9 +45,8 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
   unstable_setRequestLocale(locale)
 
   return (
-    <html lang={locale} className={cn(work_sans.variable, sarasa_gothic.variable)} suppressHydrationWarning={true}>
-
-      <body className={'min-h-screen bg-mauve-1 font-main text-mauve-12 dark:bg-mauve-dark-1 dark:text-mauve-dark-12'}>
+    <html lang={locale} className={cn(NotoSansTC.variable, GeistSans.variable)} suppressHydrationWarning={true}>
+      <body className={'min-h-screen bg-mauve-1 text-mauve-12 dark:bg-mauve-dark-1 dark:text-mauve-dark-12'}>
         <div className={'flex max-w-4xl flex-col pb-20 pt-8 antialiased transition-colors md:mx-auto md:flex-row md:pt-20 lg:pt-32'}>
           <Providers>
             <Sidebar />
