@@ -3,8 +3,10 @@ import '@/constants/globals.css'
 import type { Metadata } from 'next'
 import { Noto_Sans_TC } from 'next/font/google'
 import { notFound } from 'next/navigation'
+import { NextIntlClientProvider, useMessages } from 'next-intl'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { GeistSans } from 'geist/font/sans'
+import pick from 'lodash/pick'
 
 import Providers from '@/components/providers'
 import Sidebar from '@/components/sidebar'
@@ -44,13 +46,17 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
   // https://next-intl-docs.vercel.app/docs/getting-started/app-router#add-unstable_setrequestlocale-to-all-layouts-and-pages
   unstable_setRequestLocale(locale)
 
+  const messages = useMessages()
+
   return (
     <html lang={locale} className={cn(NotoSansTC.variable, GeistSans.variable)} suppressHydrationWarning={true}>
       <body className={'min-h-screen bg-mauve-1 text-mauve-12 dark:bg-mauve-dark-1 dark:text-mauve-dark-12'}>
         <div className={'flex max-w-4xl flex-col pb-20 pt-8 antialiased transition-colors md:mx-auto md:flex-row md:pt-20 lg:pt-32'}>
           <Providers>
             <Sidebar />
-            {children}
+            <NextIntlClientProvider locale={locale} messages={pick(messages, 'Error')}>
+              {children}
+            </NextIntlClientProvider>
           </Providers>
         </div>
       </body>

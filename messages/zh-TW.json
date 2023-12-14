@@ -4,6 +4,14 @@
     "TitleTemplate": "%s / Ryan Chen",
     "Description": "你好，我是 Ryan。歡迎來到我的作品集網站！"
   },
+  "NotFound": {
+    "Description": "找不到頁面"
+  },
+  "Error": {
+    "Title": "哎呀！",
+    "Description":"抱歉，未預期的錯誤",
+    "Retry":"重試"
+  },
   "Sidebar": {
     "Home": "首頁",
     "About": "關於",

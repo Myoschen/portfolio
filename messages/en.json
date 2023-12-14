@@ -4,6 +4,14 @@
     "TitleTemplate": "%s / Ryan Chen",
     "Description": "Hello, I'm Ryan. Welcome to my portfolio website!"
   },
+  "NotFound": {
+    "Description": "Page not found"
+  },
+  "Error": {
+    "Title": "Oops!",
+    "Description":"Sorry, unexpected error",
+    "Retry":"Retry"
+  },
   "Sidebar": {
     "Home": "Home",
     "About": "About",
