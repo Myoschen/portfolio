@@ -50,15 +50,17 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
 
   return (
     <html lang={locale} className={cn(NotoSansTC.variable, GeistSans.variable)} suppressHydrationWarning={true}>
-      <body className={'min-h-screen'}>
-        <div className={'absolute inset-0 bg-noise bg-fixed opacity-25'} />
-        <div className={'relative flex max-w-4xl flex-col pb-20 pt-8 antialiased md:mx-auto md:flex-row md:pt-20 lg:pt-32'}>
-          <Providers>
-            <Sidebar />
-            <NextIntlClientProvider locale={locale} messages={pick(messages, 'Error')}>
-              {children}
-            </NextIntlClientProvider>
-          </Providers>
+      <body>
+        <div className={'relative min-h-screen'}>
+          <div className={'absolute inset-0 bg-noise bg-fixed opacity-25'} />
+          <div className={'relative flex max-w-4xl flex-col pb-20 pt-8 antialiased md:mx-auto md:flex-row md:pt-20 lg:pt-32'}>
+            <Providers>
+              <Sidebar />
+              <NextIntlClientProvider locale={locale} messages={pick(messages, 'Error')}>
+                {children}
+              </NextIntlClientProvider>
+            </Providers>
+          </div>
         </div>
       </body>
     </html>
