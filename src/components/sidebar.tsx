@@ -3,7 +3,8 @@ import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl'
 import { IconChartBar, IconHome, IconListDetails, IconUserCircle } from '@tabler/icons-react'
 import pick from 'lodash/pick'
 
-import LogoImg from '@/../public/images/logo.png'
+import LogoImg from '~/public/images/logo.png'
+
 import CommandMenu from '@/components/command-menu'
 import LocaleSwitch from '@/components/locale-switch'
 import Logo from '@/components/logo'

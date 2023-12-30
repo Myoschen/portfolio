@@ -29,7 +29,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
         <h1 className={'text-4xl font-bold leading-relaxed'}>{t('Title')}</h1>
         <p className={'whitespace-pre-line tracking-wide'}>{t('Intro')}</p>
         <div className={'grid gap-y-4 md:grid-cols-[180px_auto] md:gap-x-2 md:gap-y-0'}>
-          <div className={'relative aspect-square w-40 overflow-hidden rounded-full ring-4 ring-violet-7 dark:via-violet-dark-7'}>
+          <div className={'relative aspect-square w-40 overflow-hidden rounded-full ring-4 ring-ring'}>
             <Image
               className={'object-cover'}
               src={AvatarImg}

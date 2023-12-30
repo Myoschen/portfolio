@@ -13,12 +13,12 @@ interface SkillProps extends SkillItem {}
 
 export default function Skill({ icon, label, level }: SkillProps) {
   return (
-    <div className={'group grid grid-cols-[60px_auto] items-center gap-x-4 rounded border-2 border-mauve-7 p-4 transition-colors ease-out hover:border-violet-7 dark:border-mauve-dark-7 dark:hover:border-violet-dark-7'}>
-      <div className={'flex items-center justify-center text-mauve-9 transition-[color_transform] ease-out group-hover:scale-110 group-hover:text-violet-10 group-hover:will-change-transform dark:text-mauve-dark-9 dark:group-hover:text-violet-dark-10'}>
+    <div className={'group grid grid-cols-[60px_auto] items-center gap-x-4 rounded-xl border-2 border-border p-4'}>
+      <div className={'flex items-center justify-center text-primary transition-colors group-hover:text-primary-hover'}>
         {icon}
       </div>
       <div className={'flex flex-col gap-y-2'}>
-        <h2 className={'text-xl font-medium'}>{label}</h2>
+        <h2 className={'text-lg font-medium'}>{label}</h2>
         <Progress value={levelMap[level]} />
       </div>
     </div>

@@ -6,6 +6,15 @@ module.exports = {
   darkMode: ['class'],
   theme: {
     extend: {
+      colors: {
+        'background': 'hsl(var(--background))',
+        'foreground': 'hsl(var(--foreground))',
+        'border': 'hsl(var(--border))',
+        'ring': 'hsl(var(--ring))',
+        'primary': 'hsl(var(--primary))',
+        'primary-hover': 'hsl(var(--primary-hover))',
+        'secondary': 'hsl(var(--secondary))',
+      },
       fontFamily: {
         sans: [
           'var(--font-geist-sans)',
@@ -15,5 +24,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('./radix-ui-colors'), require('tailwindcss-animate')],
+  plugins: [require('tailwindcss-animate')],
 }

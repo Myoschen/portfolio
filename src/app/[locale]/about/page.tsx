@@ -28,11 +28,12 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
     <main className={'mt-6 flex min-w-0 flex-auto flex-col px-6 md:mt-0'}>
       <div className={'flex flex-col gap-y-6'}>
         <h1 className={'text-4xl font-bold leading-relaxed'}>{t('Title')}</h1>
-        <div className={'relative h-80 overflow-hidden rounded-3xl'}>
+        <div className={'relative h-80 overflow-hidden rounded-3xl border shadow-sm'}>
           <Image
             className={'object-cover'}
             src={CodeThinkingImg}
             alt={'Programming'}
+            fill={true}
             placeholder={'blur'}
           />
         </div>

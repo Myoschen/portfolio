@@ -85,34 +85,33 @@ export default function CommandMenu() {
       id: 'locale-en',
       label: t('Action.EN'),
       icon: <IconLanguage className={'mr-2'} size={20} />,
-      perform: () => router.replace(`${pathname}`, { locale: 'en' }),
+      perform: () => router.replace(pathname, { locale: 'en' }),
     },
     {
       id: 'locale-zh_tw',
       label: t('Action.ZHTW'),
       icon: <IconLanguage className={'mr-2'} size={20} />,
-      perform: () => router.replace(`${pathname}`, { locale: 'zh-TW' }),
+      perform: () => router.replace(pathname, { locale: 'zh-TW' }),
     },
   ], [pathname, router, t])
 
   useEffect(() => {
-    const down = (e: KeyboardEvent) => {
+    const toggle = (e: KeyboardEvent) => {
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
         setOpen(open => !open)
       }
     }
-    document.addEventListener('keydown', down)
-    return () => document.removeEventListener('keydown', down)
+    document.addEventListener('keydown', toggle)
+    return () => document.removeEventListener('keydown', toggle)
   }, [])
 
-  const onSelect = useCallback(
-    (cb: () => void) => () => {
+  const handleSelect = useCallback((callback: () => void) => {
+    return () => {
+      callback()
       setOpen(false)
-      cb()
-    },
-    [],
-  )
+    }
+  }, [])
 
   return (
     <>
@@ -132,7 +131,7 @@ export default function CommandMenu() {
               <CommandItem
                 key={action.id}
                 value={action.label}
-                onSelect={onSelect(action.perform)}
+                onSelect={handleSelect(action.perform)}
               >
                 {action.icon}
                 {action.label}
@@ -144,7 +143,7 @@ export default function CommandMenu() {
               <CommandItem
                 key={action.id}
                 value={action.label}
-                onSelect={onSelect(action.perform)}
+                onSelect={handleSelect(action.perform)}
               >
                 {action.icon}
                 {action.label}
@@ -156,7 +155,7 @@ export default function CommandMenu() {
               <CommandItem
                 key={action.id}
                 value={action.label}
-                onSelect={onSelect(action.perform)}
+                onSelect={handleSelect(action.perform)}
               >
                 {action.icon}
                 {action.label}

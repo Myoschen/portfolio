@@ -2,11 +2,11 @@
 
 import { motion } from 'framer-motion'
 
-interface Props {
+interface RootTemplateProps {
   children: React.ReactNode
 }
 
-export default function RootTemplate({ children }: Props) {
+export default function RootTemplate({ children }: RootTemplateProps) {
   return (
     <motion.div
       className={'flex-1'}

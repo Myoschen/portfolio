@@ -15,18 +15,18 @@ export default function NavLink({ icon, label, url }: NavLinkProps) {
   const isActive = pathname === url
 
   return (
-    <Link className={'flex transition-colors'} href={url} onClick={scrollToTop}>
+    <Link href={url} onClick={scrollToTop}>
       <span
         className={cn(
-          'relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide',
-          { 'text-violet-11 dark:text-violet-dark-11': isActive }
+          'relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide opacity-75 transition-opacity',
+          isActive && 'opacity-100'
         )}
       >
         {icon}
         {label}
         {isActive && (
           <motion.div
-            className={'absolute inset-0 -z-10 rounded-md bg-mauve-4 dark:bg-mauve-dark-4'}
+            className={'absolute inset-0 -z-10 rounded-lg bg-secondary'}
             layoutId={'active-link'}
           />
         )}

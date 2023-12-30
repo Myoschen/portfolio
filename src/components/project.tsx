@@ -9,10 +9,10 @@ interface ProjectProps extends ProjectItem {}
 
 export default function Project({ title, desc, img, url }: ProjectProps) {
   return (
-    <div className={'group space-y-4 rounded border-2 border-mauve-7 transition-colors hover:border-violet-7 dark:border-mauve-dark-7 dark:hover:border-violet-dark-7'}>
+    <div className={'group space-y-4 overflow-hidden rounded-xl border-2 border-border'}>
       <div className={'relative aspect-video overflow-hidden'}>
         <Image
-          className={'rounded-t object-cover transition-transform duration-500 group-hover:scale-105'}
+          className={'rounded-t object-cover transition-transform duration-500 hover:scale-110'}
           src={img}
           alt={title}
           fill={true}
@@ -28,7 +28,7 @@ export default function Project({ title, desc, img, url }: ProjectProps) {
               <Tooltip>
                 <TooltipTrigger>
                   <ExternalLink
-                    className={'flex items-center justify-center rounded-md p-2 transition-colors hover:bg-mauve-3 dark:hover:bg-mauve-dark-3'}
+                    className={'flex items-center justify-center rounded-md p-2 transition-colors hover:bg-secondary'}
                     href={url.repo}
                   >
                     <IconCode size={20} />
@@ -43,7 +43,7 @@ export default function Project({ title, desc, img, url }: ProjectProps) {
               <Tooltip>
                 <TooltipTrigger>
                   <ExternalLink
-                    className={'flex items-center justify-center rounded-md p-2 transition-colors hover:bg-mauve-3 dark:hover:bg-mauve-dark-3'}
+                    className={'flex items-center justify-center rounded-md p-2 transition-colors hover:bg-secondary'}
                     href={url.demo}
                   >
                     <IconAppWindow size={20} />
