@@ -5,7 +5,6 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
 import CodeThinkingImg from '~/public/images/code-thinking.png'
 
-import NextPage from '@/components/next-page'
 import type { Locale } from '@/lib/types'
 
 interface AboutPageProps {
@@ -40,7 +39,6 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
         <div className={'space-y-4 whitespace-pre-line tracking-wide'}>
           <p>{t('SelfIntroduction')}</p>
         </div>
-        <NextPage className={'ml-auto'} label={t('NextPage')} url={'/skill'} />
       </div>
     </main>
   )

@@ -53,17 +53,14 @@
   "Home": {
     "Title": "Ryan Chen",
     "Intro": "Hello 👋, I'm Ryan.\nI am a developer passionate about front-end!",
-    "Status": "I am still continuing to learn React and Next.js related technologies, and I will also use time to learn back-end knowledge.",
-    "NextPage": "About"
+    "Status": "I am still continuing to learn React and Next.js related technologies, and I will also use time to learn back-end knowledge."
   },
   "About": {
     "Title": "About Me",
-    "SelfIntroduction":"I graduated from Tamkang University in the Department of Computer Science and Information Engineering.\n\nI am passionate about programming, so I tried a lot of different Programming languages such as JavaScript, TypeScript, Python, Golang, etc.\n\nHowever, due to university courses, I was exposed to web front-end development. Until now, I still love web front-end development.\n\nNow, I am still improving my skills, such as learning React.js, Next.js, CSS typography, etc.\n\nIn addition, I am also very interested in back-end technology. Like Golang, Node.js, etc.\n\nSo in the future, I will focus on the front-end. If I have spare time, I will also learn more about the back-end technology.",
-    "NextPage": "Skill"
+    "SelfIntroduction":"I graduated from Tamkang University in the Department of Computer Science and Information Engineering.\n\nI am passionate about programming, so I tried a lot of different Programming languages such as JavaScript, TypeScript, Python, Golang, etc.\n\nHowever, due to university courses, I was exposed to web front-end development. Until now, I still love web front-end development.\n\nNow, I am still improving my skills, such as learning React.js, Next.js, CSS typography, etc.\n\nIn addition, I am also very interested in back-end technology. Like Golang, Node.js, etc.\n\nSo in the future, I will focus on the front-end. If I have spare time, I will also learn more about the back-end technology."
   },
   "Skill": {
-    "Title": "My Skills",
-    "NextPage": "Project"
+    "Title": "My Skills"
   },
   "Project": {
     "Title": "Side Projects",

@@ -5,7 +5,6 @@ import { IconBrandGithub, IconBrandX, IconMail } from '@tabler/icons-react'
 
 import AvatarImg from '~/public/images/avatar.png'
 
-import NextPage from '@/components/next-page'
 import SocialLink from '@/components/social-link'
 import type { LinkItem, Locale } from '@/lib/types'
 
@@ -46,7 +45,6 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
           </ul>
         </div>
         <p className={'tracking-wide'}>{t('Status')}</p>
-        <NextPage className={'ml-auto'} label={t('NextPage')} url={'/about'} />
       </div>
     </main>
   )

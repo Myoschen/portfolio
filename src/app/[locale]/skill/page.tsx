@@ -17,7 +17,6 @@ import {
   IconBrandVue,
 } from '@tabler/icons-react'
 
-import NextPage from '@/components/next-page'
 import Skill from '@/components/skill'
 import type { Locale, SkillItem } from '@/lib/types'
 
@@ -114,7 +113,6 @@ export default function SkillPage({ params: { locale } }: SkillPageProps) {
             <Skill key={index} {...props} />
           ))}
         </div>
-        <NextPage className={'ml-auto'} label={t('NextPage')} url={'/project'} />
       </div>
     </main>
   )
