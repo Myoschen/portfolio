@@ -3,12 +3,12 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: process.e
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   modularizeImports: {
-    '@tabler/icons-react': {
-      transform: '@tabler/icons-react/dist/esm/icons/{{member}}',
+    '@/components/icons': {
+      transform: '@/components/icons/{{member}}',
     },
   },
-  transpilePackages: ['@tabler/icons-react'],
 }
 
 module.exports = withBundleAnalyzer(withNextIntl(nextConfig))

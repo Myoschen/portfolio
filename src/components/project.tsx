@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { IconAppWindow, IconCode } from '@tabler/icons-react'
+import { AppWindowIcon, CodeIcon } from 'lucide-react'
 
 import ExternalLink from '@/components/ui/external-link'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
@@ -31,7 +31,7 @@ export default function Project({ title, desc, img, url }: ProjectProps) {
                     className={'flex items-center justify-center rounded-md p-2 transition-colors hover:bg-secondary'}
                     href={url.repo}
                   >
-                    <IconCode size={20} />
+                    <CodeIcon size={20} />
                   </ExternalLink>
                 </TooltipTrigger>
                 <TooltipContent>{'Repository'}</TooltipContent>
@@ -46,7 +46,7 @@ export default function Project({ title, desc, img, url }: ProjectProps) {
                     className={'flex items-center justify-center rounded-md p-2 transition-colors hover:bg-secondary'}
                     href={url.demo}
                   >
-                    <IconAppWindow size={20} />
+                    <AppWindowIcon size={20} />
                   </ExternalLink>
                 </TooltipTrigger>
                 <TooltipContent>{'Demo'}</TooltipContent>

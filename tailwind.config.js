@@ -17,8 +17,8 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          'var(--font-geist-sans)',
           'var(--font-noto-sans-tc)',
+          'var(--font-geist-sans)',
           ...fontFamily.sans,
         ],
       },

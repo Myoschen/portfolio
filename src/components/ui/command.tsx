@@ -2,8 +2,8 @@
 
 import * as React from 'react'
 import { type DialogProps } from '@radix-ui/react-dialog'
-import { IconSearch } from '@tabler/icons-react'
 import { Command as CommandPrimitive } from 'cmdk'
+import { SearchIcon } from 'lucide-react'
 
 import { Dialog, DialogContent } from '@/components/ui/diglog'
 import { cn } from '@/lib/utils'
@@ -29,7 +29,7 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (
     <Dialog {...props}>
       <DialogContent className={'overflow-hidden p-0'}>
-        <Command className={'[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5'}>
+        <Command className={'[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3'}>
           {children}
         </Command>
       </DialogContent>
@@ -45,7 +45,7 @@ const CommandInput = React.forwardRef<
     className={'flex items-center border-b border-border px-3'}
     cmdk-input-wrapper={''}
   >
-    <IconSearch className={'mr-2 shrink-0 opacity-50'} />
+    <SearchIcon className={'mr-2 shrink-0 opacity-50'} size={16} />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(

@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl'
-import { IconChartBar, IconHome, IconListDetails, IconUserCircle } from '@tabler/icons-react'
 import pick from 'lodash/pick'
+import { HomeIcon, LightbulbIcon, ScanFaceIcon } from 'lucide-react'
 
 import LogoImg from '~/public/images/logo.png'
 
@@ -18,22 +18,17 @@ export default function Sidebar() {
 
   const navLinks: LinkItem[] = useMemo(() => [
     {
-      icon: <IconHome size={20} />,
+      icon: <HomeIcon size={20} />,
       label: t('Home'),
       url: '/',
     },
     {
-      icon: <IconUserCircle size={20} />,
+      icon: <ScanFaceIcon size={20} />,
       label: t('About'),
       url: '/about',
     },
     {
-      icon: <IconChartBar size={20} />,
-      label: t('Skill'),
-      url: '/skill',
-    },
-    {
-      icon: <IconListDetails size={20} />,
+      icon: <LightbulbIcon size={20} />,
       label: t('Project'),
       url: '/project',
     },

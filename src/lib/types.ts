@@ -1,3 +1,4 @@
+import type { SVGProps } from 'react'
 import type { StaticImageData } from 'next/image'
 
 export type Locale = 'en' | 'zh-TW'
@@ -36,4 +37,8 @@ export type ActionItem = {
   icon: JSX.Element
   label: string
   perform: () => void
+}
+
+export type SVGBaseProps = SVGProps<SVGSVGElement> & {
+  size?: number
 }
