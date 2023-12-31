@@ -53,7 +53,13 @@
   "Home": {
     "Title": "Ryan Chen",
     "Intro": "你好 👋, 我是 Ryan。\n我是一個對於前端充滿熱情的開發者！",
-    "Use": "以下是我目前在開發時會使用到的一些工具。"
+    "Uses": {
+      "Title": "用途",
+      "Intro": "這些是我目前開發時使用的程式語言、函式庫和工具。",
+      "Languages": "程式語言",
+      "Libraries": "函式庫",
+      "Tools": "工具"
+    }
   },
   "About": {
     "Title": "關於我",

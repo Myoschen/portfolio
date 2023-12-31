@@ -74,10 +74,10 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
           ))}
         </ul>
         <div className={'space-y-4'}>
-          <h2 className={'text-xl font-semibold'}>{'Uses'}</h2>
-          <p>{t('Use')}</p>
+          <h2 className={'text-xl font-semibold'}>{t('Uses.Title')}</h2>
+          <p>{t('Uses.Intro')}</p>
           <div className={'space-y-2'}>
-            <h3 className={'text-lg font-semibold'}>{'Languages'}</h3>
+            <h3 className={'text-lg font-semibold'}>{t('Uses.Languages')}</h3>
             <ul className={'flex flex-wrap gap-2'}>
               {languages.map((language, index) => (
                 <UseBadge key={index} {...language} />
@@ -85,7 +85,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
             </ul>
           </div>
           <div className={'space-y-2'}>
-            <h3 className={'text-lg font-semibold'}>{'Libraries'}</h3>
+            <h3 className={'text-lg font-semibold'}>{t('Uses.Libraries')}</h3>
             <ul className={'flex flex-wrap gap-2'}>
               {libraries.map((library, index) => (
                 <UseBadge key={index} {...library} />
@@ -93,7 +93,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
             </ul>
           </div>
           <div className={'space-y-2'}>
-            <h3 className={'text-lg font-semibold'}>{'Tools'}</h3>
+            <h3 className={'text-lg font-semibold'}>{t('Uses.Tools')}</h3>
             <ul className={'flex flex-wrap gap-2'}>
               {tools.map((tool, index) => (
                 <UseBadge key={index} {...tool} />

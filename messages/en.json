@@ -53,7 +53,13 @@
   "Home": {
     "Title": "Ryan Chen",
     "Intro": "Hello 👋, I'm Ryan.\nI am a developer passionate about front-end!",
-    "Use": "Here are some of the tools I currently use in development."
+    "Uses": {
+      "Title": "Uses",
+      "Intro": "These are the programming languages, libraries, and tools I currently use when developing.",
+      "Languages": "Languages",
+      "Libraries": "Libraries",
+      "Tools": "Tools"
+    }
   },
   "About": {
     "Title": "About Me",
