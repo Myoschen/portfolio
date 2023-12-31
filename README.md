@@ -14,7 +14,8 @@ This is my portfolio.
 - [Next.js](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Radix Primitives](https://www.radix-ui.com/primitives)
-- [Tabler Icons](https://tabler.io/icons)
+- [Lucide Icons](https://lucide.dev/)
+- [Svgl](https://svgl.vercel.app/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Next Intl](https://next-intl-docs.vercel.app/)
 
@@ -38,4 +39,4 @@ pnpm run dev
 
 ## License
 
-Licensed under the [MIT License](./LICENSE).
+Licensed under the [MIT License](./LICENSE.md).
