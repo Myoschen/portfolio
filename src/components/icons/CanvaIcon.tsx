@@ -3,7 +3,7 @@ import type { SVGBaseProps } from '@/lib/types'
 export default function CanvaIcon({ size = 16, ...props }: SVGBaseProps) {
   return (
     <svg viewBox={'0 0 80 80'} fill={'none'} xmlns={'http://www.w3.org/2000/svg'} width={size} height={size} {...props}>
-      <g clip-path={'url(#clip0_905_1790)'}>
+      <g clipPath={'url(#clip0_905_1790)'}>
         <path d={'M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80Z'} fill={'#7D2AE7'} />
         <path d={'M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80Z'} fill={'url(#paint0_radial_905_1790)'} />
         <path d={'M40 80C62.0914 80 80 62.0914 80 40C80 17.9086 62.0914 0 40 0C17.9086 0 0 17.9086 0 40C0 62.0914 17.9086 80 40 80Z'} fill={'url(#paint1_radial_905_1790)'} />
@@ -13,21 +13,21 @@ export default function CanvaIcon({ size = 16, ...props }: SVGBaseProps) {
       </g>
       <defs>
         <radialGradient id={'paint0_radial_905_1790'} cx={'0'} cy={'0'} r={'1'} gradientUnits={'userSpaceOnUse'} gradientTransform={'translate(15.453 70.9057) rotate(-49.416) scale(61.8733)'}>
-          <stop stop-color={'#6420FF'} />
-          <stop offset={'1'} stop-color={'#6420FF'} stop-opacity={'0'} />
+          <stop stopColor={'#6420FF'} />
+          <stop offset={'1'} stopColor={'#6420FF'} stopOpacity={'0'} />
         </radialGradient>
         <radialGradient id={'paint1_radial_905_1790'} cx={'0'} cy={'0'} r={'1'} gradientUnits={'userSpaceOnUse'} gradientTransform={'translate(21.1788 9.09457) rotate(54.703) scale(69.7735)'}>
-          <stop stop-color={'#00C4CC'} />
-          <stop offset={'1'} stop-color={'#00C4CC'} stop-opacity={'0'} />
+          <stop stopColor={'#00C4CC'} />
+          <stop offset={'1'} stopColor={'#00C4CC'} stopOpacity={'0'} />
         </radialGradient>
         <radialGradient id={'paint2_radial_905_1790'} cx={'0'} cy={'0'} r={'1'} gradientUnits={'userSpaceOnUse'} gradientTransform={'translate(15.4526 70.9053) rotate(-45.1954) scale(61.1242 28.1118)'}>
-          <stop stop-color={'#6420FF'} />
-          <stop offset={'1'} stop-color={'#6420FF'} stop-opacity={'0'} />
+          <stop stopColor={'#6420FF'} />
+          <stop offset={'1'} stopColor={'#6420FF'} stopOpacity={'0'} />
         </radialGradient>
         <radialGradient id={'paint3_radial_905_1790'} cx={'0'} cy={'0'} r={'1'} gradientUnits={'userSpaceOnUse'} gradientTransform={'translate(32.7158 10.7789) rotate(66.5198) scale(62.9836 105.512)'}>
-          <stop stop-color={'#00C4CC'} stop-opacity={'0.725916'} />
-          <stop offset={'0.0001'} stop-color={'#00C4CC'} />
-          <stop offset={'1'} stop-color={'#00C4CC'} stop-opacity={'0'} />
+          <stop stopColor={'#00C4CC'} stopOpacity={'0.725916'} />
+          <stop offset={'0.0001'} stopColor={'#00C4CC'} />
+          <stop offset={'1'} stopColor={'#00C4CC'} stopOpacity={'0'} />
         </radialGradient>
         <clipPath id={'clip0_905_1790'}>
           <rect width={'80'} height={'80'} fill={'white'} />

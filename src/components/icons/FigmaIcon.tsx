@@ -3,7 +3,7 @@ import type { SVGBaseProps } from '@/lib/types'
 export default function FigmaIcon({ size = 16, ...props }: SVGBaseProps) {
   return (
     <svg viewBox={'0 0 54 80'} fill={'none'} xmlns={'http://www.w3.org/2000/svg'} width={size} height={size} {...props}>
-      <g clip-path={'url(#clip0_912_3)'}>
+      <g clipPath={'url(#clip0_912_3)'}>
         <path d={'M13.3333 80.0002C20.6933 80.0002 26.6667 74.0268 26.6667 66.6668V53.3335H13.3333C5.97333 53.3335 0 59.3068 0 66.6668C0 74.0268 5.97333 80.0002 13.3333 80.0002Z'} fill={'#0ACF83'} />
         <path d={'M0 39.9998C0 32.6398 5.97333 26.6665 13.3333 26.6665H26.6667V53.3332H13.3333C5.97333 53.3332 0 47.3598 0 39.9998Z'} fill={'#A259FF'} />
         <path d={'M0 13.3333C0 5.97333 5.97333 0 13.3333 0H26.6667V26.6667H13.3333C5.97333 26.6667 0 20.6933 0 13.3333Z'} fill={'#F24E1E'} />
