@@ -9,7 +9,7 @@ interface ProjectProps extends ProjectItem {}
 
 export default function Project({ title, desc, img, url }: ProjectProps) {
   return (
-    <div className={'group space-y-4 overflow-hidden rounded-xl border-2 border-border'}>
+    <div className={'group space-y-4 overflow-hidden rounded-xl border-2 border-border bg-secondary/50'}>
       <div className={'relative aspect-video overflow-hidden'}>
         <Image
           className={'rounded-t object-cover transition-transform duration-500 hover:scale-110'}
