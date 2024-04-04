@@ -57,7 +57,7 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
             <Providers>
               <Sidebar />
               <NextIntlClientProvider locale={locale} messages={pick(messages, 'Error')}>
-                {children}
+                <div className={'md:ml-40'}>{children}</div>
               </NextIntlClientProvider>
             </Providers>
           </div>
