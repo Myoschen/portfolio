@@ -11,7 +11,7 @@ const customized = stylistic.configs.customize({
 module.exports = {
   root: true,
   extends: ['next/core-web-vitals', 'plugin:tailwindcss/recommended'],
-  plugins: ['@stylistic', 'simple-import-sort', 'unused-imports'],
+  plugins: ['@stylistic', 'simple-import-sort'],
   settings: {
     tailwindcss: {
       callees: ['cn', 'cva'],
@@ -34,12 +34,6 @@ module.exports = {
           ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
         ],
       },
-    ],
-
-    'unused-imports/no-unused-imports': 'error',
-    'unused-imports/no-unused-vars': [
-      'warn',
-      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
     ],
   },
 }
