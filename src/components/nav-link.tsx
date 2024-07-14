@@ -9,7 +9,7 @@ import { cn, scrollToTop } from '@/lib/utils'
 
 interface NavLinkProps extends LinkItem {}
 
-export default function NavLink({ icon, label, url }: NavLinkProps) {
+export function NavLink({ icon, label, url }: NavLinkProps) {
   const selectedLayoutSegment = useSelectedLayoutSegment()
   const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : '/'
   const isActive = pathname === url

@@ -7,7 +7,7 @@ import MuserImg from '~/public/images/project/muser.png'
 import ReactLinkTreeImg from '~/public/images/project/react-linktree.png'
 import ReactTodoListImg from '~/public/images/project/react-todo-list.png'
 
-import Project from '@/components/project'
+import { Project } from '@/components/project'
 import type { Locale, ProjectItem } from '@/lib/types'
 
 interface ProjectPageProps {

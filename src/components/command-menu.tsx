@@ -16,7 +16,7 @@ import {
 import { usePathname, useRouter } from '@/lib/i18n'
 import type { ActionItem } from '@/lib/types'
 
-export default function CommandMenu() {
+export function CommandMenu() {
   const [open, setOpen] = useState(false)
   const router = useRouter()
   const pathname = usePathname()

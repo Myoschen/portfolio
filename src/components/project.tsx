@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import { AppWindowIcon, CodeIcon } from 'lucide-react'
 
-import ExternalLink from '@/components/ui/external-link'
+import { ExternalLink } from '@/components/ui/external-link'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import type { ProjectItem } from '@/lib/types'
 
 interface ProjectProps extends ProjectItem {}
 
-export default function Project({ title, desc, img, url }: ProjectProps) {
+export function Project({ title, desc, img, url }: ProjectProps) {
   return (
     <div className={'group space-y-4 overflow-hidden rounded-xl border-2 border-border bg-secondary/50'}>
       <div className={'relative aspect-video overflow-hidden'}>

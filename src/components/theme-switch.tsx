@@ -6,7 +6,7 @@ import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 
-export default function ThemeSwitch() {
+export function ThemeSwitch() {
   const { setTheme } = useTheme()
   const t = useTranslations('Theme')
 

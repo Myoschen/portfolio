@@ -5,14 +5,14 @@ import { HomeIcon, LightbulbIcon, ScanFaceIcon } from 'lucide-react'
 
 import LogoImg from '~/public/images/logo.png'
 
-import CommandMenu from '@/components/command-menu'
-import LocaleSwitch from '@/components/locale-switch'
-import Logo from '@/components/logo'
-import NavLink from '@/components/nav-link'
-import ThemeSwitch from '@/components/theme-switch'
+import { CommandMenu } from '@/components/command-menu'
+import { LocaleSwitch } from '@/components/locale-switch'
+import { Logo } from '@/components/logo'
+import { NavLink } from '@/components/nav-link'
+import { ThemeSwitch } from '@/components/theme-switch'
 import type { LinkItem } from '@/lib/types'
 
-export default function Sidebar() {
+export function Sidebar() {
   const messages = useMessages()
   const t = useTranslations('Sidebar')
 

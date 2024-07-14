@@ -5,7 +5,7 @@ interface ExternalLinkProps extends LinkProps {
   className?: string
 }
 
-export default function ExternalLink({ children, className, ...props }: ExternalLinkProps) {
+export function ExternalLink({ children, className, ...props }: ExternalLinkProps) {
   return (
     <Link
       className={className}

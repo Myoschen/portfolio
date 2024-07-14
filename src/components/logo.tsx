@@ -9,7 +9,7 @@ interface LogoProps {
   src: string | StaticImageData
 }
 
-export default function Logo({ src }: LogoProps) {
+export function Logo({ src }: LogoProps) {
   return (
     <Link href={'/'} onClick={scrollToTop}>
       <Image

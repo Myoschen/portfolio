@@ -5,7 +5,7 @@ import { unstable_setRequestLocale } from 'next-intl/server'
 import AvatarImg from '~/public/images/avatar.png'
 
 import { CanvaIcon, ChakraUIIcon, CSS3Icon, DiscordIcon, ElectronIcon, ExpoIcon, FigmaIcon, FirebaseIcon, FirefoxIcon, FramerIcon, GithubIcon, GmailIcon, HTML5Icon, JavaScriptIcon, NextJSIcon, NodeJSIcon, NotionIcon, PNPMIcon, PostmanIcon, ReactIcon, ShadcnUIIcon, TailwindCSSIcon, TypeScriptIcon, VercelIcon, VscodeIcon, XIcon } from '@/components/icons'
-import SocialLink from '@/components/social-link'
+import { SocialLink } from '@/components/social-link'
 import type { LinkItem, Locale } from '@/lib/types'
 
 const socialLinks: LinkItem[] = [
