@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { useTheme } from 'next-themes'
-import { CommandIcon, HomeIcon, LanguagesIcon, LightbulbIcon, MonitorIcon, MoonIcon, ScanFaceIcon, SunIcon } from 'lucide-react'
+import { Computer, FaceId, HalfMoon, HomeSimple, KeyCommand, LightBulb, SunLight, Translate } from 'iconoir-react'
 
 import {
   CommandDialog,
@@ -33,19 +33,19 @@ export function CommandMenu() {
     {
       id: 'go-home',
       label: t('Action.Home'),
-      icon: <HomeIcon className={'mr-2'} size={16} />,
+      icon: <HomeSimple className={'mr-2 size-4'} />,
       perform: () => router.push('/'),
     },
     {
       id: 'go-about',
       label: t('Action.About'),
-      icon: <ScanFaceIcon className={'mr-2'} size={16} />,
+      icon: <FaceId className={'mr-2 size-4'} />,
       perform: () => router.push('/about'),
     },
     {
       id: 'go-project',
       label: t('Action.Project'),
-      icon: <LightbulbIcon className={'mr-2'} size={16} />,
+      icon: <LightBulb className={'mr-2 size-4'} />,
       perform: () => router.push('/project'),
     },
   ]
@@ -54,19 +54,19 @@ export function CommandMenu() {
     {
       id: 'theme-system',
       label: t('Action.SystemTheme'),
-      icon: <MonitorIcon className={'mr-2'} size={16} />,
+      icon: <Computer className={'mr-2 size-4'} />,
       perform: () => setTheme('system'),
     },
     {
       id: 'theme-light',
       label: t('Action.LightTheme'),
-      icon: <SunIcon className={'mr-2'} size={16} />,
+      icon: <SunLight className={'mr-2 size-4'} />,
       perform: () => setTheme('light'),
     },
     {
       id: 'theme-dark',
       label: t('Action.DarkTheme'),
-      icon: <MoonIcon className={'mr-2'} size={16} />,
+      icon: <HalfMoon className={'mr-2 size-4'} />,
       perform: () => setTheme('dark'),
     },
   ]
@@ -75,13 +75,13 @@ export function CommandMenu() {
     {
       id: 'locale-en',
       label: t('Action.EN'),
-      icon: <LanguagesIcon className={'mr-2'} size={16} />,
+      icon: <Translate className={'mr-2 size-4'} />,
       perform: () => router.replace(pathname, { locale: 'en' }),
     },
     {
       id: 'locale-zh_tw',
       label: t('Action.ZHTW'),
-      icon: <LanguagesIcon className={'mr-2'} size={16} />,
+      icon: <Translate className={'mr-2 size-4'} />,
       perform: () => router.replace(pathname, { locale: 'zh-TW' }),
     },
   ]
@@ -110,7 +110,7 @@ export function CommandMenu() {
         className={'inline-flex items-center gap-x-2'}
         onClick={() => setOpen(true)}
       >
-        <CommandIcon size={20} />
+        <KeyCommand className={'size-5'} />
         <span className={'font-medium tracking-wide'}>{t('Trigger')}</span>
       </button>
       <CommandDialog open={open} onOpenChange={setOpen}>

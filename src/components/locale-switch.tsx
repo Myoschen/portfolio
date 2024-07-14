@@ -2,7 +2,7 @@
 
 import { useTransition } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
-import { CheckIcon, LanguagesIcon } from 'lucide-react'
+import { Check, Translate } from 'iconoir-react'
 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { usePathname, useRouter } from '@/lib/i18n'
@@ -28,17 +28,17 @@ export function LocaleSwitch() {
         className={'inline-flex items-center gap-x-2 font-medium tracking-wide outline-none'}
         disabled={isPending}
       >
-        <LanguagesIcon size={20} />
+        <Translate className={'size-5'} />
         {locale === 'en' && (<span>{t('EN')}</span>)}
         {locale === 'zh-TW' && (<span>{t('ZHTW')}</span>)}
       </DropdownMenuTrigger>
       <DropdownMenuContent sideOffset={8} align={'start'}>
         <DropdownMenuItem onClick={() => changeLocale('en')}>
-          <CheckIcon className={cn('mr-2 scale-0', locale === 'en' && 'scale-100')} size={16} />
+          <Check className={cn('mr-2 size-4 scale-0', locale === 'en' && 'scale-100')} />
           {t('EN')}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => changeLocale('zh-TW')}>
-          <CheckIcon className={cn('mr-2 scale-0', locale === 'zh-TW' && 'scale-100')} size={16} />
+          <Check className={cn('mr-2 size-4 scale-0', locale === 'zh-TW' && 'scale-100')} />
           {t('ZHTW')}
         </DropdownMenuItem>
       </DropdownMenuContent>

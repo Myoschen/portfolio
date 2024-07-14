@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { useTheme } from 'next-themes'
-import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
+import { Computer, HalfMoon, SunLight } from 'iconoir-react'
 
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 
@@ -14,22 +14,22 @@ export function ThemeSwitch() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className={'inline-flex items-center gap-x-2 font-medium tracking-wide outline-none'}>
-          <SunIcon className={'scale-100 dark:scale-0'} size={20} />
-          <MoonIcon className={'absolute scale-0 dark:scale-100'} size={20} />
+          <SunLight className={'size-5 scale-100 dark:scale-0'} />
+          <HalfMoon className={'absolute size-5 scale-0 dark:scale-100'} />
           <span>{t('Trigger')}</span>
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent sideOffset={8} align={'start'}>
         <DropdownMenuItem onClick={() => setTheme('system')}>
-          <MonitorIcon className={'mr-2'} size={16} />
+          <Computer className={'mr-2 size-4'} />
           {t('System')}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('light')}>
-          <SunIcon className={'mr-2'} size={16} />
+          <SunLight className={'mr-2 size-4'} />
           {t('Light')}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('dark')}>
-          <MoonIcon className={'mr-2'} size={16} />
+          <HalfMoon className={'mr-2 size-4'} />
           {t('Dark')}
         </DropdownMenuItem>
       </DropdownMenuContent>

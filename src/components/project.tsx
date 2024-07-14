@@ -3,7 +3,7 @@
 import Image, { type StaticImageData } from 'next/image'
 import { useTheme } from 'next-themes'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
-import { AppWindowIcon, CodeIcon } from 'lucide-react'
+import { Code, Eye } from 'iconoir-react'
 
 import { ExternalLink } from '@/components/ui/external-link'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
@@ -64,7 +64,7 @@ export function Project({ item, className }: ProjectProps) {
       <div className={'relative flex h-[160px] flex-col gap-y-1.5 px-6 pb-4'}>
         <h2 className={'text-2xl font-medium leading-relaxed'}>{item.title}</h2>
         <p className={'line-clamp-3 h-full text-sm tracking-wider'}>{item.description}</p>
-        <div className={'flex items-center justify-start gap-x-1'}>
+        <div className={'-ml-2 flex items-center justify-start gap-x-1'}>
           {item.url?.repo && (
             <TooltipProvider>
               <Tooltip>
@@ -73,7 +73,7 @@ export function Project({ item, className }: ProjectProps) {
                     className={'flex items-center justify-center rounded-md p-2 transition-colors hover:bg-secondary'}
                     href={item.url!.repo}
                   >
-                    <CodeIcon size={20} />
+                    <Code className={'size-5'} />
                   </ExternalLink>
                 </TooltipTrigger>
                 <TooltipContent>{'Repository'}</TooltipContent>
@@ -88,7 +88,7 @@ export function Project({ item, className }: ProjectProps) {
                     className={'flex items-center justify-center rounded-md p-2 transition-colors hover:bg-secondary'}
                     href={item.url!.preview}
                   >
-                    <AppWindowIcon size={20} />
+                    <Eye className={'size-5'} />
                   </ExternalLink>
                 </TooltipTrigger>
                 <TooltipContent>{'Demo'}</TooltipContent>

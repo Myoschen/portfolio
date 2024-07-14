@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { XIcon } from 'lucide-react'
+import { Xmark } from 'iconoir-react'
 
 import { cn } from '@/lib/utils'
 
@@ -45,7 +45,7 @@ const DialogContent = React.forwardRef<
     >
       {children}
       <DialogPrimitive.Close className={'absolute right-4 top-3.5 rounded-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:pointer-events-none'}>
-        <XIcon size={20} />
+        <Xmark className={'size-5'} />
         <span className={'sr-only'}>{'Close'}</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>

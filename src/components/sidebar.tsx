@@ -1,6 +1,6 @@
 import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl'
+import { FaceId, HomeSimple, LightBulb } from 'iconoir-react'
 import pick from 'lodash.pick'
-import { HomeIcon, LightbulbIcon, ScanFaceIcon } from 'lucide-react'
 
 import logo from '#/images/logo.png'
 
@@ -17,17 +17,17 @@ export function Sidebar() {
 
   const navLinks: LinkItem[] = [
     {
-      icon: <HomeIcon size={20} />,
+      icon: <HomeSimple className={'size-5'} />,
       label: t('Home'),
       url: '/',
     },
     {
-      icon: <ScanFaceIcon size={20} />,
+      icon: <FaceId className={'size-5'} />,
       label: t('About'),
       url: '/about',
     },
     {
-      icon: <LightbulbIcon size={20} />,
+      icon: <LightBulb className={'size-5'} />,
       label: t('Project'),
       url: '/project',
     },

@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { type DialogProps } from '@radix-ui/react-dialog'
 import { Command as CommandPrimitive } from 'cmdk'
-import { SearchIcon } from 'lucide-react'
+import { Search } from 'iconoir-react'
 
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/diglog'
 import { cn } from '@/lib/utils'
@@ -47,7 +47,7 @@ const CommandInput = React.forwardRef<
     className={'flex items-center border-b border-border px-3'}
     cmdk-input-wrapper={''}
   >
-    <SearchIcon className={'mr-2 shrink-0 opacity-50'} size={16} />
+    <Search className={'mr-2 size-4 shrink-0 opacity-50'} />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(
