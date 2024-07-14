@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { GeistSans } from 'geist/font/sans'
-import pick from 'lodash/pick'
+import pick from 'lodash.pick'
 
 import Providers from '@/components/providers'
 import Sidebar from '@/components/sidebar'

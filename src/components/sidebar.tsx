@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl'
-import pick from 'lodash/pick'
+import pick from 'lodash.pick'
 import { HomeIcon, LightbulbIcon, ScanFaceIcon } from 'lucide-react'
 
 import LogoImg from '~/public/images/logo.png'
