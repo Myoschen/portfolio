@@ -14,7 +14,7 @@ This is my portfolio.
 - [Next.js](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Radix Primitives](https://www.radix-ui.com/primitives)
-- [Lucide Icons](https://lucide.dev/)
+- [Iconir Icons](https://iconoir.com/)
 - [Svgl](https://svgl.vercel.app/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Next Intl](https://next-intl-docs.vercel.app/)
