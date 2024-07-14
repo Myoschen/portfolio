@@ -7,8 +7,8 @@ import MuserImg from '~/public/images/project/muser.png'
 import ReactLinkTreeImg from '~/public/images/project/react-linktree.png'
 import ReactTodoListImg from '~/public/images/project/react-todo-list.png'
 
-import { Project } from '@/components/project'
-import type { Locale, ProjectItem } from '@/lib/types'
+import { Project, type ProjectItem } from '@/components/project'
+import type { Locale } from '@/lib/types'
 
 interface ProjectPageProps {
   params: { locale: Locale }
@@ -26,40 +26,40 @@ export default function ProjectPage({ params: { locale } }: ProjectPageProps) {
   unstable_setRequestLocale(locale)
   const t = useTranslations('Project')
 
-  const projects: ProjectItem[] = [
+  const projectItems: ProjectItem[] = [
     {
       title: t('Muser.Title'),
-      desc: t('Muser.Desc'),
-      img: MuserImg,
+      description: t('Muser.Desc'),
+      image: MuserImg,
       url: {
         repo: 'https://github.com/Myoschen/muser',
       },
     },
     {
       title: t('ReactTodoList.Title'),
-      desc: t('ReactTodoList.Desc'),
-      img: ReactTodoListImg,
+      description: t('ReactTodoList.Desc'),
+      image: ReactTodoListImg,
       url: {
         repo: 'https://github.com/Myoschen/react-todo-list',
-        demo: 'https://react-todo-list-myoschen.vercel.app/',
+        preview: 'https://react-todo-list-myoschen.vercel.app/',
       },
     },
     {
       title: t('ReactLinkTree.Title'),
-      desc: t('ReactLinkTree.Desc'),
-      img: ReactLinkTreeImg,
+      description: t('ReactLinkTree.Desc'),
+      image: ReactLinkTreeImg,
       url: {
         repo: 'https://github.com/Myoschen/react-linktree',
-        demo: 'https://react-linktree.vercel.app/',
+        preview: 'https://react-linktree.vercel.app/',
       },
     },
     {
       title: t('GithubExplorer.Title'),
-      desc: t('GithubExplorer.Desc'),
-      img: GithubExplorerImg,
+      description: t('GithubExplorer.Desc'),
+      image: GithubExplorerImg,
       url: {
         repo: 'https://github.com/Myoschen/github-explorer',
-        demo: 'https://github-explorer-myoschen.vercel.app/',
+        preview: 'https://github-explorer-myoschen.vercel.app/',
       },
     },
   ]
@@ -69,8 +69,8 @@ export default function ProjectPage({ params: { locale } }: ProjectPageProps) {
       <div className={'flex flex-col gap-y-6'}>
         <h1 className={'text-4xl font-bold leading-relaxed'}>{t('Title')}</h1>
         <div className={'grid grid-cols-1 gap-4 md:grid-cols-2'}>
-          {projects.map((props, index) => (
-            <Project key={index} {...props} />
+          {projectItems.map((item, index) => (
+            <Project key={index} item={item} />
           ))}
         </div>
       </div>
