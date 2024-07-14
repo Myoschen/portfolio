@@ -2,47 +2,46 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 
-import AvatarImg from '~/public/images/avatar.png'
+import Avatar from '#/images/avatar.png'
 
-import { CanvaIcon, ChakraUIIcon, CSS3Icon, DiscordIcon, ElectronIcon, ExpoIcon, FigmaIcon, FirebaseIcon, FirefoxIcon, FramerIcon, GithubIcon, GmailIcon, HTML5Icon, JavaScriptIcon, NextJSIcon, NodeJSIcon, NotionIcon, PNPMIcon, PostmanIcon, ReactIcon, ShadcnUIIcon, TailwindCSSIcon, TypeScriptIcon, VercelIcon, VscodeIcon, XIcon } from '@/components/icons'
+import { Arc, Canva, Css, Discord, Electron, Expo, Figma, FramerMotion, Github, Gmail, Html5, JavaScript, NextJS, NodeJS, Pnpm, Postman, React, ShadcnUI, TailwindCSS, TypeScript, Vercel, Vscode, X } from '@/components/icons'
 import { SocialLink } from '@/components/social-link'
 import type { LinkItem, Locale } from '@/lib/types'
 
 const socialLinks: LinkItem[] = [
-  { icon: <GithubIcon />, label: 'Myoschen', url: 'https://github.com/Myoschen' },
-  { icon: <GmailIcon />, label: 'myos.chen@gmail.com', url: 'mailto:myos.chen@gmail.com' },
-  { icon: <XIcon />, label: 'MyosChen', url: 'https://twitter.com/MyosChen' },
+  { icon: <Github />, label: 'Myoschen', url: 'https://github.com/Myoschen' },
+  { icon: <Gmail />, label: 'myos.chen@gmail.com', url: 'mailto:myos.chen@gmail.com' },
+  { icon: <X />, label: 'MyosChen', url: 'https://twitter.com/MyosChen' },
 ]
 
 const languages: Use[] = [
-  { icon: <HTML5Icon />, label: 'HTML' },
-  { icon: <CSS3Icon />, label: 'CSS' },
-  { icon: <JavaScriptIcon />, label: 'JavaScript' },
-  { icon: <TypeScriptIcon />, label: 'TypeScript' },
+  { icon: <Html5 />, label: 'HTML' },
+  { icon: <Css />, label: 'CSS' },
+  { icon: <JavaScript />, label: 'JavaScript' },
+  { icon: <TypeScript />, label: 'TypeScript' },
 ]
+
 const libraries: Use[] = [
-  { icon: <ReactIcon />, label: 'React' },
-  { icon: <ReactIcon />, label: 'React Native' },
-  { icon: <NextJSIcon />, label: 'Next.js' },
-  { icon: <ExpoIcon />, label: 'Expo' },
-  { icon: <TailwindCSSIcon />, label: 'Tailwind CSS' },
-  { icon: <ShadcnUIIcon />, label: 'shadcn/ui' },
-  { icon: <ChakraUIIcon />, label: 'Chakra UI' },
-  { icon: <FramerIcon />, label: 'Framer Motion' },
-  { icon: <NodeJSIcon />, label: 'Node.js' },
-  { icon: <ElectronIcon />, label: 'Electron' },
+  { icon: <React />, label: 'React' },
+  { icon: <React />, label: 'React Native' },
+  { icon: <NextJS />, label: 'Next.js' },
+  { icon: <Expo />, label: 'Expo' },
+  { icon: <TailwindCSS />, label: 'Tailwind CSS' },
+  { icon: <ShadcnUI />, label: 'shadcn/ui' },
+  { icon: <FramerMotion />, label: 'Framer Motion' },
+  { icon: <NodeJS />, label: 'Node.js' },
+  { icon: <Electron />, label: 'Electron' },
 ]
+
 const tools: Use[] = [
-  { icon: <VscodeIcon />, label: 'vscode' },
-  { icon: <FirefoxIcon />, label: 'Firefox' },
-  { icon: <NotionIcon />, label: 'Notion' },
-  { icon: <PostmanIcon />, label: 'Postman' },
-  { icon: <FigmaIcon />, label: 'Figma' },
-  { icon: <CanvaIcon />, label: 'Canva' },
-  { icon: <DiscordIcon />, label: 'Discord' },
-  { icon: <PNPMIcon />, label: 'pnpm' },
-  { icon: <VercelIcon />, label: 'Vercel' },
-  { icon: <FirebaseIcon />, label: 'Firebase' },
+  { icon: <Arc />, label: 'Arc' },
+  { icon: <Vscode />, label: 'vscode' },
+  { icon: <Postman />, label: 'Postman' },
+  { icon: <Figma />, label: 'Figma' },
+  { icon: <Canva />, label: 'Canva' },
+  { icon: <Discord />, label: 'Discord' },
+  { icon: <Pnpm />, label: 'pnpm' },
+  { icon: <Vercel />, label: 'Vercel' },
 ]
 
 interface HomePageProps {
@@ -60,7 +59,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
         <div className={'relative aspect-square w-40 overflow-hidden rounded-full ring-4 ring-ring'}>
           <Image
             className={'object-cover'}
-            src={AvatarImg}
+            src={Avatar}
             alt={'Ryan Chen'}
             placeholder={'blur'}
           />
@@ -106,7 +105,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
   )
 }
 
-type Use = {
+interface Use {
   icon: JSX.Element
   label: string
 }

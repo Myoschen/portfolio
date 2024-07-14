@@ -1,9 +1,8 @@
-import { useMemo } from 'react'
 import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl'
 import pick from 'lodash.pick'
 import { HomeIcon, LightbulbIcon, ScanFaceIcon } from 'lucide-react'
 
-import LogoImg from '~/public/images/logo.png'
+import logo from '#/images/logo.png'
 
 import { CommandMenu } from '@/components/command-menu'
 import { LocaleSwitch } from '@/components/locale-switch'
@@ -16,7 +15,7 @@ export function Sidebar() {
   const messages = useMessages()
   const t = useTranslations('Sidebar')
 
-  const navLinks: LinkItem[] = useMemo(() => [
+  const navLinks: LinkItem[] = [
     {
       icon: <HomeIcon size={20} />,
       label: t('Home'),
@@ -32,13 +31,13 @@ export function Sidebar() {
       label: t('Project'),
       url: '/project',
     },
-  ], [t])
+  ]
 
   return (
     <NextIntlClientProvider messages={{ ...pick(messages, 'Command'), ...pick(messages, 'Locale'), ...pick(messages, 'Theme') }}>
       <aside className={'px-6 md:fixed'}>
         <div className={'-ml-2 mb-4 flex justify-start md:mb-8'}>
-          <Logo src={LogoImg} />
+          <Logo src={logo} />
         </div>
         <nav className={'mb-4 md:mb-8'}>
           <div className={'-ml-2 flex flex-wrap items-start gap-x-px md:flex-col md:gap-x-0 md:gap-y-2'}>

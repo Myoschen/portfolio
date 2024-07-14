@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
-import GithubExplorerImg from '~/public/images/project/github-explorer.png'
-import MuserImg from '~/public/images/project/muser.png'
-import ReactLinkTreeImg from '~/public/images/project/react-linktree.png'
-import ReactTodoListImg from '~/public/images/project/react-todo-list.png'
+import GithubExplorer from '#/images/project/github-explorer.png'
+import Muser from '#/images/project/muser.png'
+import ReactLinkTree from '#/images/project/react-linktree.png'
+import ReactTodoList from '#/images/project/react-todo-list.png'
 
 import { Project, type ProjectItem } from '@/components/project'
 import type { Locale } from '@/lib/types'
@@ -30,7 +30,7 @@ export default function ProjectPage({ params: { locale } }: ProjectPageProps) {
     {
       title: t('Muser.Title'),
       description: t('Muser.Desc'),
-      image: MuserImg,
+      image: Muser,
       url: {
         repo: 'https://github.com/Myoschen/muser',
       },
@@ -38,7 +38,7 @@ export default function ProjectPage({ params: { locale } }: ProjectPageProps) {
     {
       title: t('ReactTodoList.Title'),
       description: t('ReactTodoList.Desc'),
-      image: ReactTodoListImg,
+      image: ReactTodoList,
       url: {
         repo: 'https://github.com/Myoschen/react-todo-list',
         preview: 'https://react-todo-list-myoschen.vercel.app/',
@@ -47,7 +47,7 @@ export default function ProjectPage({ params: { locale } }: ProjectPageProps) {
     {
       title: t('ReactLinkTree.Title'),
       description: t('ReactLinkTree.Desc'),
-      image: ReactLinkTreeImg,
+      image: ReactLinkTree,
       url: {
         repo: 'https://github.com/Myoschen/react-linktree',
         preview: 'https://react-linktree.vercel.app/',
@@ -56,7 +56,7 @@ export default function ProjectPage({ params: { locale } }: ProjectPageProps) {
     {
       title: t('GithubExplorer.Title'),
       description: t('GithubExplorer.Desc'),
-      image: GithubExplorerImg,
+      image: GithubExplorer,
       url: {
         repo: 'https://github.com/Myoschen/github-explorer',
         preview: 'https://github-explorer-myoschen.vercel.app/',

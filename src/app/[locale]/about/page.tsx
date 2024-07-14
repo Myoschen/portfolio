@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 
-import CodeThinkingImg from '~/public/images/code-thinking.png'
+import CodeThinking from '#/images/code-thinking.png'
 
 import type { Locale } from '@/lib/types'
 
@@ -30,7 +30,7 @@ export default function AboutPage({ params: { locale } }: AboutPageProps) {
         <div className={'relative h-80 overflow-hidden rounded-3xl border shadow-sm'}>
           <Image
             className={'object-cover'}
-            src={CodeThinkingImg}
+            src={CodeThinking}
             alt={'Programming'}
             fill={true}
             placeholder={'blur'}

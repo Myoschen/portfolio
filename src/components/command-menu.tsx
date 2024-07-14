@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { useTheme } from 'next-themes'
 import { CommandIcon, HomeIcon, LanguagesIcon, LightbulbIcon, MonitorIcon, MoonIcon, ScanFaceIcon, SunIcon } from 'lucide-react'
@@ -14,7 +14,13 @@ import {
   CommandList,
 } from '@/components/ui/command'
 import { usePathname, useRouter } from '@/lib/i18n'
-import type { ActionItem } from '@/lib/types'
+
+interface ActionItem {
+  id: string
+  icon: JSX.Element
+  label: string
+  perform: () => void
+}
 
 export function CommandMenu() {
   const [open, setOpen] = useState(false)
@@ -23,7 +29,7 @@ export function CommandMenu() {
   const t = useTranslations('Command')
   const { setTheme } = useTheme()
 
-  const navActions: ActionItem[] = useMemo(() => [
+  const navActions: ActionItem[] = [
     {
       id: 'go-home',
       label: t('Action.Home'),
@@ -42,9 +48,9 @@ export function CommandMenu() {
       icon: <LightbulbIcon className={'mr-2'} size={16} />,
       perform: () => router.push('/project'),
     },
-  ], [router, t])
+  ]
 
-  const themeActions: ActionItem[] = useMemo(() => [
+  const themeActions: ActionItem[] = [
     {
       id: 'theme-system',
       label: t('Action.SystemTheme'),
@@ -63,9 +69,9 @@ export function CommandMenu() {
       icon: <MoonIcon className={'mr-2'} size={16} />,
       perform: () => setTheme('dark'),
     },
-  ], [setTheme, t])
+  ]
 
-  const localeActions: ActionItem[] = useMemo(() => [
+  const localeActions: ActionItem[] = [
     {
       id: 'locale-en',
       label: t('Action.EN'),
@@ -78,7 +84,7 @@ export function CommandMenu() {
       icon: <LanguagesIcon className={'mr-2'} size={16} />,
       perform: () => router.replace(pathname, { locale: 'zh-TW' }),
     },
-  ], [pathname, router, t])
+  ]
 
   useEffect(() => {
     const toggle = (e: KeyboardEvent) => {
