@@ -5,7 +5,7 @@ import { type DialogProps } from '@radix-ui/react-dialog'
 import { Command as CommandPrimitive } from 'cmdk'
 import { SearchIcon } from 'lucide-react'
 
-import { Dialog, DialogContent } from '@/components/ui/diglog'
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/diglog'
 import { cn } from '@/lib/utils'
 
 const Command = React.forwardRef<
@@ -29,6 +29,8 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
   return (
     <Dialog {...props}>
       <DialogContent className={'overflow-hidden p-0'}>
+        <DialogTitle className={'sr-only'}>{'CommandDialog'}</DialogTitle>
+        <DialogDescription className={'sr-only'}>{'This is CommandDialog.'}</DialogDescription>
         <Command className={'[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3'}>
           {children}
         </Command>
