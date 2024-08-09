@@ -17,7 +17,7 @@ This is my portfolio.
 - [Iconir Icons](https://iconoir.com/)
 - [Svgl](https://svgl.vercel.app/)
 - [Framer Motion](https://www.framer.com/motion/)
-- [Next Intl](https://next-intl-docs.vercel.app/)
+- [next-international](https://next-international.vercel.app/)
 
 ## Usage
 
