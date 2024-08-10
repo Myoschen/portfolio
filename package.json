@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -23,7 +24,6 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.1.0",
     "@next/eslint-plugin-next": "^14.2.5",
     "@stylistic/eslint-plugin": "^2.6.2",
     "@types/node": "^20",
