@@ -2,6 +2,7 @@ import pluginNext from '@next/eslint-plugin-next'
 import stylistic from '@stylistic/eslint-plugin'
 import pluginTs from '@typescript-eslint/eslint-plugin'
 import parserTs from '@typescript-eslint/parser'
+import pluginJsonc from 'eslint-plugin-jsonc'
 import pluginReact from 'eslint-plugin-react'
 import pluginReactHooks from 'eslint-plugin-react-hooks'
 import pluginImportSort from 'eslint-plugin-simple-import-sort'
@@ -78,4 +79,6 @@ export default [
       ],
     },
   },
+  // json
+  ...pluginJsonc.configs['flat/recommended-with-json'],
 ]

@@ -1,0 +1,15 @@
+{
+  "$schema": "./data.schema.json",
+  "socials": [
+    { "type": "github", "label": "Myoschen", "url": "https://github.com/Myoschen" },
+    { "type": "email", "label": "myos.chen@gmail.com", "url": "mailto:myos.chen@gmail.com" },
+    { "type": "x", "label": "MyosChen", "url": "https://x.com/MyosChen" }
+  ],
+  "languages": ["html5", "css", "js", "ts"],
+  "libraries": ["react", "react-native", "next.js", "expo", "tailwindcss", "framer-motion", "electron"],
+  "tools": ["arc", "bun", "discord", "pnpm", "vercel", "vscode"],
+  "projects": [
+    { "key": "next-blog", "image": "./public/images/next-blog.png" },
+    { "key": "muser", "image": "./public/images/muser.png" }
+  ]
+}
