@@ -2,6 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Portfolio Data",
   "properties": {
+    "author": {
+      "type": "string",
+      "description": "Your name."
+    },
+    "logo": {
+      "type": "string",
+      "description": "Your website logo.",
+      "format": "uri-reference"
+    },
     "socials": {
       "type": "array",
       "description": "Your social links.",

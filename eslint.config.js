@@ -44,6 +44,7 @@ export default [
       ...pluginNext.configs['core-web-vitals'].rules,
       // TypeError: context.getAncestors is not a function
       '@next/next/no-duplicate-head': 'off',
+      '@typescript-eslint/no-empty-object-type': 'warn',
     },
     ignores: ['./.next/*'],
   },
@@ -70,8 +71,7 @@ export default [
           groups: [
             ['^\\u0000'],
             ['^react', '^next', '@?\\w'],
-            ['^~/.*'],
-            ['^@/.*'],
+            ['^~/.*', '^#/.*', '^@/.*'],
             ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
             ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
           ],

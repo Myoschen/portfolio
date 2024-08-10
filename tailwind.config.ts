@@ -53,6 +53,7 @@ export default {
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)', ...fontFamily.sans],
+        mono: ['var(--font-geist-mono)', ...fontFamily.mono],
       },
       keyframes: {
         'accordion-down': {
@@ -68,6 +69,16 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      transitionProperty: {
+        filter: 'filter',
+      },
+      transitionDuration: {
+        '3000': '0.3s'
+      },
+      /** @see https://easings.net/#easeInOutQuint */
+      transitionTimingFunction: {
+        'in-out-quint': 'cubic-bezier(0.83, 0, 0.17, 1)'
+      }
     },
   },
   plugins: [require('tailwindcss-animate')],

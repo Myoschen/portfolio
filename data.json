@@ -1,5 +1,7 @@
 {
   "$schema": "./data.schema.json",
+  "author": "Ryan Chen",
+  "logo": "/images/logo.png",
   "socials": [
     { "type": "github", "label": "Myoschen", "url": "https://github.com/Myoschen" },
     { "type": "email", "label": "myos.chen@gmail.com", "url": "mailto:myos.chen@gmail.com" },
@@ -9,7 +11,7 @@
   "libraries": ["react", "react-native", "next.js", "expo", "tailwindcss", "framer-motion", "electron"],
   "tools": ["arc", "bun", "discord", "pnpm", "vercel", "vscode"],
   "projects": [
-    { "key": "next-blog", "image": "./public/images/next-blog.png" },
-    { "key": "muser", "image": "./public/images/muser.png" }
+    { "key": "next-blog", "image": "/images/next-blog.png" },
+    { "key": "muser", "image": "/images/muser.png" }
   ]
 }
