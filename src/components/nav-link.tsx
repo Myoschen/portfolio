@@ -3,6 +3,7 @@
 import * as React from 'react'
 import NextLink, { type LinkProps as NextLinkProps } from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
+import { motion } from 'framer-motion'
 
 import { cn } from '@/lib/utils'
 
@@ -12,25 +13,28 @@ interface NavLinkProps extends React.PropsWithChildren<NextLinkProps> {
 
 export function NavLink({ className, href, children, ...props }: NavLinkProps) {
   const segment = useSelectedLayoutSegment()
-  const pathname = React.useRef(segment ? `/${segment}` : '/')
-  const isActive = pathname.current === href
-
-  React.useEffect(() => {
-    pathname.current = segment ? `/${segment}` : '/'
-  }, [segment])
+  const pathname = segment ? `/${segment}` : '/'
+  const isActive = pathname === href
 
   return (
     <NextLink className={cn('relative', className)} href={href} {...props}>
       {children}
       {isActive && (
-        <svg
-          className="absolute -left-3.5 top-1/2 -translate-y-1/2 fill-foreground"
-          width="6"
-          height="6"
-          viewBox="0 0 6 6"
+        <motion.div
+          className="absolute -left-3.5 top-0 flex h-full items-center"
+          layout="position"
+          layoutId="dot"
+          transition={{ type: 'spring', duration: 0.5 }}
         >
-          <circle cx="3" cy="3" r="3" />
-        </svg>
+          <svg
+            className="fill-foreground"
+            width="6"
+            height="6"
+            viewBox="0 0 6 6"
+          >
+            <circle cx="3" cy="3" r="3" />
+          </svg>
+        </motion.div>
       )}
     </NextLink>
   )

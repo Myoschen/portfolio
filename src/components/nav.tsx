@@ -1,12 +1,14 @@
 import Link from 'next/link'
-import { NavLink } from './nav-link'
-import { ThemeMenu } from './theme-menu'
 import { FaceId, HomeSimple, LightBulb } from 'iconoir-react'
 
 import data from '~/data.json'
 import { CommandMenu } from '@/components/command-menu'
 import { LanguageMenu } from '@/components/language-menu'
+import { NavLink } from '@/components/nav-link'
+import { ThemeMenu } from '@/components/theme-menu'
+import { Dock, DockIcon } from '@/components/ui/dock'
 import { Image } from '@/components/ui/image'
+import { Separator } from '@/components/ui/separator'
 import { getScopedI18n } from '@/lib/locales/server'
 
 export async function SideNav() {
@@ -33,6 +35,7 @@ export async function SideNav() {
           </NavLink>
         ))}
       </nav>
+      <Separator />
       <div className="flex flex-col gap-y-3">
         <CommandMenu />
         <LanguageMenu />
@@ -42,6 +45,28 @@ export async function SideNav() {
   )
 }
 
-// export function MobileNav() {
-//   return <></>
-// }
+export async function MobileNav() {
+  const navItems = [
+    { icon: HomeSimple, url: '/' },
+    { icon: FaceId, url: '/about' },
+    { icon: LightBulb, url: '/project' },
+  ]
+
+  return (
+    <div className="fixed bottom-4 w-full sm:hidden">
+      <Dock direction="middle">
+        {navItems.map((item, index) => (
+          <DockIcon key={index} className="hover:bg-accent">
+            <Link href={item.url}>
+              <item.icon className="size-5" />
+            </Link>
+          </DockIcon>
+        ))}
+        <Separator orientation="vertical" />
+        <DockIcon>
+          <CommandMenu hideLabel={true} />
+        </DockIcon>
+      </Dock>
+    </div>
+  )
+}

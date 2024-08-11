@@ -8,7 +8,11 @@ import { Computer, FaceId, HalfMoon, HomeSimple, KeyCommand, LightBulb, SunLight
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command'
 import { useChangeLocale, useI18n } from '@/lib/locales/client'
 
-export function CommandMenu() {
+interface CommandMenuProps {
+  hideLabel?: boolean
+}
+
+export function CommandMenu({ hideLabel = false }: CommandMenuProps) {
   const t = useI18n()
   const router = useRouter()
   const { setTheme } = useTheme()
@@ -59,7 +63,7 @@ export function CommandMenu() {
         onClick={() => setIsOpen(true)}
       >
         <KeyCommand className="size-5" />
-        <span className="text-sm font-medium">{t('command')}</span>
+        {!hideLabel && <span className="text-sm font-medium">{t('command')}</span>}
       </button>
       <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
         <CommandInput placeholder={t('command.placeholder')} />

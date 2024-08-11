@@ -45,6 +45,7 @@ export default [
       // TypeError: context.getAncestors is not a function
       '@next/next/no-duplicate-head': 'off',
       '@typescript-eslint/no-empty-object-type': 'warn',
+      '@typescript-eslint/no-unused-vars': 'warn',
     },
     ignores: ['./.next/*'],
   },

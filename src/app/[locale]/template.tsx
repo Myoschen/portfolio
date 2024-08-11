@@ -14,12 +14,12 @@ export default function Template({
   const pathname = usePathname()
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode="wait">
       <motion.div
         key={pathname}
         initial={{ y: 20, opacity: 0, filter: 'blur(8px)' }}
         animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-        exit={{ y: 20, opacity: 0, filter: 'blur(8px)' }}
+        // exit={{ y: 20, opacity: 0, filter: 'blur(8px)' }}
         transition={{ ease: [0.83, 0, 0.17, 1], duration: 0.5 }}
       >
         <FrozenRouter>{children}</FrozenRouter>

@@ -1,5 +1,5 @@
 import { I18nProviderClient } from '~/src/lib/locales/client'
-import { SideNav } from '@/components/nav'
+import { MobileNav, SideNav } from '@/components/nav'
 
 export default function MainLayout({
   params,
@@ -12,7 +12,7 @@ export default function MainLayout({
     <I18nProviderClient locale={params.locale}>
       <div className="relative mx-auto flex max-w-4xl flex-row pt-8 md:pt-20 lg:pt-32">
         <SideNav />
-        {/* <MobileNav /> */}
+        <MobileNav />
         {children}
       </div>
     </I18nProviderClient>
