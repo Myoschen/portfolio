@@ -1,6 +1,7 @@
 import data from '~/data.json'
 import { Arc, Bun, CSS, Electron, Expo, FramerMotion, Github, Gmail, HTML5, JavaScript, Next, Pnpm, React, TailwindCSS, TypeScript, Vercel, Vscode, X } from '@/components/icon'
 import { Badge } from '@/components/ui/badge'
+import { LightBoard } from '@/components/ui/light-board'
 import { getI18n } from '@/lib/locales/server'
 
 export default async function HomePage() {
@@ -13,28 +14,45 @@ export default async function HomePage() {
   ]
 
   return (
-    <main className="space-y-8 px-4 sm:ml-40 sm:mt-2 sm:px-0">
+    <main className="w-full space-y-8 px-4 pb-24 sm:ml-40 sm:mt-2 sm:max-w-xl sm:px-0 sm:pb-0">
       <div className="space-y-4">
         <h1 className="text-4xl font-bold">{data.author}</h1>
-        <p>{t('introduce')}</p>
-        <ul className="flex items-center gap-x-4">
-          {data.socials.map((item, index) => {
-            const Icon = getSocialIcon(item.type)
-            return (
-              <li key={index}>
-                <a
-                  className="flex items-center gap-x-2 transition-opacity ease-in-out-quint hover:opacity-50"
-                  href={item.url}
-                  target="_blank"
-                  rel="noreferer noopener"
-                >
-                  <Icon className="size-4" />
-                  <span className="text-sm">{item.label}</span>
-                </a>
-              </li>
-            )
-          })}
-        </ul>
+        <div className="w-full bg-black">
+          <LightBoard
+            rows={17}
+            lightSize={4}
+            gap={3}
+            text="HELLO WORLD"
+            updateInterval={300}
+            colors={{
+              background: '#1a1a1a',
+              textDim: '#3a3a3a',
+              drawLine: '#7a7a7a',
+              textBright: '#ffffff',
+            }}
+          />
+        </div>
+        <div className="space-y-2">
+          <p>{t('introduce')}</p>
+          <ul className="flex flex-col gap-x-4 gap-y-2 sm:flex-row sm:items-center">
+            {data.socials.map((item, index) => {
+              const Icon = getSocialIcon(item.type)
+              return (
+                <li key={index}>
+                  <a
+                    className="flex items-center gap-x-2 transition-opacity ease-in-out-quint hover:opacity-50"
+                    href={item.url}
+                    target="_blank"
+                    rel="noreferer noopener"
+                  >
+                    <Icon className="size-4" />
+                    <span className="text-sm">{item.label}</span>
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
       <div className="space-y-4">
         <div className="space-y-2">
