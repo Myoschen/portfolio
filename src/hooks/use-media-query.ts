@@ -8,6 +8,7 @@ type UseMediaQueryOptions = {
 
 const IS_SERVER = typeof window === 'undefined'
 
+/** @see https://usehooks-ts.com/react-hook/use-media-query */
 export function useMediaQuery(
   query: string,
   {

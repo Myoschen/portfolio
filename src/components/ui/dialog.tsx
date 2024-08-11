@@ -6,6 +6,7 @@ import { Xmark } from 'iconoir-react'
 
 import { cn } from '@/lib/utils'
 
+/** @see https://ui.shadcn.com/docs/components/dialog */
 const Dialog = DialogPrimitive.Root
 
 const DialogTrigger = DialogPrimitive.Trigger

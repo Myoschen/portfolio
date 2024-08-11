@@ -10,6 +10,7 @@ import {
 
 import { cn } from '@/lib/utils'
 
+/** @see https://ui.shadcn.com/docs/components/dropdown-menu */
 const DropdownMenu = DropdownMenuPrimitive.Root
 
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger

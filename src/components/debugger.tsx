@@ -1,3 +1,4 @@
+/** @see https://andrewgbliss.medium.com/tailwind-css-responsive-debugging-898dd2dea31a */
 export function Debugger() {
   return (
     <div className="fixed bottom-2 right-2 flex items-center justify-center border px-2 py-1 [&>p]:font-mono [&>p]:text-xs">
