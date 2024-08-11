@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { getI18n } from '~/src/lib/locales/server'
+import { getI18n } from '@/lib/locales/server'
 
 export async function generateMetadata() {
   const t = await getI18n()

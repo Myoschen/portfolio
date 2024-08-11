@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { FaceId, HomeSimple, LightBulb } from 'iconoir-react'
 
 import data from '~/data.json'
-import { BlurImage } from '~/src/components/ui/blur-image'
+import { BlurImage } from '@/components/ui/blur-image'
 import { CommandMenu } from '@/components/command-menu'
 import { LanguageMenu } from '@/components/language-menu'
 import { NavLink } from '@/components/nav-link'

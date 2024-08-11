@@ -1,5 +1,5 @@
-import { I18nProviderClient } from '~/src/lib/locales/client'
 import { MobileNav, SideNav } from '@/components/nav'
+import { I18nProviderClient } from '@/lib/locales/client'
 
 export default function MainLayout({
   params,
