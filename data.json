@@ -9,7 +9,7 @@
   ],
   "languages": ["html5", "css", "js", "ts"],
   "libraries": ["react", "react-native", "next.js", "expo", "tailwindcss", "framer-motion", "electron"],
-  "tools": ["arc", "bun", "discord", "pnpm", "vercel", "vscode"],
+  "tools": ["arc", "bun", "pnpm", "vercel", "vscode"],
   "projects": [
     { "key": "next-blog", "image": "/images/next-blog.png" },
     { "key": "muser", "image": "/images/muser.png" }

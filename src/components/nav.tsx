@@ -21,7 +21,7 @@ export async function SideNav() {
   ]
 
   return (
-    <aside className="fixed hidden space-y-6 px-6 sm:block md:space-y-8">
+    <aside className="fixed z-10 hidden space-y-6 px-6 sm:block md:space-y-8">
       <Link className="-ml-2 block w-max" href="/">
         <BlurImage src={data.logo} alt="Logo" width={60} height={60} />
       </Link>
@@ -53,7 +53,7 @@ export async function MobileNav() {
   ]
 
   return (
-    <div className="fixed bottom-4 w-full sm:hidden">
+    <div className="fixed bottom-4 z-10 w-full sm:hidden">
       <Dock>
         {navItems.map((item, index) => (
           <DockIcon key={index}>
@@ -64,7 +64,7 @@ export async function MobileNav() {
         ))}
         <Separator orientation="vertical" />
         <DockIcon>
-          <CommandMenu hideLabel={true} />
+          <CommandMenu mobile={true} />
         </DockIcon>
       </Dock>
     </div>

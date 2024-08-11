@@ -6,18 +6,21 @@ import { useTheme } from 'next-themes'
 import { Computer, FaceId, HalfMoon, HomeSimple, KeyCommand, LightBulb, SunLight, Translate } from 'iconoir-react'
 
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command'
+import { useMediaQuery } from '@/hooks/use-media-query'
 import { useChangeLocale, useI18n } from '@/lib/locales/client'
 
 interface CommandMenuProps {
-  hideLabel?: boolean
+  mobile?: boolean
 }
 
-export function CommandMenu({ hideLabel = false }: CommandMenuProps) {
+export function CommandMenu({ mobile = false }: CommandMenuProps) {
   const t = useI18n()
   const router = useRouter()
   const { setTheme } = useTheme()
   const changeLocale = useChangeLocale()
   const [isOpen, setIsOpen] = useState(false)
+
+  const matches = useMediaQuery('(min-width: 640px)')
 
   const groups = [
     {
@@ -47,6 +50,16 @@ export function CommandMenu({ hideLabel = false }: CommandMenuProps) {
 
   useEffect(() => {
     const handleKeydown = (ev: KeyboardEvent) => {
+      // if on the small screen
+      if (mobile && matches) {
+        return
+      }
+
+      // if on the large screen
+      if (!mobile && !matches) {
+        return
+      }
+
       if (ev.key === 'k' && (ev.metaKey || ev.ctrlKey)) {
         ev.preventDefault()
         setIsOpen(prev => !prev)
@@ -54,7 +67,7 @@ export function CommandMenu({ hideLabel = false }: CommandMenuProps) {
     }
     document.addEventListener('keydown', handleKeydown)
     return () => document.removeEventListener('keydown', handleKeydown)
-  }, [])
+  }, [mobile, matches])
 
   return (
     <>
@@ -63,7 +76,7 @@ export function CommandMenu({ hideLabel = false }: CommandMenuProps) {
         onClick={() => setIsOpen(true)}
       >
         <KeyCommand className="size-5" />
-        {!hideLabel && <span className="text-sm font-medium">{t('command')}</span>}
+        {!mobile && <span className="text-sm font-medium">{t('command')}</span>}
       </button>
       <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
         <CommandInput placeholder={t('command.placeholder')} />

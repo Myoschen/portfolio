@@ -55,7 +55,7 @@
       "description": "Tools you use.",
       "items": {
         "type": "string",
-        "enum": ["arc", "vscode", "discord", "pnpm", "bun", "vercel"]
+        "enum": ["arc", "vscode", "pnpm", "bun", "vercel"]
       },
       "uniqueItems": true
     },

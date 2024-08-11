@@ -14,4 +14,10 @@ export default {
   'command': 'Command',
   'command.placeholder': 'Type a command or search...',
   'command.empty': 'No results found.',
+  'introduce': 'Hello 👋, I\'m Ryan.\nI am a developer passionate about front-end!',
+  'uses': 'Uses',
+  'uses.introduce': 'These are the programming languages, libraries, and tools I currently use when developing.',
+  'uses.languages': 'Languages',
+  'uses.libraries': 'Libraries',
+  'uses.tools': 'Tools',
 } as const
