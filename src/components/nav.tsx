@@ -2,12 +2,12 @@ import Link from 'next/link'
 import { FaceId, HomeSimple, LightBulb } from 'iconoir-react'
 
 import data from '~/data.json'
+import { BlurImage } from '~/src/components/ui/blur-image'
 import { CommandMenu } from '@/components/command-menu'
 import { LanguageMenu } from '@/components/language-menu'
 import { NavLink } from '@/components/nav-link'
 import { ThemeMenu } from '@/components/theme-menu'
 import { Dock, DockIcon } from '@/components/ui/dock'
-import { Image } from '@/components/ui/image'
 import { Separator } from '@/components/ui/separator'
 import { getScopedI18n } from '@/lib/locales/server'
 
@@ -23,7 +23,7 @@ export async function SideNav() {
   return (
     <aside className="fixed hidden space-y-6 px-6 sm:block md:space-y-8">
       <Link className="-ml-2 block w-max" href="/">
-        <Image src={data.logo} alt="Logo" width={60} height={60} />
+        <BlurImage src={data.logo} alt="Logo" width={60} height={60} />
       </Link>
       <nav className="flex flex-col gap-y-3">
         {navItems.map((item, index) => (

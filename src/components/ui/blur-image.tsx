@@ -5,10 +5,10 @@ import NextImage, { type ImageProps as NextImageProps } from 'next/image'
 
 import { cn } from '@/lib/utils'
 
-interface ImageProps extends NextImageProps {}
+interface BlurImageProps extends NextImageProps {}
 
 /** @see https://www.meje.dev/blog/nextjs-image-blur-on-load */
-export function Image({ className, ...props }: ImageProps) {
+export function BlurImage({ className, ...props }: BlurImageProps) {
   const [isLoading, setIsLoading] = React.useState(false)
 
   return (
