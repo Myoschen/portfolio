@@ -5,7 +5,10 @@ import { LayoutRouterContext } from 'next/dist/shared/lib/app-router-context.sha
 import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 
-/** @see https://github.com/vercel/next.js/discussions/59349 */
+/**
+ * @see https://github.com/vercel/next.js/discussions/59349
+ * @see https://github.com/vercel/next.js/issues/49279
+ */
 export default function Template({
   children,
 }: Readonly<{
@@ -19,10 +22,9 @@ export default function Template({
         key={pathname}
         initial={{ y: 20, opacity: 0, filter: 'blur(8px)' }}
         animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-        // exit={{ y: 20, opacity: 0, filter: 'blur(8px)' }}
         transition={{ ease: [0.83, 0, 0.17, 1], duration: 0.5 }}
       >
-        <FrozenRouter>{children}</FrozenRouter>
+        {children}
       </motion.div>
     </AnimatePresence>
   )
