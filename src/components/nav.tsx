@@ -23,7 +23,7 @@ export async function SideNav() {
   return (
     <aside className="fixed z-10 hidden space-y-6 px-6 sm:block md:space-y-8">
       <Link className="-ml-2 block w-max" href="/">
-        <BlurImage src={data.logo} alt="Logo" width={60} height={60} />
+        <BlurImage className="rounded-full" src={data.logo} alt="Logo" width={60} height={60} />
       </Link>
       <nav className="flex flex-col gap-y-3">
         {navItems.map((item, index) => (
