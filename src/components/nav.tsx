@@ -2,11 +2,11 @@ import Link from 'next/link'
 import { FaceId, HomeSimple, LightBulb } from 'iconoir-react'
 
 import data from '~/data.json'
-import { BlurImage } from '@/components/ui/blur-image'
 import { CommandMenu } from '@/components/command-menu'
 import { LanguageMenu } from '@/components/language-menu'
 import { NavLink } from '@/components/nav-link'
 import { ThemeMenu } from '@/components/theme-menu'
+import { BlurImage } from '@/components/ui/blur-image'
 import { Dock, DockIcon } from '@/components/ui/dock'
 import { Separator } from '@/components/ui/separator'
 import { getScopedI18n } from '@/lib/locales/server'
@@ -54,9 +54,9 @@ export async function MobileNav() {
 
   return (
     <div className="fixed bottom-4 w-full sm:hidden">
-      <Dock direction="middle">
+      <Dock>
         {navItems.map((item, index) => (
-          <DockIcon key={index} className="hover:bg-accent">
+          <DockIcon key={index}>
             <Link href={item.url}>
               <item.icon className="size-5" />
             </Link>
