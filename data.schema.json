@@ -11,6 +11,20 @@
       "description": "Your website logo.",
       "format": "uri-reference"
     },
+    "banner": {
+      "type": "object",
+      "description": "Your banners.",
+      "properties": {
+        "home": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "about": {
+          "type": "string",
+          "format": "uri-reference"
+        }
+      }
+    },
     "socials": {
       "type": "array",
       "description": "Your social links.",

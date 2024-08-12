@@ -2,6 +2,9 @@
   "$schema": "./data.schema.json",
   "author": "Ryan Chen",
   "logo": "/images/logo.png",
+  "banner": {
+    "home":"/images/home-banner.jpg"
+  },
   "socials": [
     { "type": "github", "label": "Myoschen", "url": "https://github.com/Myoschen" },
     { "type": "email", "label": "myos.chen@gmail.com", "url": "mailto:myos.chen@gmail.com" },

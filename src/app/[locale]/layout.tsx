@@ -10,7 +10,7 @@ export default function MainLayout({
 }>) {
   return (
     <I18nProviderClient locale={params.locale}>
-      <div className="relative mx-auto flex max-w-4xl flex-row pt-8 md:pt-20 lg:pt-32">
+      <div className="relative mx-auto flex max-w-4xl flex-row pb-24 pt-8 md:py-24 lg:py-32">
         <SideNav />
         <MobileNav />
         {children}

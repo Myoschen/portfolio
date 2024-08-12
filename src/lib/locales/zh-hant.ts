@@ -20,4 +20,5 @@ export default {
   'uses.languages': '程式語言',
   'uses.libraries': '函式庫',
   'uses.tools': '工具',
+  'photoBy': '照片由 {author} 拍攝在 {service}',
 } as const

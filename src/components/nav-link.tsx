@@ -24,7 +24,7 @@ export function NavLink({ className, href, children, ...props }: NavLinkProps) {
           className="absolute -left-3.5 top-0 flex h-full items-center"
           layout="position"
           layoutId="dot"
-          transition={{ type: 'spring', duration: 0.5 }}
+          transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }}
         >
           <svg
             className="fill-foreground"

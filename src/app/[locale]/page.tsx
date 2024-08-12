@@ -1,4 +1,5 @@
 import data from '~/data.json'
+import { BlurImage } from '~/src/components/ui/blur-image'
 import { Arc, Bun, CSS, Electron, Expo, FramerMotion, Github, Gmail, HTML5, JavaScript, Next, Pnpm, React, TailwindCSS, TypeScript, Vercel, Vscode, X } from '@/components/icon'
 import { Badge } from '@/components/ui/badge'
 import { getI18n } from '@/lib/locales/server'
@@ -13,7 +14,7 @@ export default async function HomePage() {
   ]
 
   return (
-    <main className="w-full space-y-8 px-4 pb-24 sm:ml-40 sm:mt-2 sm:max-w-xl sm:px-0 sm:pb-0">
+    <main className="w-full space-y-8 px-4 sm:ml-40 sm:mt-2 sm:max-w-xl sm:px-0">
       <div className="space-y-4">
         <h1 className="text-4xl font-bold">{data.author}</h1>
         <div className="space-y-2">
@@ -36,6 +37,33 @@ export default async function HomePage() {
               )
             })}
           </ul>
+        </div>
+        <div className="flex flex-col gap-y-1">
+          <BlurImage className="relative h-60 w-full rounded-lg" src={data.banner.home} alt="Home Banner" fill={true} />
+          <p className="self-end text-xs text-muted-foreground">
+            {t('photoBy', {
+              author: (
+                <a
+                  className="text-secondary-foreground underline transition-opacity ease-in-out-quint hover:opacity-50"
+                  href="https://unsplash.com/@adrian_infernus?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                  target="_blank"
+                  rel="noreferer noopener"
+                >
+                  Adrian Infernus
+                </a>
+              ),
+              service: (
+                <a
+                  className="text-secondary-foreground underline transition-opacity ease-in-out-quint hover:opacity-50"
+                  href="https://unsplash.com/photos/a-pink-and-blue-sky-with-a-few-clouds-GLf7bAwCdYg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                  target="_blank"
+                  rel="noreferer noopener"
+                >
+                  Unsplash
+                </a>
+              ),
+            })}
+          </p>
         </div>
       </div>
       <div className="space-y-4">

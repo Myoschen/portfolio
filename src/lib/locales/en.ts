@@ -20,4 +20,5 @@ export default {
   'uses.languages': 'Languages',
   'uses.libraries': 'Libraries',
   'uses.tools': 'Tools',
+  'photoBy': 'Photo by {author} on {service}',
 } as const
