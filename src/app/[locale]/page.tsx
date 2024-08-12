@@ -1,7 +1,6 @@
 import data from '~/data.json'
 import { Arc, Bun, CSS, Electron, Expo, FramerMotion, Github, Gmail, HTML5, JavaScript, Next, Pnpm, React, TailwindCSS, TypeScript, Vercel, Vscode, X } from '@/components/icon'
 import { Badge } from '@/components/ui/badge'
-import { LightBoard } from '@/components/ui/light-board'
 import { getI18n } from '@/lib/locales/server'
 
 export default async function HomePage() {
@@ -17,21 +16,6 @@ export default async function HomePage() {
     <main className="w-full space-y-8 px-4 pb-24 sm:ml-40 sm:mt-2 sm:max-w-xl sm:px-0 sm:pb-0">
       <div className="space-y-4">
         <h1 className="text-4xl font-bold">{data.author}</h1>
-        <div className="w-full bg-black">
-          <LightBoard
-            rows={17}
-            lightSize={4}
-            gap={3}
-            text="HELLO WORLD"
-            updateInterval={300}
-            colors={{
-              background: '#1a1a1a',
-              textDim: '#3a3a3a',
-              drawLine: '#7a7a7a',
-              textBright: '#ffffff',
-            }}
-          />
-        </div>
         <div className="space-y-2">
           <p>{t('introduce')}</p>
           <ul className="flex flex-col gap-x-4 gap-y-2 sm:flex-row sm:items-center">
