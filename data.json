@@ -3,7 +3,8 @@
   "author": "Ryan Chen",
   "logo": "/images/logo.png",
   "banner": {
-    "home":"/images/home-banner.jpg"
+    "home":"/images/home-banner.jpg",
+    "about":"/images/about-banner.jpg"
   },
   "socials": [
     { "type": "github", "label": "Myoschen", "url": "https://github.com/Myoschen" },

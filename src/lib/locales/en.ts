@@ -21,4 +21,6 @@ export default {
   'uses.libraries': 'Libraries',
   'uses.tools': 'Tools',
   'photoBy': 'Photo by {author} on {service}',
+  'about-me': 'About me',
+  'self-introduce': 'I graduated from Tamkang University in the Department of Computer Science and Information Engineering.\n\nI am passionate about programming, so I tried a lot of different Programming languages such as JavaScript, TypeScript, Python, Golang, Rust, etc.\n\nHowever, due to university courses, I was exposed to web front-end development. Until now, I still love web front-end development.\n\nNow, I am still improving my skills, such as learning React, Next.js, etc.\n\nIn addition, I am also very interested in back-end technology. Like Golang, Rust, etc.\n\nSo in the future, I will focus on the front-end. If I have spare time, I will also learn more about the back-end technology.',
 } as const

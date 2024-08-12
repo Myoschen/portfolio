@@ -21,4 +21,6 @@ export default {
   'uses.libraries': '函式庫',
   'uses.tools': '工具',
   'photoBy': '照片由 {author} 拍攝在 {service}',
+  'about-me': '關於我',
+  'self-introduce': '我畢業於淡江大學資訊工程學系。\n\n我對撰寫程式充滿熱情，所以我嘗試了許多不同的程式語言，例如 JavaScript、TypeScript、Python、Golang、Rust 等等。\n\n然而由於大學課程的緣故，接觸到了 web 前端開發。直到現在，我依然熱愛 web 前端開發。\n\n目前，我仍然在提升自己的技能，比如像是學習 React、Next.js 等等。\n\n另外，我對後端技術也很十分感興趣，像是 Golang、Rust 等等。\n\n所以未來，我仍然會專注於前端。但如果有空閒的時間的話，我也會嘗試去了解一下後端相關的技術與知識。',
 } as const
