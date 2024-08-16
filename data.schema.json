@@ -88,6 +88,14 @@
             "description": "Relative path to the project image.",
             "format": "uri-reference"
           },
+          "tech" :{
+            "type": "array",
+            "description": "Tech you use",
+            "items": {
+              "type": "string",
+              "enum": ["React", "React Native", "Next.js", "Expo", "Tailwind CSS", "Framer Motion", "Electron", "TypeScript", "Tauri", "Rust", "Go", "Firebase"]
+            }
+          },
           "urls": {
             "type": "object",
             "description": "Urls of the project.",

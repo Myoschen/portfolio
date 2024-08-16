@@ -15,7 +15,15 @@
   "libraries": ["react", "react-native", "next.js", "expo", "tailwindcss", "framer-motion", "electron"],
   "tools": ["arc", "bun", "pnpm", "vercel", "vscode"],
   "projects": [
-    { "key": "next-blog", "image": "/images/next-blog.png" },
-    { "key": "muser", "image": "/images/muser.png" }
+    {
+      "key": "next-blog",
+      "image": "/images/next-blog.png",
+      "tech": ["TypeScript", "Next.js", "Tailwind CSS"]
+    },
+    {
+      "key": "muser",
+      "image": "/images/muser.png",
+      "tech": ["TypeScript", "React", "Electron"]
+    }
   ]
 }
