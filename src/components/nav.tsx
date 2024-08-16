@@ -21,25 +21,27 @@ export async function SideNav() {
   ]
 
   return (
-    <aside className="fixed z-10 hidden space-y-6 px-6 sm:block md:space-y-8">
-      <Link className="-ml-2 block w-max" href="/">
-        <BlurImage className="rounded-full" src={data.logo} alt="Logo" width={60} height={60} />
-      </Link>
-      <nav className="flex flex-col gap-y-3">
-        {navItems.map((item, index) => (
-          <NavLink key={index} className="w-max" href={item.url}>
-            <p className="flex items-center gap-x-2">
-              <item.icon className="size-5" />
-              <span className="text-sm font-medium">{item.label}</span>
-            </p>
-          </NavLink>
-        ))}
-      </nav>
-      <Separator />
-      <div className="flex flex-col gap-y-3">
-        <CommandMenu />
-        <LanguageMenu />
-        <ThemeMenu />
+    <aside className="z-10 hidden shrink-0 basis-40 px-6 sm:block">
+      <div className="fixed space-y-6 md:space-y-8">
+        <Link className="-ml-2 block w-max" href="/">
+          <BlurImage className="rounded-full" src={data.logo} alt="Logo" width={60} height={60} />
+        </Link>
+        <nav className="flex flex-col gap-y-3">
+          {navItems.map((item, index) => (
+            <NavLink key={index} className="w-max" href={item.url}>
+              <p className="flex items-center gap-x-2">
+                <item.icon className="size-5" />
+                <span className="text-sm font-medium">{item.label}</span>
+              </p>
+            </NavLink>
+          ))}
+        </nav>
+        <Separator />
+        <div className="flex flex-col gap-y-3">
+          <CommandMenu />
+          <LanguageMenu />
+          <ThemeMenu />
+        </div>
       </div>
     </aside>
   )

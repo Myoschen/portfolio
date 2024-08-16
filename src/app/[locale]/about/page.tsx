@@ -16,7 +16,7 @@ export default async function AboutPage() {
   const t = await getI18n()
 
   return (
-    <main className="w-full space-y-8 px-4 sm:ml-40 sm:mt-2 sm:max-w-xl sm:px-0">
+    <main className="flex-1 space-y-8 px-4 sm:mt-2 sm:pr-6 md:pr-0">
       <div className="space-y-4">
         <h1 className="text-4xl font-bold">{t('about-me')}</h1>
         <div className="flex flex-col gap-y-1">

@@ -12,7 +12,7 @@ export async function generateMetadata() {
 
 export default function ProjectPage() {
   return (
-    <main className="px-4 sm:ml-40 sm:px-0">
+    <main className="flex-1 space-y-8 px-4 sm:mt-2 sm:pr-6 md:pr-0">
       <h1>Project</h1>
     </main>
   )
