@@ -1,20 +1,37 @@
-import { MobileNav, SideNav } from '@/components/nav'
-import { I18nProviderClient } from '@/lib/locales/client'
+import '../globals.css'
 
-export default function MainLayout({
-  params,
+import type { Metadata } from 'next'
+import { GeistMono } from 'geist/font/mono'
+import { GeistSans } from 'geist/font/sans'
+
+import { Debugger } from '@/components/debugger'
+import { ThemeProvider } from '@/components/theme-provider'
+import { getI18n } from '@/lib/locales/server'
+import siteConfig from '@/lib/site-config'
+import { cn } from '@/lib/utils'
+
+export async function generateMetadata() {
+  const t = await getI18n()
+  return {
+    title: {
+      default: siteConfig.author,
+      template: `%s / ${siteConfig.author}`,
+    },
+    description: t('website.description'),
+  } satisfies Metadata
+}
+
+export default function RootLayout({
   children,
 }: Readonly<{
-  params: { locale: string }
   children: React.ReactNode
 }>) {
   return (
-    <I18nProviderClient locale={params.locale}>
-      <div className="relative mx-auto flex max-w-3xl flex-row pb-24 pt-8 md:py-24 lg:py-32">
-        <SideNav />
-        <MobileNav />
-        {children}
-      </div>
-    </I18nProviderClient>
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={cn(GeistSans.variable, GeistMono.variable)}>
+        <ThemeProvider>{children}</ThemeProvider>
+        { process.env.NODE_ENV === 'development' && <Debugger /> }
+      </body>
+    </html>
   )
 }
