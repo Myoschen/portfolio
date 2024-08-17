@@ -2,34 +2,21 @@
 
 import { useQueryStates } from 'nuqs'
 
-import data from '~/data.json'
 import { MultiFilter } from '@/components/multi-filter'
 import { useI18n } from '@/lib/locales/client'
 import { searchParamsParsers } from '@/lib/search-params'
+import siteConfig from '@/lib/site-config'
 import { arrayContains } from '@/lib/utils'
 
-const techOptions = [
-  'React',
-  // 'React Native',
-  'Next.js',
-  // 'Expo',
-  'Tailwind CSS',
-  'Framer Motion',
-  'Electron',
-  'TypeScript',
-  // 'Tauri',
-  // 'Rust',
-  // 'Go',
-  // 'Firebase',
-]
+const techOptions = Array.from(new Set(siteConfig.projects.map(p => p.tech).flat()))
+console.log(techOptions)
 
 export default function ProjectPage() {
   const t = useI18n()
   const [{ tech }] = useQueryStates(searchParamsParsers)
-
   const projects = tech
-    ? data.projects.filter(p => arrayContains(p.tech, tech))
-    : data.projects
+    ? siteConfig.projects.filter(p => arrayContains(p.tech, tech))
+    : siteConfig.projects
 
   return (
     <main className="flex-1 space-y-8 px-4 sm:mt-2 sm:pr-6 md:pr-0">

@@ -1,26 +1,26 @@
-import data from '~/data.json'
-import { BlurImage } from '~/src/components/ui/blur-image'
 import { Arc, Bun, CSS, Electron, Expo, FramerMotion, Github, Gmail, HTML5, JavaScript, Next, Pnpm, React, TailwindCSS, TypeScript, Vercel, Vscode, X } from '@/components/icon'
 import { Badge } from '@/components/ui/badge'
+import { BlurImage } from '@/components/ui/blur-image'
 import { getI18n } from '@/lib/locales/server'
+import siteConfig, { type Language, type Library, type Tool } from '@/lib/site-config'
 
 export default async function HomePage() {
   const t = await getI18n()
 
   const uses = [
-    { heading: t('uses.languages'), items: data.languages.map(parseLanguage) },
-    { heading: t('uses.libraries'), items: data.libraries.map(parseLibrary) },
-    { heading: t('uses.tools'), items: data.tools.map(parseTool) },
+    { heading: t('uses.languages'), items: siteConfig.languages.map(parseLanguage) },
+    { heading: t('uses.libraries'), items: siteConfig.libraries.map(parseLibrary) },
+    { heading: t('uses.tools'), items: siteConfig.tools.map(parseTool) },
   ]
 
   return (
     <main className="flex-1 space-y-8 px-4 sm:mt-2 sm:pr-6 md:pr-0">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold">{data.author}</h1>
+        <h1 className="text-4xl font-bold">{siteConfig.author}</h1>
         <div className="space-y-2">
           <p>{t('introduce')}</p>
           <ul className="flex flex-col gap-x-4 gap-y-2 sm:flex-row sm:items-center">
-            {data.socials.map((item, index) => {
+            {siteConfig.socials.map((item, index) => {
               const Icon = getSocialIcon(item.type)
               return (
                 <li key={index}>
@@ -39,7 +39,7 @@ export default async function HomePage() {
           </ul>
         </div>
         <div className="flex flex-col gap-y-1">
-          <BlurImage className="relative h-60 w-full rounded-lg" src={data.banner.home} alt="Home Banner" fill={true} />
+          <BlurImage className="relative h-60 w-full rounded-lg" src={siteConfig.banner.home} alt="Home Banner" fill={true} />
           <p className="self-end text-xs text-muted-foreground">
             {t('photoBy', {
               author: (
@@ -102,56 +102,55 @@ function getSocialIcon(type: string) {
   }
 }
 
-function parseLanguage(language: string) {
+function parseLanguage(language: Language) {
   switch (language) {
-    case 'html5':
+    case 'HTML5':
       return { icon: HTML5, label: 'HTML 5' }
-    case 'css':
+    case 'CSS':
       return { icon: CSS, label: 'CSS' }
-    case 'js':
+    case 'JavaScript':
       return { icon: JavaScript, label: 'JavaScript' }
-    case 'ts':
+    case 'TypeScript':
       return { icon: TypeScript, label: 'TypeScript' }
     default:
-      throw Error()
+      throw Error('Not currently supported!')
   }
 }
 
-function parseLibrary(library: string) {
+function parseLibrary(library: Library) {
   switch (library) {
-    case 'react':
+    case 'React':
       return { icon: React, label: 'React' }
-    case 'react-native':
+    case 'React Native':
       return { icon: React, label: 'React Native' }
-    case 'next.js':
+    case 'Next.js':
       return { icon: Next, label: 'Next.js' }
-    case 'expo':
+    case 'Expo':
       return { icon: Expo, label: 'Expo' }
-    case 'tailwindcss':
+    case 'Tailwind CSS':
       return { icon: TailwindCSS, label: 'Tailwind CSS' }
-    case 'framer-motion':
+    case 'Framer Motion':
       return { icon: FramerMotion, label: 'Framer Motion' }
-    case 'electron':
+    case 'Electron':
       return { icon: Electron, label: 'Electron' }
     default:
-      throw Error()
+      throw Error('Not currently supported!')
   }
 }
 
-// ["arc", "bun", "pnpm", "vercel", "vscode"]
-function parseTool(tool: string) {
+function parseTool(tool: Tool) {
   switch (tool) {
-    case 'arc':
+    case 'Arc':
       return { icon: Arc, label: 'Arc' }
-    case 'bun':
+    case 'Bun':
       return { icon: Bun, label: 'Bun' }
     case 'pnpm':
       return { icon: Pnpm, label: 'pnpm' }
-    case 'vercel':
+    case 'Vercel':
       return { icon: Vercel, label: 'Vercel' }
     case 'vscode':
       return { icon: Vscode, label: 'vscode' }
     default:
-      throw Error()
+      throw Error('Not currently supported!')
   }
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
-import data from '~/data.json'
 import { BlurImage } from '@/components/ui/blur-image'
 import { getI18n } from '@/lib/locales/server'
+import siteConfig from '@/lib/site-config'
 
 export async function generateMetadata() {
   const t = await getI18n()
@@ -20,7 +20,7 @@ export default async function AboutPage() {
       <div className="space-y-4">
         <h1 className="text-4xl font-bold">{t('about-me')}</h1>
         <div className="flex flex-col gap-y-1">
-          <BlurImage className="relative h-60 w-full rounded-lg" src={data.banner.about} alt="Home Banner" fill={true} />
+          <BlurImage className="relative h-60 w-full rounded-lg" src={siteConfig.banner.about} alt="Home Banner" fill={true} />
           <p className="self-end text-xs text-muted-foreground">
             {t('photoBy', {
               author: (
