@@ -9,7 +9,6 @@ import siteConfig from '@/lib/site-config'
 import { arrayContains } from '@/lib/utils'
 
 const techOptions = Array.from(new Set(siteConfig.projects.map(p => p.tech).flat()))
-console.log(techOptions)
 
 export default function ProjectPage() {
   const t = useI18n()
@@ -31,9 +30,9 @@ export default function ProjectPage() {
             options={techOptions}
           />
         </div>
-        {projects.map(p => (
+        {/* {projects.map(p => (
           <p>{p.key}</p>
-        ))}
+        ))} */}
       </div>
     </main>
   )
