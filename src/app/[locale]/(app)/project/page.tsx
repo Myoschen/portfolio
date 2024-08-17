@@ -50,11 +50,11 @@ export default function ProjectPage() {
             >
               {item.image
                 ? (
-                    <div className="relative aspect-video h-[160px] w-full overflow-hidden">
+                    <div className="relative aspect-video w-full overflow-hidden">
                       <BlurImage src={item.image} alt={item.key} fill={true} />
                     </div>
                   )
-                : (<div className="aspect-video h-[160px] bg-neutral-200 dark:bg-neutral-900" />)}
+                : (<div className="aspect-video bg-neutral-200 dark:bg-neutral-900" />)}
               <div className="space-y-3 p-4">
                 <div className="space-y-1">
                   <div className="flex items-baseline gap-x-1">
