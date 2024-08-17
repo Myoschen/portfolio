@@ -56,20 +56,32 @@ export function MultiFilter<
         >
           <PlusCircle className="size-3" />
           <span>{title}</span>
-          {selected && selected.length > 0 && (
-            <>
-              <Separator className="h-1/2" orientation="vertical" />
-              {selected.map((item, index) => (
-                <Badge
-                  key={index}
-                  className="rounded px-1 py-0 text-[10px] font-normal"
-                  variant="secondary"
-                >
-                  {item}
-                </Badge>
+          {selected && (selected.length > 3
+            ? (
+                <>
+                  <Separator className="h-1/2" orientation="vertical" />
+                  <Badge
+                    className="rounded px-1 py-0 text-[10px] font-normal"
+                    variant="secondary"
+                  >
+                    {t('selected', { number: selected.length })}
+                  </Badge>
+                </>
+              )
+            : (
+                <>
+                  <Separator className="h-1/2" orientation="vertical" />
+                  {selected.map((item, index) => (
+                    <Badge
+                      key={index}
+                      className="rounded px-1 py-0 text-[10px] font-normal"
+                      variant="secondary"
+                    >
+                      {item}
+                    </Badge>
+                  ))}
+                </>
               ))}
-            </>
-          )}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-max p-0" align="start">

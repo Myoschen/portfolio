@@ -39,4 +39,5 @@ export default {
   'website': 'Website',
   'source': 'Source',
   'building': '(開發中)',
+  'selected': '已選取 {number} 個',
 } as const

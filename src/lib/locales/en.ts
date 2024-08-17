@@ -39,4 +39,5 @@ export default {
   'website': 'Website',
   'source': 'Source',
   'building': '(building)',
+  'selected': '{number} Selected',
 } as const
