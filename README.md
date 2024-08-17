@@ -18,6 +18,8 @@ This is my portfolio.
 - [Svgl](https://svgl.vercel.app/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [next-international](https://next-international.vercel.app/)
+- [nuqs](https://nuqs.47ng.com/)
+- [react-plock](https://github.com/askides/react-plock)
 
 ## Usage
 
