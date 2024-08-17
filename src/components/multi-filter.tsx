@@ -74,7 +74,7 @@ export function MultiFilter<
       </PopoverTrigger>
       <PopoverContent className="w-max p-0" align="start">
         <Command>
-          <CommandInput className="text-xs" placeholder={placeholder ?? t('search')} />
+          <CommandInput className="h-8 text-xs" placeholder={placeholder ?? t('search')} />
           <CommandList>
             <CommandEmpty>{t('command.empty')}</CommandEmpty>
             <CommandGroup>
