@@ -12,8 +12,12 @@ export type Tool = 'Arc' | 'Bun' | 'pnpm' | 'Vercel' | 'vscode' | (string & {})
 
 export type Project = {
   key: string
-  image: string
+  image: string | undefined
   tech: (Language | Library)[]
+  url: {
+    website: string | undefined
+    source: string
+  }
   building?: boolean
 }
 
@@ -48,27 +52,61 @@ export default {
   tools: ['Arc', 'Bun', 'pnpm', 'Vercel', 'vscode'],
   projects: [
     {
-      key: 'next-blog',
-      image: '/images/next-blog.png',
+      key: 'next-blog' as const,
+      image: '/images/next-blog.jpeg',
       tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      url: {
+        website: undefined,
+        source: 'http://github.com/Myoschen/next-blog',
+      },
     },
     {
-      key: 'ui',
-      image: '/images/ui.png',
+      key: 'ui' as const,
+      image: undefined,
       tech: ['Next.js', 'Rreact Aria Components', 'TypeScript'],
+      url: {
+        website: undefined,
+        source: 'http://github.com/Myoschen/ui',
+      },
       building: true,
     },
     {
-      key: 'create-app',
-      image: '/images/create-app.png',
+      key: 'create-app' as const,
+      image: undefined,
       tech: ['Node.js', 'TypeScript'],
+      url: {
+        website: undefined,
+        source: 'http://github.com/Myoschen/create-app',
+      },
       building: true,
     },
     {
-      key: 'commerce',
-      image: '/images/commerce.png',
+      key: 'commerce' as const,
+      image: undefined,
       tech: ['Next.js', 'Rreact Aria Components', 'TypeScript', 'Rust', 'Postgres'],
+      url: {
+        website: undefined,
+        source: 'http://github.com/Myoschen/',
+      },
       building: true,
     },
   ],
 } satisfies Config
+
+export function techColor(tech: Language | Library) {
+  switch (tech) {
+    case 'TypeScript':
+      return 'text-[#2F74C0]'
+    case 'Tailwind CSS':
+      return 'text-[#38BDF9]'
+    case 'Rust':
+      return 'text-[#FC5115]'
+    case 'Postgres':
+      return 'text-[#31648C]'
+    case 'Rreact Aria Components':
+      return 'text-[#E1241B]'
+    case 'Next.js':
+    default:
+      return 'text-black dark:text-white'
+  }
+}

@@ -5,6 +5,7 @@ import NextLink, { type LinkProps as NextLinkProps } from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import { motion } from 'framer-motion'
 
+import { Dot } from '@/components/icon/dot'
 import { cn } from '@/lib/utils'
 
 interface NavLinkProps extends React.PropsWithChildren<NextLinkProps> {
@@ -26,14 +27,7 @@ export function NavLink({ className, href, children, ...props }: NavLinkProps) {
           layoutId="dot"
           transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }}
         >
-          <svg
-            className="fill-foreground"
-            width="6"
-            height="6"
-            viewBox="0 0 6 6"
-          >
-            <circle cx="3" cy="3" r="3" />
-          </svg>
+          <Dot className="size-1.5 fill-foreground" />
         </motion.div>
       )}
     </NextLink>
