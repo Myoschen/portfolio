@@ -1,120 +1,156 @@
-import Image from 'next/image'
-import { useTranslations } from 'next-intl'
-import { unstable_setRequestLocale } from 'next-intl/server'
+import { Arc, Bun, CSS, Electron, Expo, FramerMotion, Github, Gmail, HTML5, JavaScript, Next, Pnpm, React, TailwindCSS, TypeScript, Vercel, Vscode, X } from '@/components/icon'
+import { Badge } from '@/components/ui/badge'
+import { BlurImage } from '@/components/ui/blur-image'
+import { getI18n } from '@/lib/locales/server'
+import siteConfig, { type Language, type Library, type Tool } from '@/lib/site-config'
 
-import Avatar from '#/images/avatar.png'
+export default async function HomePage() {
+  const t = await getI18n()
 
-import { Arc, Canva, Css, Discord, Electron, Expo, Figma, FramerMotion, Github, Gmail, Html5, JavaScript, NextJS, NodeJS, Pnpm, Postman, React, ShadcnUI, TailwindCSS, TypeScript, Vercel, Vscode, X } from '@/components/icons'
-import { SocialLink } from '@/components/social-link'
-import type { LinkItem, Locale } from '@/lib/types'
-
-const socialLinks: LinkItem[] = [
-  { icon: <Github />, label: 'Myoschen', url: 'https://github.com/Myoschen' },
-  { icon: <Gmail />, label: 'myos.chen@gmail.com', url: 'mailto:myos.chen@gmail.com' },
-  { icon: <X />, label: 'MyosChen', url: 'https://twitter.com/MyosChen' },
-]
-
-const languages: Use[] = [
-  { icon: <Html5 />, label: 'HTML' },
-  { icon: <Css />, label: 'CSS' },
-  { icon: <JavaScript />, label: 'JavaScript' },
-  { icon: <TypeScript />, label: 'TypeScript' },
-]
-
-const libraries: Use[] = [
-  { icon: <React />, label: 'React' },
-  { icon: <React />, label: 'React Native' },
-  { icon: <NextJS />, label: 'Next.js' },
-  { icon: <Expo />, label: 'Expo' },
-  { icon: <TailwindCSS />, label: 'Tailwind CSS' },
-  { icon: <ShadcnUI />, label: 'shadcn/ui' },
-  { icon: <FramerMotion />, label: 'Framer Motion' },
-  { icon: <NodeJS />, label: 'Node.js' },
-  { icon: <Electron />, label: 'Electron' },
-]
-
-const tools: Use[] = [
-  { icon: <Arc />, label: 'Arc' },
-  { icon: <Vscode />, label: 'vscode' },
-  { icon: <Postman />, label: 'Postman' },
-  { icon: <Figma />, label: 'Figma' },
-  { icon: <Canva />, label: 'Canva' },
-  { icon: <Discord />, label: 'Discord' },
-  { icon: <Pnpm />, label: 'pnpm' },
-  { icon: <Vercel />, label: 'Vercel' },
-]
-
-interface HomePageProps {
-  params: { locale: Locale }
-}
-
-export default function HomePage({ params: { locale } }: HomePageProps) {
-  unstable_setRequestLocale(locale)
-  const t = useTranslations('Home')
+  const uses = [
+    { heading: t('uses.languages'), items: siteConfig.languages.map(parseLanguage) },
+    { heading: t('uses.libraries'), items: siteConfig.libraries.map(parseLibrary) },
+    { heading: t('uses.tools'), items: siteConfig.tools.map(parseTool) },
+  ]
 
   return (
-    <main className={'mt-6 flex min-w-0 flex-auto flex-col px-6 md:mt-0'}>
-      <div className={'flex flex-col gap-y-6'}>
-        <h1 className={'text-4xl font-bold leading-relaxed'}>{t('Title')}</h1>
-        <div className={'relative aspect-square w-40 overflow-hidden rounded-full ring-4 ring-ring'}>
-          <Image
-            className={'object-cover'}
-            src={Avatar}
-            alt={'Ryan Chen'}
-            placeholder={'blur'}
-          />
+    <main className="flex-1 space-y-8 px-4 sm:mt-2 sm:pr-6 md:pr-0">
+      <div className="space-y-4">
+        <h1 className="text-4xl font-bold">{siteConfig.author}</h1>
+        <div className="space-y-2">
+          <p>{t('introduce')}</p>
+          <ul className="flex flex-col gap-x-4 gap-y-2 sm:flex-row sm:items-center">
+            {siteConfig.socials.map((item, index) => {
+              const Icon = getSocialIcon(item.type)
+              return (
+                <li key={index}>
+                  <a
+                    className="flex items-center gap-x-2 transition-opacity ease-in-out-quint hover:opacity-50"
+                    href={item.url}
+                    target="_blank"
+                    rel="noreferer noopener"
+                  >
+                    <Icon className="size-4" />
+                    <span className="text-sm">{item.label}</span>
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
         </div>
-        <p className={'whitespace-pre-line tracking-wide'}>{t('Intro')}</p>
-        <ul className={'flex flex-wrap  justify-start gap-x-4'}>
-          {socialLinks.map((props, index) => (
-            <li key={index}>
-              <SocialLink {...props} />
-            </li>
-          ))}
-        </ul>
-        <div className={'space-y-4'}>
-          <h2 className={'text-xl font-semibold'}>{t('Uses.Title')}</h2>
-          <p>{t('Uses.Intro')}</p>
-          <div className={'space-y-2'}>
-            <h3 className={'text-lg font-semibold'}>{t('Uses.Languages')}</h3>
-            <ul className={'flex flex-wrap gap-2'}>
-              {languages.map((language, index) => (
-                <UseBadge key={index} {...language} />
-              ))}
-            </ul>
-          </div>
-          <div className={'space-y-2'}>
-            <h3 className={'text-lg font-semibold'}>{t('Uses.Libraries')}</h3>
-            <ul className={'flex flex-wrap gap-2'}>
-              {libraries.map((library, index) => (
-                <UseBadge key={index} {...library} />
-              ))}
-            </ul>
-          </div>
-          <div className={'space-y-2'}>
-            <h3 className={'text-lg font-semibold'}>{t('Uses.Tools')}</h3>
-            <ul className={'flex flex-wrap gap-2'}>
-              {tools.map((tool, index) => (
-                <UseBadge key={index} {...tool} />
-              ))}
-            </ul>
-          </div>
+        <div className="flex flex-col gap-y-1">
+          <BlurImage className="relative h-60 w-full rounded-lg" src={siteConfig.banner.home} alt="Home Banner" fill={true} />
+          <p className="self-end text-xs text-muted-foreground">
+            {t('photoBy', {
+              author: (
+                <a
+                  className="text-secondary-foreground underline transition-opacity ease-in-out-quint hover:opacity-50"
+                  href="https://unsplash.com/@adrian_infernus?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                  target="_blank"
+                  rel="noreferer noopener"
+                >
+                  Adrian Infernus
+                </a>
+              ),
+              service: (
+                <a
+                  className="text-secondary-foreground underline transition-opacity ease-in-out-quint hover:opacity-50"
+                  href="https://unsplash.com/photos/a-pink-and-blue-sky-with-a-few-clouds-GLf7bAwCdYg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+                  target="_blank"
+                  rel="noreferer noopener"
+                >
+                  Unsplash
+                </a>
+              ),
+            })}
+          </p>
         </div>
+      </div>
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <h2 className="text-xl font-semibold">{t('uses')}</h2>
+          <p className="text-sm">{t('uses.introduce')}</p>
+        </div>
+        {uses.map ((use, index) => (
+          <div key={index} className="space-y-2">
+            <h3 className="text-lg font-semibold">{use.heading}</h3>
+            <div className="flex flex-wrap items-center gap-2">
+              {use.items.map((item, index) => (
+                <Badge key={index} variant="outline" className="gap-x-1">
+                  <item.icon className="size-3" />
+                  <span>{item.label}</span>
+                </Badge>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </main>
   )
 }
 
-interface Use {
-  icon: JSX.Element
-  label: string
+function getSocialIcon(type: string) {
+  switch (type) {
+    case 'email':
+      return Gmail
+    case 'github':
+      return Github
+    case 'x':
+      return X
+    default:
+      throw Error('This type of icon is currently not supported!')
+  }
 }
 
-function UseBadge({ icon, label }: Use) {
-  return (
-    <li className={'inline-flex items-center gap-x-2 rounded-lg border border-border bg-background p-2 px-3'}>
-      {icon}
-      <span className={'text-xs font-medium'}>{label}</span>
-    </li>
-  )
+function parseLanguage(language: Language) {
+  switch (language) {
+    case 'HTML5':
+      return { icon: HTML5, label: 'HTML 5' }
+    case 'CSS':
+      return { icon: CSS, label: 'CSS' }
+    case 'JavaScript':
+      return { icon: JavaScript, label: 'JavaScript' }
+    case 'TypeScript':
+      return { icon: TypeScript, label: 'TypeScript' }
+    default:
+      throw Error('Not currently supported!')
+  }
+}
+
+function parseLibrary(library: Library) {
+  switch (library) {
+    case 'React':
+      return { icon: React, label: 'React' }
+    case 'React Native':
+      return { icon: React, label: 'React Native' }
+    case 'Next.js':
+      return { icon: Next, label: 'Next.js' }
+    case 'Expo':
+      return { icon: Expo, label: 'Expo' }
+    case 'Tailwind CSS':
+      return { icon: TailwindCSS, label: 'Tailwind CSS' }
+    case 'Framer Motion':
+      return { icon: FramerMotion, label: 'Framer Motion' }
+    case 'Electron':
+      return { icon: Electron, label: 'Electron' }
+    default:
+      throw Error('Not currently supported!')
+  }
+}
+
+function parseTool(tool: Tool) {
+  switch (tool) {
+    case 'Arc':
+      return { icon: Arc, label: 'Arc' }
+    case 'Bun':
+      return { icon: Bun, label: 'Bun' }
+    case 'pnpm':
+      return { icon: Pnpm, label: 'pnpm' }
+    case 'Vercel':
+      return { icon: Vercel, label: 'Vercel' }
+    case 'vscode':
+      return { icon: Vscode, label: 'vscode' }
+    default:
+      throw Error('Not currently supported!')
+  }
 }

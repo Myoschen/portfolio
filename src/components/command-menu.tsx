@@ -1,158 +1,106 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
-import { useTranslations } from 'next-intl'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { Computer, FaceId, HalfMoon, HomeSimple, KeyCommand, LightBulb, SunLight, Translate } from 'iconoir-react'
 
-import {
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from '@/components/ui/command'
-import { usePathname, useRouter } from '@/lib/i18n'
+import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command'
+import { useMediaQuery } from '@/hooks/use-media-query'
+import { useChangeLocale, useI18n } from '@/lib/locales/client'
 
-interface ActionItem {
-  id: string
-  icon: JSX.Element
-  label: string
-  perform: () => void
+interface CommandMenuProps {
+  mobile?: boolean
 }
 
-export function CommandMenu() {
-  const [open, setOpen] = useState(false)
+export function CommandMenu({ mobile = false }: CommandMenuProps) {
+  const t = useI18n()
   const router = useRouter()
-  const pathname = usePathname()
-  const t = useTranslations('Command')
   const { setTheme } = useTheme()
+  const changeLocale = useChangeLocale()
+  const [isOpen, setIsOpen] = useState(false)
 
-  const navActions: ActionItem[] = [
-    {
-      id: 'go-home',
-      label: t('Action.Home'),
-      icon: <HomeSimple className={'mr-2 size-4'} />,
-      perform: () => router.push('/'),
-    },
-    {
-      id: 'go-about',
-      label: t('Action.About'),
-      icon: <FaceId className={'mr-2 size-4'} />,
-      perform: () => router.push('/about'),
-    },
-    {
-      id: 'go-project',
-      label: t('Action.Project'),
-      icon: <LightBulb className={'mr-2 size-4'} />,
-      perform: () => router.push('/project'),
-    },
-  ]
+  const matches = useMediaQuery('(min-width: 640px)')
 
-  const themeActions: ActionItem[] = [
+  const groups = [
     {
-      id: 'theme-system',
-      label: t('Action.SystemTheme'),
-      icon: <Computer className={'mr-2 size-4'} />,
-      perform: () => setTheme('system'),
+      heading: t('nav'),
+      items: [
+        { icon: HomeSimple, label: t('nav.home'), perform: () => router.push('/') },
+        { icon: FaceId, label: t('nav.about'), perform: () => router.push('/about') },
+        { icon: LightBulb, label: t('nav.project'), perform: () => router.push('/project') },
+      ],
     },
     {
-      id: 'theme-light',
-      label: t('Action.LightTheme'),
-      icon: <SunLight className={'mr-2 size-4'} />,
-      perform: () => setTheme('light'),
+      heading: t('theme'),
+      items: [
+        { icon: Computer, label: t('theme.system'), perform: () => setTheme('system') },
+        { icon: SunLight, label: t('theme.light'), perform: () => setTheme('light') },
+        { icon: HalfMoon, label: t('theme.dark'), perform: () => setTheme('dark') },
+      ],
     },
     {
-      id: 'theme-dark',
-      label: t('Action.DarkTheme'),
-      icon: <HalfMoon className={'mr-2 size-4'} />,
-      perform: () => setTheme('dark'),
-    },
-  ]
-
-  const localeActions: ActionItem[] = [
-    {
-      id: 'locale-en',
-      label: t('Action.EN'),
-      icon: <Translate className={'mr-2 size-4'} />,
-      perform: () => router.replace(pathname, { locale: 'en' }),
-    },
-    {
-      id: 'locale-zh_tw',
-      label: t('Action.ZHTW'),
-      icon: <Translate className={'mr-2 size-4'} />,
-      perform: () => router.replace(pathname, { locale: 'zh-TW' }),
+      heading: t('language'),
+      items: [
+        { icon: Translate, label: t('language.en'), perform: () => changeLocale('en') },
+        { icon: Translate, label: t('language.zh-hant'), perform: () => changeLocale('zh-Hant') },
+      ],
     },
   ]
 
   useEffect(() => {
-    const toggle = (e: KeyboardEvent) => {
-      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
-        setOpen(open => !open)
+    const handleKeydown = (ev: KeyboardEvent) => {
+      // if on the small screen
+      if (mobile && matches) {
+        return
+      }
+
+      // if on the large screen
+      if (!mobile && !matches) {
+        return
+      }
+
+      if (ev.key === 'k' && (ev.metaKey || ev.ctrlKey)) {
+        ev.preventDefault()
+        setIsOpen(prev => !prev)
       }
     }
-    document.addEventListener('keydown', toggle)
-    return () => document.removeEventListener('keydown', toggle)
-  }, [])
-
-  const handleSelect = useCallback((callback: () => void) => {
-    return () => {
-      callback()
-      setOpen(false)
-    }
-  }, [])
+    document.addEventListener('keydown', handleKeydown)
+    return () => document.removeEventListener('keydown', handleKeydown)
+  }, [mobile, matches])
 
   return (
     <>
       <button
-        className={'inline-flex items-center gap-x-2'}
-        onClick={() => setOpen(true)}
+        className="flex w-max items-center gap-x-2"
+        onClick={() => setIsOpen(true)}
       >
-        <KeyCommand className={'size-5'} />
-        <span className={'font-medium tracking-wide'}>{t('Trigger')}</span>
+        <KeyCommand className="size-5" />
+        {!mobile && <span className="text-sm font-medium">{t('command')}</span>}
       </button>
-      <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder={t('Placeholder')} />
+      <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
+        <CommandInput placeholder={t('command.placeholder')} />
         <CommandList>
-          <CommandEmpty>{t('Empty')}</CommandEmpty>
-          <CommandGroup heading={t('Group.Nav')}>
-            {navActions.map(action => (
-              <CommandItem
-                key={action.id}
-                value={action.label}
-                onSelect={handleSelect(action.perform)}
-              >
-                {action.icon}
-                {action.label}
-              </CommandItem>
+          <CommandEmpty>{t('command.empty')}</CommandEmpty>
+          <CommandList>
+            {groups.map((group, index) => (
+              <CommandGroup key={index}heading={group.heading}>
+                {group.items.map((item, index) => (
+                  <CommandItem
+                    key={index}
+                    value={item.label}
+                    onSelect={() => {
+                      item.perform()
+                      setIsOpen(false)
+                    }}
+                  >
+                    <item.icon className="mr-2 size-4" />
+                    <span>{item.label}</span>
+                  </CommandItem>
+                ))}
+              </CommandGroup>
             ))}
-          </CommandGroup>
-          <CommandGroup heading={t('Group.Theme')}>
-            {themeActions.map(action => (
-              <CommandItem
-                key={action.id}
-                value={action.label}
-                onSelect={handleSelect(action.perform)}
-              >
-                {action.icon}
-                {action.label}
-              </CommandItem>
-            ))}
-          </CommandGroup>
-          <CommandGroup heading={t('Group.Locale')}>
-            {localeActions.map(action => (
-              <CommandItem
-                key={action.id}
-                value={action.label}
-                onSelect={handleSelect(action.perform)}
-              >
-                {action.icon}
-                {action.label}
-              </CommandItem>
-            ))}
-          </CommandGroup>
+          </CommandList>
         </CommandList>
       </CommandDialog>
     </>

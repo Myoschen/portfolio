@@ -1,36 +1,35 @@
 'use client'
 
+import * as React from 'react'
+import NextLink, { type LinkProps as NextLinkProps } from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import { motion } from 'framer-motion'
 
-import { Link } from '@/lib/i18n'
-import type { LinkItem } from '@/lib/types'
-import { cn, scrollToTop } from '@/lib/utils'
+import { Dot } from '@/components/icon/dot'
+import { cn } from '@/lib/utils'
 
-interface NavLinkProps extends LinkItem {}
+interface NavLinkProps extends React.PropsWithChildren<NextLinkProps> {
+  className?: string
+}
 
-export function NavLink({ icon, label, url }: NavLinkProps) {
-  const selectedLayoutSegment = useSelectedLayoutSegment()
-  const pathname = selectedLayoutSegment ? `/${selectedLayoutSegment}` : '/'
-  const isActive = pathname === url
+export function NavLink({ className, href, children, ...props }: NavLinkProps) {
+  const segment = useSelectedLayoutSegment()
+  const pathname = segment ? `/${segment}` : '/'
+  const isActive = pathname === href
 
   return (
-    <Link href={url} onClick={scrollToTop}>
-      <span
-        className={cn(
-          'relative flex items-center gap-x-2 px-2 py-1 font-medium tracking-wide opacity-75 transition-opacity',
-          isActive && 'opacity-100'
-        )}
-      >
-        {icon}
-        {label}
-        {isActive && (
-          <motion.div
-            className={'absolute inset-0 -z-10 rounded-lg bg-secondary'}
-            layoutId={'active-link'}
-          />
-        )}
-      </span>
-    </Link>
+    <NextLink className={cn('relative', className)} href={href} {...props}>
+      {children}
+      {isActive && (
+        <motion.div
+          className="absolute -left-3.5 top-0 flex h-full items-center"
+          layout="position"
+          layoutId="dot"
+          transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }}
+        >
+          <Dot className="size-1.5 fill-foreground" />
+        </motion.div>
+      )}
+    </NextLink>
   )
 }

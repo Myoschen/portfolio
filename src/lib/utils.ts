@@ -2,9 +2,9 @@ import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(...inputs))
+  return twMerge(clsx(inputs))
 }
 
-export function scrollToTop() {
-  window.scroll(0, 0)
+export function arrayContains<T>(arr: T[], elements: T[]) {
+  return elements.some(el => arr.includes(el))
 }

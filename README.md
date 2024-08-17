@@ -17,7 +17,7 @@ This is my portfolio.
 - [Iconir Icons](https://iconoir.com/)
 - [Svgl](https://svgl.vercel.app/)
 - [Framer Motion](https://www.framer.com/motion/)
-- [Next Intl](https://next-intl-docs.vercel.app/)
+- [next-international](https://next-international.vercel.app/)
 
 ## Usage
 
@@ -29,14 +29,14 @@ git clone https://github.com/Myoschen/portfolio.git
 cd portfolio
 
 # install deps
-pnpm install
+bun install
 
 # start server
-pnpm run dev
+bun run dev
 
 # open browser and visit http://localhost:3000
 ```
 
 ## License
 
-Licensed under the [MIT License](./LICENSE.md).
+Licensed under the [MIT License](./LICENSE).

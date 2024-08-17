@@ -1,8 +1,15 @@
-import createMiddleware from 'next-intl/middleware'
+import type { MiddlewareConfig, NextRequest } from 'next/server'
+import { createI18nMiddleware } from 'next-international/middleware'
 
-import { defaultLocale, locales } from '@/lib/i18n'
+const I18nMiddleware = createI18nMiddleware({
+  locales: ['en', 'zh-Hant'],
+  defaultLocale: 'en',
+})
 
-export default createMiddleware({ locales, defaultLocale })
-export const config = {
-  matcher: ['/', '/(en|zh-TW)/:path*', '/((?!_next|_vercel|.*\\..*).*)'],
+export function middleware(request: NextRequest) {
+  return I18nMiddleware(request)
+}
+
+export const config: MiddlewareConfig = {
+  matcher: ['/((?!api|static|.*\\..*|_next|favicon.ico|robots.txt).*)'],
 }
