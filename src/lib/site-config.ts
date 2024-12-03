@@ -78,7 +78,6 @@ export default {
         website: undefined,
         source: 'http://github.com/Myoschen/create-app',
       },
-      building: true,
     },
     {
       key: 'commerce' as const,
@@ -105,6 +104,8 @@ export function techColor(tech: Language | Library) {
       return 'text-[#31648C]'
     case 'Rreact Aria Components':
       return 'text-[#E1241B]'
+    case 'Node.js':
+      return 'text-[#3A873A]'
     case 'Next.js':
     default:
       return 'text-black dark:text-white'
