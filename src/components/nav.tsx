@@ -10,19 +10,24 @@ import { ThemeMenu } from '@/components/theme-menu'
 import { BlurImage } from '@/components/ui/blur-image'
 import { Dock, DockIcon } from '@/components/ui/dock'
 import { Separator } from '@/components/ui/separator'
-import { useMediaQuery } from '@/hooks/use-media-query'
+import { useBetterMediaQuery } from '@/hooks/use-better-media-query'
 import { useScopedI18n } from '@/lib/locales/client'
 import siteConfig from '@/lib/site-config'
 
 export function Nav() {
   const scopedT = useScopedI18n('nav')
-  const isDesktop = useMediaQuery('(min-width: 640px)')
+  const isDesktop = useBetterMediaQuery('(min-width: 640px)')
 
   const navItems = [
     { icon: HomeSimple, label: scopedT('home'), url: '/' },
     { icon: FaceId, label: scopedT('about'), url: '/about' },
     { icon: LightBulb, label: scopedT('project'), url: '/project' },
   ]
+
+  // initial render
+  if (isDesktop === null) {
+    return null
+  }
 
   return isDesktop
     ? (

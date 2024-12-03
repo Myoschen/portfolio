@@ -1,8 +1,9 @@
-import '../globals.css'
+import '@/app/globals.css'
 
 import type { Metadata } from 'next'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
+import { NuqsAdapter } from 'nuqs/adapters/next/app'
 
 import { Debugger } from '@/components/debugger'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -29,7 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={cn(GeistSans.variable, GeistMono.variable)}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <NuqsAdapter>
+            {children}
+          </NuqsAdapter>
+        </ThemeProvider>
         { process.env.NODE_ENV === 'development' && <Debugger /> }
       </body>
     </html>

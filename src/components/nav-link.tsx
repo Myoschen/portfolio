@@ -3,7 +3,7 @@
 import * as React from 'react'
 import NextLink, { type LinkProps as NextLinkProps } from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 import { Dot } from '@/components/icon/dot'
 import { cn } from '@/lib/utils'

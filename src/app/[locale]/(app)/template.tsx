@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { LayoutRouterContext } from 'next/dist/shared/lib/app-router-context.shared-runtime'
 import { usePathname } from 'next/navigation'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'motion/react'
 
 /**
  * @see https://github.com/vercel/next.js/discussions/59349
