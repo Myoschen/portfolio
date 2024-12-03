@@ -1,15 +1,18 @@
+import { fixupConfigRules } from '@eslint/compat'
 import pluginNext from '@next/eslint-plugin-next'
 import stylistic from '@stylistic/eslint-plugin'
 import pluginTs from '@typescript-eslint/eslint-plugin'
 import parserTs from '@typescript-eslint/parser'
-import pluginJsonc from 'eslint-plugin-jsonc'
 import pluginReact from 'eslint-plugin-react'
 import pluginReactHooks from 'eslint-plugin-react-hooks'
 import pluginImportSort from 'eslint-plugin-simple-import-sort'
 import pluginTailwind from 'eslint-plugin-tailwindcss'
 
-/** @type {import('eslint').Linter.Config[]} */
-export default [
+export default fixupConfigRules([
+  // ignores
+  {
+    ignores: ['**/node_modules/*', '**/.next/*'],
+  },
   // stylistic
   stylistic.configs.customize({
     indent: 2,
@@ -42,12 +45,9 @@ export default [
       ...pluginReactHooks.configs['recommended'].rules,
       ...pluginNext.configs['recommended'].rules,
       ...pluginNext.configs['core-web-vitals'].rules,
-      // TypeError: context.getAncestors is not a function
-      '@next/next/no-duplicate-head': 'off',
-      '@typescript-eslint/no-empty-object-type': 'warn',
       '@typescript-eslint/no-unused-vars': 'warn',
+      '@typescript-eslint/no-empty-object-type': 'warn',
     },
-    ignores: ['./.next/*'],
   },
   // tailwindcss
   ...pluginTailwind.configs['flat/recommended'],
@@ -72,7 +72,7 @@ export default [
           groups: [
             ['^\\u0000'],
             ['^react', '^next', '@?\\w'],
-            ['^~/.*', '^#/.*', '^@/.*'],
+            ['^./.*', '^~/.*', '^#/.*', '^@/.*'],
             ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
             ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
           ],
@@ -80,6 +80,4 @@ export default [
       ],
     },
   },
-  // json
-  ...pluginJsonc.configs['flat/recommended-with-json'],
-]
+])

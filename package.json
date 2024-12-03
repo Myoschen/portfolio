@@ -7,7 +7,8 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint --quiet",
+    "lint:fix": "eslint --fix --quiet"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.2",
@@ -32,6 +33,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.3",
     "@next/eslint-plugin-next": "^14.2.18",
     "@stylistic/eslint-plugin": "^2.11.0",
     "@types/node": "^20.17.9",
@@ -41,7 +43,6 @@
     "@typescript-eslint/parser": "^8.17.0",
     "eslint": "^9.16.0",
     "eslint-config-next": "14.2.18",
-    "eslint-plugin-jsonc": "^2.18.2",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
@@ -49,5 +50,8 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.7.2"
+  },
+  "overrides": {
+    "eslint": "$eslint"
   }
 }
