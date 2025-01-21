@@ -39,7 +39,13 @@ export default async function HomePage() {
           </ul>
         </div>
         <div className="flex flex-col gap-y-1">
-          <BlurImage className="relative h-60 w-full rounded-lg" src={siteConfig.banner.home} alt="Home Banner" fill={true} />
+          <BlurImage
+            className="relative h-60 w-full rounded-lg"
+            src={siteConfig.banner.home}
+            alt="Home Banner"
+            fill={true}
+            priority={true}
+          />
           <p className="self-end text-xs text-muted-foreground">
             {t('photoBy', {
               author: (
@@ -47,7 +53,7 @@ export default async function HomePage() {
                   className="text-secondary-foreground underline transition-opacity ease-in-out-quint hover:opacity-50"
                   href="https://unsplash.com/@adrian_infernus?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
                   target="_blank"
-                  rel="noreferer noopener"
+                  rel="noreferrer noopener"
                 >
                   Adrian Infernus
                 </a>
@@ -57,7 +63,7 @@ export default async function HomePage() {
                   className="text-secondary-foreground underline transition-opacity ease-in-out-quint hover:opacity-50"
                   href="https://unsplash.com/photos/a-pink-and-blue-sky-with-a-few-clouds-GLf7bAwCdYg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
                   target="_blank"
-                  rel="noreferer noopener"
+                  rel="noreferrer noopener"
                 >
                   Unsplash
                 </a>

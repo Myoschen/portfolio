@@ -10,7 +10,11 @@ export default myoschen({
       '@typescript-eslint/no-empty-object-type': 'warn',
     },
   },
-  react: true,
+  react: {
+    overrides: {
+      'react/no-array-index-key': 'off',
+    },
+  },
   next: true,
   tailwindcss: true,
 })

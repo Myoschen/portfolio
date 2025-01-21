@@ -34,7 +34,14 @@ export function Nav() {
         <aside className="z-10 shrink-0 basis-40 px-6">
           <div className="fixed space-y-6 md:space-y-8">
             <Link className="-ml-2 block w-max" href="/">
-              <BlurImage className="rounded-full" src={siteConfig.logo} alt="Logo" width={60} height={60} />
+              <BlurImage
+                className="rounded-full"
+                src={siteConfig.logo}
+                alt="Logo"
+                width={60}
+                height={60}
+                priority={true}
+              />
             </Link>
             <nav className="flex flex-col gap-y-3">
               {navItems.map((item, index) => (

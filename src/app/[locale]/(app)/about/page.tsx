@@ -20,7 +20,13 @@ export default async function AboutPage() {
       <div className="space-y-4">
         <h1 className="text-4xl font-bold">{t('about-me')}</h1>
         <div className="flex flex-col gap-y-1">
-          <BlurImage className="relative h-60 w-full rounded-lg" src={siteConfig.banner.about} alt="Home Banner" fill={true} />
+          <BlurImage
+            className="relative h-60 w-full rounded-lg"
+            src={siteConfig.banner.about}
+            alt="About Banner"
+            fill={true}
+            priority={true}
+          />
           <p className="self-end text-xs text-muted-foreground">
             {t('photoBy', {
               author: (
@@ -28,7 +34,7 @@ export default async function AboutPage() {
                   className="text-secondary-foreground underline transition-opacity ease-in-out-quint hover:opacity-50"
                   href="https://unsplash.com/@plufow?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
                   target="_blank"
-                  rel="noreferer noopener"
+                  rel="noreferrer noopener"
                 >
                   Plufow Le Studio
                 </a>
@@ -38,7 +44,7 @@ export default async function AboutPage() {
                   className="text-secondary-foreground underline transition-opacity ease-in-out-quint hover:opacity-50"
                   href="https://unsplash.com/photos/a-blurry-image-of-a-blue-and-green-background-5Q6yZN8ckuY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
                   target="_blank"
-                  rel="noreferer noopener"
+                  rel="noreferrer noopener"
                 >
                   Unsplash
                 </a>
