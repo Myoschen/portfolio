@@ -11,6 +11,7 @@
     "lint:fix": "eslint --fix --quiet"
   },
   "dependencies": {
+    "@ctrl/tinycolor": "^4.1.0",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-dropdown-menu": "^2.1.2",
     "@radix-ui/react-popover": "^1.1.2",

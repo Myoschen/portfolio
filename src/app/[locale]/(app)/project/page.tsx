@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button'
 import { useI18n } from '@/lib/locales/client'
 import { searchParamsParsers } from '@/lib/search-params'
 import siteConfig, { techColor } from '@/lib/site-config'
-import { arrayContains, cn } from '@/lib/utils'
+import { arrayContains, cn, gradient } from '@/lib/utils'
 
 const techOptions = Array.from(new Set(siteConfig.projects.map(p => p.tech).flat()))
 
@@ -48,13 +48,20 @@ export default function ProjectPage() {
               key={index}
               className="overflow-hidden rounded-lg border-2 border-secondary shadow"
             >
-              {item.image
-                ? (
-                    <div className="relative aspect-video w-full overflow-hidden">
-                      <BlurImage src={item.image} alt={item.key} fill={true} />
-                    </div>
-                  )
-                : (<div className="aspect-video bg-neutral-200 dark:bg-neutral-900" />)}
+              {
+                item.image
+                  ? (
+                      <div className="relative aspect-video w-full overflow-hidden">
+                        <BlurImage src={item.image} alt={item.key} fill={true} />
+                      </div>
+                    )
+                  : (
+                      <div
+                        className="aspect-video"
+                        style={{ backgroundImage: gradient(item.key) }}
+                      />
+                    )
+              }
               <div className="space-y-3 p-4">
                 <div className="space-y-1">
                   <div className="flex items-baseline gap-x-1">
