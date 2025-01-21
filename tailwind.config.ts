@@ -1,5 +1,5 @@
-import type { Config } from 'tailwindcss';
-import { fontFamily } from 'tailwindcss/defaultTheme';
+import type { Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
 export default {
   darkMode: ['class'],
@@ -8,7 +8,7 @@ export default {
     container: {
       center: true,
       padding: '2rem',
-      screens: { '2xl': '1400px' }
+      screens: { '2xl': '1400px' },
     },
     extend: {
       colors: {
@@ -73,13 +73,13 @@ export default {
         filter: 'filter',
       },
       transitionDuration: {
-        '3000': '0.3s'
+        3000: '0.3s',
       },
       /** @see https://easings.net/#easeInOutQuint */
       transitionTimingFunction: {
-        'in-out-quint': 'cubic-bezier(0.83, 0, 0.17, 1)'
-      }
+        'in-out-quint': 'cubic-bezier(0.83, 0, 0.17, 1)',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
-} satisfies Config;
+} satisfies Config

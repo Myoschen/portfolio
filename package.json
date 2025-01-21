@@ -33,25 +33,13 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.2.3",
-    "@next/eslint-plugin-next": "^14.2.18",
-    "@stylistic/eslint-plugin": "^2.11.0",
+    "@myoschen/eslint-config": "^1.0.7",
     "@types/node": "^20.17.9",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@typescript-eslint/eslint-plugin": "^8.17.0",
-    "@typescript-eslint/parser": "^8.17.0",
     "eslint": "^9.16.0",
-    "eslint-config-next": "14.2.18",
-    "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint-plugin-tailwindcss": "^3.17.5",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.7.2"
-  },
-  "overrides": {
-    "eslint": "$eslint"
   }
 }

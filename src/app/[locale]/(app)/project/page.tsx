@@ -1,8 +1,8 @@
 'use client'
 
-import { Masonry } from 'react-plock'
 import { ArrowUpRight } from 'iconoir-react'
 import { useQueryStates } from 'nuqs'
+import { Masonry } from 'react-plock'
 
 import { Dot } from '@/components/icon/dot'
 import { MultiFilter } from '@/components/multi-filter'
@@ -66,8 +66,9 @@ export default function ProjectPage() {
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-1">
-                  {item.tech.map(tech => (
+                  {item.tech.map((tech, index) => (
                     <Badge
+                      key={index}
                       className="rounded px-1 py-0 text-[10px] font-normal"
                       variant="secondary"
                     >
