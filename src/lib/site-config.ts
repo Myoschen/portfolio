@@ -6,7 +6,7 @@ export type Social = {
 
 export type Language = 'HTML5' | 'CSS' | 'JavaScript' | 'TypeScript' | 'Go' | 'Rust' | 'Python' | (string & {})
 
-export type Library = 'React' | 'React Native' | 'Next.js' | 'Expo' | 'Tailwind CSS' | 'Framer Motion' | 'Electron' | 'Tauri' | 'Vue' | 'Nuxt' | 'Node.js' | 'Radix UI Primitives' | 'Rreact Aria Components' | 'Postgres' | (string & {})
+export type Library = 'React' | 'React Native' | 'Next.js' | 'Expo' | 'Tailwind CSS' | 'Framer Motion' | 'Electron' | 'Tauri' | 'Vue' | 'Nuxt' | 'Node.js' | 'Radix UI Primitives' | 'Rreact Aria Components' | 'Postgres' | 'React Native Reanimated' | (string & {})
 
 export type Tool = 'Arc' | 'Bun' | 'pnpm' | 'Vercel' | 'vscode' | (string & {})
 
@@ -80,14 +80,23 @@ export default {
       },
     },
     {
-      key: 'commerce' as const,
+      key: 'native-animations' as const,
       image: undefined,
-      tech: ['Next.js', 'Rreact Aria Components', 'TypeScript', 'Rust', 'Postgres'],
+      tech: ['React', 'React Native', 'Expo', 'React Native Reanimated'],
       url: {
         website: undefined,
-        source: 'http://github.com/Myoschen/',
+        source: 'http://github.com/Myoschen/native-animations',
       },
       building: true,
+    },
+    {
+      key: 'eslint-config' as const,
+      image: undefined,
+      tech: ['Node.js', 'TypeScript'],
+      url: {
+        website: undefined,
+        source: 'http://github.com/Myoschen/eslint-config',
+      },
     },
   ],
 } satisfies Config
