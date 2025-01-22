@@ -35,7 +35,7 @@ export default {
   'create-app': 'create-app',
   'create-app.description': 'A cli to scaffold project.',
   'native-animations': 'native-animations',
-  'native-animations.description': 'Animations in React Native',
+  'native-animations.description': 'Animations in React Native.',
   'eslint-config': 'eslint-config',
   'eslint-config.description': 'My ESLint config.',
   'website': 'Website',
