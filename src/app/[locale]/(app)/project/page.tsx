@@ -57,7 +57,7 @@ export default function ProjectPage() {
                     )
                   : (
                       <div
-                        className="aspect-video"
+                        className="grainy relative aspect-video"
                         style={{ backgroundImage: gradient(item.key) }}
                       />
                     )

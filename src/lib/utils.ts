@@ -20,17 +20,24 @@ export function hash(input: string) {
   return hash
 }
 
-export type HslOptions = {
-  saturation: number
-  lightness: number
+export type GradientOptions = {
+  s?: number // saturation
+  l?: number // lightness
 }
 
-export function gradient(text: string, options?: HslOptions) {
+export function gradient(text: string, options?: GradientOptions) {
   const n = hash(text)
-  const { saturation = 0.5, lightness = 0.5 } = options ?? {}
-  const color = new TinyColor({ h: n % 360, s: saturation, l: lightness })
-  const triad = color.triad()
-  const c1 = color.toHslString()
-  const c2 = color.mix(triad[1]!, 50).toHslString()
-  return `radial-gradient(at bottom left, ${c1}, ${c2})`
+  const posN = Math.abs(n)
+  const { s = 0.5, l = 0.4 } = options ?? {}
+
+  const baseColor = new TinyColor({ h: n % 360, s, l })
+  const colors = Array.from({ length: 2 + (posN % 3) }, (_, i) => {
+    const deg = (n * (i + 1)) % 120
+    const mixColor = new TinyColor({ h: (n + i * 60) % 360, s, l })
+    return baseColor.spin(deg).mix(mixColor, 50).toHslString()
+  })
+
+  const positions = ['top left', 'top right', 'bottom left', 'bottom right']
+  const atPosition = positions[(posN * 7) % positions.length]
+  return `radial-gradient(at ${atPosition}, ${colors.join(', ')})`
 }
