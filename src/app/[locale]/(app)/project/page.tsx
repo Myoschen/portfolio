@@ -93,7 +93,12 @@ export default function ProjectPage() {
                       </a>
                     </Button>
                   )}
-                  <Button size="xs" asChild={true}>
+                  <Button
+                    className={cn({ 'opacity-50 pointer-events-none': item.private })}
+                    size="xs"
+                    asChild={true}
+                    onClick={item.private ? ev => ev.preventDefault() : undefined}
+                  >
                     <a href={item.url.source} target="_blank" rel="noopener noreferer">
                       <span className="mr-1">{t('source')}</span>
                       <ArrowUpRight className="size-3" />

@@ -19,6 +19,7 @@ export type Project = {
     source: string
   }
   building?: boolean
+  private?: boolean
 }
 
 export type Config = {
@@ -88,6 +89,7 @@ export default {
         source: 'http://github.com/Myoschen/native-animations',
       },
       building: true,
+      private: true,
     },
     {
       key: 'eslint-config' as const,
