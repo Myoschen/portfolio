@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { FaceId, HomeSimple, LightBulb } from 'iconoir-react'
+import { motion } from 'motion/react'
 
 import { CommandMenu } from '@/components/command-menu'
 import { LanguageMenu } from '@/components/language-menu'
@@ -32,7 +33,10 @@ export function Nav() {
   return isDesktop
     ? (
         <aside className="z-10 shrink-0 basis-40 px-6">
-          <div className="fixed space-y-6 md:space-y-8">
+          <motion.div
+            className="fixed space-y-6 md:space-y-8"
+            layoutScroll={true}
+          >
             <Link className="-ml-2 block w-max" href="/">
               <BlurImage
                 className="rounded-full"
@@ -59,7 +63,7 @@ export function Nav() {
               <LanguageMenu />
               <ThemeMenu />
             </div>
-          </div>
+          </motion.div>
         </aside>
       )
     : (
